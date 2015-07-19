@@ -21,3 +21,227 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+
+/* My Custom CSS */
+
+/*  MAIN COLORS */
+
+$mainColor : #A1006B;
+$secondaryColor : #009688;
+
+$greyColor : #B7B6B6;
+$blackColor : #000000;
+$whiteColor : #fff;
+$greenOkColor : #CCDC00;
+$redKoColor : #E05206;
+$orangeNokColor : #FFB612;
+
+.background-maincolor{
+	background-color: $mainColor;
+}
+.maincolor{
+	color: $mainColor;
+}
+
+.secondarycolor{
+	color: $secondaryColor;
+}
+
+.color-grey{
+	color: $greyColor;
+}
+
+.black{
+	color: $blackColor;
+}
+
+.white{
+	color: $whiteColor;
+}
+
+.green-ok{
+	color: $greenOkColor;
+}
+.orange-nok{
+	color: $orangeNokColor;
+}
+.red-ko{
+	color: $redKoColor;
+}
+
+/* POLICIES */
+
+body, .ionic-body {
+	font-family:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+
+/* NAV BAR */
+.bar.bar-positive{
+	background-color: $secondaryColor;
+	border-color: #DADADA;
+	/*padding-top:0px;*/
+	border: none;
+	color:white;
+}
+.bar.bar-positive .button{
+	color: white;
+}
+.tab-nav{
+	color: white;
+	background-color: $secondaryColor !important;
+}
+.bar.bar-positive .title{
+	font-size:15px;
+	color: white;
+	font-weight: bold;
+}
+.bar-positive .button.button-clear{
+	font-size:15px;
+}
+.bar-header {
+  	box-shadow: 0px 1px 1px #b4b4b4;
+}
+
+.tabs {
+  	box-shadow: 0px -1px 1px #b4b4b4;
+}
+.tabs-striped .tabs {
+	background-color: $secondaryColor !important;
+}
+
+.tab-nav.tabs {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	box-shadow: 0px 1px 1px #b4b4b4;
+}
+
+.bar-subheader {
+  	box-shadow: 0px 1px 1px #b4b4b4;
+}
+
+/*  NAVICON */
+.custom-navicon{
+	color: #fff;
+}
+.custom-navicon:hover{
+	color: #fff;
+}
+
+/* Position */
+.center{
+	text-align:center;
+}
+.item-content-no-padding .item-content{
+	padding:0px;
+}
+
+/* Styling for the form fields */
+label.item.has-error {  
+  	border-color: #a94442;
+}
+select#siteSelector.ion-input-select-large.has-error {  
+  	border-color: #a94442;
+}
+.help-block {
+  	color: #a94442;
+  	display: block;
+  	margin-top: 5px;
+  	margin-bottom: 10px;
+}
+
+/* POPUP */
+/* Have to check if we can add a class to popup instead of modify the parent one */
+.popup-container .popup{
+	width: 100%;
+}
+
+/* GENERAL */
+.bold{
+	font-weight: bold;
+}
+.picto-event{
+	height:20px;
+	width:20px;
+}
+
+/* BUTTONS */
+.button.button-positive {
+  	border-color: $mainColor;
+ 	 background-color: $mainColor;
+  	color: white;
+  	font-weight: bold;
+}
+.button.button-positive.active, .button.button-positive.activated {
+  	border-color: $mainColor;
+  	background-color: #830057;
+  	color: white;
+  	font-weight: bold;
+}
+
+.button.button-positive.button-outline {
+  	border-color: $mainColor;
+  	background-color: $secondaryColor;
+  	color: $mainColor;
+  	font-weight: bold;
+}
+.button.button-positive.button-outline.active, .button.button-positive.button-outline.activated {
+  	border-color: $secondaryColor;
+  	background-color: $mainColor;
+  	color: $secondaryColor;
+  	font-weight: bold;
+}
+
+
+.ion-input-select-large,
+.ion-input-select,
+select {
+  background-repeat: no-repeat;
+  border:thin solid #dddddd;
+  color:#333;
+  box-sizing:border-box;
+  height:45px;
+}
+
+.ion-input-select-large {
+  font-size: 14px;
+  padding: 6px 0 5px 10px;
+  width: 100%;
+}
+
+/*
+Sliders
+*/
+.slider {
+	height: 100%; 	/* Slider height you want */
+}
+.slider-slide {
+ 	height: 100%;
+} 
+
+.no-padding{
+	padding: 0px;
+}
+
+.slider-pager {
+	top: 100px;
+	bottom: none;
+}
+
+.img-responsive{
+	width: 100%;
+	height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+            
