@@ -7847,3 +7847,6 @@ Sliders
 .img-responsive {
   width: 100%;
   height: auto; }
+
+.uppercase {
+  text-transform: uppercase; }

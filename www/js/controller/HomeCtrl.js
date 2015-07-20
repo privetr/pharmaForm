@@ -18,8 +18,6 @@
 	function HomeCtrl($state, $scope) {
 
 		var vm = this;
-		
-		
 	}
 
 })();

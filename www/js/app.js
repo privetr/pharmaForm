@@ -7,7 +7,7 @@
   
   'use strict';
 
-  var app = angular.module('starter', ['ionic', ])
+  var app = angular.module('starter', ['ionic', 'LocalForageModule'])
 
   .config(function($ionicConfigProvider){
         $ionicConfigProvider.tabs.position('top');
@@ -22,6 +22,20 @@
         url: '/home', 
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl as vm'
+      })
+
+      // List Patient
+      .state('list_patients', {
+        url: '/list_patients', 
+        templateUrl: 'templates/list_patients.html',
+        controller: 'ListPatientsCtrl as vm'
+      })
+
+      // View Patient
+      .state('view_patient', {
+        url: '/view_patient/:patientId', 
+        templateUrl: 'templates/view_patient.html',
+        controller: 'ViewPatientCtrl as vm'
       })
         
       $urlRouterProvider.otherwise("/home");
