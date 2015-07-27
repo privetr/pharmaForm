@@ -1,3 +1,10 @@
+/**
+ * angular-localforage - Angular service & directive for https://github.com/mozilla/localForage (Offline storage, improved.)
+ * @version v1.2.3
+ * @link https://github.com/ocombe/angular-localForage
+ * @license MIT
+ * @author Olivier Combe <olivier.combe@gmail.com>
+ */
 (function(root, factory) {
   'use strict';
 
@@ -471,4 +478,3 @@
     }
   }]);
 });
-
