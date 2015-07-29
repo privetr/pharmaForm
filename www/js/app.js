@@ -14,7 +14,7 @@
         $ionicConfigProvider.views.maxCache(0);
   })
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $localForageProvider) {
       $stateProvider
       
       // Home Template
@@ -46,6 +46,9 @@
           var $state = $injector.get("$state");
           $state.go("home");
       });
+      
+      // Configure localforage provider
+      $localForageProvider.config({name : 'pfDatabase', storeName : 'patients'});
       
   })
 

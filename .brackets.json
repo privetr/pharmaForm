@@ -1,0 +1,10 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic.bundle.min.js",
+        "D:/hybridApps/pharmaForm/www/lib/localforage/angular-localForage.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic-angular.min.js",
+        "D:/hybridApps/pharmaForm/www/js/app.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic.min.js",
+        "D:/hybridApps/pharmaForm/www/js/services/pfUtilsService.js"
+    ]
+}

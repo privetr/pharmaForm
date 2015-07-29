@@ -54,14 +54,17 @@
 				
 					    <ion-list>
 							<div class="list list-inset">
-								<ion-item ng-repeat="patient in listPatients | filter: query | orderBy:predicate:reverse" 
+								<ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse" 
 								class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-								ng-init="date = vm.formatDate(statement.date)"
+								ng-init="birthdate = vm.formatDate(object.patient.birthdate)"
 								ui-sref='patient_view ( {patientId: patient.id} )'
 								>			  
-									<p><color class="maincolor uppercase" style="padding-right:20px"><b>Nom</b></color> {{patient.lastname}}</p>
-									<p><color class="maincolor" style="padding-right:20px"><b>Prénom</b></color> {{patient.firstname}}</p>
-									<p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> {{date}}b</p>
+									<p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                        <color class="uppercase">
+                                        {{object.patient.lastname}}</color>
+                                    </p>
+									<p><color class="maincolor" style="padding-right:20px"><b>Prénom</b></color> {{object.patient.firstname}}</p>
+									<p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> {{birthdate}}b</p>
 							     </ion-item>
 						     </div>
 						</ion-list> 

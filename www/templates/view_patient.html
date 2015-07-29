@@ -62,17 +62,37 @@
                                 <input id="input_new_comment" type="text" ng-model="vm.new_comment" placeholder="Nouveau commentaire">
                             </label>
                         </div>
+                        
+                        <div class="row" style="margin-top:20px;">
+                       		<div class="button-bar col-50">
+                       			<button class="button button-positive icon-left ion-plus-round"
+                                        ng-click="vm.addComment(vm.new_comment)">Ajouter</button>
+                       		</div>
+                           <div class="col-25 col-offset-25">
+                       			<button class="button button-clear button-assertive icon ion-close-round"
+                       				ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
+								</button>
+								<button class="button button-clear button-energized icon ion-shuffle"
+                       				 ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
+								</button>
+								<button class="button button-clear button-dark icon ion-edit"
+                       				 ng-click="vm.showDelete = false; vm.showReorder = false">
+								</button>
+                       		</div>
+                       	</div>
 
-                        <div class="row button-bar" style="margin-top:20px;">
-                            <button class="button button-positive icon-left ion-plus-round" 
-                                      ng-click="vm.addComment(vm.new_comment)">Ajouter</button>
-                        </div>
-
-                        <ion-list>
+                        <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
                             <div class="list list-inset">
-                                <ion-item ng-repeat="(key_comment, comment) in vm.listComments" class="item-text-wrap item-icon-right">
+                                <ion-item ng-repeat="(key_comment, comment) in vm.listComments" class="item-text-wrap item-icon-right"
+                                          ng-click="vm.editComment(key_comment, comment)">
                                     {{comment.text}}
-                                    <i class="icon ion-close-round assertive" ng-click="vm.removeComment(key_comment)"></i>
+                                    
+                                    <ion-delete-button class="ion-minus-circled"
+						                ng-click="vm.removeComment(key_comment)">
+						    		</ion-delete-button>
+						  			<ion-reorder-button class="ion-navicon"
+						            	on-reorder="vm.reorderItem(comment, $fromIndex, $toIndex)">
+						    		</ion-reorder-button>
                                 </ion-item>
                             </div>
                         </ion-list>
