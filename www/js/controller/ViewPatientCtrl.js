@@ -2,7 +2,7 @@
     'use strict';
 	
 	angular.module('starter')
-
+    
 	/* 
 	 * CONTROLLER ViewPatientCtrl
 	 * Page : view_patient.html
@@ -12,16 +12,47 @@
 	.controller('ViewPatientCtrl', ViewPatientCtrl);
 	
 	ViewPatientCtrl.$inject = ['$state', '$scope',
-                               'pfLocalForageService', 'pfUtilsService'
+                               'pfLocalForageService', 'pfUtilsService', '$stateParams',
+                               '$localForage'
 		               ];
 
 	/* @ngInject */
-	function ViewPatientCtrl($state, $scope, pfLocalForageService, pfUtilsService) {
+	function ViewPatientCtrl($state, $scope, pfLocalForageService, pfUtilsService, $stateParams, $localForage) {
 
 		var vm = this;        
         
         vm.showDelete = false;
         vm.showReorder = false;
+        
+        vm.patientId = $stateParams.patientId;
+        
+        vm.loadPatient = function() {
+            if(vm.patientId !== '-1'){
+                vm.isNewPatient = false;
+                vm.edition = false;
+                
+                pfLocalForageService.getListPatients()
+                .then (function(listPatients) {
+                    vm.listPatients = pfUtilsService.transformationToArray(listPatients);
+                    for (var i = 0 ; i < vm.listPatients.length ; i++) {
+                        if (vm.listPatients[i].patient.guid === vm.patientId) {
+                            vm.indexExistingPatient = i;
+                            vm.lastname = vm.listPatients[i].patient.lastname;
+                            vm.firstname = vm.listPatients[i].patient.firstname;
+                            vm.birthdate = vm.listPatients[i].patient.birthdate;
+                            vm.graftdate = vm.listPatients[i].patient.graftdate;
+                            vm.listComments = vm.listPatients[i].patient.listComments;
+                            break;
+                        }
+                    }
+                });
+            }
+            else {
+                vm.isNewPatient = true;
+                vm.edition = true;
+            }
+		} 
+        vm.loadPatient();
         
         // Date of the day
         var now = new Date();
@@ -35,20 +66,36 @@
          * SAVE PATIENTS
          */
         vm.savePatient = function() {
-        	vm.patient = {};
-
-            // We store all informations
-            vm.patient.lastname = vm.lastname;
-            vm.patient.firstname = vm.firstname;
-            vm.patient.birthdate = vm.birthdate;
-            vm.patient.graftdate = vm.graftdate;
-            vm.patient.listComments = vm.listComments;
             
-            pfLocalForageService.insertNewPatient(vm.patient)
-            .then(function() {
-                pfUtilsService.showAlert('Sauvegarde réussie', 'Informations du patient enregistrées');
-                $state.go('list_patients');
-            })
+            if(vm.isNewPatient){
+                vm.new_patient = {};
+
+                // We store all informations
+                vm.new_patient.lastname = vm.lastname;
+                vm.new_patient.firstname = vm.firstname;
+                vm.new_patient.birthdate = vm.birthdate;
+                vm.new_patient.graftdate = vm.graftdate;
+                vm.new_patient.listComments = vm.listComments;
+
+                pfLocalForageService.insertNewPatient(vm.new_patient)
+                .then(function() {
+                    pfUtilsService.showAlert('Sauvegarde réussie', 'Informations du patient enregistrées');
+                    $state.go('home');
+                })
+            }
+            else {
+                vm.listPatients[vm.indexExistingPatient].patient.lastname = vm.lastname;
+                vm.listPatients[vm.indexExistingPatient].patient.firstname = vm.firstname;
+                vm.listPatients[vm.indexExistingPatient].patient.birthdate = vm.birthdate;
+                vm.listPatients[vm.indexExistingPatient].patient.graftdate = vm.graftdate;
+                vm.listPatients[vm.indexExistingPatient].patient.listComments = vm.listComments;
+                
+                $localForage.setItem('listPatients', vm.listPatients)
+                .then(function() {
+                    pfUtilsService.showAlert('Sauvegarde réussie', 'Informations du patient enregistrées');
+                    vm.edition = false;
+                })
+            }
 		}
         
         

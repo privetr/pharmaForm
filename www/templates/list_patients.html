@@ -44,9 +44,9 @@
 						  	</div>
 							<div class="row"  style="padding-top:0px;">
 								<div class="button-bar">
-									<a class="button button-stable button-outline" href="" ng-click="predicate = 'lastname'; reverse=!reverse">Nom</a>
-									<a class="button button-stable button-outline" href="" ng-click="predicate = 'firstname'; reverse=!reverse">Prénom</a>
-									<a class="button button-stable button-outline" href="" ng-click="predicate = 'date'; reverse=!reverse">Date naissance</a>
+									<a class="button button-stable button-outline" href="" ng-click="predicate = 'patient.lastname'; reverse=!reverse">Nom</a>
+									<a class="button button-stable button-outline" href="" ng-click="predicate = 'patient.firstname'; reverse=!reverse">Prénom</a>
+									<a class="button button-stable button-outline" href="" ng-click="predicate = 'patient.date'; reverse=!reverse">Date naissance</a>
 								</div>
 							</div>
 			
@@ -56,15 +56,14 @@
 							<div class="list list-inset">
 								<ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse" 
 								class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-								ng-init="birthdate = vm.formatDate(object.patient.birthdate)"
-								ui-sref='patient_view ( {patientId: patient.id} )'
+								ui-sref='view_patient ( {patientId: object.patient.guid} )'
 								>			  
 									<p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
                                         <color class="uppercase">
                                         {{object.patient.lastname}}</color>
                                     </p>
 									<p><color class="maincolor" style="padding-right:20px"><b>Prénom</b></color> {{object.patient.firstname}}</p>
-									<p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> {{birthdate}}b</p>
+									<p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> {{birthdate}}</p>
 							     </ion-item>
 						     </div>
 						</ion-list> 

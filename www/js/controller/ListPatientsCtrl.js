@@ -20,6 +20,8 @@
 		var vm = this;
         
         vm.listPatients = [];
+        
+        // We check if it is a creation of user or not
 		
 		/*
 		 * Get Patients list
@@ -30,6 +32,12 @@
 			vm.nbPatients = vm.listPatients.length;
 			console.log("Nombre de patients : " + vm.nbPatients);
 		});
+        
+        vm.formatDate = function(input) {
+			//input type : 2015-06-30T14:49:20Z
+			// output type : dd/MM/yyyy HH:mm
+			return input.substring(8,10) + "/" + input.substring(5,7) + "/" + input.substring(0,4) + " " + input.substring(11,16);
+		}
         
 	}
 
