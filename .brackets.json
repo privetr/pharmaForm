@@ -11,6 +11,14 @@
         "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular.min.js",
         "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular-ui/angular-ui-router.js",
         "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
-        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic-angular.js"
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic-angular.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic.bundle.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/ionic.js",
+        "D:/hybridApps/pharmaForm/www/lib/localforage/localforage.js",
+        "D:/hybridApps/pharmaForm/gulpfile.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-sanitize.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-resource.min.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-resource.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-animate.min.js"
     ]
 }

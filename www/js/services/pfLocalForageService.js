@@ -47,7 +47,7 @@
                         "patient": dataToInsert
                     })
                 );
-                $localForage.setItem('listPatients', listPatients);
+                return $localForage.setItem('listPatients', listPatients);
             })
         }
         

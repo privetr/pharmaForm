@@ -21,6 +21,13 @@
 
 		var vm = this;        
         
+        // Date of the day
+        var now = new Date();
+        
+        // To avoid problems of Invalid fucking dates : https://docs.angularjs.org/api/ng/input/input%5Bdate%5D
+        vm.birthdate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        vm.graftdate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        
         vm.showDelete = false;
         vm.showReorder = false;
         
@@ -54,10 +61,6 @@
 		} 
         vm.loadPatient();
         
-        // Date of the day
-        var now = new Date();
-        vm.dateNow = new Date(now.getFullYear(), now.getMonth() , now.getDate());
-        
         // Comments
         vm.listComments = [];
 
@@ -80,7 +83,7 @@
                 pfLocalForageService.insertNewPatient(vm.new_patient)
                 .then(function() {
                     pfUtilsService.showAlert('Sauvegarde réussie', 'Informations du patient enregistrées');
-                    $state.go('home');
+                    $state.go('list_patients');
                 })
             }
             else {

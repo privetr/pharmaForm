@@ -48,16 +48,14 @@
                             <!-- birthdate -->
                             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de naissance</h4>
                             <label class="item item-input">
-				                <input type="date" ng-model="vm.birthdate"
-                                       ng-init="vm.birthdate = vm.birthdate || vm.dateNow" class="bold"
+				                <input type="date" ng-model="vm.birthdate" class="bold"
                                        ng-readonly="!vm.edition">
             				</label>
                             
                             <!-- graftdate -->
                             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de greffe</h4>
                             <label class="item item-input">
-				                <input type="date" ng-model="vm.graftdate" 
-                                       ng-init="vm.graftdate = vm.graftdate || vm.dateNow" class="bold"
+				                <input type="date" ng-model="vm.graftdate" class="bold"
                                        ng-readonly="!vm.edition">
             				</label> 
                         </div>
@@ -71,7 +69,7 @@
 						</div>
                         
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Commentaires</h4>
-                        <div class="col">
+                        <div class="col" ng-if="vm.edition">
                             <label class="item item-input">
                                 <input id="input_new_comment" type="text" 
                                        ng-model="vm.new_comment" placeholder="Nouveau commentaire"
@@ -79,7 +77,7 @@
                             </label>
                         </div>
                         
-                        <div class="row" style="margin-top:20px;">
+                        <div class="row" style="margin-top:20px;" ng-if="vm.edition">
                        		<div class="button-bar col-50">
                        			<button class="button button-positive icon-left ion-plus-round"
                                         ng-click="vm.addComment(vm.new_comment)">Ajouter</button>
