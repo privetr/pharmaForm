@@ -62,7 +62,8 @@
                         
                         <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
 							<div class="col">
-								<button class="button button-block button-energized icon-left">
+								<button class="button button-block button-energized icon-left" 
+                                        ui-sref='choice_session ( {patientId: vm.patientId} )'>
 									<i class="icon ion-medkit"></i> Accéder aux séances
 								</button>
 							</div>
@@ -101,7 +102,7 @@
                         <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
                             <div class="list list-inset">
                                 <ion-item ng-repeat="(key_comment, comment) in vm.listComments" class="item-text-wrap item-icon-right"
-                                          ng-click="vm.editComment(key_comment, comment)">
+                                          ng-click="!vm.edition || vm.editComment(key_comment, comment)">
                                     {{comment.text}}
                                     
                                     <ion-delete-button class="ion-minus-circled"

@@ -1,0 +1,28 @@
+{  
+   "session":[  
+      {  
+         "id":"session_1",
+         "title":"La maladie et les traitements immunosuppresseurs"
+      },
+      {  
+         "id":"session_2",
+         "title":"Les anti-infectieux"
+      },
+      {  
+         "id":"session_3",
+         "title":"Gestion pratique des médicaments et les médicaments associés"
+      },
+      {  
+         "id":"session_4",
+         "title":"Modalité d’utilisation des médicaments"
+      },
+      {  
+         "id":"session_5",
+         "title":"Surveillance"
+      },
+      {  
+         "id":"session_6",
+         "title":"Gestion pratique du quotidien"
+      }
+   ]
+}

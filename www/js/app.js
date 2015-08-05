@@ -37,6 +37,13 @@
         templateUrl: 'templates/view_patient.html',
         controller: 'ViewPatientCtrl as vm'
       })
+      
+      // View Patient
+      .state('choice_session', {
+        url: '/choice_session/:patientId', 
+        templateUrl: 'templates/choice_session.html',
+        controller: 'ChoiceSessionCtrl as vm'
+      })
         
       $urlRouterProvider.otherwise("/home");
       
