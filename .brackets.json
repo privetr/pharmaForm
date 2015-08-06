@@ -20,6 +20,8 @@
         "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-resource.min.js",
         "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-resource.js",
         "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-animate.min.js",
-        "D:/hybridApps/pharmaForm/www/js/services/pfLookUpService.js"
+        "D:/hybridApps/pharmaForm/www/js/services/pfLookUpService.js",
+        "D:/hybridApps/pharmaForm/www/js/services/pfLocalForageService.js",
+        "D:/hybridApps/pharmaForm/www/js/controller/ChoiceSessionCtrl.js"
     ]
 }

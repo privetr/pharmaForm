@@ -19,7 +19,7 @@
 
 		var vm = this;
         
-        vm.sessions = {}
+        vm.sessions = {};
         
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
