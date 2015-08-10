@@ -13,11 +13,11 @@
 	
 	NewSessionCtrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading'];
+                             '$ionicPopup', '$ionicLoading', '$localForage'];
 
 	/* @ngInject */
 	function NewSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading) {
+                            $ionicPopup, $ionicLoading, $localForage) {
 
 		var vm = this;
         
@@ -55,6 +55,7 @@
                         vm.patient.birthdate = vm.listPatients[i].patient.birthdate;
                         vm.patient.graftdate = vm.listPatients[i].patient.graftdate;
                         vm.patient.listComments = vm.listPatients[i].patient.listComments;
+                        vm.patient.listSessionsOver = vm.listPatients[i].patient.listSessionsOver;
                         break;
                     }
                 }
@@ -93,7 +94,31 @@
             // We unshow the button to save Session to avoid multiple send and we display a dialog alert
             hideButtonSaveSession();
             
-            // TODO Save Session
+            // We have to get patients at first
+            pfLocalForageService.getListPatients()
+            .then (function(listPatients) {
+                vm.listPatients = pfUtilsService.transformationToArray(listPatients);
+                
+                // We save session
+                if (vm.patient.listSessionsOver !== undefined) {
+                    vm.patient.listSessionsOver.push(vm.session.id);
+                }
+                else {
+                    vm.patient.listSessionsOver = [];
+                    vm.patient.listSessionsOver.push(vm.session.id);
+                }
+                
+                vm.listPatients[vm.patient.indexPatient].patient.listSessionsOver = vm.patient.listSessionsOver;
+                
+                return $localForage.setItem('listPatients', vm.listPatients)
+                
+                
+            })
+            .then(function() {
+                pfUtilsService.showAlert('Séance terminée', 'La séance est désormais terminée, félicitations');
+                $state.go('choice_session', {patientId: vm.patient.id} );
+            })
+            
             
             displayButtonSaveSession();
         }
