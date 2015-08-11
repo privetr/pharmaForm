@@ -28,14 +28,24 @@
                         
                         <ion-list>
 							<div class="list list-inset">
-								<ion-item ng-repeat="session in vm.sessions" 
-								class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-								ui-sref='new_session ( {patientId: vm.patient.id, sessionId: session.id} )'>			  
-									<p>
-                                        {{session.title}}
-                                    </p>
-							     </ion-item>
-						     </div>
+				                <ion-item ng-repeat="session in vm.sessions track by $index" class="item-button-right"
+								class="item-text-wrap item-icon-right" type="item-text-wrap">			  
+                                    Séance {{$index + 1}}. {{session.title}}
+                                    <a class="button button-clear button-balanced"
+                                       ui-sref='new_session ( {patientId: vm.patient.id, sessionId: session.id} )'
+                                       ng-if="vm.patient.listSessionsOver.indexOf(session.id) == -1 &&
+                                              vm.patient.listSessionsOver.indexOf(vm.sessions[$index-1].id) > -1 || 
+                                              vm.patient.listSessionsOver == undefined && $index == 0"
+                                       >
+                                      Démarrer
+                                    </a>
+                                    <a class="button button-clear button-energized"
+                                       ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
+                                       >
+                                      Réalisée
+                                    </a>
+							    </ion-item>
+				            </div>
 						</ion-list> 
 				
 			  		</ion-content>

@@ -52,6 +52,7 @@
                         vm.patient.birthdate = vm.listPatients[i].patient.birthdate;
                         vm.patient.graftdate = vm.listPatients[i].patient.graftdate;
                         vm.patient.listComments = vm.listPatients[i].patient.listComments;
+                        vm.patient.listSessionsOver = vm.listPatients[i].patient.listSessionsOver;
                         break;
                     }
                 }
