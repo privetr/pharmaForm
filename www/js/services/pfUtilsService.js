@@ -9,7 +9,9 @@
     	
         var service = {
         	transformationToArray: transformationToArray,
-        	showAlert: showAlert
+        	showAlert: showAlert,
+            getListGraftType: getListGraftType,
+            getListGraftIndication: getListGraftIndication
         };
 
         return service;
@@ -35,6 +37,27 @@
      	     title: title,
      	     template: template
      	   });
+     	}
+        
+        function getListGraftType() {
+     	   var listGraftType = {
+               "0" : "Monopulmonaire",
+               "1" : "Double monopulmonaire",
+               "2" : "Cardiopulmonaire"
+           }
+           return listGraftType;
+     	}
+        
+        function getListGraftIndication() {
+     	   var listGraftIndication = {
+               "0" : "Mucoviscidose",
+               "1" : "BPCO",
+               "2" : "Emphysème / DPP",
+               "3" : "HTAP",
+               "4" : "Fibrose pulmonaire",
+               "5" : "Déficit en a anti trypsine"
+           }
+           return listGraftIndication;
      	}
 
     }

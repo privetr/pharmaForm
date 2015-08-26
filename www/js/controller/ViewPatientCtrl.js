@@ -33,6 +33,9 @@
         
         vm.patientId = $stateParams.patientId;
         
+        vm.listGraftType = pfUtilsService.getListGraftType();
+        vm.listGraftIndication = pfUtilsService.getListGraftIndication();
+        
         vm.loadPatient = function() {
             if(vm.patientId !== '-1'){
                 vm.isNewPatient = false;
@@ -49,6 +52,15 @@
                             vm.birthdate = vm.listPatients[i].patient.birthdate;
                             vm.graftdate = vm.listPatients[i].patient.graftdate;
                             vm.listComments = vm.listPatients[i].patient.listComments;
+                            
+                            vm.graftType = vm.listPatients[i].patient.graftType;
+                            vm.graftIndication = vm.listPatients[i].patient.graftIndication;
+                            
+                            vm.cmvStatusReceiver = vm.listPatients[i].patient.cmvStatusReceiver;
+                            vm.cmvStatusDonor = vm.listPatients[i].patient.cmvStatusDonor;
+                            vm.ebvStatusReceiver = vm.listPatients[i].patient.ebvStatusReceiver;
+                            vm.ebvStatusDonor = vm.listPatients[i].patient.ebvStatusDonor;
+                            
                             break;
                         }
                     }
@@ -79,6 +91,14 @@
                 vm.new_patient.birthdate = vm.birthdate;
                 vm.new_patient.graftdate = vm.graftdate;
                 vm.new_patient.listComments = vm.listComments;
+                
+                vm.new_patient.graftType = vm.graftType;
+                vm.new_patient.graftIndication = vm.graftIndication;
+                
+                vm.new_patient.cmvStatusReceiver = vm.cmvStatusReceiver;
+                vm.new_patient.cmvStatusDonor = vm.cmvStatusDonor;
+                vm.new_patient.ebvStatusReceiver = vm.ebvStatusReceiver;
+                vm.new_patient.ebvStatusDonor = vm.ebvStatusDonor;
 
                 pfLocalForageService.insertNewPatient(vm.new_patient)
                 .then(function() {
@@ -92,6 +112,14 @@
                 vm.listPatients[vm.indexExistingPatient].patient.birthdate = vm.birthdate;
                 vm.listPatients[vm.indexExistingPatient].patient.graftdate = vm.graftdate;
                 vm.listPatients[vm.indexExistingPatient].patient.listComments = vm.listComments;
+                
+                vm.listPatients[vm.indexExistingPatient].patient.graftType = vm.graftType;
+                vm.listPatients[vm.indexExistingPatient].patient.graftIndication = vm.graftIndication;
+                
+                vm.listPatients[vm.indexExistingPatient].patient.cmvStatusReceiver = vm.cmvStatusReceiver;
+                vm.listPatients[vm.indexExistingPatient].patient.cmvStatusDonor = vm.cmvStatusDonor;
+                vm.listPatients[vm.indexExistingPatient].patient.ebvStatusReceiver = vm.ebvStatusReceiver;
+                vm.listPatients[vm.indexExistingPatient].patient.ebvStatusDonor = vm.ebvStatusDonor;
                 
                 $localForage.setItem('listPatients', vm.listPatients)
                 .then(function() {

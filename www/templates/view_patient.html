@@ -58,8 +58,138 @@
 				                <input type="date" ng-model="vm.graftdate" class="bold"
                                        ng-readonly="!vm.edition">
             				</label> 
+                            
+                            <!-- graftType -->
+                            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Type de greffe</h4>
+                            <select class="ion-input-select-large"	ng-options="id as grafttype for (id, grafttype) in vm.listGraftType"
+                                    ng-model="vm.graftType" ng-init="vm.graftType=vm.graftType"
+                                    ng-disabled="!vm.edition">         
+                            </select>
+                            
+                            <!-- graftIndication -->
+                            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la greffe</h4>
+                            <select class="ion-input-select-large"	
+                                    ng-options="id as graftindication for (id, graftindication) in vm.listGraftIndication"
+                                    ng-model="vm.graftIndication" ng-init="vm.graftIndication=vm.graftIndication"
+                                    ng-disabled="!vm.edition">         
+                            </select>
+                            
+                            <!-- cmvStatus -->
+                            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut CMV</h4>
+                            <div class="row">
+                                <div class="col" style="padding-left: 10px;">
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <i class="ion-minus assertive"> Négatif</i>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <i class="ion-plus balanced"> Positif</i>
+                                </div>
+                            </div>
+                            
+                            <div class="row" ng-init="vm.cmvStatusReceiver = vm.cmvStatusReceiver">
+                                <div class="col" style="padding-left: 10px;">
+                                    Receveur
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" ng-model="vm.cmvStatusReceiver" value="0" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" ng-model="vm.cmvStatusReceiver" value="1" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="row" ng-init="vm.cmvStatusDonor = vm.cmvStatusDonor">
+                                <div class="col" style="padding-left: 10px;">
+                                    Donneur
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- ebvStatus -->
+                            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut EBV</h4>
+                            <div class="row">
+                                <div class="col" style="padding-left: 10px;">
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <i class="ion-minus assertive"> Négatif</i>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <i class="ion-plus balanced"> Positif</i>
+                                </div>
+                            </div>
+                            
+                            <div class="row" ng-init="vm.ebvStatusReceiver = vm.ebvStatusReceiver">
+                                <div class="col" style="padding-left: 10px;">
+                                    Receveur
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" ng-model="vm.ebvStatusReceiver" value="0" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" ng-model="vm.ebvStatusReceiver" value="1" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="row" ng-init="vm.ebvStatusDonor = vm.ebvStatusDonor">
+                                <div class="col" style="padding-left: 10px;">
+                                    Donneur
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         
+                        <!-- Button Access sessions -->
                         <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
 							<div class="col">
 								<button class="button button-block button-energized icon-left" 
@@ -69,6 +199,7 @@
 							</div>
 						</div>
                         
+                        <!-- Comments -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Commentaires</h4>
                         <div class="col" ng-if="vm.edition">
                             <label class="item item-input">

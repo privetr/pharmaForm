@@ -23,6 +23,8 @@
         "D:/hybridApps/pharmaForm/www/js/services/pfLookUpService.js",
         "D:/hybridApps/pharmaForm/www/js/services/pfLocalForageService.js",
         "D:/hybridApps/pharmaForm/www/js/controller/ChoiceSessionCtrl.js",
-        "D:/hybridApps/pharmaForm/platforms/android/build/intermediates/assets/debug/www/cordova_plugins.js"
+        "D:/hybridApps/pharmaForm/platforms/android/build/intermediates/assets/debug/www/cordova_plugins.js",
+        "D:/hybridApps/pharmaForm/www/lib/ionic/js/angular/angular-animate.js",
+        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-whitelist/whitelist.js"
     ]
 }
