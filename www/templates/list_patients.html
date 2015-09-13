@@ -50,6 +50,8 @@
                                        ng-click="predicate = 'patient.firstname'; reverse=!reverse">Prénom</a>
 									<a class="button button-stable button-outline" href="" 
                                        ng-click="predicate = 'patient.birthdate'; reverse=!reverse">Date naissance</a>
+                                    <a class="button button-stable button-outline" href="" 
+                                       ng-click="predicate = 'patient.creationDate'; reverse=!reverse">Date création</a>
 								</div>
 							</div>
 			
@@ -60,7 +62,6 @@
 								<ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse" 
 								class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
 								ui-sref='view_patient ( {patientId: object.patient.guid} )'
-                                          
 								>			  
 									<p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
                                         <color class="uppercase">

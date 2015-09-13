@@ -9,12 +9,18 @@
     	
         var service = {
         	getSessions: getSessions,
+            getAntiRejectPrescription: getAntiRejectPrescription,
         };
         return service;
 
         // This function returns the Sessions json file
         function getSessions() {
             return $http.get('js/sessions/sessions.json');
+        }
+        
+        // This function returns the Anti Reject Prescription json file
+        function getAntiRejectPrescription() {
+            return $http.get('js/sessions/antireject.json');
         }
         
     }

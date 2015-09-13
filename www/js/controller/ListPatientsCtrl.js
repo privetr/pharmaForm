@@ -19,6 +19,10 @@
 
 		var vm = this;
         
+        // Initialize sort orderBy
+        $scope.predicate = 'patient.creationDate';
+        $scope.reverse = true;
+        
         vm.listPatients = [];
         
         // We check if it is a creation of user or not

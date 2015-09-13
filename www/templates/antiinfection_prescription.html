@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	
+	<body>
+		<ion-header-bar class="bar-positive">
+			<a class="button button-icon icon ion-chevron-left white" 
+               ui-sref="display_prescription ( {patientId: vm.patient.id} )"> Prescription</a>
+			<h1 class="title">
+				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
+				ETP Greffe Pulmonaire
+			</h1>
+	  	</ion-header-bar>
+	  	
+	  	<div class="bar bar-subheader bar-positive">
+		  	<h2 class="title">Modification des traitements anti-infectieux</h2>
+		</div>
+			
+			<ion-nav-view>
+				<ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
+				  
+					<ion-content  class="has-header has-subheader has-footer">
+				  		
+						<h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+                            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-infectieux
+                        </h3>
+                        
+				
+			  		</ion-content>
+				</ion-view>
+			</ion-nav-view>
+		</div>
+	</body>
+</html>

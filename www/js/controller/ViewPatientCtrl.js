@@ -32,6 +32,7 @@
         vm.showReorder = false;
         
         vm.patientId = $stateParams.patientId;
+        console.log('Patient id : ' + vm.patientId);
         
         vm.listGraftType = pfUtilsService.getListGraftType();
         vm.listGraftIndication = pfUtilsService.getListGraftIndication();
@@ -99,6 +100,9 @@
                 vm.new_patient.cmvStatusDonor = vm.cmvStatusDonor;
                 vm.new_patient.ebvStatusReceiver = vm.ebvStatusReceiver;
                 vm.new_patient.ebvStatusDonor = vm.ebvStatusDonor;
+                
+                // we save the creation date to be able to order ths list by creation date
+                vm.new_patient.creationDate = new Date();
 
                 pfLocalForageService.insertNewPatient(vm.new_patient)
                 .then(function() {
@@ -121,6 +125,9 @@
                 vm.listPatients[vm.indexExistingPatient].patient.ebvStatusReceiver = vm.ebvStatusReceiver;
                 vm.listPatients[vm.indexExistingPatient].patient.ebvStatusDonor = vm.ebvStatusDonor;
                 
+                // we save the creation date to be able to order ths list by creation date
+                vm.listPatients[vm.indexExistingPatient].patient.creationDate = new Date();
+                
                 $localForage.setItem('listPatients', vm.listPatients)
                 .then(function() {
                     pfUtilsService.showAlert('Sauvegarde réussie', 'Informations du patient enregistrées');
@@ -135,7 +142,7 @@
          * Functions to manage comments
          */
         vm.addComment = function(comment) {
-        	if (comment !== undefined){
+        	if (comment !== undefined && comment !== ""){
         		vm.listComments.push(
                     new Object({
                 		"text": comment

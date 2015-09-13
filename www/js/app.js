@@ -51,6 +51,35 @@
         templateUrl: 'templates/new_session.html',
         controller: 'NewSessionCtrl as vm'
       })
+      
+      // Display prescription
+      .state('display_prescription', {
+        url: '/display_prescription/:patientId', 
+        templateUrl: 'templates/display_prescription.html',
+        controller: 'DisplayPrescriptionCtrl as vm'
+      })
+      
+      // Anti Reject prescription
+      .state('antireject_prescription', {
+        url: '/antireject_prescription/:patientId', 
+        templateUrl: 'templates/antireject_prescription.html',
+        controller: 'AntiRejectPrescriptionCtrl as vm'
+      })
+      
+      // Anti Infection prescription
+      .state('antiinfection_prescription', {
+        url: '/antiinfection_prescription/:patientId', 
+        templateUrl: 'templates/antiinfection_prescription.html',
+        controller: 'AntiInfectionPrescriptionCtrl as vm'
+      })
+      
+      // Other prescription
+      .state('other_prescription', {
+        url: '/other_prescription/:patientId', 
+        templateUrl: 'templates/other_prescription.html',
+        controller: 'OtherPrescriptionCtrl as vm'
+      })
+        
         
       $urlRouterProvider.otherwise("/home");
       
@@ -67,15 +96,22 @@
   })
 
   .run(function($ionicPlatform) {
+   
+      
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       if(window.cordova && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+          cordova.plugins.Keyboard.disableScroll(true);
       }
       if(window.StatusBar) {
-        StatusBar.styleDefault();
+          StatusBar.styleDefault();
       }
+        
+      ionic.Platform.isFullScreen = true
+      
+       //cordova.plugins.Keyboard.disableScroll(true); 
     });
   })
 

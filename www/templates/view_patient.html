@@ -45,6 +45,26 @@
                                        ng-readonly="!vm.edition">
             				</label> 
                             
+                            <!-- Button Access sessions -->
+                            <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
+                                <div class="col">
+                                    <button class="button button-block button-energized icon-left" 
+                                            ui-sref='choice_session ( {patientId: vm.patientId} )'>
+                                        <i class="icon ion-filing"></i> Accéder aux séances
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Button Access prescription -->
+                            <div class="row" ng-if="vm.patientId != -1">
+                                <div class="col">
+                                    <button class="button button-block button-energized icon-left" 
+                                            ui-sref='display_prescription ( {patientId: vm.patientId} )'>
+                                        <i class="icon ion-medkit"></i> Accéder à la prescription
+                                    </button>
+                                </div>
+                            </div>
+                            
                             <!-- birthdate -->
                             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de naissance</h4>
                             <label class="item item-input">
@@ -77,21 +97,21 @@
                             <!-- cmvStatus -->
                             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut CMV</h4>
                             <div class="row">
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <i class="ion-minus assertive"> Négatif</i>
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <i class="ion-plus balanced"> Positif</i>
                                 </div>
                             </div>
                             
                             <div class="row" ng-init="vm.cmvStatusReceiver = vm.cmvStatusReceiver">
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     Receveur
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-assertive">
                                         <input type="radio" ng-model="vm.cmvStatusReceiver" value="0" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -99,7 +119,7 @@
                                         </div>
                                     </label>
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-balanced">
                                         <input type="radio" ng-model="vm.cmvStatusReceiver" value="1" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -110,10 +130,10 @@
                             </div>
                             
                             <div class="row" ng-init="vm.cmvStatusDonor = vm.cmvStatusDonor">
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     Donneur
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-assertive">
                                         <input type="radio" value="0" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -121,7 +141,7 @@
                                         </div>
                                     </label>
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-balanced">
                                         <input type="radio" value="1" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -134,21 +154,21 @@
                             <!-- ebvStatus -->
                             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut EBV</h4>
                             <div class="row">
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <i class="ion-minus assertive"> Négatif</i>
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <i class="ion-plus balanced"> Positif</i>
                                 </div>
                             </div>
                             
                             <div class="row" ng-init="vm.ebvStatusReceiver = vm.ebvStatusReceiver">
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     Receveur
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-assertive">
                                         <input type="radio" ng-model="vm.ebvStatusReceiver" value="0" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -156,7 +176,7 @@
                                         </div>
                                     </label>
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-balanced">
                                         <input type="radio" ng-model="vm.ebvStatusReceiver" value="1" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -167,10 +187,10 @@
                             </div>
                             
                             <div class="row" ng-init="vm.ebvStatusDonor = vm.ebvStatusDonor">
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     Donneur
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-assertive">
                                         <input type="radio" value="0" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -178,7 +198,7 @@
                                         </div>
                                     </label>
                                 </div>
-                                <div class="col" style="padding-left: 10px;">
+                                <div class="col-20" style="padding-left: 10px;">
                                     <label class="toggle toggle-balanced">
                                         <input type="radio" value="1" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
                                         <div class="track">
@@ -188,16 +208,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Button Access sessions -->
-                        <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
-							<div class="col">
-								<button class="button button-block button-energized icon-left" 
-                                        ui-sref='choice_session ( {patientId: vm.patientId} )'>
-									<i class="icon ion-medkit"></i> Accéder aux séances
-								</button>
-							</div>
-						</div>
                         
                         <!-- Comments -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Commentaires</h4>

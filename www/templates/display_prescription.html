@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	
+	<body>
+		<ion-header-bar class="bar-positive">
+			<a class="button button-icon icon ion-chevron-left white" ui-sref="view_patient ( {patientId: vm.patient.id} )"> Fiche patient</a>
+			<h1 class="title">
+				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
+				ETP Greffe Pulmonaire
+			</h1>
+	  	</ion-header-bar>
+	  	
+	  	<div class="bar bar-subheader bar-positive">
+		  	<h2 class="title">Prescription</h2>
+		</div>
+			
+			<ion-nav-view>
+				<ion-view  title="ETP Greffe Pulmonaire - Prescription">
+				  
+					<ion-content  class="has-header has-subheader has-footer">
+				  		
+						<h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+                            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Prescription
+                        </h3>
+                        
+                        <!-- Button Access sessions -->
+                        <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
+                            <div class="col">
+                                <button class="button button-block button-energized" 
+                                        ui-sref='antireject_prescription ( {patientId: vm.patient.id} )'>
+                                    Sélectionner les traitements anti-rejets
+                                </button>
+                                
+                                <button class="button button-block button-energized" 
+                                        ui-sref='antiinfection_prescription ( {patientId: vm.patient.id} )'>
+                                    Sélectionner les traitements anti-infectieux
+                                </button>
+                                
+                                <button class="button button-block button-energized" 
+                                        ui-sref='other_prescription ( {patientId: vm.patient.id} )'>
+                                    Sélectionner les traitements associés
+                                </button>
+                            </div>
+                        </div>
+				
+			  		</ion-content>
+				</ion-view>
+			</ion-nav-view>
+		</div>
+	</body>
+</html>
