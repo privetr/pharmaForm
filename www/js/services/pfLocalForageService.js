@@ -10,6 +10,8 @@
         var service = {
         	getListPatients : getListPatients,
         	insertNewPatient : insertNewPatient,
+            insertNewAntiReject : insertNewAntiReject,
+            insertNewAntiInfection : insertNewAntiInfection
         }; 
 
         return service;
@@ -45,6 +47,52 @@
                 listPatients.push(
                     new Object({
                         "patient": dataToInsert
+                    })
+                );
+                return $localForage.setItem('listPatients', listPatients);
+            })
+        }
+        
+        // Function which inserts a new anti reject for a patient local database
+        function insertNewAntiReject(patient, dataToInsert) {
+        	var listPatients = [];
+        	
+        	return $localForage.getItem('listPatients')
+     		.then(function(list) {
+                if(list !== null) listPatients = list;
+                
+                // We test if the list of anti rejects is empty or not
+                if(listPatients[patient.indexPatient].patient.listAntiReject === undefined){
+                    listPatients[patient.indexPatient].patient.listAntiReject = [];
+                }
+                
+                // We add the anti reject to the list
+                listPatients[patient.indexPatient].patient.listAntiReject.push(
+                    new Object({
+                        "antireject": dataToInsert
+                    })
+                );
+                return $localForage.setItem('listPatients', listPatients);
+            })
+        }
+        
+        // Function which inserts a new anti infection for a patient local database
+        function insertNewAntiInfection(patient, dataToInsert) {
+        	var listPatients = [];
+        	
+        	return $localForage.getItem('listPatients')
+     		.then(function(list) {
+                if(list !== null) listPatients = list;
+                
+                // We test if the list of anti infection is empty or not
+                if(listPatients[patient.indexPatient].patient.listAntiInfection === undefined){
+                    listPatients[patient.indexPatient].patient.listAntiInfection = [];
+                }
+                
+                // We add the anti infection to the list
+                listPatients[patient.indexPatient].patient.listAntiInfection.push(
+                    new Object({
+                        "antiinfection": dataToInsert
                     })
                 );
                 return $localForage.setItem('listPatients', listPatients);

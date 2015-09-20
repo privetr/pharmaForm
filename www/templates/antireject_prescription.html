@@ -12,43 +12,63 @@
 				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
 				ETP Greffe Pulmonaire
 			</h1>
+            <a id="button_save_antireject" class="button button-icon icon ion-checkmark-round white" 
+               ng-click="vm.saveAntiReject()"> 
+                Enregistrer
+            </a>
 	  	</ion-header-bar>
 	  	
 	  	<div class="bar bar-subheader bar-positive">
 		  	<h2 class="title">Modification des traitements anti-rejets</h2>
 		</div>
 			
-			<ion-nav-view>
-				<ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
-				  
-					<ion-content  class="has-header has-subheader has-footer">
-				  		
-						<h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-rejets
-                        </h3>
-                        
-                        <!-- antireject -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Anti-rejet</h4>
-                        <select class="ion-input-select-large"	
-                                ng-options="index as item.name for (index, item) in vm.antiRejectPrescription"
-                                ng-model="vm.newAntiReject">         
-                        </select>
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                        <select class="ion-input-select-large"	
-                                ng-options="index as item.name for (index, item) in vm.antiRejectPrescription[vm.newAntiReject].dosage"
-                                ng-model="vm.newAntiRejectDosage">         
-                        </select>
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Posologie</h4>
-                        <select class="ion-input-select-large"	
-                                ng-options="index as item.name for (index, item) 
-                                            in vm.antiRejectPrescription[vm.newAntiReject].dosage[vm.newAntiRejectDosage].posologie"
-                                ng-model="vm.newAntiRejectDosage">         
-                        </select>
-                        
-				
-			  		</ion-content>
-				</ion-view>
-			</ion-nav-view>
-		</div>
+        <ion-nav-view>
+            <ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
+
+                <ion-content  class="has-header has-subheader has-footer">
+
+                    <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+                        <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-rejets
+                    </h3>
+
+                    <!-- antireject -->
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Anti-rejet</h4>
+                    <select class="ion-input-select-large"	
+                            ng-options="index as item.name for (index, item) in vm.antiRejectPrescription"
+                            ng-model="vm.newAntiReject"> 
+                    <!-- 
+                    <select class="ion-input-select-large"	
+                            ng-options="item.id as item.name for item in vm.antiRejectPrescription"
+                            ng-model="vm.newAntiReject">
+                    -->
+                    </select>
+
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+                    <label class="item item-input">
+                        <input type="text" ng-model="vm.newAntiRejectDosage" placeholder="Exemple : 0,5 mg">
+                    </label>
+
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
+                    <select class="ion-input-select-large"	
+                            ng-options="key as item for (key, item) in vm.antiRejectListFrequence"
+                            ng-model="vm.newAntiRejectFrequence">         
+                    </select>
+
+                    <!--<h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+                    <select class="ion-input-select-large"	
+                            ng-options="index as item.name for (index, item) in vm.antiRejectPrescription[vm.newAntiReject].dosage"
+                            ng-model="vm.newAntiRejectDosage">         
+                    </select>
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Posologie</h4>
+                    <select class="ion-input-select-large"	
+                            ng-options="index as item.name for (index, item) 
+                                        in vm.antiRejectPrescription[vm.newAntiReject].dosage[vm.newAntiRejectDosage].posologie"
+                            ng-model="vm.newAntiRejectDosage">         
+                    </select>-->
+
+
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
 	</body>
 </html>

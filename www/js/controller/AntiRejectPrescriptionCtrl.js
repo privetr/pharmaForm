@@ -34,13 +34,10 @@
                 vm.listPatients = pfUtilsService.transformationToArray(listPatients);
                 for (var i = 0 ; i < vm.listPatients.length ; i++) {
                     if (vm.listPatients[i].patient.guid === vm.patient.id) {
+                        vm.patient = vm.listPatients[i].patient;
+                        vm.patient.id = $stateParams.patientId;
                         vm.patient.indexPatient = i;
-                        vm.patient.lastname = vm.listPatients[i].patient.lastname;
-                        vm.patient.firstname = vm.listPatients[i].patient.firstname;
-                        vm.patient.birthdate = vm.listPatients[i].patient.birthdate;
-                        vm.patient.graftdate = vm.listPatients[i].patient.graftdate;
-                        vm.patient.listComments = vm.listPatients[i].patient.listComments;
-                        vm.patient.listSessionsOver = vm.listPatients[i].patient.listSessionsOver;
+                        console.log("Patient : ", vm.patient);
                         break;
                     }
                 }
@@ -59,6 +56,29 @@
             });
         }
         vm.getAntiRejectPrescription();
+        
+        /*
+         * Get Frequences list
+         */
+        vm.antiRejectListFrequence = pfUtilsService.getListFrequence();
+        
+        /*
+         * Save AntiReject
+         */
+        vm.saveAntiReject = function() {
+            vm.newAR = {};
+
+            // We store all informations
+            vm.newAR.medicine = vm.antiRejectPrescription[vm.newAntiReject];
+            vm.newAR.dosage = vm.newAntiRejectDosage;
+            vm.newAR.frequence = vm.antiRejectListFrequence[vm.newAntiRejectFrequence];
+
+            pfLocalForageService.insertNewAntiReject(vm.patient, vm.newAR)
+            .then(function() {
+                pfUtilsService.showAlert('Sauvegarde réussie', 'Anti-rejet ajouté');
+                $state.go('display_prescription', {patientId: vm.patient.id} );
+            })
+        }
         
         
 	}

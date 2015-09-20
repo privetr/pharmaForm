@@ -17,38 +17,77 @@
 		  	<h2 class="title">Prescription</h2>
 		</div>
 			
-			<ion-nav-view>
-				<ion-view  title="ETP Greffe Pulmonaire - Prescription">
-				  
-					<ion-content  class="has-header has-subheader has-footer">
-				  		
-						<h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Prescription
-                        </h3>
-                        
-                        <!-- Button Access sessions -->
-                        <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
-                            <div class="col">
-                                <button class="button button-block button-energized" 
-                                        ui-sref='antireject_prescription ( {patientId: vm.patient.id} )'>
-                                    Sélectionner les traitements anti-rejets
-                                </button>
-                                
-                                <button class="button button-block button-energized" 
-                                        ui-sref='antiinfection_prescription ( {patientId: vm.patient.id} )'>
-                                    Sélectionner les traitements anti-infectieux
-                                </button>
-                                
-                                <button class="button button-block button-energized" 
-                                        ui-sref='other_prescription ( {patientId: vm.patient.id} )'>
-                                    Sélectionner les traitements associés
-                                </button>
-                            </div>
+        <ion-nav-view>
+            <ion-view  title="ETP Greffe Pulmonaire - Prescription">
+
+                <ion-content  class="has-header has-subheader has-footer">
+
+                    <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+                        <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Prescription
+                    </h3>
+
+                    <!-- Button Access sessions -->
+                    <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
+                        <div class="col">
+                            <button class="button button-block button-energized" 
+                                    ui-sref='antireject_prescription ( {patientId: vm.patient.id} )'>
+                                Sélectionner les traitements anti-rejets
+                            </button>
+
+                            <button class="button button-block button-energized" 
+                                    ui-sref='antiinfection_prescription ( {patientId: vm.patient.id} )'>
+                                Sélectionner les traitements anti-infectieux
+                            </button>
+
+                            <button class="button button-block button-energized" 
+                                    ui-sref='other_prescription ( {patientId: vm.patient.id} )'>
+                                Sélectionner les traitements associés
+                            </button>
                         </div>
-				
-			  		</ion-content>
-				</ion-view>
-			</ion-nav-view>
-		</div>
+                    </div>
+                    
+                    <!-- Anti-rejets -->
+                    <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                        ng-if="vm.patient.listAntiReject">Liste des Anti-rejets</h4>
+                    <ion-list>
+                        <div class="list list-inset">
+                            <ion-item ng-repeat="objectAR in vm.patient.listAntiReject" 
+                            class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                            >			  
+                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                    {{objectAR.antireject.medicine.name}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                                    {{objectAR.antireject.dosage}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                    {{objectAR.antireject.frequence}}</p>
+                             </ion-item>
+                         </div>
+                    </ion-list> 
+                    
+                     <!-- Anti-Infectieux -->
+                    <h4 class="maincolor" style="margin-bottom: 0px; margin-top: 20px; padding-left:10px" 
+                        ng-if="vm.patient.listAntiInfection">Liste des Anti-infectieux</h4>
+                    <ion-list>
+                        <div class="list list-inset">
+                            <ion-item ng-repeat="objectAI in vm.patient.listAntiInfection" 
+                            class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                            >			  
+                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                    {{objectAI.antiinfection.medicine.name}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                                    {{objectAI.antiinfection.dosage}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                    {{objectAI.antiinfection.frequence}}</p>
+                             </ion-item>
+                         </div>
+                    </ion-list> 
+
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
 	</body>
 </html>

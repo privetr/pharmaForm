@@ -17,66 +17,65 @@
 		  	<h2 class="title">Liste des patients</h2>
 		</div>
 			
-			<ion-nav-view>
-				<ion-view  title="ETP Greffe Pulmonaire - Liste patients">
-				  
-					<ion-content  class="has-header has-subheader has-footer">
-				  		
-						<div class="row" style="margin-top:10px;">
-							<div class="col">
-								<button class="button button-block button-positive icon-left" ui-sref="view_patient ( {patientId: -1} )">
-									<i class="icon ion-plus-round"></i> Ajouter un nouveau patient
-								</button>
-							</div>
-						</div>
+        <ion-nav-view>
+            <ion-view  title="ETP Greffe Pulmonaire - Liste patients">
 
-					  	<div id="id_sort_filter_list_patients" style="margin-top:10px;">
-					
-							<div class="row" style="padding-top:0px;">
-								<div class="col">
-							  		<form class="form-inline">
-							  			<label class="item item-input">
-										    <i class="icon ion-search placeholder-icon"></i>
-										    <input ng-model="query" type="text" placeholder="Rechercher un patient...">
-										 </label>
-								    </form>
-								</div>
-						  	</div>
-							<div class="row"  style="padding-top:0px;">
-								<div class="button-bar">
-									<a class="button button-stable button-outline" href="" 
-                                       ng-click="predicate = 'patient.lastname'; reverse=!reverse">Nom</a>
-									<a class="button button-stable button-outline" href="" 
-                                       ng-click="predicate = 'patient.firstname'; reverse=!reverse">Prénom</a>
-									<a class="button button-stable button-outline" href="" 
-                                       ng-click="predicate = 'patient.birthdate'; reverse=!reverse">Date naissance</a>
-                                    <a class="button button-stable button-outline" href="" 
-                                       ng-click="predicate = 'patient.creationDate'; reverse=!reverse">Date création</a>
-								</div>
-							</div>
-			
-						</div>
-				
-					    <ion-list>
-							<div class="list list-inset">
-								<ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse" 
-								class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-								ui-sref='view_patient ( {patientId: object.patient.guid} )'
-								>			  
-									<p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
-                                        <color class="uppercase">
-                                        {{object.patient.lastname}}</color>
-                                    </p>
-									<p><color class="maincolor" style="padding-right:20px"><b>Prénom</b></color> {{object.patient.firstname}}</p>
-									<p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> 
-                                        {{object.patient.birthdate | date : 'dd/MM/yyyy'}}</p>
-							     </ion-item>
-						     </div>
-						</ion-list> 
-				
-			  		</ion-content>
-				</ion-view>
-			</ion-nav-view>
-		</div>
+                <ion-content  class="has-header has-subheader has-footer">
+
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col">
+                            <button class="button button-block button-positive icon-left" ui-sref="view_patient ( {patientId: -1} )">
+                                <i class="icon ion-plus-round"></i> Ajouter un nouveau patient
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="id_sort_filter_list_patients" style="margin-top:10px;">
+
+                        <div class="row" style="padding-top:0px;">
+                            <div class="col">
+                                <form class="form-inline">
+                                    <label class="item item-input">
+                                        <i class="icon ion-search placeholder-icon"></i>
+                                        <input ng-model="query" type="text" placeholder="Rechercher un patient...">
+                                     </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row"  style="padding-top:0px;">
+                            <div class="button-bar">
+                                <a class="button button-stable button-outline" href="" 
+                                   ng-click="predicate = 'patient.lastname'; reverse=!reverse">Nom</a>
+                                <a class="button button-stable button-outline" href="" 
+                                   ng-click="predicate = 'patient.firstname'; reverse=!reverse">Prénom</a>
+                                <a class="button button-stable button-outline" href="" 
+                                   ng-click="predicate = 'patient.birthdate'; reverse=!reverse">Date naissance</a>
+                                <a class="button button-stable button-outline" href="" 
+                                   ng-click="predicate = 'patient.creationDate'; reverse=!reverse">Date création</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <ion-list>
+                        <div class="list list-inset">
+                            <ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse" 
+                            class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                            ui-sref='view_patient ( {patientId: object.patient.guid} )'
+                            >			  
+                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                    <color class="uppercase">
+                                    {{object.patient.lastname}}</color>
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Prénom</b></color> {{object.patient.firstname}}</p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> 
+                                    {{object.patient.birthdate | date : 'dd/MM/yyyy'}}</p>
+                             </ion-item>
+                         </div>
+                    </ion-list> 
+
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
 	</body>
 </html>

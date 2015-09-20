@@ -34,19 +34,50 @@
                 vm.listPatients = pfUtilsService.transformationToArray(listPatients);
                 for (var i = 0 ; i < vm.listPatients.length ; i++) {
                     if (vm.listPatients[i].patient.guid === vm.patient.id) {
+                        vm.patient = vm.listPatients[i].patient;
+                        vm.patient.id = $stateParams.patientId;
                         vm.patient.indexPatient = i;
-                        vm.patient.lastname = vm.listPatients[i].patient.lastname;
-                        vm.patient.firstname = vm.listPatients[i].patient.firstname;
-                        vm.patient.birthdate = vm.listPatients[i].patient.birthdate;
-                        vm.patient.graftdate = vm.listPatients[i].patient.graftdate;
-                        vm.patient.listComments = vm.listPatients[i].patient.listComments;
-                        vm.patient.listSessionsOver = vm.listPatients[i].patient.listSessionsOver;
                         break;
                     }
                 }
             });
 		} 
         vm.getPatient();
+        
+        /*
+         * Get Anti infection prescription
+         */
+        vm.getAntiInfectionPrescription = function() {
+            pfLookUpService.getAntiInfectionPrescription()
+            .then(function (result) {
+                vm.antiInfectionPrescription = result.data.antiinfection;
+                console.log('getAntiInfectionPrescription return : ', vm.antiInfectionPrescription);
+            });
+        }
+        vm.getAntiInfectionPrescription();
+        
+        /*
+         * Get Frequences list
+         */
+        vm.antiInfectionListFrequence = pfUtilsService.getListFrequence();
+        
+        /*
+         * Save AntiInfection
+         */
+        vm.saveAntiInfection = function() {
+            vm.newAI = {};
+
+            // We store all informations
+            vm.newAI.medicine = vm.antiInfectionPrescription[vm.newAntiInfection];
+            vm.newAI.dosage = vm.newAntiInfectionDosage;
+            vm.newAI.frequence = vm.antiInfectionListFrequence[vm.newAntiInfectionFrequence];
+
+            pfLocalForageService.insertNewAntiInfection(vm.patient, vm.newAI)
+            .then(function() {
+                pfUtilsService.showAlert('Sauvegarde réussie', 'Anti-infectieux ajouté');
+                $state.go('display_prescription', {patientId: vm.patient.id} );
+            })
+        }
         
         
 	}
