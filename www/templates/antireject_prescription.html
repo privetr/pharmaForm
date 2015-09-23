@@ -50,9 +50,17 @@
 
                     <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
                     <select class="ion-input-select-large"	
-                            ng-options="key as item for (key, item) in vm.antiRejectListFrequence"
+                            ng-options="index as item.name for (index, item) in vm.antiRejectListFrequence"
                             ng-model="vm.newAntiRejectFrequence">         
                     </select>
+                    
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col">
+                            <button class="button button-block button-positive icon-left" ng-click="vm.addAntiReject()">
+                                <i class="icon ion-plus-round"></i> Ajouter anti-rejet
+                            </button>
+                        </div>
+                    </div>
 
                     <!--<h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
                     <select class="ion-input-select-large"	
@@ -65,6 +73,53 @@
                                         in vm.antiRejectPrescription[vm.newAntiReject].dosage[vm.newAntiRejectDosage].posologie"
                             ng-model="vm.newAntiRejectDosage">         
                     </select>-->
+                    
+                    <!-- Liste Anti-rejets -->
+                    
+                    
+                    <div class="row" style="margin-top:20px;">
+                        <div class="button-bar col-50">
+                            <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                            ng-if="vm.patient.listAntiReject">Liste des Anti-rejets</h4>
+                        </div>
+                        <div class="col-25 col-offset-25">
+                            <button class="button button-clear button-assertive icon ion-close-round"
+                                ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
+                            </button>
+                            <button class="button button-clear button-energized icon ion-shuffle"
+                                ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
+                            </button>
+                            <button class="button button-clear button-dark icon ion-edit"
+                                 ng-click="vm.showDelete = false; vm.showReorder = false">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+                        <div class="list list-inset">
+                            <ion-item ng-repeat="(key_objectAR, objectAR) in vm.listAntiReject" 
+                                class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                                ng-click="vm.editAntiReject(key_objectAR, objectAR)">	
+                                
+                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                    {{objectAR.antireject.medicine.name}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                                    {{objectAR.antireject.dosage}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                    {{objectAR.antireject.frequence}}
+                                </p>
+                                
+                                <ion-delete-button class="ion-minus-circled"
+                                    ng-click="vm.removeAntiReject(key_objectAR)">
+                                </ion-delete-button>
+                                <ion-reorder-button class="ion-navicon"
+                                    on-reorder="vm.reorderItem(objectAR, $fromIndex, $toIndex)">
+                                </ion-reorder-button>
+                             </ion-item>
+                         </div>
+                    </ion-list>
 
 
                 </ion-content>

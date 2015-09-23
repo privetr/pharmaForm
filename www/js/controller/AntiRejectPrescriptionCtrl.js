@@ -12,15 +12,19 @@
 	.controller('AntiRejectPrescriptionCtrl', AntiRejectPrescriptionCtrl);
 	
 	AntiRejectPrescriptionCtrl.$inject = ['$state', '$scope', '$stateParams',
-                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService'];
+                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage'];
 
 	/* @ngInject */
-	function AntiRejectPrescriptionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService) {
+	function AntiRejectPrescriptionCtrl($state, $scope, $stateParams, pfLocalForageService, 
+                                         pfUtilsService, pfLookUpService, $localForage) {
 
 		var vm = this;
         
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
+        
+        // AntiRejects
+        vm.listAntiReject = [];
         
         console.log('Patient id : ' + vm.patient.id);
         
@@ -37,6 +41,9 @@
                         vm.patient = vm.listPatients[i].patient;
                         vm.patient.id = $stateParams.patientId;
                         vm.patient.indexPatient = i;
+                        if(vm.patient.listAntiReject){
+                            vm.listAntiReject = vm.patient.listAntiReject;
+                        }
                         console.log("Patient : ", vm.patient);
                         break;
                     }
@@ -60,26 +67,90 @@
         /*
          * Get Frequences list
          */
-        vm.antiRejectListFrequence = pfUtilsService.getListFrequence();
+        vm.getAntiRejectListFrequence = function() {
+            pfLookUpService.getFrequence()
+            .then(function (result) {
+                vm.antiRejectListFrequence = result.data.frequence;
+                console.log('getAntiRejectListFrequence return : ', vm.antiRejectListFrequence);
+            });
+        }
+        vm.getAntiRejectListFrequence();
         
         /*
          * Save AntiReject
          */
         vm.saveAntiReject = function() {
-            vm.newAR = {};
-
-            // We store all informations
-            vm.newAR.medicine = vm.antiRejectPrescription[vm.newAntiReject];
-            vm.newAR.dosage = vm.newAntiRejectDosage;
-            vm.newAR.frequence = vm.antiRejectListFrequence[vm.newAntiRejectFrequence];
-
-            pfLocalForageService.insertNewAntiReject(vm.patient, vm.newAR)
+            
+            // we set the new patient informations
+            vm.listPatients[vm.patient.indexPatient].patient.listAntiReject = vm.listAntiReject;
+            
+            $localForage.setItem('listPatients', vm.listPatients)
             .then(function() {
-                pfUtilsService.showAlert('Sauvegarde réussie', 'Anti-rejet ajouté');
+                pfUtilsService.showAlert('Sauvegarde réussie', 'Anti-rejets modifiés');
                 $state.go('display_prescription', {patientId: vm.patient.id} );
             })
         }
         
+        /*
+         * ANTI REJECTS
+         * Functions to manage anti-rejects
+         */
+        vm.addAntiReject = function() {
+        	if (vm.antiRejectPrescription[vm.newAntiReject] !== undefined &&
+                vm.newAntiRejectDosage !== undefined &&
+                vm.antiRejectListFrequence[vm.newAntiRejectFrequence] !== undefined){
+                
+                vm.newAR = {};
+
+                alert(vm.newAntiReject);
+                // We store all informations
+                vm.newAR.medicine = vm.antiRejectPrescription[vm.newAntiReject];
+                vm.newAR.dosage = vm.newAntiRejectDosage;
+                vm.newAR.frequence = vm.antiRejectListFrequence[vm.newAntiRejectFrequence];
+                        		
+                vm.listAntiReject.push(
+                    new Object({
+                        "antireject": vm.newAR
+                    })
+                );
+                
+                // we reinitialize content of inputs
+                vm.newAntiReject = undefined;
+                vm.newAntiRejectDosage = undefined;
+                vm.newAntiRejectFrequence = undefined;
+        	}
+		}
+        
+        vm.removeAntiReject = function(idToDelete) {
+			vm.listAntiReject.splice(idToDelete, 1);
+		} 
+        
+        vm.editAntiReject = function(idToEdit, object) {
+        	// At first we remove it from the list
+        	vm.listAntiReject.splice(idToEdit, 1);
+        	
+        	// Then we set the input with these values
+            //alert(vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id));
+        	vm.newAntiReject = vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id, 'id').toString();
+            vm.newAntiRejectDosage = object.antireject.dosage;
+            vm.newAntiRejectFrequence = vm.getIndexOf(vm.antiRejectListFrequence, object.antireject.frequence, '').toString();
+		} 
+        
+        vm.reorderItem = function(antireject, fromIndex, toIndex) {
+        	vm.listAntiReject.splice(fromIndex, 1);
+        	vm.listAntiReject.splice(toIndex, 0, antireject);
+        };
+        
+        vm.getIndexOf = function (arr, val, prop) {
+          var l = arr.length,
+            k = 0;
+          for (k = 0; k < l; k = k + 1) {
+            if (arr[k][prop] === val) {
+              return k;
+            }
+          }
+          return false;
+        }
         
 	}
 

@@ -1,0 +1,16 @@
+{  
+   "frequence":[  
+      {  
+         "id":"frequence_1",
+         "name":"Toutes les 8h / 3 fois par jour"
+      },
+      {  
+         "id":"frequence_2",
+         "name":"Toutes les 12h / 2 fois par jour"
+      },
+      {  
+         "id":"frequence_3",
+         "name":"Toutes les 24h / 1 fois par jour"
+      }
+   ]
+}

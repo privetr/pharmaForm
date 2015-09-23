@@ -10,7 +10,8 @@
         var service = {
         	getSessions: getSessions,
             getAntiRejectPrescription: getAntiRejectPrescription,
-            getAntiInfectionPrescription: getAntiInfectionPrescription
+            getAntiInfectionPrescription: getAntiInfectionPrescription,
+            getFrequence: getFrequence
         };
         return service;
 
@@ -27,6 +28,11 @@
         // This function returns the Anti Infection Prescription json file
         function getAntiInfectionPrescription() {
             return $http.get('js/sessions/antiinfection.json');
+        }
+        
+        // This function returns the frequence json file
+        function getFrequence() {
+            return $http.get('js/sessions/frequence.json');
         }
         
     }

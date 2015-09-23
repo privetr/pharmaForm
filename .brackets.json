@@ -28,6 +28,16 @@
         "D:/hybridApps/pharmaForm/plugins/cordova-plugin-whitelist/whitelist.js",
         "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/www/windows/SplashScreenProxy.js",
-        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/tests/tests.js"
+        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/tests/tests.js",
+        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/src/tizen/SplashScreenProxy.js",
+        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-splashscreen/src/blackberry10/index.js",
+        "D:/hybridApps/pharmaForm/plugins/cordova-plugin-device/www/device.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular/angular.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular/angular.min.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular/index.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-animate/angular-animate.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-animate/angular-animate.min.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-animate/index.js"
     ]
 }
