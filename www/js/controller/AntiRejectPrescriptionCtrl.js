@@ -102,12 +102,11 @@
                 
                 vm.newAR = {};
 
-                alert(vm.newAntiReject);
                 // We store all informations
                 vm.newAR.medicine = vm.antiRejectPrescription[vm.newAntiReject];
                 vm.newAR.dosage = vm.newAntiRejectDosage;
                 vm.newAR.frequence = vm.antiRejectListFrequence[vm.newAntiRejectFrequence];
-                        		
+                
                 vm.listAntiReject.push(
                     new Object({
                         "antireject": vm.newAR
@@ -133,7 +132,7 @@
             //alert(vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id));
         	vm.newAntiReject = vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id, 'id').toString();
             vm.newAntiRejectDosage = object.antireject.dosage;
-            vm.newAntiRejectFrequence = vm.getIndexOf(vm.antiRejectListFrequence, object.antireject.frequence, '').toString();
+            vm.newAntiRejectFrequence = vm.getIndexOf(vm.antiRejectListFrequence, object.antireject.frequence.id, 'id').toString();
 		} 
         
         vm.reorderItem = function(antireject, fromIndex, toIndex) {
@@ -142,14 +141,14 @@
         };
         
         vm.getIndexOf = function (arr, val, prop) {
-          var l = arr.length,
+            var l = arr.length,
             k = 0;
-          for (k = 0; k < l; k = k + 1) {
-            if (arr[k][prop] === val) {
-              return k;
+            for (k = 0; k < l; k = k + 1) {
+                if (arr[k][prop] === val) {
+                    return k;
+                }
             }
-          }
-          return false;
+            return false;
         }
         
 	}

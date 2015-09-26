@@ -36,11 +36,6 @@
                     <select class="ion-input-select-large"	
                             ng-options="index as item.name for (index, item) in vm.antiRejectPrescription"
                             ng-model="vm.newAntiReject"> 
-                    <!-- 
-                    <select class="ion-input-select-large"	
-                            ng-options="item.id as item.name for item in vm.antiRejectPrescription"
-                            ng-model="vm.newAntiReject">
-                    -->
                     </select>
 
                     <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
@@ -62,21 +57,7 @@
                         </div>
                     </div>
 
-                    <!--<h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                    <select class="ion-input-select-large"	
-                            ng-options="index as item.name for (index, item) in vm.antiRejectPrescription[vm.newAntiReject].dosage"
-                            ng-model="vm.newAntiRejectDosage">         
-                    </select>
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Posologie</h4>
-                    <select class="ion-input-select-large"	
-                            ng-options="index as item.name for (index, item) 
-                                        in vm.antiRejectPrescription[vm.newAntiReject].dosage[vm.newAntiRejectDosage].posologie"
-                            ng-model="vm.newAntiRejectDosage">         
-                    </select>-->
-                    
                     <!-- Liste Anti-rejets -->
-                    
-                    
                     <div class="row" style="margin-top:20px;">
                         <div class="button-bar col-50">
                             <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
@@ -108,7 +89,7 @@
                                     {{objectAR.antireject.dosage}}
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                                    {{objectAR.antireject.frequence}}
+                                    {{objectAR.antireject.frequence.name}}
                                 </p>
                                 
                                 <ion-delete-button class="ion-minus-circled"
