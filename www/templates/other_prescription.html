@@ -12,6 +12,10 @@
 				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
 				ETP Greffe Pulmonaire
 			</h1>
+            <a id="button_save_other" class="button button-icon icon ion-checkmark-round white" 
+               ng-click="vm.saveOtherPrescription()"> 
+                Enregistrer
+            </a>
 	  	</ion-header-bar>
 	  	
 	  	<div class="bar bar-subheader bar-positive">
@@ -26,6 +30,76 @@
                     <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
                         <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements associés
                     </h3>
+                    
+                    <!-- other prescription -->
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Princeps + DCI</h4>
+                    <label class="item item-input">
+                        <input type="text" ng-model="vm.newOther" placeholder="Exemple : PROGRAF® Tacrolimus">
+                    </label>
+                    
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+                    <label class="item item-input">
+                        <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 0,5 mg">
+                    </label>
+
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
+                    <label class="item item-input">
+                        <input type="text" ng-model="vm.newOtherFrequence" placeholder="Exemple : Toutes les 8h / 3 fois par jour">
+                    </label>
+                    
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col">
+                            <button class="button button-block button-positive icon-left" ng-click="vm.addOther()">
+                                <i class="icon ion-plus-round"></i> Ajouter traitement associé
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Liste Other prescription -->
+                    <div class="row" style="margin-top:20px;">
+                        <div class="button-bar col-50">
+                            <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                            ng-if="vm.patient.listOtherPrescription">Liste des traitements associés</h4>
+                        </div>
+                        <div class="col-25 col-offset-25">
+                            <button class="button button-clear button-assertive icon ion-close-round"
+                                ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
+                            </button>
+                            <button class="button button-clear button-energized icon ion-shuffle"
+                                ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
+                            </button>
+                            <button class="button button-clear button-dark icon ion-edit"
+                                 ng-click="vm.showDelete = false; vm.showReorder = false">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+                        <div class="list list-inset">
+                            <ion-item ng-repeat="(key_objectO, objectO) in vm.listOtherPrescription" 
+                                class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                                ng-click="vm.editOther(key_objectO, objectO)">	
+                                
+                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                    {{objectO.other.medicine}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                                    {{objectO.other.dosage}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                    {{objectO.other.frequence}}
+                                </p>
+                                
+                                <ion-delete-button class="ion-minus-circled"
+                                    ng-click="vm.removeOther(key_objectO)">
+                                </ion-delete-button>
+                                <ion-reorder-button class="ion-navicon"
+                                    on-reorder="vm.reorderItem(objectO, $fromIndex, $toIndex)">
+                                </ion-reorder-button>
+                             </ion-item>
+                         </div>
+                    </ion-list>
+
 
 
                 </ion-content>

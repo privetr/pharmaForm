@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	
+	<body>
+		<ion-header-bar class="bar-positive">
+			<a class="button button-icon icon ion-chevron-left white" ui-sref="choice_session ( {patientId: vm.patient.id} )"> 
+                Liste séances
+            </a>
+			<h1 class="title">
+				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
+				ETP Greffe Pulmonaire
+			</h1>
+            <a id="button_save_session" class="button button-icon icon ion-paper-airplane white" ng-click="vm.popupSaveSession()"> Terminer</a>
+	  	</ion-header-bar>
+	  	
+	  	<div class="bar bar-subheader bar-positive">
+		  	<h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Séance 1</h2>
+		</div>
+			
+        <ion-nav-view>
+            <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
+                
+                <ion-slide-box> 
+				
+              
+                    <!-- Slide 1 -->
+                    <ion-slide prevent-drag>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- rangeFeeling -->
+                            <div class="row">
+                                <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    Comment vous-sentez vous aujourd’hui ?
+                                </h4>
+                            </div>
+                            <div class="list col-80 col-offset-10">
+                                <div class="item range range-positive">
+                                    <i class="icon ion-sad-outline color-positive"></i>
+                                    <input type="range" ng-model="vm.rangeFeeling" name="rangeFeeling" min="0" max="100" value="50">
+                                    <i class="icon ion-happy-outline color-positive"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- rangeRespiratory -->
+                            <div class="row">
+                                <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    Votre fonction respiratoire ?
+                                </h4>
+                            </div>
+                            <div class="list col-80 col-offset-10">
+                                <div class="item range range-assertive">
+                                    <i class="icon ion-sad-outline color-assertive"></i>
+                                    <input type="range" ng-model="vm.rangeRespiratory" name="rangeRespiratory" min="0" max="100" value="50">
+                                    <i class="icon ion-happy-outline color-assertive"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- rangePain -->
+                            <div class="row">
+                                <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    Et vos douleurs ?
+                                </h4>
+                            </div>
+                            <div class="list col-80 col-offset-10">
+                                <div class="item range range-energized">
+                                    <i class="icon ion-sad-outline color-energized"></i>
+                                    <input type="range" ng-model="vm.rangePain" name="rangePain" min="0" max="100" value="50">
+                                    <i class="icon ion-happy-outline color-energized"></i>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 2 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- whatKnowAboutGraft -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Que savez-vous de la greffe ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="whatKnowAboutGraft" ng-model="vm.whatKnowAboutGraft" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 3 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- interestRegularControl -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quel est l’intérêt d’un suivi régulier ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="interestRegularControl" ng-model="vm.interestRegularControl" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                            
+                            <!-- possibleProblem -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quelles peuvent être les complications ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="possibleProblem" ng-model="vm.possibleProblem" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                        </ion-content>
+                    </ion-slide>
+                        
+                    <!-- Slide 4 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- whatIsReject -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Qu’est ce que le rejet ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="whatIsReject" ng-model="vm.whatIsReject" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 5 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- whatSignReject -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quels sont les signes d’appels du rejet ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="whatSignReject" ng-model="vm.whatSignReject" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                            
+                            <!-- howAvoidProblem -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Comment éviter les complications ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="howAvoidProblem" ng-model="vm.howAvoidProblem" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                        </ion-content>
+                    </ion-slide>
+              
+                    <!-- Slide 6 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    En résumé, la greffe c’est... une balance !
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-33 col-offset-33">
+                                    <img class="img-responsive" src="img/home/chuGrenoble.jpg">
+                                </div>
+                            </div>
+                            
+                        </ion-content>
+                    </ion-slide>
+                            
+                    <!-- Slide 7 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Que pensez-vous des médecines complémentaires homéo, phyto, acupuncture...?
+                                </h4>
+                            </div>
+                            
+                        </ion-content>
+                    </ion-slide>
+                            
+                    <!-- Slide 8 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <h3 class="maincolor" style="padding-left:10px;">
+                                Bravo, la séance est finie !
+                            </h3>
+                            
+                            <!-- whatDidYouThink -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Qu’en avez-vous pensé ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="whatDidYouThink" ng-model="vm.whatDidYouThink" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                            
+                            <!-- yourQuestions -->
+                            <div class="row">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Avez-vous des questions ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea name="yourQuestions" ng-model="vm.yourQuestions" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label> 
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 9 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+
+                            <h3 class="maincolor" style="padding-left:10px;">
+                                Bilan
+                            </h3>
+                            
+                        </ion-content>
+                    </ion-slide>
+              
+			     </ion-slide-box>
+            </ion-view>
+        </ion-nav-view>
+	</body>
+</html>

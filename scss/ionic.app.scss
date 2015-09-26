@@ -29,12 +29,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 $mainColor : #A1006B;
 $secondaryColor : #009688;
 
-$greyColor : #B7B6B6;
+$greyColor : #616161;
 $blackColor : #000000;
 $whiteColor : #fff;
 $greenOkColor : #CCDC00;
 $redKoColor : #E05206;
 $orangeNokColor : #FFB612;
+
+/* Ionic colors */
+$energizedColor : #ffc900;
+$assertiveColor : #ef473a;
+$darkColor : #444;
+$positiveColor : #387ef5;
 
 .background-maincolor{
 	background-color: $mainColor;
@@ -45,6 +51,22 @@ $orangeNokColor : #FFB612;
 
 .secondarycolor{
 	color: $secondaryColor;
+}
+
+.color-energized{
+	color: $energizedColor;
+}
+
+.color-assertive{
+	color: $assertiveColor;
+}
+
+.color-dark{
+	color: $darkColor;
+}
+
+.color-positive{
+	color: $positiveColor;
 }
 
 .color-grey{

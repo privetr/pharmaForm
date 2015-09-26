@@ -38,6 +38,15 @@
         "D:/hybridApps/pharmaForm/www/lib/angular/index.js",
         "D:/hybridApps/pharmaForm/www/lib/angular-animate/angular-animate.js",
         "D:/hybridApps/pharmaForm/www/lib/angular-animate/angular-animate.min.js",
-        "D:/hybridApps/pharmaForm/www/lib/angular-animate/index.js"
+        "D:/hybridApps/pharmaForm/www/lib/angular-animate/index.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-sanitize/angular-sanitize.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-sanitize/angular-sanitize.min.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-sanitize/index.js",
+        "D:/hybridApps/pharmaForm/www/js/controller/AntiRejectPrescriptionCtrl.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-ui-router/src/resolve.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-ui-router/src/state.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-ui-router/src/stateDirectives.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-ui-router/src/stateFilters.js",
+        "D:/hybridApps/pharmaForm/www/lib/angular-ui-router/src/templateFactory.js"
     ]
 }

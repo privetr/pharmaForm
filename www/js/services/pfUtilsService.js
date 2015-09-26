@@ -11,7 +11,9 @@
         	transformationToArray: transformationToArray,
         	showAlert: showAlert,
             getListGraftType: getListGraftType,
-            getListGraftIndication: getListGraftIndication        };
+            getListGraftIndication: getListGraftIndication,
+            getIndexOf: getIndexOf
+        };
 
         return service;
 
@@ -58,6 +60,17 @@
            }
            return listGraftIndication;
      	}
+        
+        function getIndexOf(arr, val, prop) {
+            var l = arr.length,
+            k = 0;
+            for (k = 0; k < l; k = k + 1) {
+                if (arr[k][prop] === val) {
+                    return k;
+                }
+            }
+            return false;
+        }
 
     }
 })();

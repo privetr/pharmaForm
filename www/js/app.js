@@ -45,13 +45,6 @@
         controller: 'ChoiceSessionCtrl as vm'
       })
       
-      // New session
-      .state('new_session', {
-        url: '/new_session/:patientId/:sessionId', 
-        templateUrl: 'templates/new_session.html',
-        controller: 'NewSessionCtrl as vm'
-      })
-      
       // Display prescription
       .state('display_prescription', {
         url: '/display_prescription/:patientId', 
@@ -78,6 +71,13 @@
         url: '/other_prescription/:patientId', 
         templateUrl: 'templates/other_prescription.html',
         controller: 'OtherPrescriptionCtrl as vm'
+      })
+      
+      // Seance_1
+      .state('session_1', {
+        url: '/session_1/:patientId/:sessionId', 
+        templateUrl: 'templates/session_1.html',
+        controller: 'Session1Ctrl as vm'
       })
         
         

@@ -4,20 +4,37 @@
 	angular.module('starter')
 
 	/* 
-	 * CONTROLLER NewSessionCtrl
-	 * Page : new_session.html
-	 * Goal : Managing new Session
+	 * CONTROLLER Session1Ctrl
+	 * Page : seance_1.html
+	 * Goal : Managing seance 1
 	 */
 	
-	.controller('NewSessionCtrl', NewSessionCtrl);
+    .directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
+      return {
+        restrict :  'A',
+        link : function(scope, elem, attrs, e) {
+          var reportEvent = function (e){
+            if  (e.target.tagName.toLowerCase() == 'input'){
+                $ionicSlideBoxDelegate.enableSlide(false);
+            }
+            else{
+                $ionicSlideBoxDelegate.enableSlide(true);
+            }
+          };
+          $ionicGesture.on('drag', reportEvent, elem);
+        }
+      };
+    })
+    
+	.controller('Session1Ctrl', Session1Ctrl);
 	
-	NewSessionCtrl.$inject = ['$state', '$scope', '$stateParams',
+	Session1Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate'];
 
 	/* @ngInject */
-	function NewSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage) {
+	function Session1Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
+                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate) {
 
 		var vm = this;
         
@@ -26,18 +43,6 @@
         
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
-		
-        /*
-         * Get Session
-         */
-        vm.getSession = function() {
-            pfLookUpService.getSessions()
-            .then(function (result) {
-            	console.log('getSessions return : ', result);
-                vm.sessions = result.data.session;
-            });
-        }
-        vm.getSession();
         
 		/*
 		 * Get Patient
@@ -90,31 +95,22 @@
             // We unshow the button to save Session to avoid multiple send and we display a dialog alert
             hideButtonSaveSession();
             
-            // We have to get patients at first
-            pfLocalForageService.getListPatients()
-            .then (function(listPatients) {
-                vm.listPatients = pfUtilsService.transformationToArray(listPatients);
+            // We save session
+            if (vm.patient.listSessionsOver !== undefined) {
+                vm.patient.listSessionsOver.push(vm.session.id);
+            }
+            else {
+                vm.patient.listSessionsOver = [];
+                vm.patient.listSessionsOver.push(vm.session.id);
+            }
+
+            vm.listPatients[vm.patient.indexPatient].patient.listSessionsOver = vm.patient.listSessionsOver;                
                 
-                // We save session
-                if (vm.patient.listSessionsOver !== undefined) {
-                    vm.patient.listSessionsOver.push(vm.session.id);
-                }
-                else {
-                    vm.patient.listSessionsOver = [];
-                    vm.patient.listSessionsOver.push(vm.session.id);
-                }
-                
-                vm.listPatients[vm.patient.indexPatient].patient.listSessionsOver = vm.patient.listSessionsOver;
-                
-                return $localForage.setItem('listPatients', vm.listPatients)
-                
-                
-            })
+            $localForage.setItem('listPatients', vm.listPatients)
             .then(function() {
                 pfUtilsService.showAlert('Séance terminée', 'La séance est désormais terminée, félicitations');
                 $state.go('choice_session', {patientId: vm.patient.id} );
             })
-            
             
             displayButtonSaveSession();
         }
@@ -139,6 +135,17 @@
 			});
     		$ionicLoading.hide();
     	}
+        
+        /*
+		 * SLIDERS
+		 * Functions to manage sliding mode
+		 */
+		vm.nextSlide = function() {
+			$ionicSlideBoxDelegate.next();
+		}
+		vm.previousSlide = function() {
+			$ionicSlideBoxDelegate.previous();
+		}  	
         
         
 	}

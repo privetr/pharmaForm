@@ -7702,6 +7702,7 @@ a.button {
 
 /* My Custom CSS */
 /*  MAIN COLORS */
+/* Ionic colors */
 .background-maincolor {
   background-color: #A1006B; }
 
@@ -7711,8 +7712,20 @@ a.button {
 .secondarycolor {
   color: #009688; }
 
+.color-energized {
+  color: #ffc900; }
+
+.color-assertive {
+  color: #ef473a; }
+
+.color-dark {
+  color: #444; }
+
+.color-positive {
+  color: #387ef5; }
+
 .color-grey {
-  color: #B7B6B6; }
+  color: #616161; }
 
 .black {
   color: #000000; }

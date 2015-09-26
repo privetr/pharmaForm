@@ -85,6 +85,26 @@
                              </ion-item>
                          </div>
                     </ion-list> 
+                    
+                    <!-- Other Prescription -->
+                    <h4 class="maincolor" style="margin-bottom: 0px; margin-top: 20px; padding-left:10px" 
+                        ng-if="vm.patient.listOtherPrescription">Liste des traitements associés</h4>
+                    <ion-list>
+                        <div class="list list-inset">
+                            <ion-item ng-repeat="objectO in vm.patient.listOtherPrescription" 
+                            class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                            >			  
+                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                                    {{objectO.other.medicine}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                                    {{objectO.other.dosage}}
+                                </p>
+                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                    {{objectO.other.frequence}}</p>
+                             </ion-item>
+                         </div>
+                    </ion-list> 
 
                 </ion-content>
             </ion-view>

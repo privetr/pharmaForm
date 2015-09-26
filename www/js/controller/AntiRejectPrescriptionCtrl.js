@@ -86,7 +86,7 @@
             
             $localForage.setItem('listPatients', vm.listPatients)
             .then(function() {
-                pfUtilsService.showAlert('Sauvegarde réussie', 'Anti-rejets modifiés');
+                pfUtilsService.showAlert('Sauvegarde réussie', 'Traitements Anti-rejets modifiés');
                 $state.go('display_prescription', {patientId: vm.patient.id} );
             })
         }
@@ -130,27 +130,16 @@
         	
         	// Then we set the input with these values
             //alert(vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id));
-        	vm.newAntiReject = vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id, 'id').toString();
+        	vm.newAntiReject = pfUtilsService.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id, 'id').toString();
             vm.newAntiRejectDosage = object.antireject.dosage;
-            vm.newAntiRejectFrequence = vm.getIndexOf(vm.antiRejectListFrequence, object.antireject.frequence.id, 'id').toString();
+            vm.newAntiRejectFrequence = pfUtilsService.getIndexOf(vm.antiRejectListFrequence, object.antireject.frequence.id, 'id').toString();
 		} 
         
         vm.reorderItem = function(antireject, fromIndex, toIndex) {
         	vm.listAntiReject.splice(fromIndex, 1);
         	vm.listAntiReject.splice(toIndex, 0, antireject);
         };
-        
-        vm.getIndexOf = function (arr, val, prop) {
-            var l = arr.length,
-            k = 0;
-            for (k = 0; k < l; k = k + 1) {
-                if (arr[k][prop] === val) {
-                    return k;
-                }
-            }
-            return false;
-        }
-        
+
 	}
 
 })();

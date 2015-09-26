@@ -32,7 +32,7 @@
                             class="item-text-wrap item-icon-right" type="item-text-wrap">			  
                                 Séance {{$index + 1}}. {{session.title}}
                                 <a class="button button-clear button-balanced"
-                                   ui-sref='new_session ( {patientId: vm.patient.id, sessionId: session.id} )'
+                                   ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id} )'
                                    ng-if="vm.patient.listSessionsOver.indexOf(session.id) == -1 &&
                                           vm.patient.listSessionsOver.indexOf(vm.sessions[$index-1].id) > -1 || 
                                           vm.patient.listSessionsOver == undefined && $index == 0"
