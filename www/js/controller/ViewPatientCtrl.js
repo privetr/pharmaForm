@@ -55,7 +55,14 @@
                             vm.listComments = vm.listPatients[i].patient.listComments;
                             
                             vm.graftType = vm.listPatients[i].patient.graftType;
+                            vm.isReGraft = vm.listPatients[i].patient.isReGraft;
+                            
+                            // graftIndication is an array
                             vm.graftIndication = vm.listPatients[i].patient.graftIndication;
+                            console.log('indication', vm.graftIndication);
+                            if(vm.graftIndication){
+                                vm.listGraftIndication = vm.graftIndication;
+                            }
                             
                             vm.cmvStatusReceiver = vm.listPatients[i].patient.cmvStatusReceiver;
                             vm.cmvStatusDonor = vm.listPatients[i].patient.cmvStatusDonor;
@@ -94,7 +101,8 @@
                 vm.new_patient.listComments = vm.listComments;
                 
                 vm.new_patient.graftType = vm.graftType;
-                vm.new_patient.graftIndication = vm.graftIndication;
+                vm.new_patient.isReGraft = vm.isReGraft;
+                vm.new_patient.graftIndication = vm.listGraftIndication;
                 
                 vm.new_patient.cmvStatusReceiver = vm.cmvStatusReceiver;
                 vm.new_patient.cmvStatusDonor = vm.cmvStatusDonor;
@@ -118,7 +126,8 @@
                 vm.listPatients[vm.indexExistingPatient].patient.listComments = vm.listComments;
                 
                 vm.listPatients[vm.indexExistingPatient].patient.graftType = vm.graftType;
-                vm.listPatients[vm.indexExistingPatient].patient.graftIndication = vm.graftIndication;
+                vm.listPatients[vm.indexExistingPatient].patient.isReGraft = vm.isReGraft;
+                vm.listPatients[vm.indexExistingPatient].patient.graftIndication = vm.listGraftIndication;
                 
                 vm.listPatients[vm.indexExistingPatient].patient.cmvStatusReceiver = vm.cmvStatusReceiver;
                 vm.listPatients[vm.indexExistingPatient].patient.cmvStatusDonor = vm.cmvStatusDonor;

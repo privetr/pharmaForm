@@ -85,14 +85,28 @@
                                 ng-model="vm.graftType" ng-init="vm.graftType=vm.graftType"
                                 ng-disabled="!vm.edition">         
                         </select>
+                        
+                        <!-- isReGraft -->
+                        <ul class="list">
+                            <li class="item item-checkbox">
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="vm.isReGraft" ng-init="vm.isReGraft=vm.isReGraft" ng-disabled="!vm.edition">
+                                </label>
+                                Retransplantation suite à un échec
+                            </li>
+                        </ul>
 
                         <!-- graftIndication -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la greffe</h4>
-                        <select class="ion-input-select-large"	
-                                ng-options="id as graftindication for (id, graftindication) in vm.listGraftIndication"
-                                ng-model="vm.graftIndication" ng-init="vm.graftIndication=vm.graftIndication"
-                                ng-disabled="!vm.edition">         
-                        </select>
+                        <ul class="list" style="padding-top:10px;">
+                            <li class="item item-checkbox" ng-repeat="graftindication in vm.listGraftIndication">
+                                <label class="checkbox">
+                                    <input type="checkbox" value="{{graftindication.name}}" 
+                                           ng-model="graftindication.selected" ng-disabled="!vm.edition">                 
+                                </label>
+                                {{graftindication.name}}
+                            </li>
+                        </ul>                        
 
                         <!-- cmvStatus -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut CMV</h4>

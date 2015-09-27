@@ -50,14 +50,14 @@
      	}
         
         function getListGraftIndication() {
-     	   var listGraftIndication = {
-               "0" : "Mucoviscidose",
-               "1" : "BPCO",
-               "2" : "Emphysème / DPP",
-               "3" : "HTAP",
-               "4" : "Fibrose pulmonaire",
-               "5" : "Déficit en a anti trypsine"
-           }
+           var listGraftIndication = [
+                { name: 'Mucoviscidose',    selected: false },
+                { name: 'BPCO',   selected: false },
+                { name: 'Emphysème / DPP',     selected: false },
+                { name: 'HTAP', selected: false },
+                { name: 'Fibrose pulmonaire', selected: false },
+                { name: 'Déficit en a anti trypsine', selected: false }
+           ];
            return listGraftIndication;
      	}
         
