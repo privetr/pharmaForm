@@ -76,7 +76,7 @@
       // Seance_1
       .state('session_1', {
         url: '/session_1/:patientId/:sessionId', 
-        templateUrl: 'templates/session_1.html',
+        templateUrl: 'templates/sessions/session_1.html',
         controller: 'Session1Ctrl as vm'
       })
         

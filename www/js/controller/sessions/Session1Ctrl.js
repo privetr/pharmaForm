@@ -95,20 +95,47 @@
             // We unshow the button to save Session to avoid multiple send and we display a dialog alert
             hideButtonSaveSession();
             
+            // we have to save all answers for Session 1
+            vm.session.answer = {};
+            // Slide1
+            vm.session.answer.rangeFeeling = vm.rangeFeeling;
+            vm.session.answer.rangeRespiratory = vm.rangeRespiratory;
+            vm.session.answer.rangePain = vm.rangePain;
+            // Slide 2
+            vm.session.answer.whatKnowAboutGraft = vm.whatKnowAboutGraft;
+            // Slide 3
+            vm.session.answer.interestRegularControl = vm.interestRegularControl;
+            vm.session.answer.possibleProblem = vm.possibleProblem;
+            // Slide 4
+            vm.session.answer.whatIsReject = vm.whatIsReject;
+            // Slide 5
+            vm.session.answer.whatSignReject = vm.whatSignReject;
+            vm.session.answer.howAvoidProblem = vm.howAvoidProblem;
+            // Slide 6
+            // Slide 7
+            // Slide 8
+            vm.session.answer.whatDidYouThink = vm.whatDidYouThink;
+            vm.session.answer.yourQuestions = vm.yourQuestions;
+            
             // We save session
-            if (vm.patient.listSessionsOver !== undefined) {
-                vm.patient.listSessionsOver.push(vm.session.id);
+            if (vm.patient.listSessionsOver !== undefined) {    // Some sessions have already been saved
+                vm.patient.listSessionsOver.push(vm.session.id);    // List of sessions over
+                vm.patient.listSessionsAnswers.push(vm.session);
             }
-            else {
-                vm.patient.listSessionsOver = [];
+            else {  // None session has already been saved
+                vm.patient.listSessionsOver = [];   // List of sessions over
                 vm.patient.listSessionsOver.push(vm.session.id);
+                
+                vm.patient.listSessionsAnswers = [];    // List of session answers
+                vm.patient.listSessionsAnswers.push(vm.session);
             }
 
-            vm.listPatients[vm.patient.indexPatient].patient.listSessionsOver = vm.patient.listSessionsOver;                
+            vm.listPatients[vm.patient.indexPatient].patient.listSessionsOver = vm.patient.listSessionsOver;      
+            vm.listPatients[vm.patient.indexPatient].patient.listSessionsAnswers = vm.patient.listSessionsAnswers; 
                 
             $localForage.setItem('listPatients', vm.listPatients)
             .then(function() {
-                pfUtilsService.showAlert('Séance terminée', 'La séance est désormais terminée, félicitations');
+                pfUtilsService.showAlert('Séance 1 terminée', 'La séance 1 est désormais terminée, Félicitations !');
                 $state.go('choice_session', {patientId: vm.patient.id} );
             })
             
