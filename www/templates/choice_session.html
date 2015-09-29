@@ -41,6 +41,7 @@
                                 </a>
                                 <a class="button button-clear button-energized"
                                    ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
+                                   ng-click="vm.generatePdfSession()"
                                    >
                                   Réalisée
                                 </a>

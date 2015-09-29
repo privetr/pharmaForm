@@ -14,7 +14,7 @@
         $ionicConfigProvider.views.maxCache(0);
   })
 
-  .config(function($stateProvider, $urlRouterProvider, $localForageProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $localForageProvider, $compileProvider) {
       $stateProvider
       
       // Home Template
@@ -92,6 +92,10 @@
       
       // Configure localforage provider
       $localForageProvider.config({name : 'pfDatabase', storeName : 'patients'});
+      
+      // blob: urls have to be explicitly allowed in AngularJS
+      // http://stackoverflow.com/questions/15606751/angular-changes-urls-to-unsafe-in-extension-page
+      $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|blob):/);
       
   })
 
