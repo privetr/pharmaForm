@@ -12,10 +12,10 @@
 	.controller('ChoiceSessionCtrl', ChoiceSessionCtrl);
 	
 	ChoiceSessionCtrl.$inject = ['$state', '$scope', '$stateParams',
-                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService'];
+                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', 'pfPdfGeneratorService'];
 
 	/* @ngInject */
-	function ChoiceSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService) {
+	function ChoiceSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService, pfPdfGeneratorService) {
 
 		var vm = this;
         
@@ -69,77 +69,37 @@
         }
         
         vm.generatePdfSession = function() {
-            var docDefinition = { content: 'This is an sample PDF printed with pdfMake' + vm.patient.id };
-            //console.log(pdfMake.createPdf(docDefinition).print());
-            //console.log(pdfMake.createPdf(docDefinition).open());
-            //pdfMake.createPdf(docDefinition).open()
-            //pdfMake.createPdf(docDefinition).download();
-            //pdfMake.createPdf(docDefinition).open();
-            //pdfMake.createPdf(docDefinition).download();
+            /*if (!window.plugin || !window.plugin.email) {
+                console.error("no cordova-plugin-email-composer available");
+                return;
+            }*/
             
             console.log("generating pdf...");
-            var doc = new jsPDF();
-
-            doc.text(20, 20, 'HELLO!');
             
-            var pdfOutput = doc.output('datauristring');
+            var pdfOutput = pfPdfGeneratorService.generatePdfSession1(vm.patient);
             
             var uristringparts = pdfOutput.split(',');
-      uristringparts[0] = "base64:" + escape("test.pdf") + "//";
+            uristringparts[0] = 'base64:' + escape(vm.patient.lastname + 'BilanSession.pdf') + '//';
 
-      var moddeduristring =  uristringparts.join("");
+            var moddeduristring =  uristringparts.join('');
             
             var emailProperties = {
-      to: ["privet.remi@gmail.com"], // email addresses for TO field
-//                cc: [], // email addresses for CC field
-//                bcc: [], // email addresses for BCC field
-      attachments: [moddeduristring], // paths to the files you want to attach or base64 encoded data streams
-      subject: "Sample PDF", // subject of the email
-      body: "Sample PDF is attached.<br/>", // email body (could be HTML code, in this case set isHtml to true)
-      isHtml: true // indicats if the body is HTML or plain text
-    };
-    var emailCallback = function() {
-       console.log('email view dismissed');
-    };
-    window.plugin.email.isServiceAvailable(
-            function(isAvailable) {
-              window.plugin.email.open(emailProperties, emailCallback, this);
-            }
-    );
-            //https://github.com/cunneen/Cordova-PDF-Example-using-jsPDF/blob/master/www/js/jutoPDFCreator.js
-            //window.open(pdfOutput, "_blank", "EnableViewPortScale=yes,location=no,disallowoverscroll=yes,allowInlineMediaPlayback=yes,toolbarposition=top,transitionstyle=fliphorizontal");
-            
-            //NEXT SAVE IT TO THE DEVICE'S LOCAL FILE SYSTEM
-            //http://www.tricedesigns.com/2014/01/08/generating-pdf-inside-of-phonegap-apps/
-            /*console.log("file system...");
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+                to: ['privet.remi@gmail.com'],
+                attachments: [moddeduristring], // paths to the files you want to attach or base64 encoded data streams
+                subject: 'Bilan session', // subject of the email
+                body: 'Document PDF Comportant le bilan de la session numéro X de ' + 
+                    vm.patient.lastname + ' ' + vm.patient.firstname + '<br/>',
+                isHtml: true // indicats if the body is HTML or plain text
+            };
+            var emailCallback = function() {
+                console.log('Email sent');
+            };
+            window.plugin.email.isServiceAvailable(
+                function(isAvailable) {
+                    window.plugin.email.open(emailProperties, emailCallback, this);
+                }
+            );
  
-           console.log(fileSystem.name);
-           console.log(fileSystem.root.name);
-           console.log(fileSystem.root.fullPath);
-
-           fileSystem.root.getFile("test.pdf", {create: true}, function(entry) {
-                  var fileEntry = entry;
-                  console.log(entry);
-
-                  entry.createWriter(function(writer) {
-                      writer.onwrite = function(evt) {
-                         console.log("write success");
-                      };
-
-                      console.log("writing to file");
-                      writer.write( pdfOutput );
-                  }, function(error) {
-                      console.log(error);
-                  });
-
-               }, function(error){
-                  console.log(error);
-               });
-            },
-            function(event){
-                console.log( evt.target.error.code );
-            });*/
             
 
         }
