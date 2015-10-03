@@ -14,7 +14,7 @@
         restrict :  'A',
         link : function(scope, elem, attrs, e) {
           var reportEvent = function (e){
-            if  (e.target.tagName.toLowerCase() == 'input'){
+            if  (e.target.tagName.toLowerCase() == 'input' || e.target.tagName.toLowerCase() == 'img'){
                 $ionicSlideBoxDelegate.enableSlide(false);
             }
             else{

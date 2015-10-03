@@ -12,10 +12,12 @@
 	.controller('ChoiceSessionCtrl', ChoiceSessionCtrl);
 	
 	ChoiceSessionCtrl.$inject = ['$state', '$scope', '$stateParams',
-                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', 'pfPdfGeneratorService'];
+                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', 
+                                'pfPdfGeneratorService'];
 
 	/* @ngInject */
-	function ChoiceSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService, pfPdfGeneratorService) {
+	function ChoiceSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService, 
+                                pfPdfGeneratorService) {
 
 		var vm = this;
         

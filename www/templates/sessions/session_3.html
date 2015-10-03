@@ -24,9 +24,7 @@
             <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
                 
                 <ion-slide-box> 
-				
-              
-                    <!-- Slide 1 -->
+                    
                     <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
@@ -40,7 +38,7 @@
                             
                             <div class="row">
                                 <div class="col-50" id="drag_1">
-                                    <img style="height: 200px;" src="img/home/chuGrenoble.jpg">
+                                    <img style="height: 200px;" src="img/home/chuGrenoble.jpg" data-drag="true" jqyoui-draggable>
                                 </div>
                                 <div class="col-50" id="id_1">
                                 </div>
@@ -49,25 +47,7 @@
                             
                         </ion-content>
                     </ion-slide>
-                    
-                    <!-- Slide 2 -->
-                    <ion-slide>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
-                            
-                            
-                        </ion-content>
-                    </ion-slide>
-                    
-                    
-              
+
 			     </ion-slide-box>
             </ion-view>
         </ion-nav-view>

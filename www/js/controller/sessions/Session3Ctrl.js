@@ -8,24 +8,7 @@
 	 * Page : seance_3.html
 	 * Goal : Managing seance 3
 	 */
-	
-    .directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
-      return {
-        restrict :  'A',
-        link : function(scope, elem, attrs, e) {
-          var reportEvent = function (e){
-            if  (e.target.tagName.toLowerCase() == 'input' || e.target.tagName.toLowerCase() == 'img'){
-                $ionicSlideBoxDelegate.enableSlide(false);
-            }
-            else{
-                $ionicSlideBoxDelegate.enableSlide(true);
-            }
-          };
-          $ionicGesture.on('drag', reportEvent, elem);
-        }
-      };
-    })
-    
+
 	.controller('Session3Ctrl', Session3Ctrl);
 	
 	Session3Ctrl.$inject = ['$state', '$scope', '$stateParams',
