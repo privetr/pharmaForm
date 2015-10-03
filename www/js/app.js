@@ -79,6 +79,34 @@
         templateUrl: 'templates/sessions/session_1.html',
         controller: 'Session1Ctrl as vm'
       })
+      
+      // Seance_2
+      .state('session_2', {
+        url: '/session_2/:patientId/:sessionId', 
+        templateUrl: 'templates/sessions/session_2.html',
+        controller: 'Session2Ctrl as vm'
+      })
+      
+      // Seance_3
+      .state('session_3', {
+        url: '/session_3/:patientId/:sessionId', 
+        templateUrl: 'templates/sessions/session_3.html',
+        controller: 'Session3Ctrl as vm'
+      })
+      
+      // Seance_4
+      .state('session_4', {
+        url: '/session_4/:patientId/:sessionId', 
+        templateUrl: 'templates/sessions/session_4.html',
+        controller: 'Session4Ctrl as vm'
+      })
+      
+      // Seance_5
+      .state('session_5', {
+        url: '/session_5/:patientId/:sessionId', 
+        templateUrl: 'templates/sessions/session_5.html',
+        controller: 'Session5Ctrl as vm'
+      })
         
         
       $urlRouterProvider.otherwise("/home");

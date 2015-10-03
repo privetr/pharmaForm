@@ -69,13 +69,14 @@
         }
         
         vm.generatePdfSession = function() {
-            /*if (!window.plugin || !window.plugin.email) {
+            if (!window.plugin || !window.plugin.email) {
                 console.error("no cordova-plugin-email-composer available");
                 return;
-            }*/
+            }
             
             console.log("generating pdf...");
             
+            // https://github.com/cunneen/Cordova-PDF-Example-using-jsPDF/blob/master/www/js/jutoPDFCreator.js
             var pdfOutput = pfPdfGeneratorService.generatePdfSession1(vm.patient);
             
             var uristringparts = pdfOutput.split(',');
