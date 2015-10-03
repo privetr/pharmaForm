@@ -25,6 +25,7 @@
         
         // AntiRejects
         vm.listAntiReject = [];
+        vm.newAntiRejectDosage = {};
         
         console.log('Patient id : ' + vm.patient.id);
         
@@ -75,6 +76,17 @@
             });
         }
         vm.getAntiRejectListFrequence();
+        
+        vm.columnBreak = 4;
+        vm.startNewRow = function(index, count) {
+            console.log (index + " " + count + " ");
+            return ((index) % count) === 0;
+        }
+        
+        /*
+         * Get Dosage Times list
+         */
+        vm.listDosageTimes = pfUtilsService.getListDosageTimes();
         
         /*
          * Save AntiReject

@@ -2,43 +2,203 @@
    "antireject":[  
       {  
          "id":"antireject_1",
-         "name":"PROGRAF® Tacrolimus"
+         "name":"PROGRAF® Tacrolimus",
+         "dosage":[
+              {  
+                 "id":"dosage_1_1",
+                 "name":"0,5 mg"
+              },
+              {  
+                 "id":"dosage_1_2",
+                 "name":"1 mg"
+              },
+              {  
+                 "id":"dosage_1_3",
+                 "name":"5 mg"
+              }
+          ]
       },
       {  
          "id":"antireject_2",
-         "name":"ADVAGRAF® Tacrolimus"
+         "name":"ADVAGRAF® Tacrolimus",
+         "dosage":[
+              {  
+                 "id":"dosage_2_1",
+                 "name":"0,5 mg LP"
+              },
+              {  
+                 "id":"dosage_2_2",
+                 "name":"1 mg LP"
+              },
+              {  
+                 "id":"dosage_2_3",
+                 "name":"3 mg LP"
+              },
+              {  
+                 "id":"dosage_2_4",
+                 "name":"5 mg LP"
+              }
+          ]
       },
       {  
          "id":"antireject_3",
-         "name":"MODIGRAF® Tacrolimus"
+         "name":"MODIGRAF® Tacrolimus",
+         "dosage":[
+              {  
+                 "id":"dosage_3_1",
+                 "name":"0,2 mg"
+              },
+              {  
+                 "id":"dosage_3_2",
+                 "name":"1 mg"
+              }
+          ]
       },
       {  
          "id":"antireject_4",
-         "name":"NEORAL® Ciclosporine"
+         "name":"NEORAL® Ciclosporine",
+         "dosage":[
+              {  
+                 "id":"dosage_4_1",
+                 "name":"10 mg"
+              },
+              {  
+                 "id":"dosage_4_2",
+                 "name":"25 mg"
+              },
+              {  
+                 "id":"dosage_4_3",
+                 "name":"50 mg"
+              },
+              {  
+                 "id":"dosage_4_4",
+                 "name":"100 mg"
+              },
+              {  
+                 "id":"dosage_4_5",
+                 "name":"100 mg/mL"
+              }
+          ]
       },
       {  
          "id":"antireject_5",
-         "name":"CELLCEPT® Mycophénolate mofétil"
+         "name":"CELLCEPT® Mycophénolate mofétil",
+         "dosage":[
+              {  
+                 "id":"dosage_5_1",
+                 "name":"250 mg"
+              },
+              {  
+                 "id":"dosage_5_2",
+                 "name":"500 mg"
+              },
+              {  
+                 "id":"dosage_5_3",
+                 "name":"1g/5mL"
+              }
+          ]
       },
       {  
          "id":"antireject_6",
-         "name":"MYFORTIC® Mycophénolate sodique"
+         "name":"MYFORTIC® Mycophénolate sodique",
+         "dosage":[
+              {  
+                 "id":"dosage_6_1",
+                 "name":"180 mg"
+              },
+              {  
+                 "id":"dosage_6_2",
+                 "name":"360 mg"
+              }
+          ]
       },
       {  
          "id":"antireject_7",
-         "name":"CERTICAN® Everolimus"
+         "name":"CERTICAN® Everolimus",
+         "dosage":[
+              {  
+                 "id":"dosage_7_1",
+                 "name":"0,1 mg disp"
+              },
+              {  
+                 "id":"dosage_7_2",
+                 "name":"0,1 mg"
+              },
+              {  
+                 "id":"dosage_7_3",
+                 "name":"0,25 mg disp"
+              },
+              {  
+                 "id":"dosage_7_4",
+                 "name":"0,25 mg"
+              },
+              {  
+                 "id":"dosage_7_5",
+                 "name":"0,5 mg"
+              },
+              {  
+                 "id":"dosage_7_6",
+                 "name":"0,75 mg"
+              }
+          ]
       },
       {  
          "id":"antireject_8",
-         "name":"IMUREL® Azathioprine"
+         "name":"IMUREL® Azathioprine",
+         "dosage":[
+              {  
+                 "id":"dosage_8_1",
+                 "name":"25 mg"
+              },
+              {  
+                 "id":"dosage_8_2",
+                 "name":"50 mg"
+              }
+          ]
       },
       {  
          "id":"antireject_9",
-         "name":"CORTANCYL® Prednisone"
+         "name":"CORTANCYL® Prednisone",
+         "dosage":[
+              {  
+                 "id":"dosage_9_1",
+                 "name":"1 mg"
+              },
+              {  
+                 "id":"dosage_9_2",
+                 "name":"5 mg"
+              },
+              {  
+                 "id":"dosage_9_3",
+                 "name":"20 mg"
+              }
+          ]
       },
       {  
          "id":"antireject_10",
-         "name":"SOLUPRED® Prednisolone"
+         "name":"SOLUPRED® Prednisolone",
+         "dosage":[
+              {  
+                 "id":"dosage_10_1",
+                 "name":"5 mg eff"
+              },
+              {  
+                 "id":"dosage_10_2",
+                 "name":"5 mg oro"
+              },
+              {  
+                 "id":"dosage_10_3",
+                 "name":"20 mg eff"
+              },
+              {  
+                 "id":"dosage_10_4",
+                 "name":"20 mg oro"
+              },
+              {  
+                 "id":"dosage_10_5",
+                 "name":"1 mg/mL"
+              }
+          ]
       }
    ]
 }

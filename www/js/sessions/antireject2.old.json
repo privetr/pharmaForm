@@ -1,0 +1,44 @@
+{  
+   "antireject":[  
+      {  
+         "id":"antireject_1",
+         "name":"PROGRAF® Tacrolimus"
+      },
+      {  
+         "id":"antireject_2",
+         "name":"ADVAGRAF® Tacrolimus"
+      },
+      {  
+         "id":"antireject_3",
+         "name":"MODIGRAF® Tacrolimus"
+      },
+      {  
+         "id":"antireject_4",
+         "name":"NEORAL® Ciclosporine"
+      },
+      {  
+         "id":"antireject_5",
+         "name":"CELLCEPT® Mycophénolate mofétil"
+      },
+      {  
+         "id":"antireject_6",
+         "name":"MYFORTIC® Mycophénolate sodique"
+      },
+      {  
+         "id":"antireject_7",
+         "name":"CERTICAN® Everolimus"
+      },
+      {  
+         "id":"antireject_8",
+         "name":"IMUREL® Azathioprine"
+      },
+      {  
+         "id":"antireject_9",
+         "name":"CORTANCYL® Prednisone"
+      },
+      {  
+         "id":"antireject_10",
+         "name":"SOLUPRED® Prednisolone"
+      }
+   ]
+}

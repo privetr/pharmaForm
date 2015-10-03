@@ -12,6 +12,7 @@
         	showAlert: showAlert,
             getListGraftType: getListGraftType,
             getListGraftIndication: getListGraftIndication,
+            getListDosageTimes: getListDosageTimes,
             getIndexOf: getIndexOf
         };
 
@@ -59,6 +60,28 @@
                 { name: 'Déficit en a anti trypsine', selected: false }
            ];
            return listGraftIndication;
+     	}
+        
+        function getListDosageTimes() {
+     	   var listDosageTimes = {
+               "1" : "1",
+               "2" : "2",
+               "3" : "3",
+               "4" : "4",
+               "5" : "5"
+           }
+           return listDosageTimes;
+     	}
+        
+        function getListDosageTimes() {
+     	   var listDosageTimes = {
+               "1" : "1",
+               "2" : "2",
+               "3" : "3",
+               "4" : "4",
+               "5" : "5"
+           }
+           return listDosageTimes;
      	}
         
         function getIndexOf(arr, val, prop) {

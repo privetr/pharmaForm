@@ -39,15 +39,75 @@
                     </select>
 
                     <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                    <label class="item item-input">
-                        <input type="text" ng-model="vm.newAntiRejectDosage" placeholder="Exemple : 0,5 mg">
-                    </label>
+                    <ul class="list" style="padding-top:10px;">
+                        <div class="row" ng-repeat="dosage in vm.antiRejectPrescription[vm.newAntiReject].dosage">
+                            <div class="col">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{dosage.id}}" 
+                                               ng-model="vm.newAntiRejectDosage[$index].dosage">                 
+                                    </label>
+                                    {{dosage.name}}
+                                </li>
+                            </div>
+                            <div class="col">
+                                <select class="ion-input-select-large"	
+                                        ng-options="key as item for (key, item) in vm.listDosageTimes"
+                                        ng-model="vm.newAntiRejectDosage[$index].dosageTime"> 
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </ul>   
 
                     <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
-                    <select class="ion-input-select-large"	
+                    <!--<select class="ion-input-select-large"	
                             ng-options="index as item.name for (index, item) in vm.antiRejectListFrequence"
                             ng-model="vm.newAntiRejectFrequence">         
-                    </select>
+                    </select>-->
+                    <ul class="list" style="padding-top:10px;">
+                        <div ng-repeat="frequence in vm.antiRejectListFrequence" 
+                             ng-if="$index % 4 === 0" class="row">
+                            <div class="col-25" ng-if="vm.antiRejectListFrequence[$index].name">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiRejectListFrequence[$index].id}}" 
+                                               ng-model="vm.antiRejectListFrequence[$index].selected">                 
+                                    </label>
+                                    {{vm.antiRejectListFrequence[$index].name}}
+                                </li>
+                            </div>
+                            <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+1].name">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+1].id}}" 
+                                               ng-model="vm.antiRejectListFrequence[$index+1].selected">                 
+                                    </label>
+                                    {{vm.antiRejectListFrequence[$index+1].name}}
+                                </li>
+                            </div>
+                            <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+2].name">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+2].id}}" 
+                                               ng-model="vm.antiRejectListFrequence[$index+2].selected">                 
+                                    </label>
+                                    {{vm.antiRejectListFrequence[$index+2].name}}
+                                </li>
+                            </div>
+                            <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+3].name">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+3].id}}" 
+                                               ng-model="vm.antiRejectListFrequence[$index+3].selected">                 
+                                    </label>
+                                    {{vm.antiRejectListFrequence[$index+3].name}}
+                                </li>
+                            </div>
+                        </div>
+                        
+                    </ul>  
+                    
                     
                     <div class="row" style="margin-top:10px;">
                         <div class="col">
