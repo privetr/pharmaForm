@@ -38,16 +38,74 @@
                             ng-model="vm.newAntiInfection"> 
                     </select>
 
+                    <!-- dosage -->
                     <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                    <label class="item item-input">
-                        <input type="text" ng-model="vm.newAntiInfectionDosage" placeholder="Exemple : 0,5 mg">
-                    </label>
+                    <div class="row" style="padding-left:20px" ng-if="!vm.newAntiInfection">
+                        Aucun
+                    </div>
+                    <ul class="list" style="padding-top:10px;">
+                        <div class="row" ng-repeat="dosage in vm.antiInfectionPrescription[vm.newAntiInfection].dosage">
+                            <div class="col" style="padding:0px; margin:0px;">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{dosage.id}}" 
+                                               ng-model="dosage.selected">                 
+                                    </label>
+                                    {{dosage.name}}
+                                </li>
+                            </div>
+                            <div class="col" ng-if="dosage.selected">
+                                <select class="ion-input-select-large item"	
+                                        ng-options="key as item for (key, item) in vm.listDosageTimes"
+                                        ng-model="dosage.nbMedicine"> 
+                                </select>
+                            </div>
+                        </div>
+                    </ul>   
 
+                    <!-- horaires -->
                     <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
-                    <select class="ion-input-select-large"	
-                            ng-options="index as item.name for (index, item) in vm.antiInfectionListFrequence"
-                            ng-model="vm.newAntiInfectionFrequence">         
-                    </select>
+                    <ul class="list" style="padding-top:10px;">
+                        <div ng-repeat="frequence in vm.antiInfectionListFrequence" 
+                             ng-if="$index % 4 === 0" class="row">
+                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index].name">
+                                <li class="item item-checkbox item-text-wrap">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index].id}}" 
+                                               ng-model="vm.antiInfectionListFrequence[$index].selected">                 
+                                    </label>
+                                    {{vm.antiInfectionListFrequence[$index].name}}
+                                </li>
+                            </div>
+                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+1].name">
+                                <li class="item item-checkbox item-text-wrap">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+1].id}}" 
+                                               ng-model="vm.antiInfectionListFrequence[$index+1].selected">                 
+                                    </label>
+                                    {{vm.antiInfectionListFrequence[$index+1].name}}
+                                </li>
+                            </div>
+                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+2].name">
+                                <li class="item item-checkbox item-text-wrap">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+2].id}}" 
+                                               ng-model="vm.antiInfectionListFrequence[$index+2].selected">                 
+                                    </label>
+                                    {{vm.antiInfectionListFrequence[$index+2].name}}
+                                </li>
+                            </div>
+                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+3].name">
+                                <li class="item item-checkbox item-text-wrap">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+3].id}}" 
+                                               ng-model="vm.antiInfectionListFrequence[$index+3].selected">                 
+                                    </label>
+                                    {{vm.antiInfectionListFrequence[$index+3].name}}
+                                </li>
+                            </div>
+                        </div>
+                    </ul>  
                     
                     <div class="row" style="margin-top:10px;">
                         <div class="col">
@@ -86,10 +144,16 @@
                                     {{objectAI.antiinfection.medicine.name}}
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                                    {{objectAI.antiinfection.dosage}}
+                                    <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
+                                        ng-if="dosage.selected" style="padding-right:30px";>
+                                        {{dosage.name}} - {{dosage.nbMedicine}} comprimé(s)
+                                    </em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                                    {{objectAI.antiinfection.frequence.name}}
+                                    <em ng-repeat="frequence in objectAI.antiinfection.frequence" 
+                                        ng-if="frequence.selected" style="padding-right:30px";>
+                                        {{frequence.name}}
+                                    </em>
                                 </p>
                                 
                                 <ion-delete-button class="ion-minus-circled"

@@ -73,17 +73,6 @@
            return listDosageTimes;
      	}
         
-        function getListDosageTimes() {
-     	   var listDosageTimes = {
-               "1" : "1",
-               "2" : "2",
-               "3" : "3",
-               "4" : "4",
-               "5" : "5"
-           }
-           return listDosageTimes;
-     	}
-        
         function getIndexOf(arr, val, prop) {
             var l = arr.length,
             k = 0;

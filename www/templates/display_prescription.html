@@ -58,10 +58,17 @@
                                     {{objectAR.antireject.medicine.name}}
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                                    {{objectAR.antireject.dosage}}
+                                    <em ng-repeat="dosage in objectAR.antireject.dosage" 
+                                        ng-if="dosage.selected" style="padding-right:30px";>
+                                        {{dosage.name}} - {{dosage.nbMedicine}} comprimé(s)
+                                    </em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                                    {{objectAR.antireject.frequence.name}}</p>
+                                    <em ng-repeat="frequence in objectAR.antireject.frequence" 
+                                        ng-if="frequence.selected" style="padding-right:30px";>
+                                        {{frequence.name}}
+                                    </em>
+                                </p>
                              </ion-item>
                          </div>
                     </ion-list> 
@@ -78,10 +85,17 @@
                                     {{objectAI.antiinfection.medicine.name}}
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                                    {{objectAI.antiinfection.dosage}}
+                                    <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
+                                        ng-if="dosage.selected" style="padding-right:30px";>
+                                        {{dosage.name}} - {{dosage.nbMedicine}} comprimé(s)
+                                    </em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                                    {{objectAI.antiinfection.frequence.name}}</p>
+                                    <em ng-repeat="frequence in objectAI.antiinfection.frequence" 
+                                        ng-if="frequence.selected" style="padding-right:30px";>
+                                        {{frequence.name}}
+                                    </em>
+                                </p>
                              </ion-item>
                          </div>
                     </ion-list> 

@@ -7,28 +7,15 @@
               {  
                  "id":"dosage_1_1",
                  "name":"100 mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_1_1_1",
-                         "name":"3 comprimés à 8h"
-                      }
-                  ]
+                 "selected":false
               },
               {  
                  "id":"dosage_1_2",
                  "name":"40 mg/mL",
-                 "posologie":[
-                      {  
-                         "id":"posologie_1_2_1",
-                         "name":"200 mg quatre fois par jour soit 5 mL quatre fois par jour"
-                      },
-                      {  
-                         "id":"posologie_1_2_2",
-                         "name":"400 mg deux fois par jour soir 10 mL deux fois par jour"
-                      }
-                  ]
+                 "selected":false
               }
-          ]
+          ],
+          "specialfrequence":false
       },
       {  
          "id":"antiinfection_2",
@@ -37,42 +24,20 @@
               {  
                  "id":"dosage_2_1",
                  "name":"50 mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_2_1_1",
-                         "name":"1 comprimé à 8h et 1 comprimé à 20h"
-                      },
-                      {  
-                         "id":"posologie_2_1_2",
-                         "name":"2 comprimés à 8h et 2 comprimés à 20h"
-                      }
-                  ]
+                 "selected":false
               },
               {  
                  "id":"dosage_2_2",
                  "name":"200 mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_2_2_1",
-                         "name":"1 comprimé à 8h et 1 comprimé à 20h"
-                      },
-                      {  
-                         "id":"posologie_2_2_2",
-                         "name":"2 comprimés à 8h et 2 comprimés à 20h"
-                      }
-                  ]
+                 "selected":false
               },
               {  
                  "id":"dosage_2_3",
                  "name":"40 mg/ml",
-                 "posologie":[
-                      {  
-                         "id":"posologie_2_3_1",
-                         "name":"200 mg à 8h et 200 mg à 20h soit 5 mL à 8h et 5 mL à 20h"
-                      }
-                  ]
+                 "selected":false
               }
-          ]
+          ],
+          "specialfrequence":false
       },
       {  
          "id":"antiinfection_3",
@@ -81,32 +46,15 @@
               {  
                  "id":"dosage_3_1",
                  "name":"400mg-80mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_3_1_1",
-                         "name":"1 comprimé à 8h et 1 comprimé à 20h"
-                      },
-                      {  
-                         "id":"posologie_3_1_2",
-                         "name":"2 comprimés à 8h et 2 comprimés à 20h"
-                      }
-                  ]
+                 "selected":false
               },
               {  
                  "id":"dosage_3_2",
                  "name":"800mg-160 (FORTE)",
-                 "posologie":[
-                      {  
-                         "id":"posologie_3_1_1",
-                         "name":"1 comprimé les lundis, mercredis et vendredis à 8h"
-                      },
-                      {  
-                         "id":"posologie_3_1_2",
-                         "name":"2 comprimés les lundis, mercredis et vendredis à 8h"
-                      }
-                  ]
+                 "selected":false
               }
-          ]
+          ],
+          "specialfrequence":"weekDay"
       },
       {  
          "id":"antiinfection_4",
@@ -115,18 +63,10 @@
               {  
                  "id":"dosage_4_1",
                  "name":"500mg-25mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_4_1_1",
-                         "name":"2 comprimés"
-                      },
-                      {  
-                         "id":"posologie_4_1_2",
-                         "name":"3 comprimés"
-                      }
-                  ]
+                 "selected":false
               }
-          ]
+          ],
+          "specialfrequence":"unique"
       },
       {  
          "id":"antiinfection_5",
@@ -135,6 +75,7 @@
               {  
                  "id":"dosage_5_1",
                  "name":"300 mg",
+                 "selected":false,
                  "posologie":[
                       {  
                          "id":"posologie_5_1_1",
@@ -142,7 +83,8 @@
                       }
                   ]
               }
-          ]
+          ],
+          "specialfrequence":"month"
       },
       {  
          "id":"antiinfection_6",
@@ -151,24 +93,15 @@
               {  
                  "id":"dosage_6_1",
                  "name":"450 mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_6_1_1",
-                         "name":"2 comprimés à 8h"
-                      }
-                  ]
+                 "selected":false
               },
               {  
                  "id":"dosage_6_2",
                  "name":"50 mg/ml",
-                 "posologie":[
-                      {  
-                         "id":"posologie_6_2_1",
-                         "name":"900 mg à 8h soit 18 mL à 8h"
-                      }
-                  ]
+                 "selected":false
               }
-          ]
+          ],
+          "specialfrequence":false
       },
       {  
          "id":"antiinfection_7",
@@ -177,22 +110,10 @@
               {  
                  "id":"dosage_7_1",
                  "name":"500 mg",
-                 "posologie":[
-                      {  
-                         "id":"posologie_7_1_1",
-                         "name":"1 comprimé à 8h et 1 comprimé à 20h"
-                      },
-                      {  
-                         "id":"posologie_7_1_2",
-                         "name":"2 comprimés à 8h et 2 comprimés à 20h"
-                      },
-                      {  
-                         "id":"posologie_7_1_3",
-                         "name":"4 comprimés quatre fois par jour"
-                      }
-                  ]
+                 "selected":false
               }
-          ]
+          ],
+          "specialfrequence":false
       }
    ]
 }

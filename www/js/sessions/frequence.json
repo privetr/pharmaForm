@@ -2,122 +2,122 @@
    "frequence":[  
       {  
          "id":"frequence_0",
-         "name":"0:00",
+         "name":"00h00",
          "selected":false
       },
       {  
          "id":"frequence_1",
-         "name":"1:00",
+         "name":"01h00",
          "selected":false
       },
       {  
          "id":"frequence_2",
-         "name":"2:00",
+         "name":"02h00",
          "selected":false
       },
       {  
          "id":"frequence_3",
-         "name":"3:00",
+         "name":"03h00",
          "selected":false
       },
       {  
          "id":"frequence_4",
-         "name":"4:00",
+         "name":"04h00",
          "selected":false
       },
       {  
          "id":"frequence_5",
-         "name":"5:00",
+         "name":"05h00",
          "selected":false
       },
       {  
          "id":"frequence_6",
-         "name":"6:00",
+         "name":"06h00",
          "selected":false
       },
       {  
          "id":"frequence_7",
-         "name":"7:00",
+         "name":"07h00",
          "selected":false
       },
       {  
          "id":"frequence_8",
-         "name":"8:00",
+         "name":"08h00",
          "selected":false
       },
       {  
          "id":"frequence_9",
-         "name":"9:00",
+         "name":"09h00",
          "selected":false
       },
       {  
          "id":"frequence_10",
-         "name":"10:00",
+         "name":"10h00",
          "selected":false
       },
       {  
          "id":"frequence_11",
-         "name":"11:00",
+         "name":"11h00",
          "selected":false
       },
       {  
          "id":"frequence_12",
-         "name":"12:00",
+         "name":"12h00",
          "selected":false
       },
        {  
          "id":"frequence_13",
-         "name":"13:00",
+         "name":"13h00",
          "selected":false
       },
       {  
          "id":"frequence_14",
-         "name":"14:00",
+         "name":"14h00",
          "selected":false
       },
       {  
          "id":"frequence_15",
-         "name":"15:00",
+         "name":"15h00",
          "selected":false
       },
       {  
          "id":"frequence_16",
-         "name":"16:00",
+         "name":"16h00",
          "selected":false
       },
       {  
          "id":"frequence_17",
-         "name":"17:00",
+         "name":"17h00",
          "selected":false
       },
       {  
          "id":"frequence_18",
-         "name":"18:00",
+         "name":"18h00",
          "selected":false
       },
       {  
          "id":"frequence_19",
-         "name":"19:00",
+         "name":"19h00",
          "selected":false
       },
       {  
          "id":"frequence_20",
-         "name":"20:00",
+         "name":"20h00",
          "selected":false
       },
       {  
          "id":"frequence_21",
-         "name":"21:00",
+         "name":"21h00",
          "selected":false
       },
       {  
          "id":"frequence_22",
-         "name":"22:00",
+         "name":"22h00",
          "selected":false
       },
       {  
          "id":"frequence_23",
-         "name":"23:00",
+         "name":"23h00",
          "selected":false
       }
        

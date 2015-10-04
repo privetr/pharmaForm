@@ -25,7 +25,6 @@
         
         // AntiRejects
         vm.listAntiReject = [];
-        vm.newAntiRejectDosage = {};
         
         console.log('Patient id : ' + vm.patient.id);
         
@@ -76,13 +75,7 @@
             });
         }
         vm.getAntiRejectListFrequence();
-        
-        vm.columnBreak = 4;
-        vm.startNewRow = function(index, count) {
-            console.log (index + " " + count + " ");
-            return ((index) % count) === 0;
-        }
-        
+
         /*
          * Get Dosage Times list
          */
@@ -108,16 +101,14 @@
          * Functions to manage anti-rejects
          */
         vm.addAntiReject = function() {
-        	if (vm.antiRejectPrescription[vm.newAntiReject] !== undefined &&
-                vm.newAntiRejectDosage !== undefined &&
-                vm.antiRejectListFrequence[vm.newAntiRejectFrequence] !== undefined){
+        	if (vm.antiRejectPrescription[vm.newAntiReject] !== undefined){
                 
                 vm.newAR = {};
 
                 // We store all informations
                 vm.newAR.medicine = vm.antiRejectPrescription[vm.newAntiReject];
-                vm.newAR.dosage = vm.newAntiRejectDosage;
-                vm.newAR.frequence = vm.antiRejectListFrequence[vm.newAntiRejectFrequence];
+                vm.newAR.dosage = vm.antiRejectPrescription[vm.newAntiReject].dosage;
+                vm.newAR.frequence = vm.antiRejectListFrequence;
                 
                 vm.listAntiReject.push(
                     new Object({
@@ -127,8 +118,8 @@
                 
                 // we reinitialize content of inputs
                 vm.newAntiReject = undefined;
-                vm.newAntiRejectDosage = undefined;
-                vm.newAntiRejectFrequence = undefined;
+                vm.getAntiRejectListFrequence();    // We reinitialize the list vm.antiRejectListFrequence
+                vm.getAntiRejectPrescription();     // We reinitialize the list vm.antiRejectPrescription
         	}
 		}
         
@@ -143,8 +134,8 @@
         	// Then we set the input with these values
             //alert(vm.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id));
         	vm.newAntiReject = pfUtilsService.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id, 'id').toString();
-            vm.newAntiRejectDosage = object.antireject.dosage;
-            vm.newAntiRejectFrequence = pfUtilsService.getIndexOf(vm.antiRejectListFrequence, object.antireject.frequence.id, 'id').toString();
+            vm.antiRejectPrescription[vm.newAntiReject].dosage = object.antireject.dosage;
+            vm.antiRejectListFrequence = object.antireject.frequence;
 		} 
         
         vm.reorderItem = function(antireject, fromIndex, toIndex) {

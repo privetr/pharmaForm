@@ -77,6 +77,11 @@
         vm.getAntiInfectionListFrequence();
         
         /*
+         * Get Dosage Times list
+         */
+        vm.listDosageTimes = pfUtilsService.getListDosageTimes();
+        
+        /*
          * Save AntiInfection
          */
         vm.saveAntiInfection = function() {
@@ -96,27 +101,25 @@
          * Functions to manage anti-infections
          */
         vm.addAntiInfection = function() {
-        	if (vm.antiInfectionPrescription[vm.newAntiInfection] !== undefined &&
-                vm.newAntiInfectionDosage !== undefined &&
-                vm.antiInfectionListFrequence[vm.newAntiInfectionFrequence] !== undefined){
+        	if (vm.antiInfectionPrescription[vm.newAntiInfection] !== undefined){
                 
-                vm.newAR = {};
+                vm.newAI = {};
 
                 // We store all informations
-                vm.newAR.medicine = vm.antiInfectionPrescription[vm.newAntiInfection];
-                vm.newAR.dosage = vm.newAntiInfectionDosage;
-                vm.newAR.frequence = vm.antiInfectionListFrequence[vm.newAntiInfectionFrequence];
+                vm.newAI.medicine = vm.antiInfectionPrescription[vm.newAntiInfection];
+                vm.newAI.dosage = vm.antiInfectionPrescription[vm.newAntiInfection].dosage;
+                vm.newAI.frequence = vm.antiInfectionListFrequence;
                 
                 vm.listAntiInfection.push(
                     new Object({
-                        "antiinfection": vm.newAR
+                        "antiinfection": vm.newAI
                     })
                 );
                 
                 // we reinitialize content of inputs
                 vm.newAntiInfection = undefined;
-                vm.newAntiInfectionDosage = undefined;
-                vm.newAntiInfectionFrequence = undefined;
+                vm.getAntiInfectionListFrequence();    // We reinitialize the list vm.antiInfectionListFrequence
+                vm.getAntiInfectionPrescription();     // We reinitialize the list vm.antiInfectionPrescription
         	}
 		}
         
@@ -130,9 +133,8 @@
         	
         	// Then we set the input with these values
         	vm.newAntiInfection = pfUtilsService.getIndexOf(vm.antiInfectionPrescription, object.antiinfection.medicine.id, 'id').toString();
-            vm.newAntiInfectionDosage = object.antiinfection.dosage;
-            vm.newAntiInfectionFrequence = 
-                pfUtilsService.getIndexOf(vm.antiInfectionListFrequence, object.antiinfection.frequence.id, 'id').toString();
+            vm.antiInfectionPrescription[vm.newAntiInfection].dosage = object.antiinfection.dosage;
+            vm.antiInfectionListFrequence = object.antiinfection.frequence;
 		} 
         
         vm.reorderItem = function(antiinfection, fromIndex, toIndex) {
