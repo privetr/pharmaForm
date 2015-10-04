@@ -142,6 +142,11 @@
         	vm.listAntiReject.splice(fromIndex, 1);
         	vm.listAntiReject.splice(toIndex, 0, antireject);
         };
+        
+        vm.popupBack = function() {
+            var params = { patientId: vm.patient.id};
+        	pfUtilsService.popupBack('display_prescription', params);
+        };
 
 	}
 

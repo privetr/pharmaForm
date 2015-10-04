@@ -114,6 +114,11 @@
         	vm.listOtherPrescription.splice(toIndex, 0, other);
         };
         
+        vm.popupBack = function() {
+            var params = { patientId: vm.patient.id};
+        	pfUtilsService.popupBack('display_prescription', params);
+        };
+        
 	}
 
 })();

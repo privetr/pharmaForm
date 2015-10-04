@@ -179,6 +179,16 @@
         	vm.listComments.splice(fromIndex, 1);
         	vm.listComments.splice(toIndex, 0, comment);
         };
+        
+        vm.popupBack = function() {
+            if(vm.edition){
+        	    pfUtilsService.popupBack('list_patients', {});
+            }
+            else{
+                $state.go('list_patients');
+            }
+            
+        };
 	}
 
 })();

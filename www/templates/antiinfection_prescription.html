@@ -7,10 +7,10 @@
 	<body>
 		<ion-header-bar class="bar-positive">
 			<a class="button button-icon icon ion-chevron-left white" 
-               ui-sref="display_prescription ( {patientId: vm.patient.id} )"> Prescription</a>
+               ng-click="vm.popupBack()"> Prescription</a>
 			<h1 class="title">
 				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
-				ETP Greffe Pulmonaire
+				Greathe
 			</h1>
             <a id="button_save_antiinfection" class="button button-icon icon ion-checkmark-round white" 
                ng-click="vm.saveAntiInfection()"> 

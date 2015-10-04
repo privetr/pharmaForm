@@ -53,14 +53,17 @@
     	 */
     	vm.popupSaveSession = function() {
             var myPopup = $ionicPopup.show ({
-                template: 'Etes-vous sûr de vouloir terminer la séance ?',
+                template: '<em class="item-center item-text-wrap">Etes-vous sûr de vouloir terminer la séance ?</em>',
                 title: 'Enregistrer séance',
                 scope: $scope,
                 buttons: [
-                      { text: 'Annuler' },
+                      {
+                          text: 'Annuler',
+                          type: 'button-stable button-clear'
+                      },
                       {
                           text: '<b>Enregistrer</b>',
-                          type: 'button-energized',
+                          type: 'button-energized button-clear',
                           onTap: function(e) {
                               vm.saveSession();
                           }
@@ -139,6 +142,11 @@
 		vm.previousSlide = function() {
 			$ionicSlideBoxDelegate.previous();
 		}  	
+        
+        vm.popupBack = function() {
+            var params = { patientId: vm.patient.id};
+        	pfUtilsService.popupBack('choice_session', params);
+        };
         
         
 	}

@@ -6,10 +6,11 @@
 	
 	<body>
 		<ion-header-bar class="bar-positive">
-			<a class="button button-icon icon ion-chevron-left white" ui-sref="list_patients"> Liste patients</a>
+            <a class="button button-icon icon ion-chevron-left white" 
+               ng-click="vm.popupBack()"> Liste patients</a>
 			<h1 class="title">
 				<img class="title-image" src="img/home/chuGrenoble.jpg " width="40" height="20" /> 
-				ETP Greffe Pulmonaire
+				Greathe
 			</h1>
             <a id="button_save_patient" class="button button-icon icon ion-checkmark-round white" 
                ng-click="vm.savePatient()" ng-if="vm.edition"> 
@@ -32,14 +33,14 @@
 
                     <div class="list">
                         <!-- lastname -->
-                        <h4 class="maincolor" style="padding-left:10px">Patient</h4>
-
+                        <h4 class="maincolor" style="padding-left:10px">Nom</h4>
                         <label class="item item-input">
                             <input type="text" name="lastname" ng-model="vm.lastname" placeholder="Nom" required
                                    ng-readonly="!vm.edition">
                         </label>
 
                         <!-- firstname -->
+                        <h4 class="maincolor" style="padding-left:10px">Prénom</h4>
                         <label class="item item-input">
                             <input type="text" name="firstname" ng-model="vm.firstname" placeholder="Prénom" required
                                    ng-readonly="!vm.edition">
@@ -87,7 +88,7 @@
                         </select>
                         
                         <!-- isReGraft -->
-                        <ul class="list">
+                        <ul class="list" ng-if="vm.isReGraft || vm.edition">
                             <li class="item item-checkbox">
                                 <label class="checkbox">
                                     <input type="checkbox" ng-model="vm.isReGraft" ng-init="vm.isReGraft=vm.isReGraft" ng-disabled="!vm.edition">
@@ -99,7 +100,8 @@
                         <!-- graftIndication -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la greffe</h4>
                         <ul class="list" style="padding-top:10px;">
-                            <li class="item item-checkbox" ng-repeat="graftindication in vm.listGraftIndication">
+                            <li class="item item-checkbox" ng-repeat="graftindication in vm.listGraftIndication"  
+                                ng-if="graftindication.selected || vm.edition">
                                 <label class="checkbox">
                                     <input type="checkbox" value="{{graftindication.name}}" 
                                            ng-model="graftindication.selected" ng-disabled="!vm.edition">                 
@@ -109,7 +111,17 @@
                         </ul>                        
 
                         <!-- cmvStatus -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut CMV</h4>
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
+                            Statut CMV 
+                            <em ng-if="vm.cmvStatusReceiver || vm.cmvStatusDonor">
+                            ( 
+                                <em ng-if="vm.cmvStatusReceiver==0">-</em><em ng-if="vm.cmvStatusReceiver==1">+</em>
+                                /
+                                <em ng-if="vm.cmvStatusDonor==0">-</em><em ng-if="vm.cmvStatusDonor==1">+</em>
+                                
+                            )
+                            </em>
+                        </h4>
                         <div class="row">
                             <div class="col-20" style="padding-left: 10px;">
                             </div>
@@ -166,7 +178,17 @@
                         </div>
 
                         <!-- ebvStatus -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Statut EBV</h4>
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
+                            Statut EBV
+                            <em ng-if="vm.ebvStatusReceiver || vm.ebvStatusDonor">
+                            ( 
+                                <em ng-if="vm.ebvStatusReceiver==0">-</em><em ng-if="vm.ebvStatusReceiver==1">+</em>
+                                /
+                                <em ng-if="vm.ebvStatusDonor==0">-</em><em ng-if="vm.ebvStatusDonor==1">+</em>
+                                
+                            )
+                            </em>
+                        </h4>
                         <div class="row">
                             <div class="col-20" style="padding-left: 10px;">
                             </div>

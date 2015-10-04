@@ -127,7 +127,7 @@
       
   })
 
-  .run(function($ionicPlatform) {
+  .run(function($ionicPlatform, pfUtilsService) {
    
       
     $ionicPlatform.ready(function() {
@@ -144,6 +144,10 @@
       ionic.Platform.isFullScreen = true
       
        //cordova.plugins.Keyboard.disableScroll(true); 
+      
+      $( "#id_button_home" ).click(function() {
+          pfUtilsService.popupBackHome();
+      });
     });
   })
 

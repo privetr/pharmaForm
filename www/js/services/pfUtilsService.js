@@ -3,9 +3,9 @@
 
     angular.module('starter').factory('pfUtilsService', pfUtilsService);
 
-    pfUtilsService.$inject = ['$http', '$q', '$rootScope', '$ionicPopup'];
+    pfUtilsService.$inject = ['$http', '$q', '$rootScope', '$ionicPopup', '$state'];
 
-    function pfUtilsService($http, $q, $rootScope, $ionicPopup) {
+    function pfUtilsService($http, $q, $rootScope, $ionicPopup, $state) {
     	
         var service = {
         	transformationToArray: transformationToArray,
@@ -13,7 +13,9 @@
             getListGraftType: getListGraftType,
             getListGraftIndication: getListGraftIndication,
             getListDosageTimes: getListDosageTimes,
-            getIndexOf: getIndexOf
+            getIndexOf: getIndexOf,
+            popupBack: popupBack,
+            popupBackHome: popupBackHome
         };
 
         return service;
@@ -35,10 +37,16 @@
         }
         
         function showAlert(title, template) {
-     	   $ionicPopup.alert({
-     	     title: title,
-     	     template: template
-     	   });
+            var myPopup = $ionicPopup.show ({
+                template: '<em class="item-center item-text-wrap">'+ template + '</em>',
+                title: title,
+                buttons: [
+                      {
+                          text: '<b>OK</b>',
+                          type: 'button-royal button-clear'
+                      }
+                ]
+            });
      	}
         
         function getListGraftType() {
@@ -83,6 +91,52 @@
             }
             return false;
         }
+        
+        /*
+    	 * Function to display a Pop-up to confirm we want to getback
+    	 */
+    	function popupBack(stateToGo, params) {
+            var myPopup = $ionicPopup.show ({
+                template: '<em class="item-center item-text-wrap">Etes-vous sûr de vouloir quitter la page  sans enregistrer ?</em>',
+                title: 'Attention',
+                buttons: [
+                      {
+                          text: 'Annuler',
+                          type: 'button-clear button-stable'
+                      },
+                      {
+                          text: '<b>Continuer</b>',
+                          type: 'button-energized button-clear',
+                          onTap: function(e) {
+                              $state.go(stateToGo, params);
+                          }
+                      }
+                ]
+            });
+     	};
+        
+        /*
+    	 * Function to display a Pop-up to confirm we want to getbackto home
+    	 */
+    	function popupBackHome() {
+            var myPopup = $ionicPopup.show ({
+                template: '<em class="item-center item-text-wrap">Etes-vous sûr de vouloir quitter la page ? Toutes les données non enregistrées seront perdues.</em>',
+                title: 'Attention',
+                buttons: [
+                      {
+                          text: 'Annuler',
+                          type: 'button-clear button-stable'
+                      },
+                      {
+                          text: '<b>Continuer</b>',
+                          type: 'button-energized button-clear',
+                          onTap: function(e) {
+                              $state.go('home');
+                          }
+                      }
+                ]
+            });
+     	};
 
     }
 })();

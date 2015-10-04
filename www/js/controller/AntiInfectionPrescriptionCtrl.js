@@ -142,6 +142,11 @@
         	vm.listAntiInfection.splice(toIndex, 0, antiinfection);
         };
         
+        vm.popupBack = function() {
+            var params = { patientId: vm.patient.id};
+        	pfUtilsService.popupBack('display_prescription', params);
+        };
+        
 	}
 
 })();

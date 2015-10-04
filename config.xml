@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.pharmaform587556" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>ETP Greffe</name>
+<widget id="com.ionicframework.pharmaform587556" 
+        version="1.0.0" 
+        xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Greathe</name>
   <description>
         Suivi des patients greffés
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
-    </author>
+  <author email="privet.remi@gmail.com" href="http://remiprivet.fr">
+      Rémi PRIVET
+  </author>
   <content src="index.html"/>
   <access origin="*"/>
   <access origin="*" launch-external="yes" />
