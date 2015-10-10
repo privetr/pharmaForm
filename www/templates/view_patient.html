@@ -93,7 +93,7 @@
                                 <label class="checkbox">
                                     <input type="checkbox" ng-model="vm.isReGraft" ng-init="vm.isReGraft=vm.isReGraft" ng-disabled="!vm.edition">
                                 </label>
-                                Retransplantation suite à un échec
+                                Retransplantation
                             </li>
                         </ul>
 
@@ -115,10 +115,9 @@
                             Statut CMV 
                             <em ng-if="vm.cmvStatusReceiver || vm.cmvStatusDonor">
                             ( 
-                                <em ng-if="vm.cmvStatusReceiver==0">-</em><em ng-if="vm.cmvStatusReceiver==1">+</em>
-                                /
                                 <em ng-if="vm.cmvStatusDonor==0">-</em><em ng-if="vm.cmvStatusDonor==1">+</em>
-                                
+                                /
+                                <em ng-if="vm.cmvStatusReceiver==0">-</em><em ng-if="vm.cmvStatusReceiver==1">+</em>
                             )
                             </em>
                         </h4>
@@ -130,28 +129,6 @@
                             </div>
                             <div class="col-20" style="padding-left: 10px;">
                                 <i class="ion-plus balanced"> Positif</i>
-                            </div>
-                        </div>
-
-                        <div class="row" ng-init="vm.cmvStatusReceiver = vm.cmvStatusReceiver">
-                            <div class="col-20" style="padding-left: 10px;">
-                                Receveur
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-assertive">
-                                    <input type="radio" ng-model="vm.cmvStatusReceiver" value="0" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-balanced">
-                                    <input type="radio" ng-model="vm.cmvStatusReceiver" value="1" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
                             </div>
                         </div>
 
@@ -176,16 +153,39 @@
                                 </label>
                             </div>
                         </div>
+                        
+                        <div class="row" ng-init="vm.cmvStatusReceiver = vm.cmvStatusReceiver">
+                            <div class="col-20" style="padding-left: 10px;">
+                                Receveur
+                            </div>
+                            <div class="col-20" style="padding-left: 10px;">
+                                <label class="toggle toggle-assertive">
+                                    <input type="radio" ng-model="vm.cmvStatusReceiver" value="0" ng-disabled="!vm.edition">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-20" style="padding-left: 10px;">
+                                <label class="toggle toggle-balanced">
+                                    <input type="radio" ng-model="vm.cmvStatusReceiver" value="1" ng-disabled="!vm.edition">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        
 
                         <!-- ebvStatus -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
                             Statut EBV
                             <em ng-if="vm.ebvStatusReceiver || vm.ebvStatusDonor">
                             ( 
-                                <em ng-if="vm.ebvStatusReceiver==0">-</em><em ng-if="vm.ebvStatusReceiver==1">+</em>
-                                /
                                 <em ng-if="vm.ebvStatusDonor==0">-</em><em ng-if="vm.ebvStatusDonor==1">+</em>
-                                
+                                /
+                                <em ng-if="vm.ebvStatusReceiver==0">-</em><em ng-if="vm.ebvStatusReceiver==1">+</em>
                             )
                             </em>
                         </h4>
@@ -197,28 +197,6 @@
                             </div>
                             <div class="col-20" style="padding-left: 10px;">
                                 <i class="ion-plus balanced"> Positif</i>
-                            </div>
-                        </div>
-
-                        <div class="row" ng-init="vm.ebvStatusReceiver = vm.ebvStatusReceiver">
-                            <div class="col-20" style="padding-left: 10px;">
-                                Receveur
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-assertive">
-                                    <input type="radio" ng-model="vm.ebvStatusReceiver" value="0" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-balanced">
-                                    <input type="radio" ng-model="vm.ebvStatusReceiver" value="1" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
                             </div>
                         </div>
 
@@ -243,6 +221,30 @@
                                 </label>
                             </div>
                         </div>
+                        
+                        <div class="row" ng-init="vm.ebvStatusReceiver = vm.ebvStatusReceiver">
+                            <div class="col-20" style="padding-left: 10px;">
+                                Receveur
+                            </div>
+                            <div class="col-20" style="padding-left: 10px;">
+                                <label class="toggle toggle-assertive">
+                                    <input type="radio" ng-model="vm.ebvStatusReceiver" value="0" ng-disabled="!vm.edition">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-20" style="padding-left: 10px;">
+                                <label class="toggle toggle-balanced">
+                                    <input type="radio" ng-model="vm.ebvStatusReceiver" value="1" ng-disabled="!vm.edition">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        
                     </div>
 
                     <!-- Comments -->

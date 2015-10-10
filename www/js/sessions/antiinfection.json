@@ -46,7 +46,8 @@
               {  
                  "id":"dosage_3_1",
                  "name":"400mg-80mg",
-                 "selected":false
+                 "selected":false,
+                 "choicedays":""
               },
               {  
                  "id":"dosage_3_2",
@@ -54,7 +55,12 @@
                  "selected":false
               }
           ],
-          "specialfrequence":"weekDay"
+          "specialfrequence":{
+                  "value":"weekDay",
+                  "name":"3 fois par semaine",
+                  "selected": false
+          }
+          
       },
       {  
          "id":"antiinfection_4",
@@ -66,7 +72,11 @@
                  "selected":false
               }
           ],
-          "specialfrequence":"unique"
+          "specialfrequence":{
+                  "value":"weekDayOnly",
+                  "name":"1 fois par semaine",
+                  "selected": true
+          }
       },
       {  
          "id":"antiinfection_5",
@@ -75,16 +85,14 @@
               {  
                  "id":"dosage_5_1",
                  "name":"300 mg",
-                 "selected":false,
-                 "posologie":[
-                      {  
-                         "id":"posologie_5_1_1",
-                         "name":"1 aérosol"
-                      }
-                  ]
+                 "selected":false
               }
           ],
-          "specialfrequence":"month"
+          "specialfrequence":{
+                  "value":"monthOnly",
+                  "name":"1 fois par mois",
+                  "selected": true
+          }
       },
       {  
          "id":"antiinfection_6",

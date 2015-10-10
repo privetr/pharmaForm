@@ -61,22 +61,27 @@
         function getListGraftIndication() {
            var listGraftIndication = [
                 { name: 'Mucoviscidose',    selected: false },
-                { name: 'BPCO',   selected: false },
-                { name: 'Emphysème / DPP',     selected: false },
-                { name: 'HTAP', selected: false },
+                { name: 'Bronchopneumopathie chronique obstructive',   selected: false },
+                { name: 'Emphysème / Dilatation des bronches',     selected: false },
+                { name: 'Hypertension artérielle pulmonaire', selected: false },
                 { name: 'Fibrose pulmonaire', selected: false },
-                { name: 'Déficit en a anti trypsine', selected: false }
+                { name: 'Déficit en alpha-1 antitrypsine', selected: false }
            ];
            return listGraftIndication;
      	}
         
         function getListDosageTimes() {
      	   var listDosageTimes = {
-               "1" : "1",
-               "2" : "2",
-               "3" : "3",
-               "4" : "4",
-               "5" : "5"
+               "0,5" : "0,5",
+               "1,0" : "1,0",
+               "1,5" : "1,5",
+               "2,0" : "2,0",
+               "2,5" : "2,5",
+               "3,0" : "3,0",
+               "3,5" : "3,5",
+               "4,0" : "4,0",
+               "4,5" : "4,5",
+               "5,0" : "5,0"
            }
            return listDosageTimes;
      	}

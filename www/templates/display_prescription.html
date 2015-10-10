@@ -60,7 +60,7 @@
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
                                     <em ng-repeat="dosage in objectAR.antireject.dosage" 
                                         ng-if="dosage.selected" style="padding-right:30px";>
-                                        {{dosage.name}} - {{dosage.nbMedicine}} comprimé(s)
+                                        {{dosage.nbMedicine}} comprimé(s) - {{dosage.name}} 
                                     </em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
@@ -86,11 +86,21 @@
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
                                     <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
-                                        ng-if="dosage.selected" style="padding-right:30px";>
-                                        {{dosage.name}} - {{dosage.nbMedicine}} comprimé(s)
+                                        ng-if="dosage.selected && !objectAI.antiinfection.specialfrequence.selected" 
+                                        style="padding-right:30px";>
+                                        {{dosage.nbMedicine}} comprimé(s) - {{dosage.name}}
+                                    </em>
+                                    <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
+                                        ng-if="dosage.selected && objectAI.antiinfection.specialfrequence.selected" 
+                                        style="padding-right:30px";>
+                                        <em ng-if="objectAI.antiinfection.specialfrequence.value == 'monthOnly'">
+                                            Chaque mois, le
+                                        </em>
+                                        {{dosage.nbMedicine}} : {{dosage.name}}
                                     </em>
                                 </p>
-                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                <p ng-if="!objectAI.antiinfection.specialfrequence.selected">
+                                    <color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
                                     <em ng-repeat="frequence in objectAI.antiinfection.frequence" 
                                         ng-if="frequence.selected" style="padding-right:30px";>
                                         {{frequence.name}}

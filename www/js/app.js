@@ -100,13 +100,6 @@
         templateUrl: 'templates/sessions/session_4.html',
         controller: 'Session4Ctrl as vm'
       })
-      
-      // Seance_5
-      .state('session_5', {
-        url: '/session_5/:patientId/:sessionId', 
-        templateUrl: 'templates/sessions/session_5.html',
-        controller: 'Session5Ctrl as vm'
-      })
         
         
       $urlRouterProvider.otherwise("/home");

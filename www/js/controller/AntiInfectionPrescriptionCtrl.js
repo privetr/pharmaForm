@@ -109,6 +109,7 @@
                 vm.newAI.medicine = vm.antiInfectionPrescription[vm.newAntiInfection];
                 vm.newAI.dosage = vm.antiInfectionPrescription[vm.newAntiInfection].dosage;
                 vm.newAI.frequence = vm.antiInfectionListFrequence;
+                vm.newAI.specialfrequence = vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence;
                 
                 vm.listAntiInfection.push(
                     new Object({
@@ -135,6 +136,7 @@
         	vm.newAntiInfection = pfUtilsService.getIndexOf(vm.antiInfectionPrescription, object.antiinfection.medicine.id, 'id').toString();
             vm.antiInfectionPrescription[vm.newAntiInfection].dosage = object.antiinfection.dosage;
             vm.antiInfectionListFrequence = object.antiinfection.frequence;
+            vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence = object.antiinfection.specialfrequence;
 		} 
         
         vm.reorderItem = function(antiinfection, fromIndex, toIndex) {

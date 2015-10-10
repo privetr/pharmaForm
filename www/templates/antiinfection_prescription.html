@@ -43,9 +43,20 @@
                     <div class="row" style="padding-left:20px" ng-if="!vm.newAntiInfection">
                         Aucun
                     </div>
+                    <div class="col" ng-if="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence">
+                        <li class="item item-checkbox item-text-wrap">
+                            <label class="checkbox">
+                                <input type="checkbox" value="true"
+                                       ng-model="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected"
+                                       ng-disabled="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'monthOnly' ||
+                                                    vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDayOnly'">    
+                            </label>
+                            {{vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.name}}
+                        </li>
+                    </div>
                     <ul class="list" style="padding-top:10px;">
                         <div class="row" ng-repeat="dosage in vm.antiInfectionPrescription[vm.newAntiInfection].dosage">
-                            <div class="col" style="padding:0px; margin:0px;">
+                            <div class="col-50" style="padding:0px; margin:0px;">
                                 <li class="item item-checkbox">
                                     <label class="checkbox">
                                         <input type="checkbox" value="{{dosage.id}}" 
@@ -54,18 +65,54 @@
                                     {{dosage.name}}
                                 </li>
                             </div>
-                            <div class="col" ng-if="dosage.selected">
+                            <!-- normal -->
+                            <div class="col-50" 
+                                 ng-if="dosage.selected && !vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
                                 <select class="ion-input-select-large item"	
                                         ng-options="key as item for (key, item) in vm.listDosageTimes"
                                         ng-model="dosage.nbMedicine"> 
                                 </select>
                             </div>
+                            <!-- weekDay -->
+                            <div class="col-50"
+                                 ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
+                                        && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDay'">
+                                 <label class="item item-input">
+                                     <input type="text" 
+                                            ng-model="dosage.nbMedicine"
+                                            placeholder="Saisir Jours, Ex : Lundi, mercredi, vendredi">
+                                </label>
+                            </div>
+                            <!-- weekDayOnly -->
+                            <div class="col-50"
+                                 ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
+                                        && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDayOnly'">
+                                 <label class="item item-input">
+                                     <input type="text" 
+                                            ng-model="dosage.nbMedicine"
+                                            placeholder="Saisir Jour, Ex : Lundi">
+                                </label>
+                            </div>
+                            <!-- monthOnly -->
+                            <div class="col-50"
+                                 ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
+                                        && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'monthOnly'">
+                                <label class="item item-input">
+                                    <input type="text" 
+                                        ng-model="dosage.nbMedicine"
+                                        placeholder="Saisir Date du mois, Ex : 26">
+                                </label>
+                            </div>
                         </div>
                     </ul>   
 
                     <!-- horaires -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
-                    <ul class="list" style="padding-top:10px;">
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px"
+                        ng-if="!vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
+                        Fréquence
+                    </h4>
+                    <ul class="list" style="padding-top:10px;" 
+                        ng-if="!vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
                         <div ng-repeat="frequence in vm.antiInfectionListFrequence" 
                              ng-if="$index % 4 === 0" class="row">
                             <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index].name">
@@ -145,11 +192,21 @@
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
                                     <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
-                                        ng-if="dosage.selected" style="padding-right:30px";>
-                                        {{dosage.name}} - {{dosage.nbMedicine}} comprimé(s)
+                                        ng-if="dosage.selected && !objectAI.antiinfection.specialfrequence.selected" 
+                                        style="padding-right:30px";>
+                                        {{dosage.nbMedicine}} comprimé(s) - {{dosage.name}}
+                                    </em>
+                                    <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
+                                        ng-if="dosage.selected && objectAI.antiinfection.specialfrequence.selected" 
+                                        style="padding-right:30px";>
+                                        <em ng-if="objectAI.antiinfection.specialfrequence.value == 'monthOnly'">
+                                            Chaque mois, le
+                                        </em>
+                                        {{dosage.nbMedicine}} : {{dosage.name}}
                                     </em>
                                 </p>
-                                <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                                <p ng-if="!objectAI.antiinfection.specialfrequence.selected">
+                                    <color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
                                     <em ng-repeat="frequence in objectAI.antiinfection.frequence" 
                                         ng-if="frequence.selected" style="padding-right:30px";>
                                         {{frequence.name}}
