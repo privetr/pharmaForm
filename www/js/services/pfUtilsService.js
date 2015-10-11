@@ -15,7 +15,8 @@
             getListDosageTimes: getListDosageTimes,
             getIndexOf: getIndexOf,
             popupBack: popupBack,
-            popupBackHome: popupBackHome
+            popupBackHome: popupBackHome,
+            getIndexOfInList: getIndexOfInList
         };
 
         return service;
@@ -91,6 +92,17 @@
             k = 0;
             for (k = 0; k < l; k = k + 1) {
                 if (arr[k][prop] === val) {
+                    return k;
+                }
+            }
+            return false;
+        }
+        
+        function getIndexOfInList(arr, val) {
+            var l = arr.length,
+            k = 0;
+            for (k = 0 ; k < l ; k++) {
+                if (arr[k] === val) {
                     return k;
                 }
             }

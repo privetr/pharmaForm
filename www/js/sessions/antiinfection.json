@@ -15,7 +15,8 @@
                  "selected":false
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antiinfection_2",
@@ -37,7 +38,8 @@
                  "selected":false
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antiinfection_3",
@@ -59,7 +61,8 @@
                   "value":"weekDay",
                   "name":"3 fois par semaine",
                   "selected": false
-          }
+          },
+          "imagePath": "img/home/chuGrenoble.jpg"
           
       },
       {  
@@ -76,7 +79,8 @@
                   "value":"weekDayOnly",
                   "name":"1 fois par semaine",
                   "selected": true
-          }
+          },
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antiinfection_5",
@@ -92,7 +96,8 @@
                   "value":"monthOnly",
                   "name":"1 fois par mois",
                   "selected": true
-          }
+          },
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antiinfection_6",
@@ -109,7 +114,8 @@
                  "selected":false
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antiinfection_7",
@@ -121,7 +127,8 @@
                  "selected":false
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "imagePath": "img/home/chuGrenoble.jpg"
       }
    ]
 }

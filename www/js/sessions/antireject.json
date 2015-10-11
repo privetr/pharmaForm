@@ -19,7 +19,8 @@
                  "name":"5 mg",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_2",
@@ -45,7 +46,8 @@
                  "name":"5 mg LP",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_3",
@@ -59,7 +61,8 @@
                  "id":"dosage_3_2",
                  "name":"1 mg"
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_4",
@@ -90,7 +93,8 @@
                  "name":"100 mg/mL",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_5",
@@ -111,7 +115,8 @@
                  "name":"1g/5mL",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_6",
@@ -127,7 +132,8 @@
                  "name":"360 mg",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_7",
@@ -163,7 +169,8 @@
                  "name":"0,75 mg",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_8",
@@ -179,7 +186,8 @@
                  "name":"50 mg",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_9",
@@ -200,7 +208,8 @@
                  "name":"20 mg",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       },
       {  
          "id":"antireject_10",
@@ -231,7 +240,8 @@
                  "name":"1 mg/mL",
                  "selected":false
               }
-          ]
+          ],
+          "imagePath": "img/home/chuGrenoble.jpg"
       }
    ]
 }

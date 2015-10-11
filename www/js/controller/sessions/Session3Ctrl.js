@@ -27,6 +27,8 @@
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
         
+        vm.listHours = [];
+        
 		/*
 		 * Get Patient
 		 */		
@@ -43,10 +45,92 @@
                         break;
                     }
                 }
+                console.log("Patient : ", vm.patient);
+                
+                // We have to get main informations for PDP
+                vm.getHoursMedecine();
             });
 		} 
         vm.getPatient();
         
+        /*
+         * Get Hours to take medicine
+         */
+        vm.getHoursMedecine = function() {
+            vm.listHours.listKey = [];
+            vm.listHours.values = [];
+            vm.listHours.listMedicine = [];
+            
+            // AntiRejects
+            var antiRejectHasHours = false;
+            var tmpFrequence = [];
+            
+            angular.forEach(vm.patient.listAntiReject, function(med) {
+                angular.forEach(med.antireject.frequence, function(frequence) {
+                    // We test if frequence is not yet in the array 
+                    if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
+                        antiRejectHasHours = true;
+                        
+                        vm.listHours.listKey.push(frequence.id);
+                        vm.listHours.values.push(frequence);
+                        tmpFrequence.push(frequence);
+                    }
+                })
+                if(antiRejectHasHours){
+                    vm.listHours.listMedicine.push(
+                        {
+                            "medicine": med,
+                            "frequence": tmpFrequence,
+                            "type": "antireject"
+                        }
+                    );
+                }
+                antiRejectHasHours = false;
+                tmpFrequence = []
+            });
+            
+            // AntiInfection
+            var antiInfectionHasHours = false;
+            tmpFrequence = [];
+            
+            angular.forEach(vm.patient.listAntiInfection, function(med) {
+                angular.forEach(med.antiinfection.frequence, function(frequence) {
+                    // We test if frequence is not yet in the array 
+                    if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
+                        antiInfectionHasHours = true;
+                        
+                        vm.listHours.listKey.push(frequence.id);
+                        vm.listHours.values.push(frequence);
+                        tmpFrequence.push(frequence);
+                    }
+                })
+                if(antiInfectionHasHours){
+                    vm.listHours.listMedicine.push(
+                        {
+                            "medicine": med,
+                            "frequence": tmpFrequence,
+                            "type": "antiinfection",
+                            "special": false
+                        }
+                    );
+                }
+                else{
+                    vm.listHours.listMedicine.push(
+                        {
+                            "medicine": med,
+                            "frequence": med.antiinfection.dosage,
+                            "type": "antiinfection",
+                            "special": true
+                        }
+                    );
+                }
+                antiInfectionHasHours = false;
+                tmpFrequence = []
+            });
+            console.log("Formatted medicine PDP : ", vm.listHours);
+                
+        }
+
         
         /*
     	 * Function to display a Pop-up to confirm we want to save the Session
