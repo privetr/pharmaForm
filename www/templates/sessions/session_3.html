@@ -57,16 +57,27 @@
                 </div>
                 
                 <ion-content class="has-header has-subheader has-footer">
+                    <div class="row" style="margin-top:50px">
+                        <em ng-repeat="value in vm.listHours.listMedicine">
+                            <em ng-if="value.type === 'antireject'">
+                                <img style="height: 50px; z-index:100" src="{{value.medicine.antireject.medicine.imagePath}}"
+                                     data-drag="true" jqyoui-draggable>
+                            </em>
+                            <em ng-if="value.type === 'antiinfection'">
+                                <img style="height: 50px; z-index:100" src="{{value.medicine.antiinfection.medicine.imagePath}}"
+                                     data-drag="true" jqyoui-draggable>
+                            </em>
+                        </em>
+                    </div>
                     
-                    <ul class="list"  style="margin-top:50px">
-                        <li class="item" ng-repeat="value in vm.listHours.listMedicine">
-                            <div class="col-20 item-text-wrap">
-                                <em ng-if="value.type === 'antireject'">{{value.medicine.antireject.medicine.name}}</em>
-                                <em ng-if="value.type === 'antiinfection'">{{value.medicine.antiinfection.medicine.name}}</em>
-                            </div>
-                            
-                        </li>
-                    </ul>
+                    <div class="row item" ng-repeat="value in vm.listHours.listMedicine" 
+                         style="padding-top:20px; padding-bottom:50px; z-index:1;">
+                        <div class="col-20 item-text-wrap">
+                            <em ng-if="value.type === 'antireject'">{{value.medicine.antireject.medicine.name}}</em>
+                            <em ng-if="value.type === 'antiinfection'">{{value.medicine.antiinfection.medicine.name}}</em>
+                        </div>
+
+                    </div>
                 </ion-content>
             </ion-view>
         </ion-nav-view>

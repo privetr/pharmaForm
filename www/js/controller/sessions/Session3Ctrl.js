@@ -64,9 +64,10 @@
             // AntiRejects
             var antiRejectHasHours = false;
             var tmpFrequence = [];
+            var tmpDosage = []
             
-            angular.forEach(vm.patient.listAntiReject, function(med) {
-                angular.forEach(med.antireject.frequence, function(frequence) {
+            angular.forEach(vm.patient.listAntiReject, function(med) {  // Loop medicine
+                angular.forEach(med.antireject.frequence, function(frequence) {     // Loop frequence
                     // We test if frequence is not yet in the array 
                     if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
                         antiRejectHasHours = true;
@@ -76,25 +77,37 @@
                         tmpFrequence.push(frequence);
                     }
                 })
+                
+                // We have to look for dosages
+                angular.forEach(med.antireject.dosage, function(dosage) {     // Loop dosage
+                    if(dosage.selected){
+                        tmpDosage.push(dosage);
+                    }
+                })
+                
                 if(antiRejectHasHours){
                     vm.listHours.listMedicine.push(
                         {
                             "medicine": med,
                             "frequence": tmpFrequence,
-                            "type": "antireject"
+                            "type": "antireject",
+                            "dosage": tmpDosage,
+                            "special": false
                         }
                     );
                 }
                 antiRejectHasHours = false;
                 tmpFrequence = []
+                tmpDosage = []
             });
             
             // AntiInfection
             var antiInfectionHasHours = false;
             tmpFrequence = [];
+            tmpDosage = [];
             
-            angular.forEach(vm.patient.listAntiInfection, function(med) {
-                angular.forEach(med.antiinfection.frequence, function(frequence) {
+            angular.forEach(vm.patient.listAntiInfection, function(med) {   // Loop medicine
+                angular.forEach(med.antiinfection.frequence, function(frequence) {  // Loop frequence
                     // We test if frequence is not yet in the array 
                     if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
                         antiInfectionHasHours = true;
@@ -104,13 +117,22 @@
                         tmpFrequence.push(frequence);
                     }
                 })
+                
+                // We have to look for dosages
+                angular.forEach(med.antiinfection.dosage, function(dosage) {     // Loop dosage
+                    if(dosage.selected){
+                        tmpDosage.push(dosage);
+                    }
+                })
+                
                 if(antiInfectionHasHours){
                     vm.listHours.listMedicine.push(
                         {
                             "medicine": med,
                             "frequence": tmpFrequence,
                             "type": "antiinfection",
-                            "special": false
+                            "special": false,
+                            "dosage": tmpDosage
                         }
                     );
                 }
@@ -120,12 +142,14 @@
                             "medicine": med,
                             "frequence": med.antiinfection.dosage,
                             "type": "antiinfection",
-                            "special": true
+                            "special": true,
+                            "dosage": tmpDosage
                         }
                     );
                 }
                 antiInfectionHasHours = false;
-                tmpFrequence = []
+                tmpFrequence = [];
+                tmpDosage = [];
             });
             console.log("Formatted medicine PDP : ", vm.listHours);
                 
