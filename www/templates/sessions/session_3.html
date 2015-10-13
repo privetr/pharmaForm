@@ -57,11 +57,12 @@
                 </div>
                 
                 <ion-content class="has-header has-subheader has-footer">
-                    <div class="row" style="margin-top:50px">
+                    <div class="row" style="margin-top:50px" data-drop="true">
                         <em ng-repeat="value in vm.listHours.listMedicine">
                             <em ng-if="value.type === 'antireject'">
                                 <img style="height: 50px; z-index:100" src="{{value.medicine.antireject.medicine.imagePath}}"
-                                     data-drag="true" jqyoui-draggable>
+                                     data-drag="true" jqyoui-draggable="{animate:true}" 
+                                     ng-model="value.medicine.antireject.medicine.imagePath" jqyoui-options="{revert: 'invalid'}">
                             </em>
                             <em ng-if="value.type === 'antiinfection'">
                                 <img style="height: 50px; z-index:100" src="{{value.medicine.antiinfection.medicine.imagePath}}"
@@ -70,11 +71,19 @@
                         </em>
                     </div>
                     
-                    <div class="row item" ng-repeat="value in vm.listHours.listMedicine" 
-                         style="padding-top:20px; padding-bottom:50px; z-index:1;">
-                        <div class="col-20 item-text-wrap">
-                            <em ng-if="value.type === 'antireject'">{{value.medicine.antireject.medicine.name}}</em>
-                            <em ng-if="value.type === 'antiinfection'">{{value.medicine.antiinfection.medicine.name}}</em>
+                    <div class="item" ng-repeat="value in vm.listHours.listMedicine" 
+                         style="padding-top:20px; z-index:1;">
+                        <div class="row">
+                            <div class="col-20 item-text-wrap">
+                                <em ng-if="value.type === 'antireject'">{{value.medicine.antireject.medicine.name}}</em>
+                                <em ng-if="value.type === 'antiinfection'">{{value.medicine.antiinfection.medicine.name}}</em>
+                            </div>
+                        </div>
+                        
+                        <div class="row" style="height:80px;"
+                             data-drop="true" jqyoui-droppable data-jqyoui-options 
+                             ng-model="value.medicine.antireject.medicine.imagePath">
+                        
                         </div>
 
                     </div>
