@@ -27,7 +27,7 @@
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
         
-        vm.listHours = [];
+        vm.listHours = {};
         
 		/*
 		 * Get Patient
@@ -92,7 +92,8 @@
                             "frequence": tmpFrequence,
                             "type": "antireject",
                             "dosage": tmpDosage,
-                            "special": false
+                            "special": false,
+                            "listHours": vm.listHours.values
                         }
                     );
                 }
@@ -132,7 +133,8 @@
                             "frequence": tmpFrequence,
                             "type": "antiinfection",
                             "special": false,
-                            "dosage": tmpDosage
+                            "dosage": tmpDosage,
+                            "listHours": vm.listHours.values
                         }
                     );
                 }
@@ -180,6 +182,27 @@
             });
      	};
         
+        /*
+    	 * Function to display a Pop-up to confirm we want to save the Session
+    	 */
+    	vm.answerPatientFrequenceChange = function(frequence, med, index) {
+            console.log(frequence, med);
+            //med.responseAnswer[index] = true;
+            frequence.class = 1;
+            
+            var tmpBool = false;
+            angular.forEach(med.frequence, function(f) {
+                if(f.id === frequence.id){
+                    tmpBool = true;
+                }
+            });
+            if(tmpBool){
+                med.listHours[index].class = 1;
+            }
+            else{
+                med.listHours[index].class = -1;
+            }
+        }
         
         /*
 		 * SAVE SESSION

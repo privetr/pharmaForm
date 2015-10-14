@@ -38,6 +38,7 @@
                             <div class="row">
                                 <div class="col-50" id="drag_1">
                                     http://codef0rmer.github.io/angular-dragdrop/#/filter
+                                    http://angular-dragdrop.github.io/angular-dragdrop/
                                     <img style="height: 50px;" src="img/home/chuGrenoble.jpg" data-drag="true" jqyoui-draggable>
                                 </div>
                                 <div class="col-50" id="id_1">
@@ -49,12 +50,12 @@
                     </ion-slide>
 
 			     </ion-slide-box>-->
-                <div class="row" style="position: absolute; top:100px; width:100%; z-index:100;">
+                <!--<div class="row" style="position: absolute; top:100px; width:100%; z-index:100;">
                     <div class="col-20"></div>
                     <div class="col-10" ng-repeat="value in vm.listHours.values">
                         {{value.name}}
                     </div>
-                </div>
+                </div>-->
                 
                 <ion-content class="has-header has-subheader has-footer">
                     <div class="row" style="margin-top:50px" data-drop="true">
@@ -71,19 +72,40 @@
                         </em>
                     </div>
                     
-                    <div class="item" ng-repeat="value in vm.listHours.listMedicine" 
+                    <div class="item" ng-repeat="med in vm.listHours.listMedicine" 
                          style="padding-top:20px; z-index:1;">
                         <div class="row">
-                            <div class="col-20 item-text-wrap">
-                                <em ng-if="value.type === 'antireject'">{{value.medicine.antireject.medicine.name}}</em>
-                                <em ng-if="value.type === 'antiinfection'">{{value.medicine.antiinfection.medicine.name}}</em>
+                            <div class="col-20"></div>
+                            <div class="col-10" ng-repeat="hours in med.listHours" ng-if="!med.special">
+                                {{hours.name}}
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-20 item-text-wrap" style="margin-left:-10px">
+                                <em ng-if="med.type === 'antireject'">{{med.medicine.antireject.medicine.name}}</em>
+                                <em ng-if="med.type === 'antiinfection'">{{med.medicine.antiinfection.medicine.name}}</em>
+                            </div>
+                            <div class="col-10" ng-repeat="frequence in vm.listHours.values" ng-if="!med.special">
+                                <li class="item item-checkbox">
+                                    <label class="checkbox" 
+                                           ng-class="{ 'checkbox-assertive': med.listHours[$index].class === -1,
+                                                     'checkbox-balanced': med.listHours[$index].class === 1
+                                                     }">
+                                        <input type="checkbox" ng-model="med.listHours[$index].answerPatient"
+                                               ng-change="vm.answerPatientFrequenceChange(frequence, med, $index)">
+                                    </label>
+                                </li>
+                                
+                            </div>
+                            {{med.listHours[0]}}
                         </div>
                         
                         <div class="row" style="height:80px;"
                              data-drop="true" jqyoui-droppable data-jqyoui-options 
-                             ng-model="value.medicine.antireject.medicine.imagePath">
-                        
+                             ng-model="med.medicine.antireject.medicine.imagePath">
+                                <img style="height: 50px; z-index:100" src="{{med.medicine.antireject.medicine.imagePath}}"
+                                     data-drag="true" jqyoui-draggable="{animate:true}" 
+                                     ng-model="med.medicine.antireject.medicine.imagePath" jqyoui-options="{revert: 'invalid'}">
                         </div>
 
                     </div>
