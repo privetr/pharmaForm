@@ -58,11 +58,12 @@
                 </div>-->
                 
                 <ion-content class="has-header has-subheader has-footer">
-                    <div class="row" style="margin-top:50px" data-drop="true">
+                    <div class="row" data-drop="true">
                         <em ng-repeat="value in vm.listHours.listMedicine">
                             <em ng-if="value.type === 'antireject'">
                                 <img style="height: 50px; z-index:100" src="{{value.medicine.antireject.medicine.imagePath}}"
                                      data-drag="true" jqyoui-draggable="{animate:true}" 
+                                     name="{{value.medicine.antireject.medicine.imagePath}}"
                                      ng-model="value.medicine.antireject.medicine.imagePath" jqyoui-options="{revert: 'invalid'}">
                             </em>
                             <em ng-if="value.type === 'antiinfection'">
@@ -72,7 +73,7 @@
                         </em>
                     </div>
                     
-                    <div class="item" ng-repeat="med in vm.listHours.listMedicine" 
+                    <div class="item" ng-repeat="med in vm.listHours.listMedicine" ng-init="medIndex = $index" 
                          style="padding-top:20px; z-index:1;">
                         <div class="row">
                             <div class="col-20"></div>
@@ -85,27 +86,38 @@
                                 <em ng-if="med.type === 'antireject'">{{med.medicine.antireject.medicine.name}}</em>
                                 <em ng-if="med.type === 'antiinfection'">{{med.medicine.antiinfection.medicine.name}}</em>
                             </div>
-                            <div class="col-10" ng-repeat="frequence in vm.listHours.values" ng-if="!med.special">
+                            <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index" >
                                 <li class="item item-checkbox">
                                     <label class="checkbox" 
-                                           ng-class="{ 'checkbox-assertive': med.listHours[$index].class === -1,
-                                                     'checkbox-balanced': med.listHours[$index].class === 1
+                                           ng-class="{ 'checkbox-assertive': frequence.class === -1,
+                                                     'checkbox-balanced': frequence.class === 1
                                                      }">
-                                        <input type="checkbox" ng-model="med.listHours[$index].answerPatient"
-                                               ng-change="vm.answerPatientFrequenceChange(frequence, med, $index)">
+                                        <input type="checkbox" name="checkbox-{{medIndex}}-{{medFrequence}}"
+                                               ng-model="frequence.answerPatient"
+                                               ng-change="vm.answerPatientFrequenceChange(frequence, medIndex, medFrequence)"
+                                               >
                                     </label>
                                 </li>
-                                
                             </div>
-                            {{med.listHours[0]}}
+                        </div>
+                        
+                        <div class="col">
+                            <label class="item item-input">
+                                <input type="text" ng-model="med.indication" placeholder="Indication">
+                            </label>
+                        </div>
+                        
+                        <div class="col">
+                            <label class="item item-input">
+                                <input type="text" ng-model="med.comment" placeholder="Commentaire">
+                            </label>
                         </div>
                         
                         <div class="row" style="height:80px;"
-                             data-drop="true" jqyoui-droppable data-jqyoui-options 
-                             ng-model="med.medicine.antireject.medicine.imagePath">
-                                <img style="height: 50px; z-index:100" src="{{med.medicine.antireject.medicine.imagePath}}"
-                                     data-drag="true" jqyoui-draggable="{animate:true}" 
-                                     ng-model="med.medicine.antireject.medicine.imagePath" jqyoui-options="{revert: 'invalid'}">
+                             data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback'}"
+                             data-jqyoui-options 
+                             >
+                            
                         </div>
 
                     </div>

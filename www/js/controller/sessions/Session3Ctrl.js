@@ -65,11 +65,12 @@
             var antiRejectHasHours = false;
             var tmpFrequence = [];
             var tmpDosage = []
-            
+                        
             angular.forEach(vm.patient.listAntiReject, function(med) {  // Loop medicine
                 angular.forEach(med.antireject.frequence, function(frequence) {     // Loop frequence
                     // We test if frequence is not yet in the array 
                     if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
+                        console.log("1");
                         antiRejectHasHours = true;
                         
                         vm.listHours.listKey.push(frequence.id);
@@ -93,14 +94,19 @@
                             "type": "antireject",
                             "dosage": tmpDosage,
                             "special": false,
-                            "listHours": vm.listHours.values
+                            "listHours": [],
+                            "indication": "",
+                            "comment": ""
                         }
                     );
                 }
+                
                 antiRejectHasHours = false;
                 tmpFrequence = []
                 tmpDosage = []
             });
+            
+            var numMed = 0;
             
             // AntiInfection
             var antiInfectionHasHours = false;
@@ -134,9 +140,12 @@
                             "type": "antiinfection",
                             "special": false,
                             "dosage": tmpDosage,
-                            "listHours": vm.listHours.values
+                            "listHours": [], 
+                            "indication": "",
+                            "comment": ""
                         }
                     );
+                    
                 }
                 else{
                     vm.listHours.listMedicine.push(
@@ -145,7 +154,9 @@
                             "frequence": med.antiinfection.dosage,
                             "type": "antiinfection",
                             "special": true,
-                            "dosage": tmpDosage
+                            "dosage": tmpDosage,
+                            "indication": "",
+                            "comment": ""
                         }
                     );
                 }
@@ -153,6 +164,26 @@
                 tmpFrequence = [];
                 tmpDosage = [];
             });
+            
+            // In the end we add frequences for each medicine
+            // http://underscorejs.org/#sortBy
+            vm.listHours.values = _.sortBy(vm.listHours.values, 'name');
+            
+            angular.forEach(vm.listHours.listMedicine, function(med) {  // Loop frequences
+                angular.forEach(vm.listHours.values, function(frequence) {     // Loop frequence
+                    if(med.listHours){
+                        med.listHours.push(
+                            {
+                                id: frequence.id,
+                                name: frequence.name,
+                                class: 0,
+                                answerPatient: false
+                            }
+                        )
+                    }
+                })
+            });
+            
             console.log("Formatted medicine PDP : ", vm.listHours);
                 
         }
@@ -185,24 +216,33 @@
         /*
     	 * Function to display a Pop-up to confirm we want to save the Session
     	 */
-    	vm.answerPatientFrequenceChange = function(frequence, med, index) {
-            console.log(frequence, med);
-            //med.responseAnswer[index] = true;
-            frequence.class = 1;
-            
+    	vm.answerPatientFrequenceChange = function(frequence, indexMed, indexFreq) {
+            console.log(frequence, indexMed, indexFreq);
+
             var tmpBool = false;
-            angular.forEach(med.frequence, function(f) {
+            angular.forEach(vm.listHours.listMedicine[indexMed].frequence, function(f) {
                 if(f.id === frequence.id){
                     tmpBool = true;
                 }
             });
-            if(tmpBool){
-                med.listHours[index].class = 1;
+            
+            if(!vm.listHours.listMedicine[indexMed].listHours[indexFreq].answerPatient) {   // If we unchecked the checkbox
+                 vm.listHours.listMedicine[indexMed].listHours[indexFreq].class = 0;
             }
-            else{
-                med.listHours[index].class = -1;
+            else if(tmpBool) {   // Checkbox checked, right answer
+                vm.listHours.listMedicine[indexMed].listHours[indexFreq].class = 1;
             }
+            else {   // Checkbox checked, wrong answer
+                vm.listHours.listMedicine[indexMed].listHours[indexFreq].class = -1;
+            }
+            
+             console.log("Formatted medicine PDP : ", vm.listHours);
         }
+        
+        $scope.dropCallback = function(event, ui) {
+          console.log('hey, you dumped me :-(', ui.helper[0].name);
+        };
+        
         
         /*
 		 * SAVE SESSION
