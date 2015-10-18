@@ -7733,15 +7733,6 @@ a.button {
 .white {
   color: #fff; }
 
-.green-ok {
-  color: #CCDC00; }
-
-.orange-nok {
-  color: #FFB612; }
-
-.red-ko {
-  color: #E05206; }
-
 /* POLICIES */
 body, .ionic-body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
@@ -7919,3 +7910,10 @@ Sliders
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+
+/* IMAGES borders */
+.img-wrong {
+  border: 1px solid #ef473a; }
+
+.img-right {
+  border: 1px solid #33cd5f; }

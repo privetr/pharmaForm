@@ -12,10 +12,10 @@
 	.controller('ListPatientsCtrl', ListPatientsCtrl);
 	
 	ListPatientsCtrl.$inject = ['$state', '$scope',
-                                'pfLocalForageService', 'pfUtilsService'];
+                                'pfLocalForageService', 'pfUtilsService', '$ionicPopup', '$localForage'];
 
 	/* @ngInject */
-	function ListPatientsCtrl($state, $scope, pfLocalForageService, pfUtilsService) {
+	function ListPatientsCtrl($state, $scope, pfLocalForageService, pfUtilsService, $ionicPopup, $localForage) {
 
 		var vm = this;
         
@@ -35,6 +35,7 @@
 			vm.listPatients = pfUtilsService.transformationToArray(listPatients);
 			vm.nbPatients = vm.listPatients.length;
 			console.log("Nombre de patients : " + vm.nbPatients);
+            console.log("Liste patients : ", vm.listPatients);
 		});
         
         vm.formatDate = function(input) {
@@ -43,6 +44,42 @@
 			return input.substring(8,10) + "/" + input.substring(5,7) + "/" + input.substring(0,4) + " " + input.substring(11,16);
 		}
         
+        vm.deletePatient = function(patientToDelete) {
+            var idToDelete = 0;
+            
+            var myPopup = $ionicPopup.show ({
+                template: '<em class="item-center item-text-wrap">Etes-vous sûr de vouloir supprimer définitivement le patient ?</em>',
+                title: 'Supprimer ' + patientToDelete.patient.firstname + " " + patientToDelete.patient.lastname + " ?",
+                buttons: [
+                      {
+                          text: 'Annuler',
+                          type: 'button-clear button-stable'
+                      },
+                      {
+                          text: '<b>Continuer</b>',
+                          type: 'button-energized button-clear',
+                          onTap: function(e) {
+                              // We search for the patient to delete
+                              for(var i=0; i < vm.listPatients.length; i++){ // Loop patient
+                                    if(vm.listPatients[i].patient.id === patientToDelete.patient.id){
+                                        console.log(vm.listPatients[i].patient.id, patientToDelete.patient.id);
+                                        break;
+                                    }
+                                    idToDelete ++;
+                              }
+
+                              vm.listPatients.splice(idToDelete, 1);
+                              
+                              $localForage.setItem('listPatients', vm.listPatients)
+                              .then(function() {
+                                    pfUtilsService.showAlert('Suppression réussie', 'Le patient a été supprimé');
+                              })
+                          }
+                      }
+                ]
+            });
+            
+		} 
 	}
 
 })();

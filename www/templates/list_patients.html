@@ -59,7 +59,7 @@
 
                     <ion-list>
                         <div class="list list-inset">
-                            <ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse" 
+                            <ion-item ng-repeat="object in vm.listPatients | filter: query | orderBy:predicate:reverse"
                             class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
                             ui-sref='view_patient ( {patientId: object.patient.guid} )'
                             >			  
@@ -70,8 +70,11 @@
                                 <p><color class="maincolor" style="padding-right:20px"><b>Prénom</b></color> {{object.patient.firstname}}</p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Date</b></color> 
                                     {{object.patient.birthdate | date : 'dd/MM/yyyy'}}</p>
-                             </ion-item>
-                         </div>
+                                
+                                <ion-option-button class="button-assertive"
+                                                   ng-click="vm.deletePatient(object);"> Supprimer</ion-option-button>
+                            </ion-item>
+                        </div>
                     </ion-list> 
 
                 </ion-content>

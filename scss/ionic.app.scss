@@ -32,15 +32,13 @@ $secondaryColor : #009688;
 $greyColor : #616161;
 $blackColor : #000000;
 $whiteColor : #fff;
-$greenOkColor : #CCDC00;
-$redKoColor : #E05206;
-$orangeNokColor : #FFB612;
 
 /* Ionic colors */
 $energizedColor : #ffc900;
 $assertiveColor : #ef473a;
 $darkColor : #444;
 $positiveColor : #387ef5;
+$balancedColor : #33cd5f;
 
 .background-maincolor{
 	background-color: $mainColor;
@@ -79,16 +77,6 @@ $positiveColor : #387ef5;
 
 .white{
 	color: $whiteColor;
-}
-
-.green-ok{
-	color: $greenOkColor;
-}
-.orange-nok{
-	color: $orangeNokColor;
-}
-.red-ko{
-	color: $redKoColor;
 }
 
 /* POLICIES */
@@ -291,6 +279,14 @@ Sliders
   	-webkit-align-items: center;
  	-ms-flex-align: center;
   	align-items: center;
+}
+
+/* IMAGES borders */
+.img-wrong { 
+   border:1px solid $assertiveColor;
+}
+.img-right { 
+   border:1px solid $balancedColor;
 }
 
 

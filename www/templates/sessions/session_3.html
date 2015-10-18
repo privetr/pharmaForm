@@ -59,16 +59,13 @@
                 
                 <ion-content class="has-header has-subheader has-footer">
                     <div class="row" data-drop="true">
-                        <em ng-repeat="value in vm.listHours.listMedicine">
-                            <em ng-if="value.type === 'antireject'">
-                                <img style="height: 50px; z-index:100" src="{{value.medicine.antireject.medicine.imagePath}}"
+                        <em ng-repeat="medicine in vm.listHours.listMedicine" ng-init="medIndex = $index">
+                            <em ng-repeat="dosage in medicine.dosage" ng-init="imageIndex = $index">
+                                <img style="height: 50px; z-index:100" src="{{dosage.imagePath}}"
                                      data-drag="true" jqyoui-draggable="{animate:true}" 
-                                     name="{{value.medicine.antireject.medicine.imagePath}}"
-                                     ng-model="value.medicine.antireject.medicine.imagePath" jqyoui-options="{revert: 'invalid'}">
-                            </em>
-                            <em ng-if="value.type === 'antiinfection'">
-                                <img style="height: 50px; z-index:100" src="{{value.medicine.antiinfection.medicine.imagePath}}"
-                                     data-drag="true" jqyoui-draggable>
+                                     name="{{dosage.imagePath}}"
+                                     id="img-{{medIndex}}-{{imageIndex}}"
+                                     ng-model="dosage.imagePath" >
                             </em>
                         </em>
                     </div>
@@ -113,12 +110,24 @@
                             </label>
                         </div>
                         
-                        <div class="row" style="height:80px;"
-                             data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback'}"
-                             data-jqyoui-options 
-                             >
-                            
-                        </div>
+                        <em ng-if="med.type === 'antireject'">
+                            <div class="row" style="height:80px;"
+                                 data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback(med)'}" 
+                                 name="dropzone-{{med.medicine.antireject.medicine.name}}"
+                                 data-jqyoui-options 
+                                 >
+
+                            </div>
+                        </em>
+                        <em ng-if="med.type === 'antiinfection'">
+                            <div class="row" style="height:80px;"
+                                 data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback(med)'}" 
+                                 name="dropzone-{{med.medicine.antiinfection.medicine.name}}"
+                                 data-jqyoui-options 
+                                 >
+
+                            </div>
+                        </em>
 
                     </div>
                 </ion-content>

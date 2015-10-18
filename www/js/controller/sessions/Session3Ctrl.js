@@ -70,7 +70,6 @@
                 angular.forEach(med.antireject.frequence, function(frequence) {     // Loop frequence
                     // We test if frequence is not yet in the array 
                     if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
-                        console.log("1");
                         antiRejectHasHours = true;
                         
                         vm.listHours.listKey.push(frequence.id);
@@ -239,8 +238,28 @@
              console.log("Formatted medicine PDP : ", vm.listHours);
         }
         
-        $scope.dropCallback = function(event, ui) {
-          console.log('hey, you dumped me :-(', ui.helper[0].name);
+        $scope.dropCallback = function(event, ui, med) {
+            console.log('hey, you dumped me :-(', ui.helper[0].name);
+            console.log('hey, you dumped me :-(', med);
+            var rightAnswer = false;
+            
+            // We have to try if the image dropped corresponds to the medicine
+            for(var i=0; i < med.dosage.length; i++){
+                
+                if(med.dosage[i].imagePath === ui.helper[0].name){
+                    rightAnswer = true;
+                    break;
+                }
+            }
+            console.log(rightAnswer);
+            if(rightAnswer){
+                $( '#' + ui.helper[0].id ).removeClass( 'img-wrong' );
+                $( '#' + ui.helper[0].id ).addClass( 'img-right' );
+            }
+            else{
+                $( '#' + ui.helper[0].id ).removeClass( 'img-right' );
+                $( '#' + ui.helper[0].id ).addClass( 'img-wrong' );
+            }
         };
         
         

@@ -7,16 +7,17 @@
               {  
                  "id":"dosage_1_1",
                  "name":"100 mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_1_2",
                  "name":"40 mg/mL",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               }
           ],
-          "specialfrequence":false,
-          "imagePath": "img/home/chuGrenoble.jpg"
+          "specialfrequence":false
       },
       {  
          "id":"antiinfection_2",
@@ -25,21 +26,23 @@
               {  
                  "id":"dosage_2_1",
                  "name":"50 mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_2_2",
                  "name":"200 mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_2_3",
                  "name":"40 mg/ml",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               }
           ],
-          "specialfrequence":false,
-          "imagePath": "img/home/chuGrenoble.jpg"
+          "specialfrequence":false
       },
       {  
          "id":"antiinfection_3",
@@ -49,21 +52,21 @@
                  "id":"dosage_3_1",
                  "name":"400mg-80mg",
                  "selected":false,
-                 "choicedays":""
+                 "choicedays":"",
+                 "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_3_2",
                  "name":"800mg-160 (FORTE)",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               }
           ],
           "specialfrequence":{
                   "value":"weekDay",
                   "name":"3 fois par semaine",
                   "selected": false
-          },
-          "imagePath": "img/home/chuGrenoble.jpg"
-          
+          }          
       },
       {  
          "id":"antiinfection_4",
@@ -72,15 +75,15 @@
               {  
                  "id":"dosage_4_1",
                  "name":"500mg-25mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               }
           ],
           "specialfrequence":{
                   "value":"weekDayOnly",
                   "name":"1 fois par semaine",
                   "selected": true
-          },
-          "imagePath": "img/home/chuGrenoble.jpg"
+          }
       },
       {  
          "id":"antiinfection_5",
@@ -89,15 +92,15 @@
               {  
                  "id":"dosage_5_1",
                  "name":"300 mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               }
           ],
           "specialfrequence":{
                   "value":"monthOnly",
                   "name":"1 fois par mois",
                   "selected": true
-          },
-          "imagePath": "img/home/chuGrenoble.jpg"
+          }
       },
       {  
          "id":"antiinfection_6",
@@ -106,7 +109,8 @@
               {  
                  "id":"dosage_6_1",
                  "name":"450 mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_6_2",
@@ -114,8 +118,7 @@
                  "selected":false
               }
           ],
-          "specialfrequence":false,
-          "imagePath": "img/home/chuGrenoble.jpg"
+          "specialfrequence":false
       },
       {  
          "id":"antiinfection_7",
@@ -124,11 +127,11 @@
               {  
                  "id":"dosage_7_1",
                  "name":"500 mg",
-                 "selected":false
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
               }
           ],
-          "specialfrequence":false,
-          "imagePath": "img/home/chuGrenoble.jpg"
+          "specialfrequence":false
       }
    ]
 }
