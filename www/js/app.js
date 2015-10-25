@@ -75,28 +75,28 @@
       
       // Seance_1
       .state('session_1', {
-        url: '/session_1/:patientId/:sessionId', 
+        url: '/session_1/:patientId/:sessionId/:alreadyDone', 
         templateUrl: 'templates/sessions/session_1.html',
         controller: 'Session1Ctrl as vm'
       })
       
       // Seance_2
       .state('session_2', {
-        url: '/session_2/:patientId/:sessionId', 
+        url: '/session_2/:patientId/:sessionId/:alreadyDone', 
         templateUrl: 'templates/sessions/session_2.html',
         controller: 'Session2Ctrl as vm'
       })
       
       // Seance_3
       .state('session_3', {
-        url: '/session_3/:patientId/:sessionId', 
+        url: '/session_3/:patientId/:sessionId/:alreadyDone', 
         templateUrl: 'templates/sessions/session_3.html',
         controller: 'Session3Ctrl as vm'
       })
       
       // Seance_4
       .state('session_4', {
-        url: '/session_4/:patientId/:sessionId', 
+        url: '/session_4/:patientId/:sessionId/:alreadyDone', 
         templateUrl: 'templates/sessions/session_4.html',
         controller: 'Session4Ctrl as vm'
       })

@@ -25,7 +25,33 @@
                 <ion-slide-box> 
 				
               
-                    <!-- Slide 1 -->
+                    <!-- Slide 0 -->
+                    <ion-slide>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="padding-top:30px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Dans un premier temps, nous allons aborder votre vie au quotidien.
+                                </h3>
+                            </div>
+                            <div class="row" style="padding-top:30px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Puis nous verrons ensemble la transplantation et son traitement.
+                                </h3>
+                            </div>
+                            
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- SLIDE 1 -->
                     <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
@@ -37,52 +63,81 @@
                                 </div>
                             </div>
                             
+                            <div class="row">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Aujourd’hui, à ce moment précis...
+                                </h3>
+                            </div>
                             <!-- rangeFeeling -->
                             <div class="row">
                                 <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
-                                    Comment vous-sentez vous aujourd’hui ?
+                                    Comment vous-sentez vous ?
                                 </h4>
                             </div>
-                            <div class="list col-80 col-offset-10">
-                                <div class="item range range-positive">
-                                    <i class="icon ion-sad-outline color-positive"></i>
-                                    <input type="range" ng-model="vm.rangeFeeling" name="rangeFeeling" min="0" max="100" value="50">
-                                    <i class="icon ion-happy-outline color-positive"></i>
+                            <div class="row">
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Pas bien du tout</em>
+                                </div>
+                                <div class="col col-60">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.rangeFeeling" name="rangeFeeling" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très bien</em>
                                 </div>
                             </div>
                             
                             <!-- rangeRespiratory -->
-                            <div class="row">
+                            <div class="row" style="margin-top:25px;">
                                 <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
-                                    Votre fonction respiratoire ?
+                                    Que pouvez-vous dire de votre fonction respiratoire ?
                                 </h4>
                             </div>
-                            <div class="list col-80 col-offset-10">
-                                <div class="item range range-assertive">
-                                    <i class="icon ion-sad-outline color-assertive"></i>
-                                    <input type="range" ng-model="vm.rangeRespiratory" name="rangeRespiratory" min="0" max="100" value="50">
-                                    <i class="icon ion-happy-outline color-assertive"></i>
+                            <div class="row">
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très mauvaise</em>
+                                </div>
+                                <div class="col col-60">
+                                    <div class="item range range-assertive">
+                                        <i class="icon ion-sad-outline color-assertive"></i>
+                                        <input type="range" ng-model="vm.rangeRespiratory" name="rangeRespiratory" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-assertive"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très bonne</em>
                                 </div>
                             </div>
                             
                             <!-- rangePain -->
-                            <div class="row">
+                            <div class="row" style="margin-top:25px;">
                                 <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
-                                    Et vos douleurs ?
+                                    Avez-vous des douleurs ?
                                 </h4>
                             </div>
-                            <div class="list col-80 col-offset-10">
-                                <div class="item range range-energized">
-                                    <i class="icon ion-sad-outline color-energized"></i>
-                                    <input type="range" ng-model="vm.rangePain" name="rangePain" min="0" max="100" value="50">
-                                    <i class="icon ion-happy-outline color-energized"></i>
+                            <div class="row">
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très bonne</em>
+                                </div>
+                                <div class="col col-60">
+                                    <div class="item range range-energized">
+                                        <i class="icon ion-sad-outline color-energized"></i>
+                                        <input type="range" ng-model="vm.rangePain" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-energized"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très bonne</em>
                                 </div>
                             </div>
                         </ion-content>
                     </ion-slide>
                     
-                    <!-- Slide 2 -->
-                    <ion-slide>
+                    <!-- SLIDE 2 -->
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -93,21 +148,262 @@
                                 </div>
                             </div>
                             
-                            <!-- whatKnowAboutGraft -->
                             <div class="row">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Dans votre vie quotidienne...
+                                </h3>
+                            </div>
+                            
+                            <!-- vm.rangeDayLife -->
+                            <div class="row" style="margin-top:25px;">
                                 <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Que savez-vous de la greffe ?
+                                    Comment cela se passe-t-il ?
                                 </h4>
                             </div>
-                            <label class="item item-input">
-                                <textarea name="whatKnowAboutGraft" ng-model="vm.whatKnowAboutGraft" 
-                                       placeholder="Ajouter du texte..."></textarea>
-                            </label> 
+                            <div class="row">
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Pas bien du tout</em>
+                                </div>
+                                <div class="col col-60">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.rangeDayLife" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très bien</em>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.selectFamilySituation -->
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Quelle est votre situation familiale ? </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <select class="ion-input-select-large"
+                                            ng-model="vm.selectFamilySituation" ng-init="vm.selectFamilySituation=vm.selectFamilySituation">   
+                                        <option>Seul(e)</option>
+                                        <option>Conjoint(e)</option>
+                                        <option>Colocation</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.doYouHaveChildren -->
+                            <div class="row">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Avez-vous des enfants ?
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.doYouHaveChildren" 
+                                           placeholder="Indiquer le prénom et la date de naissance"></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.doYouHaveGrandChildren -->
+                            <div class="row">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Avez-vous des petits-enfants ?
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.doYouHaveGrandChildren" 
+                                           placeholder="Indiquer le prénom et la date de naissance"></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.contraceptionTrueFalse &  vm.contraceptionWhich -->
+                            <div class="row">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Avez-vous un ou des moyens de contraception ? 
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.contraceptionTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.contraceptionTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                        <label class="item item-input">
+                                        <textarea ng-model="vm.contraceptionWhich" 
+                                               placeholder="Lesquels ?"></textarea>
+                                    </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.pregnantTrueFalse &  vm.pregnantWhen -->
+                            <div class="row">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Avez-vous un projet de grossesse ?  
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.pregnantTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.pregnantTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                        <label class="item item-input">
+                                        <textarea ng-model="vm.pregnantWhen" 
+                                               placeholder="Lesquels ?"></textarea>
+                                    </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.selectOwner -->
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">Êtes-vous ? </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <select class="ion-input-select-large"
+                                            ng-model="vm.selectOwner" ng-init="vm.selectOwner=vm.selectOwner">   
+                                        <option>Propriétaire </option>
+                                        <option>Locataire</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.typeHome -->
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">Vivez vous en ? </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <select class="ion-input-select-large"
+                                            ng-model="vm.typeHome" ng-init="vm.typeHome=vm.typeHome">   
+                                        <option>Appartement </option>
+                                        <option>Maison</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.homeAdapted &  vm.homeDescription -->
+                            <div class="row">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Votre logement est-il adapté ? 
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.homeAdapted">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.homeAdapted">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                        <label class="item item-input">
+                                        <textarea ng-model="vm.homeDescription" 
+                                               placeholder="Etage, m², ..."></textarea>
+                                    </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.doYouHavePets &  vm.whichPets -->
+                            <div class="row">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Avez-vous des animaux domestiques ?
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.doYouHavePets">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.doYouHavePets">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                        <label class="item item-input">
+                                        <textarea ng-model="vm.whichPets" 
+                                               placeholder="Lesquels ?"></textarea>
+                                    </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.doYouHaveAllocation -->
+                            <div class="row">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Avez-vous des allocations ?
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.doYouHaveAllocation" 
+                                           placeholder="Invalidité, ..."></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
                         </ion-content>
                     </ion-slide>
                     
                     <!-- Slide 3 -->
-                    <ion-slide>
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -118,32 +414,98 @@
                                 </div>
                             </div>
                             
-                            <!-- interestRegularControl -->
                             <div class="row">
-                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Quel est l’intérêt d’un suivi régulier ?
-                                </h4>
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Comment vous sentez-vous dans ces différents domaines ?
+                                </h3>
                             </div>
-                            <label class="item item-input">
-                                <textarea name="interestRegularControl" ng-model="vm.interestRegularControl" 
-                                       placeholder="Ajouter du texte..."></textarea>
-                            </label> 
                             
-                            <!-- possibleProblem -->
+                            <!-- vm.domaine1 -->
                             <div class="row">
-                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Quelles peuvent être les complications ?
-                                </h4>
+                                <div class="col-33 col-offset-33">
+                                    <img class="img-responsive" src="img/session1/domaine1.png">
+                                </div>
                             </div>
-                            <label class="item item-input">
-                                <textarea name="possibleProblem" ng-model="vm.possibleProblem" 
-                                       placeholder="Ajouter du texte..."></textarea>
-                            </label> 
+                            <div class="row">
+                                <div class="col col-50 col-offset-25">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.domaine1" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.domaine2 -->
+                            <div class="row" style="padding-top:30px">
+                                <div class="col-33 col-offset-33">
+                                    <img src="img/session1/domaine2.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-50 col-offset-25">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.domaine2" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- vm.domaine3 -->
+                            <div class="row"  style="padding-top:30px">
+                                <div class="col-33 col-offset-33">
+                                    <img src="img/session1/domaine3.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-50 col-offset-25">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.domaine3" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.domaine4 -->
+                            <div class="row" style="padding-top:30px">
+                                <div class="col-33 col-offset-33">
+                                    <img src="img/session1/domaine4.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-50 col-offset-25">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.domaine4" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.domaine5 -->
+                            <div class="row" style="padding-top:30px">
+                                <div class="col-33 col-offset-33">
+                                    <img src="img/session1/domaine5.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-50 col-offset-25">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.domaine5" name="rangePain" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </ion-content>
                     </ion-slide>
                         
-                    <!-- Slide 4 -->
-                    <ion-slide>
+                    <!-- SLIDE 4 -->
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -154,21 +516,109 @@
                                 </div>
                             </div>
                             
-                            <!-- whatIsReject -->
-                            <div class="row">
-                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Qu’est ce que le rejet ?
-                                </h4>
+                            <div class="row" style="padding-top:30px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    A propos de votre travail ou de vos études...
+                                </h3>
                             </div>
-                            <label class="item item-input">
-                                <textarea name="whatIsReject" ng-model="vm.whatIsReject" 
-                                       placeholder="Ajouter du texte..."></textarea>
-                            </label> 
+                            
+                            <!-- vm.howGoesWork -->
+                            <div class="row" style="padding-top:30px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Comment cela se passe t-il ?
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.howGoesWork" 
+                                           placeholder="Ajouter du texte ..."></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
+                             <!-- vm.workSituation -->
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">Votre situation actuelle </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <select class="ion-input-select-large"
+                                            ng-model="vm.workSituation" ng-init="vm.workSituation=vm.workSituation">   
+                                        <option>Arrêt de travail</option>
+                                        <option>En formation</option>
+                                        <option>Invalidité</option>
+                                        <option>Recherche d’emploi</option>
+                                        <option>Chômage</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.hourAmplitude -->
+                            <div class="row" style="padding-top:30px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Amplitude horaire
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.hourAmplitude" 
+                                           placeholder="Ajouter du texte ..."></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.typeHourWork -->
+                            <div class="row" style="padding-top:30px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Temps complet / temps partiel 
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.typeHourWork" 
+                                           placeholder="Ajouter du texte ..."></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.transportation -->
+                            <div class="row" style="padding-top:30px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Moyen de transport
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.transportation" 
+                                           placeholder="Ajouter du texte ..."></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.timeTransportation -->
+                            <div class="row" style="padding-top:30px;">
+                                <div class="col col-25 item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Durée moyenne de transport par jour 
+                                    </h4>
+                                </div>
+                                <div class="col col-75">
+                                    <label class="item item-input">
+                                    <textarea ng-model="vm.timeTransportation" 
+                                           placeholder="Ajouter du texte ..."></textarea>
+                                </label> 
+                                </div>
+                            </div>
+                            
                         </ion-content>
                     </ion-slide>
                     
-                    <!-- Slide 5 -->
-                    <ion-slide>
+                    <!-- SLIDE 5 -->
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -179,32 +629,116 @@
                                 </div>
                             </div>
                             
-                            <!-- whatSignReject -->
-                            <div class="row">
+                            <div class="row" style="padding-top:30px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    A propos de vos loisirs...
+                                </h3>
+                            </div>
+                            
+                            <!-- vm.freeTimeOccupation -->
+                            <div class="row" style="padding-top:30px;">
                                 <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Quels sont les signes d’appels du rejet ?
+                                    Que faites vous de votre temps libre ? Comment cela se passe t-il ?
                                 </h4>
                             </div>
                             <label class="item item-input">
-                                <textarea name="whatSignReject" ng-model="vm.whatSignReject" 
-                                       placeholder="Ajouter du texte..."></textarea>
+                                <textarea ng-model="vm.freeTimeOccupation" 
+                                       placeholder="Ajouter du texte ..."></textarea>
                             </label> 
                             
-                            <!-- howAvoidProblem -->
-                            <div class="row">
+                            <!-- vm.doYouDoSportTrueFalse &  vm.doYouDoSport -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Pratiquez-vous une activité physique ? 
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.doYouDoSportTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.doYouDoSportTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label class="item item-input">
+                                        <textarea ng-model="vm.doYouDoSport" 
+                                               placeholder="Lesquelles ?"></textarea>
+                                    </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.importanceSport -->
+                            <div class="row" style="padding-top:30px;">
                                 <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Comment éviter les complications ?
+                                    En quoi une activité physique est-elle importante, pour vous ?
                                 </h4>
                             </div>
                             <label class="item item-input">
-                                <textarea name="howAvoidProblem" ng-model="vm.howAvoidProblem" 
-                                       placeholder="Ajouter du texte..."></textarea>
+                                <textarea ng-model="vm.importanceSport" 
+                                       placeholder="Ajouter du texte ..."></textarea>
                             </label> 
+                            
+                            <!-- vm.doYouGoPartyTrueFalse &  vm.doYouGoParty -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Vous arrive-t-il de sortir avec vos amis ou vos collègues ?
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.doYouGoPartyTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.doYouGoPartyTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label class="item item-input">
+                                        <textarea ng-model="vm.doYouGoParty" 
+                                               placeholder="Ajouter du texte..."></textarea>
+                                    </label> 
+                                </div>
+                            </div>
+                            
+                            <!-- vm.whatDoYouWantToAchieve -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Qu’avez-vous envie d’entreprendre ou de réaliser ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea ng-model="vm.whatDoYouWantToAchieve" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label> 
+                            
                         </ion-content>
                     </ion-slide>
               
-                    <!-- Slide 6 -->
-                    <ion-slide>
+                    <!-- SLIDE 6 -->
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -214,23 +748,88 @@
                                     <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    En résumé, la greffe c’est... une balance !
-                                </h4>
-                            </div>
-                            <div class="row">
-                                <div class="col-33 col-offset-33">
-                                    <img class="img-responsive" src="img/home/chuGrenoble.jpg">
+                            
+                            <!-- vm.doYouSmoke -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Vous arrive-t-il de sortir avec vos amis ou vos collègues ?
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px; margin-top:20px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.doYouSmoke">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px; margin-top:20px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.doYouSmoke">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
+                            
+                            <!-- vm.passiveSmoke -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    D’après vous, quels sont les effets et risques du tabagisme passif et actif ?
+                                </h4>
+                            </div>
+                            <label class="item item-input">
+                                <textarea ng-model="vm.passiveSmoke" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.doYouDrink -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Vous arrive t-il de consommer de l’alcool ou d’en avoir envie ? 
+                                    </h4>
+                                </div>
+                                <div class="col" style="padding-left: 10px; margin-top:20px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.doYouDrink">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col" style="padding-left: 10px; margin-top:20px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.doYouDrink">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.effectDrink -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    D’après vous, quels sont les effets et risques de consommer de l’alcool ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.effectDrink" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
                             
                         </ion-content>
                     </ion-slide>
                             
                     <!-- Slide 7 -->
-                    <ion-slide>
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -240,18 +839,18 @@
                                     <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Que pensez-vous des médecines complémentaires homéo, phyto, acupuncture...?
-                                </h4>
+                            
+                            <div class="row" style="padding-top:30px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Maintenant, nous allons voir la transplantation et son traitement. 
+                                </h3>
                             </div>
                             
                         </ion-content>
                     </ion-slide>
                             
                     <!-- Slide 8 -->
-                    <ion-slide>
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -262,36 +861,83 @@
                                 </div>
                             </div>
                             
-                            <h3 class="maincolor" style="padding-left:10px; margin-top:0px;">
-                                Bravo, la séance est finie !
-                            </h3>
+                            <div class="row" style="padding-top:10px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    D'après vous...
+                                </h3>
+                            </div>
                             
-                            <!-- whatDidYouThink -->
-                            <div class="row">
+                            <!-- vm.whatIsTransplantation -->
+                            <div class="row" style="padding-top:20px;">
                                 <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Qu’en avez-vous pensé ?
+                                    C’est quoi la transplantation ?
                                 </h4>
                             </div>
-                            <label class="item item-input">
-                                <textarea name="whatDidYouThink" ng-model="vm.whatDidYouThink" 
-                                       placeholder="Ajouter du texte..."></textarea>
-                            </label> 
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.whatIsTransplantation" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
                             
-                            <!-- yourQuestions -->
-                            <div class="row">
+                            <!-- vm.howTalkTransplantationFriends -->
+                            <div class="row" style="padding-top:30px;">
                                 <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Avez-vous des questions ?
+                                    Comment parlez-vous de votre maladie à votre entourage ?
                                 </h4>
                             </div>
-                            <label class="item item-input">
-                                <textarea name="yourQuestions" ng-model="vm.yourQuestions" 
-                                       placeholder="Ajouter du texte..."></textarea>
-                            </label> 
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.howTalkTransplantationFriends" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.purposeRegularMedical -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quel est l’intérêt d’un suivi médical régulier ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.purposeRegularMedical" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.situationContactCenter -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quelles sont les situations qui vous amènent à contacter votre centre référent ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.situationContactCenter" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.complicationTransplantation -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quelles peuvent être les complications liées à la transplantation ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.complicationTransplantation" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.whatIsGraftReject -->
+                            <div class="row" style="padding-top:30px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    C’est quoi le rejet du greffon ? Quels en sont les signes ? Qu’est-ce qui l’induit ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.whatIsGraftReject" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+
                         </ion-content>
                     </ion-slide>
                     
                     <!-- Slide 9 -->
-                    <ion-slide>
+                    <ion-slide prevent-drag>
                         <ion-content class="has-header has-subheader has-footer">
                             <div class="row">
                                 <div class="col col-20 col-offset-20">
@@ -301,10 +947,361 @@
                                     <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
                                 </div>
                             </div>
+                            
+                            <div class="row" style="padding-top:10px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Déroulement d’une journée-type...
+                                </h3>
+                            </div>
+                            
+                            <!-- vm.organizationDay -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Racontez-moi la manière dont vous organisez votre journée et la 
+                                    prise de vos traitements par rapport à vos activités ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.organizationDay" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 10 -->
+                    <ion-slide prevent-drag>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="padding-top:10px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Dans votre vie quotidienne
+                                </h3>
+                            </div>
+                            
+                            <!-- vm.positiveElements & vm.negativeElements -->
+                            <div class="row" style="padding-top:20px;">
+                                <div class="col">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Quels sont les éléments plutôt positifs ?         
+                                    </h4>
+                                </div>
+                                <div class="col">
+                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                        Quels sont les éléments plutôt difficiles ?
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.positiveElements" 
+                                               placeholder="Ajouter du texte ..."></textarea>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.negativeElements" 
+                                               placeholder="Ajouter du texte ..."></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.someDifficultiesTreatment -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Certains patients ont des difficultés avec leur traitement : qu’en pensez-vous ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.someDifficultiesTreatment" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.whatIsGoodTakeTreatement -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Pour vous, que signifie « bien prendre son traitement » ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.whatIsGoodTakeTreatement" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.secondaryMedicine -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Que pensez-vous des médecines complémentaires : homéopathie, acupuncture, ostéopathie, phytothérapie, etc.?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.secondaryMedicine" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
 
-                            <h3 class="maincolor" style="padding-left:10px; margin-top:0px;">
-                                Bilan
-                            </h3>
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 11 -->
+                    <ion-slide prevent-drag>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.automedicationTrueFalse & vm.automedication -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Vous arrive t-il de prendre des médicaments en automédication, c’est-à-dire non prescrits ?
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.automedicationTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.automedicationTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col col-60">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.automedication" 
+                                               placeholder="Ajouter du texte ..."></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.otherDoctorTrueFalse & vm.otherDoctor -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Prenez-vous des médicaments prescrits par un autre médecin que celui référent de la transplantation ?
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.otherDoctorTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.otherDoctorTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col col-60">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.otherDoctor" 
+                                               placeholder="Ajouter du texte ..."></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.feelingNewTreatmentRange & vm.feelingNewTreatment -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Comment vivez-vous votre nouveau traitement ? 
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Pas bien du tout</em>
+                                </div>
+                                <div class="col">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.feelingNewTreatmentRange" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                                <div class="col color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Très bien</em>
+                                </div>
+                                <div class="col col-50">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.feelingNewTreatment" 
+                                               placeholder="Ajouter du texte ..."></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.whatIsBiggetProblemTreatment -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Qu’est-ce qui vous parait le plus contraignant dans ce traitement ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.whatIsBiggetProblemTreatment" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.risksMedicine -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Quels risques à long terme des médicaments percevez-vous ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.risksMedicine" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 12 -->
+                    <ion-slide prevent-drag>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.changeDecisionTeamRange -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Estimez-vous pouvoir discuter les décisions de l’équipe soignante ?
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Non, pas du tout</em>
+                                </div>
+                                <div class="col">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.changeDecisionTeamRange" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-20 color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Entièrement</em>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.libertyDecisionTeamRange & vm.libertyDecisionTeam -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Quel degré de liberté de décision vous autorisez-vous par rapport aux décisions de l’équipe soignante ?
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Aucun</em>
+                                </div>
+                                <div class="col">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.libertyDecisionTeamRange"min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                                <div class="col color-grey" style="padding-top:20px;">
+                                    <em class="item-center">Complet</em>
+                                </div>
+                                <div class="col col-50">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.libertyDecisionTeam" 
+                                               placeholder="Dans quel(s) domaine(s) ?"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- vm.uselessActs -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Parmi les actes que l’on vous demande de faire, y en a-t-il qui vous semble sans intérêt ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.uselessActs" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                            <!-- vm.fearSubjectsTeam -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Y a-t-il des sujets que vous n’osez pas aborder avec l’équipe ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.fearSubjectsTeam" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
+                            
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 13 -->
+                    <ion-slide prevent-drag>
+                        <ion-content class="has-header has-subheader has-footer">
+                            <div class="row">
+                                <div class="col col-20 col-offset-20">
+                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                </div>
+                                <div class="col col-20 col-offset-33">
+                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="padding-top:10px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    Merci d’avoir participé à ce questionnaire !
+                                </h3>
+                            </div>
+                            
+                            <div class="row" style="padding-top:30px;">
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    A partir de vos réponses, nous pouvons mieux définir vos besoins.
+                                </h3>
+                            </div>
                             
                         </ion-content>
                     </ion-slide>
