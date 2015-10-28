@@ -37,6 +37,98 @@
                                 </div>
                             </div>
                             
+                            <ion-list>
+                                <div class="list list-inset">
+                                    <ion-item ng-repeat="(key_question, question) in vm.listTrueFalseQuestions"
+                                              ng-init="questionIndex = $index"
+                                              class="item-text-wrap">
+                                        
+                                        <div class="row">
+                                            <div class="col col-40">
+                                                <em ng-class="{'color-balanced' : 
+                                                              vm.listTrueFalseQuestions[questionIndex].answerPatient === question.answer 
+                                                              && vm.displayAnswerTrueFalse === true,
+                                                              'color-assertive' : 
+                                                              vm.listTrueFalseQuestions[questionIndex].answerPatient !== question.answer 
+                                                              && vm.displayAnswerTrueFalse === true}">
+                                                    {{question.title}}
+                                                </em>
+                                            </div>
+
+                                            <!-- Answer True False -->
+                                            <div class="col col-20">
+                                                <label class="toggle toggle-energized">
+                                                    <input type="radio" value="true"
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].answerPatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                                <label class="toggle toggle-energized">
+                                                    <input type="radio" value="false" 
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].answerPatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            
+                                            <!-- confidence patient -->
+                                            <div class="col">
+                                                <label class="toggle toggle-royal">
+                                                    <input type="radio" value="1"
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].confidencePatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                                <label class="toggle toggle-royal">
+                                                    <input type="radio" value="2" 
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].confidencePatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                                <label class="toggle toggle-royal">
+                                                    <input type="radio" value="3" 
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].confidencePatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                                <label class="toggle toggle-royal">
+                                                    <input type="radio" value="4" 
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].confidencePatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                                <label class="toggle toggle-royal">
+                                                    <input type="radio" value="5" 
+                                                           ng-model="vm.listTrueFalseQuestions[questionIndex].confidencePatient">
+                                                    <div class="track">
+                                                        <div class="handle"></div>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        
+                                        
+                                        
+                                    </ion-item>
+                                </div>
+                            </ion-list>
+                            
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col">
+                                    <button class="button button-block button-energized icon-left" 
+                                            ng-click="vm.displayAnswerTrueFalse = !vm.displayAnswerTrueFalse">
+                                        <i class="icon ion-wand"></i> Afficher les réponses
+                                    </button>
+                                </div>
+                            </div>
+                            
                             
                         </ion-content>
                     </ion-slide>
@@ -52,6 +144,8 @@
                                     <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
                                 </div>
                             </div>
+                            
+                            
                             
                             
                         </ion-content>

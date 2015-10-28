@@ -12,11 +12,11 @@
 	.controller('AntiRejectPrescriptionCtrl', AntiRejectPrescriptionCtrl);
 	
 	AntiRejectPrescriptionCtrl.$inject = ['$state', '$scope', '$stateParams',
-                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage'];
+                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage', '$ionicScrollDelegate'];
 
 	/* @ngInject */
 	function AntiRejectPrescriptionCtrl($state, $scope, $stateParams, pfLocalForageService, 
-                                         pfUtilsService, pfLookUpService, $localForage) {
+                                         pfUtilsService, pfLookUpService, $localForage, $ionicScrollDelegate) {
 
 		var vm = this;
         
@@ -121,10 +121,12 @@
                 vm.getAntiRejectListFrequence();    // We reinitialize the list vm.antiRejectListFrequence
                 vm.getAntiRejectPrescription();     // We reinitialize the list vm.antiRejectPrescription
         	}
+            $ionicScrollDelegate.resize(); 
 		}
         
         vm.removeAntiReject = function(idToDelete) {
 			vm.listAntiReject.splice(idToDelete, 1);
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.editAntiReject = function(idToEdit, object) {
@@ -136,6 +138,7 @@
         	vm.newAntiReject = pfUtilsService.getIndexOf(vm.antiRejectPrescription, object.antireject.medicine.id, 'id').toString();
             vm.antiRejectPrescription[vm.newAntiReject].dosage = object.antireject.dosage;
             vm.antiRejectListFrequence = object.antireject.frequence;
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.reorderItem = function(antireject, fromIndex, toIndex) {

@@ -11,7 +11,8 @@
         	getSessions: getSessions,
             getAntiRejectPrescription: getAntiRejectPrescription,
             getAntiInfectionPrescription: getAntiInfectionPrescription,
-            getFrequence: getFrequence
+            getFrequence: getFrequence,
+            getTrueFalseQuestions: getTrueFalseQuestions
         };
         return service;
 
@@ -33,6 +34,11 @@
         // This function returns the frequence json file
         function getFrequence() {
             return $http.get('js/sessions/frequence.json');
+        }
+        
+        // This function returns the truefalse json file
+        function getTrueFalseQuestions() {
+            return $http.get('js/sessions/session4_truefalse.json');
         }
         
     }

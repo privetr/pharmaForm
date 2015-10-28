@@ -27,7 +27,7 @@
 		</div>
 			
         <ion-nav-view>
-            <ion-view  title="ETP Greffe Pulmonaire - Liste patients">
+            <ion-view  title="ETP Transplantation Pulmonaire - Liste patients">
 
                 <ion-content  class="has-header has-subheader has-footer">
 
@@ -74,14 +74,14 @@
                         </label>
 
                         <!-- graftdate -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de greffe</h4>
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de transplantation</h4>
                         <label class="item item-input">
                             <input type="date" ng-model="vm.graftdate" class="bold"
                                    ng-readonly="!vm.edition">
                         </label> 
 
                         <!-- graftType -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Type de greffe</h4>
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Type de transplantation</h4>
                         <select class="ion-input-select-large"	ng-options="id as grafttype for (id, grafttype) in vm.listGraftType"
                                 ng-model="vm.graftType" ng-init="vm.graftType=vm.graftType"
                                 ng-disabled="!vm.edition">         
@@ -98,7 +98,7 @@
                         </ul>
 
                         <!-- graftIndication -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la greffe</h4>
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la transplantation</h4>
                         <ul class="list" style="padding-top:10px;">
                             <li class="item item-checkbox" ng-repeat="graftindication in vm.listGraftIndication"  
                                 ng-if="graftindication.selected || vm.edition">

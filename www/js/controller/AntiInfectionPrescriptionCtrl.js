@@ -12,11 +12,11 @@
 	.controller('AntiInfectionPrescriptionCtrl', AntiInfectionPrescriptionCtrl);
 	
 	AntiInfectionPrescriptionCtrl.$inject = ['$state', '$scope', '$stateParams',
-                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage'];
+                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage', '$ionicScrollDelegate'];
 
 	/* @ngInject */
 	function AntiInfectionPrescriptionCtrl($state, $scope, $stateParams, pfLocalForageService, 
-                                         pfUtilsService, pfLookUpService, $localForage) {
+                                         pfUtilsService, pfLookUpService, $localForage, $ionicScrollDelegate) {
 
 		var vm = this;
         
@@ -122,10 +122,14 @@
                 vm.getAntiInfectionListFrequence();    // We reinitialize the list vm.antiInfectionListFrequence
                 vm.getAntiInfectionPrescription();     // We reinitialize the list vm.antiInfectionPrescription
         	}
+            
+            $ionicScrollDelegate.resize(); 
 		}
         
         vm.removeAntiInfection = function(idToDelete) {
 			vm.listAntiInfection.splice(idToDelete, 1);
+            
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.editAntiInfection = function(idToEdit, object) {
@@ -137,6 +141,8 @@
             vm.antiInfectionPrescription[vm.newAntiInfection].dosage = object.antiinfection.dosage;
             vm.antiInfectionListFrequence = object.antiinfection.frequence;
             vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence = object.antiinfection.specialfrequence;
+            
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.reorderItem = function(antiinfection, fromIndex, toIndex) {

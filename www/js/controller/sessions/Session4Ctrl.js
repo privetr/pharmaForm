@@ -28,6 +28,10 @@
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
         
+        vm.displayAnswerTrueFalse = false;
+        
+        vm.alreadyDone = $stateParams.alreadyDone;
+        
 		/*
 		 * Get Patient
 		 */		
@@ -41,12 +45,38 @@
                         vm.patient = vm.listPatients[i].patient;
                         vm.patient.id = $stateParams.patientId;
                         vm.patient.indexPatient = i;
+                        
+                        console.log('Patient : ', vm.patient);
+                        
+                        vm.getTrueFalseQuestion();
+                        
                         break;
                     }
                 }
             });
 		} 
         vm.getPatient();
+        
+         vm.getTrueFalseQuestion = function() {
+             
+            // We can display the session if it has already be done
+            if(vm.alreadyDone === '1'){
+                for (var i = 0 ; i < vm.patient.listSessionsAnswers.length ; i++) {
+                    if (vm.patient.listSessionsAnswers[i].id === $stateParams.sessionId) {
+                        vm.listTrueFalseQuestions = vm.patient.listSessionsAnswers[i].answer.listTrueFalseQuestions;
+                    }
+                }
+            }
+            else{
+                pfLookUpService.getTrueFalseQuestions()
+                .then(function (result) {
+                    vm.listTrueFalseQuestions = result.data.question; 
+                });
+            }
+             
+            vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
+            console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
+         }
         
         
         /*
@@ -84,7 +114,9 @@
             
             // we have to save all answers for Session 1
             vm.session.answer = {};
+            
             // Slide1
+            vm.session.answer.listTrueFalseQuestions = vm.listTrueFalseQuestions;
             
             
             // We save session

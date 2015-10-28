@@ -1,0 +1,139 @@
+{  
+   "question":[  
+      {  
+         "id":"truefalse_1",
+         "title":"Mon traitement antirejet, je le prendrai toute ma vie.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_2",
+         "title":"Une baisse du VEMS indique un bon état respiratoire.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_3",
+         "title":"Je peux rendre visite à ma famille à l’étranger, dès ma sortie d’hôpital.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_4",
+         "title":"Je ne peux pas manger certains aliments et doit prendre des précautions en choisissant et préparant mon alimentation.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_5",
+         "title":"Les traitements antirejet augmentent le risque de cancer de la peau.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_6",
+         "title":"Le tabac n’a pas d’effet néfaste sur le greffon.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_7",
+         "title":"Le risque d’aspergillose est peu important chez un patient transplanté.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_8",
+         "title":"Le dosage sanguin des immunosuppresseurs est nécessaire pour adapter la prescription des immunosuppresseurs.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_9",
+         "title":"Après la transplantation, il est conseillé de pratiquer un réentrainement à l’effort.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_10",
+         "title":"En cas de modification de l’état respiratoire, un patient transplanté peut se permettre d’attendre avant de consulter.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_11",
+         "title":"En cas de projet de grossesse, il est important d’en discuter avec le médecin référent.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_12",
+         "title":"Laver les fruits, légumes et herbes aromatiques, permet de réduire le risque infectieux chez le patient transplanté.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_13",
+         "title":"Un patient transplanté peut être présent lors de travaux de rénovation (tapisserie, plâtre, peinture,…).",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_14",
+         "title":"En cas d’oubli de prise des immunosuppresseurs, j’attends la prise suivante et double les doses.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_15",
+         "title":"Consommer de la viande ou des poissons crus ou peu cuit est conseillé chez un patient transplanté.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_16",
+         "title":"Je peux reprendre une activité sexuelle lors de mon retour à domicile.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_17",
+         "title":"L’hydratation quotidienne est importante.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_18",
+         "title":"Un patient transplanté peut prendre un médicament sans l’accord du centre de référence.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_19",
+         "title":"Un reflux gastro œsophagien peut abimer le greffon.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_20",
+         "title":"Un suivi régulier au centre de transplantation permet de dépister précocement un rejet de greffon.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_21",
+         "title":"Après plusieurs années de transplantation, les immunosuppresseurs peuvent être arrêtés.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_22",
+         "title":"La consommation de pamplemousse modifie l’efficacité du traitement antirejet.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_23",
+         "title":"Ce matin, j’ai une fibroscopie bronchique, l’infirmier m’a dit que je devais rester à jeun, donc je ne prends aucun de mes traitements.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_24",
+         "title":"Chez un patient transplanté, la charcuterie à la coupe est fortement déconseillée.",
+         "answer":"true"
+      },
+      {  
+         "id":"truefalse_25",
+         "title":"En cas d’essoufflement inhabituel, je peux me permettre d’attendre avant de consulter.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_26",
+         "title":"Les produits laitiers au lait cru sont conseillés chez un patient transplanté.",
+         "answer":"false"
+      },
+      {  
+         "id":"truefalse_27",
+         "title":"En prenant de façon irrégulière un traitement antirejet, le patient transplanté prend des risques pour sa santé et sa vie.",
+         "answer":"true"
+      }
+   ]
+}

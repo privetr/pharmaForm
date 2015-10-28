@@ -13,11 +13,11 @@
 	
 	ViewPatientCtrl.$inject = ['$state', '$scope',
                                'pfLocalForageService', 'pfUtilsService', '$stateParams',
-                               '$localForage'
+                               '$localForage', '$ionicScrollDelegate'
 		               ];
 
 	/* @ngInject */
-	function ViewPatientCtrl($state, $scope, pfLocalForageService, pfUtilsService, $stateParams, $localForage) {
+	function ViewPatientCtrl($state, $scope, pfLocalForageService, pfUtilsService, $stateParams, $localForage, $ionicScrollDelegate) {
 
 		var vm = this;        
         
@@ -161,10 +161,14 @@
                 // we remove content of input
                 vm.new_comment = undefined;
         	}
+            // We resize the scroll height to avoid problem of scroll list  : http://stackoverflow.com/questions/31295923/ionic-accordion-reflow
+            $ionicScrollDelegate.resize(); 
 		}
         
         vm.removeComment = function(idToDelete) {
 			vm.listComments.splice(idToDelete, 1);
+            // We resize the scroll height to avoid problem of scroll list  : http://stackoverflow.com/questions/31295923/ionic-accordion-reflow
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.editComment = function(idToEdit, comment) {
@@ -173,6 +177,9 @@
         	
         	// Then we set the input with these values
         	vm.new_comment = comment.text;
+            
+            // We resize the scroll height to avoid problem of scroll list  : http://stackoverflow.com/questions/31295923/ionic-accordion-reflow
+            $ionicScrollDelegate.resize();  
 		} 
         
         vm.reorderItem = function(comment, fromIndex, toIndex) {

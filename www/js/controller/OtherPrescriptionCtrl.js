@@ -12,10 +12,11 @@
 	.controller('OtherPrescriptionCtrl', OtherPrescriptionCtrl);
 	
 	OtherPrescriptionCtrl.$inject = ['$state', '$scope', '$stateParams',
-                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage'];
+                                'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', '$localForage', '$ionicScrollDelegate'];
 
 	/* @ngInject */
-	function OtherPrescriptionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService, $localForage) {
+	function OtherPrescriptionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService, $localForage,
+                                   $ionicScrollDelegate) {
 
 		var vm = this;
         
@@ -93,10 +94,14 @@
                 vm.newOtherDosage = undefined;
                 vm.newOtherFrequence = undefined;
         	}
+            
+            $ionicScrollDelegate.resize(); 
 		}
         
         vm.removeOther = function(idToDelete) {
 			vm.listOtherPrescription.splice(idToDelete, 1);
+            
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.editOther = function(idToEdit, object) {
@@ -107,6 +112,8 @@
         	vm.newOther = object.other.medicine;
             vm.newOtherDosage = object.other.dosage;
             vm.newOtherFrequence = object.other.frequence;
+            
+            $ionicScrollDelegate.resize(); 
 		} 
         
         vm.reorderItem = function(other, fromIndex, toIndex) {

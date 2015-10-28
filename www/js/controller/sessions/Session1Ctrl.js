@@ -63,7 +63,7 @@
                         console.log('Patient : ', vm.patient);
                         
                         // We can display the session if it has already be done
-                        if(vm.alreadyDone){
+                        if(vm.alreadyDone === '1'){
                             vm.setPreviousValues();
                         }
                         break;
