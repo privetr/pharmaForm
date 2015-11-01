@@ -94,8 +94,8 @@
                 vm.new_patient = {};
 
                 // We store all informations
-                vm.new_patient.lastname = vm.lastname;
-                vm.new_patient.firstname = vm.firstname;
+                vm.new_patient.lastname = pfUtilsService.capitalizeFirstLetter(vm.lastname);
+                vm.new_patient.firstname = pfUtilsService.capitalizeFirstLetter(vm.firstname);
                 vm.new_patient.birthdate = vm.birthdate;
                 vm.new_patient.graftdate = vm.graftdate;
                 vm.new_patient.listComments = vm.listComments;

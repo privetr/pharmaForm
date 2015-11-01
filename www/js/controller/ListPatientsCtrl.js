@@ -60,15 +60,9 @@
                           type: 'button-energized button-clear',
                           onTap: function(e) {
                               // We search for the patient to delete
-                              for(var i=0; i < vm.listPatients.length; i++){ // Loop patient
-                                    if(vm.listPatients[i].patient.id === patientToDelete.patient.id){
-                                        console.log(vm.listPatients[i].patient.id, patientToDelete.patient.id);
-                                        break;
-                                    }
-                                    idToDelete ++;
-                              }
-
-                              vm.listPatients.splice(idToDelete, 1);
+                              vm.listPatients = _.reject(vm.listPatients, function(item){ 
+                                  return item.patient.guid === patientToDelete.patient.guid; 
+                              });
                               
                               $localForage.setItem('listPatients', vm.listPatients)
                               .then(function() {

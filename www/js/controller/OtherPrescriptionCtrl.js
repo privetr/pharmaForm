@@ -25,6 +25,7 @@
         
         // OtherPrescription
         vm.listOtherPrescription = [];
+        vm.existingMedicine = true;
         
         console.log('Patient id : ' + vm.patient.id);
         
@@ -51,6 +52,24 @@
             });
 		} 
         vm.getPatient();
+        
+        /*
+         * Get Other prescription
+         */
+        vm.getOtherPrescription = function() {
+            pfLookUpService.getOtherPrescription()
+            .then(function (result) {
+                vm.existingMedicinePrescription = result.data.existingmedicine;
+                console.log('getOtherPrescription return : ', vm.existingMedicinePrescription);
+            });
+        }
+        vm.getOtherPrescription();
+
+        /*
+         * Get Dosage Times list
+         */
+        vm.listDosageTimes = pfUtilsService.getListDosageTimes();
+        
         
         /*
          * Save Other prescription
@@ -125,6 +144,10 @@
             var params = { patientId: vm.patient.id};
         	pfUtilsService.popupBack('display_prescription', params);
         };
+        
+        vm.changeExistingMedicine = function() {
+            $ionicScrollDelegate.resize();
+        }
         
 	}
 

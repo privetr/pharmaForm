@@ -42,6 +42,7 @@
                 
                 // We set a guid for the new statement
                 dataToInsert.guid = "patient_" + Math.floor(Date.now() / 1000);
+                console.log('New patient created with ID : ', dataToInsert.guid);
                 
                 // We add the statement to the list
                 listPatients.push(

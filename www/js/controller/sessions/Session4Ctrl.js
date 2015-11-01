@@ -64,6 +64,7 @@
                 for (var i = 0 ; i < vm.patient.listSessionsAnswers.length ; i++) {
                     if (vm.patient.listSessionsAnswers[i].id === $stateParams.sessionId) {
                         vm.listTrueFalseQuestions = vm.patient.listSessionsAnswers[i].answer.listTrueFalseQuestions;
+                        vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
                     }
                 }
             }
@@ -71,10 +72,10 @@
                 pfLookUpService.getTrueFalseQuestions()
                 .then(function (result) {
                     vm.listTrueFalseQuestions = result.data.question; 
+                    vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
                 });
             }
              
-            vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
             console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
          }
         

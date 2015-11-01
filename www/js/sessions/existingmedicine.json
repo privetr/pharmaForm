@@ -1,0 +1,1026 @@
+{  
+   "existingmedicine":[  
+      {  
+         "id":"existingmedicine_1",
+         "name":"A 313® Rétinol",
+         "dosage":[
+              {  
+                 "id":"dosage_1_1",
+                 "name":"50 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_2",
+         "name":"ACLASTA® Acide zolédronique",
+         "dosage":[
+              {  
+                 "id":"dosage_2_1",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_2_2",
+                 "name":"4 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_3",
+         "name":"ACTONEL® Risédronate",
+         "dosage":[
+              {  
+                 "id":"dosage_3_1",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_3_2",
+                 "name":"35 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_3_3",
+                 "name":"75 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_4",
+         "name":"ACTONELCOMBI® Risédronate, Calcium, Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_4_1",
+                 "name":"35 mg/1000mg/880UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_5",
+         "name":"ALFALASTIN® Alpha-1 antitrypsine humaine",
+         "dosage":[
+              {  
+                 "id":"dosage_5_1",
+                 "name":"1 g",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_5_2",
+                 "name":"4 g",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_6",
+         "name":"APIDRA® Insuline glulisine"
+      },
+      {  
+         "id":"existingmedicine_7",
+         "name":"CACIT VITAMINE D3® Calcium, Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_7_1",
+                 "name":"500 mg/440 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_7_2",
+                 "name":"1000 mg / 880 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_8",
+         "name":"CACIT® Calcium",
+         "dosage":[
+              {  
+                 "id":"dosage_8_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_8_1",
+                 "name":"1000 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_9",
+         "name":"CALCIDOSE VITAMINE D3® Calcium, Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_9_1",
+                 "name":"500 mg/400 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_10",
+         "name":"CALCIDOSE® Calcium",
+         "dosage":[
+              {  
+                 "id":"dosage_10_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_11",
+         "name":"CALCIPARINE® Héparine calcique",
+         "dosage":[
+              {  
+                 "id":"dosage_11_1",
+                 "name":"12 500 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_11_2",
+                 "name":"20 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_12",
+         "name":"CALTRATE VITAMINE D3® Calcium, Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_12_1",
+                 "name":"600 mg/400 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_13",
+         "name":"CALTRATE® Calcium",
+         "dosage":[
+              {  
+                 "id":"dosage_13_1",
+                 "name":"600 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_14",
+         "name":"CHOLURSO® Acide ursodésoxycholique",
+         "dosage":[
+              {  
+                 "id":"dosage_14_1",
+                 "name":"250 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_14_2",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_15",
+         "name":"CLAIRYG® Immunoglobuline humaine normale",
+         "dosage":[
+              {  
+                 "id":"dosage_15_1",
+                 "name":"2,5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_15_2",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_15_3",
+                 "name":"10 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_16",
+         "name":"COLIMYCINE® Colistiméthate sodique",
+         "dosage":[
+              {  
+                 "id":"dosage_16_1",
+                 "name":"1 MUI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_17",
+         "name":"COUMADINE® Warfarine",
+         "dosage":[
+              {  
+                 "id":"dosage_17_1",
+                 "name":"2 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_17_2",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_18",
+         "name":"CREON® Pancréatine",
+         "dosage":[
+              {  
+                 "id":"dosage_18_1",
+                 "name":"5 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_18_2",
+                 "name":"12 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_18_3",
+                 "name":"25 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_19",
+         "name":"CRESTOR® Rosuvastatine",
+         "dosage":[
+              {  
+                 "id":"dosage_19_1",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_19_2",
+                 "name":"10 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_19_3",
+                 "name":"20 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_20",
+         "name":"DAFALGAN® Paracétamol",
+         "dosage":[
+              {  
+                 "id":"dosage_20_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_20_2",
+                 "name":"1000 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_21",
+         "name":"DOLIPRANE® Paracétamol",
+         "dosage":[
+              {  
+                 "id":"dosage_21_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_21_2",
+                 "name":"1000 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_22",
+         "name":"EFFERALGAN® Paracétamol",
+         "dosage":[
+              {  
+                 "id":"dosage_22_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_22_2",
+                 "name":"1000 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_23",
+         "name":"ELIQUIS® Apixaban",
+         "dosage":[
+              {  
+                 "id":"dosage_23_1",
+                 "name":"2,5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_23_2",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_24",
+         "name":"ELISOR® Pravastatine",
+         "dosage":[
+              {  
+                 "id":"dosage_24_1",
+                 "name":"10 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_24_2",
+                 "name":"40 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_25",
+         "name":"EUPANTOL® Pantoprazole",
+         "dosage":[
+              {  
+                 "id":"dosage_25_1",
+                 "name":"20 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_25_2",
+                 "name":"40 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_26",
+         "name":"FERROSTRANE® Fer",
+         "dosage":[
+              {  
+                 "id":"dosage_26_1",
+                 "name":"34 mg/càc",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_27",
+         "name":"FOSAMAX® Acide alendronique",
+         "dosage":[
+              {  
+                 "id":"dosage_27_1",
+                 "name":"10 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_27_2",
+                 "name":"70 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_28",
+         "name":"FOSAVANCE® Acide alendronique, Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_28_1",
+                 "name":"70 mg/2 800 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_28_2",
+                 "name":"70 mg/5 600 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_29",
+         "name":"FUMAFER® Fumarate ferreux",
+         "dosage":[
+              {  
+                 "id":"dosage_29_1",
+                 "name":"33 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_29_2",
+                 "name":"66 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_30",
+         "name":"GLUCOPHAGE® Metformine",
+         "dosage":[
+              {  
+                 "id":"dosage_30_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_30_2",
+                 "name":"850 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_30_3",
+                 "name":"1 000 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_31",
+         "name":"HUMALOG MIX® Insuline lispro protamine",
+         "dosage":[
+              {  
+                 "id":"dosage_31_1",
+                 "name":"25",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_31_2",
+                 "name":"50",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_32",
+         "name":"HUMALOG® Insuline lispro"
+      },
+      {  
+         "id":"existingmedicine_33",
+         "name":"IDEOS® Calcium, Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_33_1",
+                 "name":"500 mg/400 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_34",
+         "name":"INEXIUM® Esoméprazole",
+         "dosage":[
+              {  
+                 "id":"dosage_34_1",
+                 "name":"20 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_34_2",
+                 "name":"40 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_35",
+         "name":"INSULATARD® Insuline humaine protamine"
+      },
+      {  
+         "id":"existingmedicine_36",
+         "name":"LAMALINE® Paracétamol, Opium, Caféine",
+         "dosage":[
+              {  
+                 "id":"dosage_36_1",
+                 "name":"300 mg/10mg/30mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_37",
+         "name":"LANTUS® Insuline glargine"
+      },
+      {  
+         "id":"existingmedicine_38",
+         "name":"LEDERFOLINE® Acide folinique",
+         "dosage":[
+              {  
+                 "id":"dosage_38_1",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_38_2",
+                 "name":"15 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_38_3",
+                 "name":"25 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_39",
+         "name":"LEVEMIR® Insuline détémir"
+      },
+      {  
+         "id":"existingmedicine_40",
+         "name":"LIPANTHYL® Fénofibrate",
+         "dosage":[
+              {  
+                 "id":"dosage_40_1",
+                 "name":"67 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_40_2",
+                 "name":"145 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_40_3",
+                 "name":"160 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_40_4",
+                 "name":"200 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_41",
+         "name":"LOVENOX® Enoxaparine sodique",
+         "dosage":[
+              {  
+                 "id":"dosage_41_1",
+                 "name":"4 000  UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_41_2",
+                 "name":"6 000  UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_41_3",
+                 "name":"8 000  UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_41_4",
+                 "name":"10 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_42",
+         "name":"MAG 2® Carbonate de magnésium",
+         "dosage":[
+              {  
+                 "id":"dosage_42_1",
+                 "name":"100 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_43",
+         "name":"MAGNE B6® Magnésium, Pyridoxine",
+         "dosage":[
+              {  
+                 "id":"dosage_43_1",
+                 "name":"48 mg/5mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_44",
+         "name":"MAGNEVIE B6® Magnésium, Pyridoxine",
+         "dosage":[
+              {  
+                 "id":"dosage_44_1",
+                 "name":"100mg/10mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_45",
+         "name":"NOVOMIX® Insuline asparte biphasique",
+         "dosage":[
+              {  
+                 "id":"dosage_45_1",
+                 "name":"30",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_45_2",
+                 "name":"50",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_45_3",
+                 "name":"70",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_46",
+         "name":"NOVORAPID® Insuline asparte"
+      },
+      {  
+         "id":"existingmedicine_47",
+         "name":"PRADAXA® Dabigatran",
+         "dosage":[
+              {  
+                 "id":"dosage_47_1",
+                 "name":"75 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_47_2",
+                 "name":"110 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_47_3",
+                 "name":"150 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_48",
+         "name":"PREVISCAN® Fluindione",
+         "dosage":[
+              {  
+                 "id":"dosage_48_1",
+                 "name":"20 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_49",
+         "name":"PULMOZYME® Dornase alfa",
+         "dosage":[
+              {  
+                 "id":"dosage_49_1",
+                 "name":"2 500 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_50",
+         "name":"SINGULAIR® Montélukast",
+         "dosage":[
+              {  
+                 "id":"dosage_50_1",
+                 "name":"4 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_50_2",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_50_3",
+                 "name":"10 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_51",
+         "name":"SPECIAFOLDINE® Acide folique",
+         "dosage":[
+              {  
+                 "id":"dosage_51_1",
+                 "name":"0,4 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_51_2",
+                 "name":"5 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_52",
+         "name":"STAGID® Metformine",
+         "dosage":[
+              {  
+                 "id":"dosage_52_1",
+                 "name":"700 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_53",
+         "name":"TARDYFERON B9® Sulfate ferreux, Acide folique",
+         "dosage":[
+              {  
+                 "id":"dosage_53_1",
+                 "name":"50 mg/0,35mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_54",
+         "name":"TARDYFERON® Sulfate ferreux",
+         "dosage":[
+              {  
+                 "id":"dosage_54_1",
+                 "name":"80 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_55",
+         "name":"TEGELINE® Immunoglobuline humaine normale",
+         "dosage":[
+              {  
+                 "id":"dosage_55_1",
+                 "name":"2,5 g",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_55_1",
+                 "name":"5 g",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_55_1",
+                 "name":"10 g",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_56",
+         "name":"TOCO® Alpha-tocophérol",
+         "dosage":[
+              {  
+                 "id":"dosage_56_1",
+                 "name":"500 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_57",
+         "name":"UMULINE NPH® Insuline isophane protamine"
+      },
+      {  
+         "id":"existingmedicine_58",
+         "name":"UMULINE RAPIDE® Insuline isophane"
+      },
+      {  
+         "id":"existingmedicine_59",
+         "name":"UN-ALFA® Alfacalcidol",
+         "dosage":[
+              {  
+                 "id":"dosage_59_1",
+                 "name":"0,10 µg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_59_2",
+                 "name":"0,25 µg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_59_3",
+                 "name":"0,5 µg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_59_4",
+                 "name":"1 µg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_60",
+         "name":"UVEDOSE® Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_60_1",
+                 "name":"100 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_61",
+         "name":"VITAMINE K1® Phytoménadione",
+         "dosage":[
+              {  
+                 "id":"dosage_61_1",
+                 "name":"2 mg/0,2mL",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_61_2",
+                 "name":"10 mg/1mL",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_62",
+         "name":"XARELTO® Rivaroxaban",
+         "dosage":[
+              {  
+                 "id":"dosage_62_1",
+                 "name":"10 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_62_2",
+                 "name":"15 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_62_3",
+                 "name":"20 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_63",
+         "name":"ZITHROMAX® Azithromycine",
+         "dosage":[
+              {  
+                 "id":"dosage_63_1",
+                 "name":"250 mg",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      },
+      {  
+         "id":"existingmedicine_64",
+         "name":"ZYMAD® Colécalciférol",
+         "dosage":[
+              {  
+                 "id":"dosage_64_1",
+                 "name":"10 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_64_2",
+                 "name":"80 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              },
+              {  
+                 "id":"dosage_64_3",
+                 "name":"200 000 UI",
+                 "selected":false,
+                 "imagePath": "img/home/chuGrenoble.jpg"
+              }
+          ]
+      }
+   ]
+}

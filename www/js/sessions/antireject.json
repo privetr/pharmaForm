@@ -154,7 +154,7 @@
          "dosage":[
               {  
                  "id":"dosage_7_1",
-                 "name":"0,1 mg disp",
+                 "name":"0,1 mg dispersible",
                  "selected":false,
                  "imagePath": "img/home/chuGrenoble.jpg"
               },
@@ -166,7 +166,7 @@
               },
               {  
                  "id":"dosage_7_3",
-                 "name":"0,25 mg disp",
+                 "name":"0,25 mg dispersible",
                  "selected":false,
                  "imagePath": "img/home/chuGrenoble.jpg"
               },
@@ -238,25 +238,25 @@
          "dosage":[
               {  
                  "id":"dosage_10_1",
-                 "name":"5 mg eff",
+                 "name":"5 mg effervescent",
                  "selected":false,
                  "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_10_2",
-                 "name":"5 mg oro",
+                 "name":"5 mg orodispersible",
                  "selected":false,
                  "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_10_3",
-                 "name":"20 mg eff",
+                 "name":"20 mg effervescent",
                  "selected":false,
                  "imagePath": "img/home/chuGrenoble.jpg"
               },
               {  
                  "id":"dosage_10_4",
-                 "name":"20 mg oro",
+                 "name":"20 mg orodispersible",
                  "selected":false,
                  "imagePath": "img/home/chuGrenoble.jpg"
               },

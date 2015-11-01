@@ -31,21 +31,76 @@
                         <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements associés
                     </h3>
                     
-                    <!-- other prescription -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Princeps + DCI</h4>
-                    <label class="item item-input">
-                        <input type="text" ng-model="vm.newOther" placeholder="Exemple : PROGRAF® Tacrolimus">
-                    </label>
+                    <div class="row">
+                        <div class="col">
+                            <ul class="list item-text-wrap">
+                                <ion-radio ng-model="vm.existingMedicine" ng-value="true" 
+                                           ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
+                                    Médicament fréquent
+                                </ion-radio>
+                                <ion-radio ng-model="vm.existingMedicine" ng-value="false" 
+                                           ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
+                                    Médicament hors liste
+                                </ion-radio>
+                            </ul>
+                        </div>
+                    </div>
                     
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                    <label class="item item-input">
-                        <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 0,5 mg">
-                    </label>
+                    
+                    <!-- existing medicine prescription -->
+                    <em ng-if="vm.existingMedicine">
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Traitement associé</h4>
+                        <select class="ion-input-select-large"	
+                                ng-options="index as item.name for (index, item) in vm.existingMedicinePrescription"
+                                ng-model="vm.newExistingMedicine"> 
+                        </select>
 
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
-                    <label class="item item-input">
-                        <input type="text" ng-model="vm.newOtherFrequence" placeholder="Exemple : Toutes les 8h / 3 fois par jour">
-                    </label>
+                        <!-- Dosage -->
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px" 
+                            ng-if="vm.existingMedicinePrescription[vm.newExistingMedicine].dosage || !vm.newExistingMedicine">Dosage</h4>
+                        <div class="row" style="padding-left:20px" 
+                             ng-if="!vm.newExistingMedicine">
+                            Aucun
+                        </div>
+                        <ul class="list" style="padding-top:10px;">
+                            <div class="row" ng-repeat="dosage in vm.existingMedicinePrescription[vm.newExistingMedicine].dosage">
+                                <div class="col" style="padding:0px; margin:0px;">
+                                    <li class="item item-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="{{dosage.id}}" 
+                                                   ng-model="dosage.selected">                 
+                                        </label>
+                                        {{dosage.name}}
+                                    </li>
+                                </div>
+                                <div class="col" ng-if="dosage.selected">
+                                    <select class="ion-input-select-large item"	
+                                            ng-options="key as item for (key, item) in vm.listDosageTimes"
+                                            ng-model="dosage.nbMedicine"> 
+                                    </select>
+                                </div>
+                            </div>
+                        </ul>   
+
+                    </em>
+                    
+                    <!-- custom prescription -->
+                    <em ng-if="!vm.existingMedicine">
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Princeps + DCI</h4>
+                        <label class="item item-input">
+                            <input type="text" ng-model="vm.newOther" placeholder="Exemple : PROGRAF® Tacrolimus">
+                        </label>
+
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+                        <label class="item item-input">
+                            <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 0,5 mg">
+                        </label>
+
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
+                        <label class="item item-input">
+                            <input type="text" ng-model="vm.newOtherFrequence" placeholder="Exemple : Toutes les 8h / 3 fois par jour">
+                        </label>
+                    </em>
                     
                     <div class="row" style="margin-top:10px;">
                         <div class="col">

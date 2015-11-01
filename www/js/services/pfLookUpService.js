@@ -11,6 +11,7 @@
         	getSessions: getSessions,
             getAntiRejectPrescription: getAntiRejectPrescription,
             getAntiInfectionPrescription: getAntiInfectionPrescription,
+            getOtherPrescription: getOtherPrescription,
             getFrequence: getFrequence,
             getTrueFalseQuestions: getTrueFalseQuestions
         };
@@ -29,6 +30,11 @@
         // This function returns the Anti Infection Prescription json file
         function getAntiInfectionPrescription() {
             return $http.get('js/sessions/antiinfection.json');
+        }
+        
+        // This function returns the Anti Reject Prescription json file
+        function getOtherPrescription() {
+            return $http.get('js/sessions/existingmedicine.json');
         }
         
         // This function returns the frequence json file

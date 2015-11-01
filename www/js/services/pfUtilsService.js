@@ -9,6 +9,7 @@
     	
         var service = {
         	transformationToArray: transformationToArray,
+            capitalizeFirstLetter: capitalizeFirstLetter,
         	showAlert: showAlert,
             getListGraftType: getListGraftType,
             getListGraftIndication: getListGraftIndication,
@@ -37,6 +38,10 @@
             return data;
         }
         
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
         function showAlert(title, template) {
             var myPopup = $ionicPopup.show ({
                 template: '<em class="item-center item-text-wrap">'+ template + '</em>',
