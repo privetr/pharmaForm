@@ -13,7 +13,8 @@
             getAntiInfectionPrescription: getAntiInfectionPrescription,
             getOtherPrescription: getOtherPrescription,
             getFrequence: getFrequence,
-            getTrueFalseQuestions: getTrueFalseQuestions
+            getTrueFalseQuestions: getTrueFalseQuestions,
+            getQuestionsSession4: getQuestionsSession4
         };
         return service;
 
@@ -45,6 +46,11 @@
         // This function returns the truefalse json file
         function getTrueFalseQuestions() {
             return $http.get('js/sessions/session4_truefalse.json');
+        }
+        
+        // This function returns the truefalse json file
+        function getQuestionsSession4() {
+            return $http.get('js/sessions/session4_questions.json');
         }
         
     }

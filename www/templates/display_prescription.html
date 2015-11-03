@@ -119,13 +119,21 @@
                             class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
                             >			  
                                 <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
-                                    {{objectO.other.medicine}}
+                                    <em ng-if="!objectO.other.existingMedicine">{{objectO.other.medicine}}</em>
+                                    <em ng-if="objectO.other.existingMedicine">{{objectO.other.medicine.name}}</em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                                    {{objectO.other.dosage}}
+                                    <em ng-if="!objectO.other.existingMedicine">{{objectO.other.dosage}}</em>
+                                    <em ng-if="objectO.other.existingMedicine">
+                                        <em ng-repeat="dosage in objectO.other.medicine.dosage" 
+                                            ng-if="dosage.selected" style="padding-right:30px";>
+                                            {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                                        </em>
+                                    </em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                                    {{objectO.other.frequence}}</p>
+                                    {{objectO.other.frequence}}
+                                </p>
                              </ion-item>
                          </div>
                     </ion-list> 

@@ -1,0 +1,294 @@
+{  
+   "question":[  
+      {  
+         "id":"question_1",
+         "title":"Pour fêter votre transplantation et votre sortie d’hôpital, votre meilleur ami veut organiser une petite fête, avec une trentaine de personnes. Que faites-vous ?",
+          "answer":[
+              {
+                  "id":"answer_1_1",
+                  "title":"Vous restreignez les invités.",
+                  "value":"nok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_1_2",
+                  "title":"Vous y allez sans précaution particulière.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_1_3",
+                  "title":"Vous reportez la fête de 6 mois.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_1_4",
+                  "title":"Vous prenez un masque et une solution hydro-alcoolique pour les mains.",
+                  "value":"nok",
+                  "selected":false
+              }
+          ],
+          "addon":"Dans les 6 premiers mois, il est préférable d’éviter les endroits avec beaucoup de monde. Si cela n’est pas possible, vous devez vous protéger au mieux avec un masque, un lavage des mains rigoureux et l’utilisation d’une solution hydro-alcoolique.",
+          "validated":false
+      },
+      {  
+         "id":"question_2",
+         "title":"Un de vos amis veut vous rendre visite, mais il vous dit qu’il est un peu enrhumé. Que lui répondez-vous ?",
+         "answer":[
+              {
+                  "id":"answer_2_1",
+                  "title":"De venir passer l’après-midi ensemble.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_2_2",
+                  "title":"De ne pas venir, car c’est un risque pour vous.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_2_3",
+                  "title":"De venir plutôt la semaine prochaine.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_2_4",
+                  "title":"De venir passer l’après-midi, en prenant des précautions d’hygiène (port du masque, pas de contact physique et utilisation de solution hydro-alcoolique).",
+                  "value":"nok",
+                  "selected":false
+              }
+          ],
+          "addon":"Etre en contact avec une personne malade est un risque très important pour vous. Il est préférable d’attendre que la personne soit guérie avant de la voir. Autres maladies contagieuses : varicelle, grippe, gastro-entérite, ...",
+          "validated":false
+      },
+      {  
+         "id":"question_3",
+         "title":"C’est samedi soir, il est 20h. Vous avez de la fièvre à 38,8°C et des frissons. Que faites-vous ?",
+         "answer":[
+              {
+                  "id":"answer_3_1",
+                  "title":"Vous attendez lundi pour appeler le centre de référence.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_3_2",
+                  "title":"Vous appelez de suite le centre de référence ou vous allez aux urgences les plus proches.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_3_3",
+                  "title":"Vous prenez du paracétamol.",
+                  "value":"nok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_3_4",
+                  "title":"Vous prenez les antibiotiques de votre pharmacie.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_3_5",
+                  "title":"Vous appelez le 15.",
+                  "value":"ko",
+                  "selected":false
+              }
+          ],
+          "addon":"Pour tout signe d’infection, vous devez sans attendre contacter votre centre de référence. Autres situations qui vous font contacter votre centre : essoufflements, douleurs, ...",
+          "validated":false
+      },
+      {  
+         "id":"question_4",
+         "title":"Vous pouvez consommer sans risque pour votre santé :",
+         "answer":[
+              {
+                  "id":"answer_4_1",
+                  "title":"Du pamplemousse",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_4_2",
+                  "title":"Des tomates bien lavées",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_4_3",
+                  "title":"Du saumon fumé",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_4_4",
+                  "title":"Un carpaccio de boeuf",
+                  "value":"ko",
+                  "selected":false
+              }
+          ],
+          "addon":"L’alimentation est porteuse de germes, vous devez vous en protéger en lavant et faisant bien cuire tous les aliments. Le pamplemousse lui interagit avec vos immunosuppresseurs, vous devez formellement l’éviter.",
+          "validated":false
+      },
+      {  
+         "id":"question_5",
+         "title":"Votre conjoint(e) a présenté une gastro-entérite, il y a quelques jours. Vous commencez à vous sentir nauséeux, mais sans vomissement et vous ressentez des douleurs abdominales avec des diarrhées. Vous avez rendez-vous au centre de référence dans 5 jours. Que faites-vous ?",
+         "answer":[
+              {
+                  "id":"answer_5_1",
+                  "title":"Vous buvez davantage et appeler le centre de référence.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_5_2",
+                  "title":"Vous buvez davantage et prenez les médicaments de votre conjoint(e).",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_5_3",
+                  "title":"Vous restez au lit et attendez que les symptômes passent comme l’a fait votre conjoint(e).",
+                  "value":"ko",
+                  "selected":false
+              }
+          ],
+          "addon":"En cas de diarrhée, il est recommandé de boire abondamment et de contacter votre centre de référence. En cas de déshydratation, il peut apparaitre une insuffisance rénale importante.Vous ne devez pas vous automédiquer, car il y a un risque d’interaction médicamenteuse qui nécessite une adaptation des doses par le médecin de centre de référence. ",
+          "validated":false
+      },
+      {  
+         "id":"question_6",
+         "title":"Vous ressentez une discrète gêne respiratoire depuis quelques jours. Vous avez une consultation prévue au centre de transplantation dans 3 jours. Que faites-vous ?",
+         "answer":[
+              {
+                  "id":"answer_6_1",
+                  "title":"Vous mesurez votre souffle avec le spiromètre.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_6_2",
+                  "title":"Vous appelez le centre de transplantation.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_6_3",
+                  "title":"Vous attendez votre consultation.",
+                  "value":"ko",
+                  "selected":false
+              }
+          ],
+          "addon":"Vous mesurez votre VEMS, il est diminué de plus de 10%. Vous devez en informer votre centre de référence, qui vous demandera quels autres signes vous avez et de venir en consultation pour une éventuelle hospitalisation.",
+          "validated":false
+      },
+      {  
+         "id":"question_7",
+         "title":"Vous prenez vos médicaments à 8h comme d’habitude. A 8h30, vous avez des vomissements. Que faites-vous ?",
+         "answer":[
+              {
+                  "id":"answer_7_1",
+                  "title":"Vous reprenez vos médicaments anti-rejets au dosage identique.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_7_2",
+                  "title":"Vous ne faites rien et attendez la prise suivante.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_7_3",
+                  "title":"Vous contacter le centre de référence.",
+                  "value":"ok",
+                  "selected":false
+              }
+          ],
+          "addon":"Si des vomissements ont lieu dans l’heure qui suit la prise des médicaments, il faut les reprendre à la même dose. En effet, ils n’ont pas eu le temps de passer dans le sang. Au-delà d’une heure, le passage sanguin a eu lieu. Il est important de signaler au centre de transplantation tout épisode de vomissement, même isolé.",
+          "validated":false
+      },
+      {  
+         "id":"question_8",
+         "title":"Une de vos amies vous propose d’aller à la piscine, un mois après votre transplantation. Que faites-vous ?",
+         "answer":[
+              {
+                  "id":"answer_8_1",
+                  "title":"Vous y aller, mais vous ne mettez pas la tête sous l’eau.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_8_2",
+                  "title":"Vous attendez au moins 1 an après la transplantation avant d’y aller.",
+                  "value":"ok",
+                  "selected":false
+              },
+              {
+                  "id":"answer_8_3",
+                  "title":"Vous y aller et faites toutes les nages que vous connaissez.",
+                  "value":"ko",
+                  "selected":false
+              }
+          ],
+          "addon":"Il est préférable d’éviter la piscine pendant la première année après la transplantation. Ensuite, vous pouvez y aller en n’oubliant pas de vous laver au savon dès la sortie du bassin.",
+          "validated":false
+      },
+      {  
+         "id":"question_9",
+         "title":"Un de vos amis vous propose une journée au ski ?",
+         "answer":[
+              {
+                  "id":"answer_9_1",
+                  "title":"Vous y aller.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_9_2",
+                  "title":"Vous n’y allez pas.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_9_3",
+                  "title":"Vous y aller mais vous ne tentez pas des figures trop compliquées.",
+                  "value":"ok",
+                  "selected":false
+              }
+          ],
+          "addon":"Vous pouvez y aller dès que vous le pouvez, à condition d’éviter les situations risquées.",
+          "validated":false
+      },
+      {  
+         "id":"question_10",
+         "title":"Les plantes de votre jardin ont fané pendant votre hospitalisation. Vous décidez de les remplacer. Quelles précautions prenez-vous ?",
+         "answer":[
+              {
+                  "id":"answer_10_1",
+                  "title":"Aucune, vous ne risquez rien car ce ne sont pas les mêmes agents infectieux dans le jardin.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_10_2",
+                  "title":"Vous mettez des gants et un masque.",
+                  "value":"ko",
+                  "selected":false
+              },
+              {
+                  "id":"answer_10_3",
+                  "title":"Vous appelez un ami pour qu’il le fasse à votre place.",
+                  "value":"ok",
+                  "selected":false
+              }
+          ],
+          "addon":"Le jardinage n’est pas conseillé après une transplantation. Les agents infectieux de l’environnement apportent également un risque infectieux majeur pour vous. Il est préférable de demander à votre entourage de vous remplacer. ",
+          "validated":false
+      }
+   ]
+}

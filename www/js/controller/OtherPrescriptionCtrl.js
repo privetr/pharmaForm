@@ -91,28 +91,41 @@
          * Functions to manage others medicines
          */
         vm.addOther = function() {
-        	if (vm.newOther !== undefined &&
-                vm.newOtherDosage !== undefined &&
-                vm.newOtherFrequence !== undefined){
-                
-                vm.newO = {};
+            vm.newO = {};
+            
+            if(vm.existingMedicine){    // Existing medicine
+                if (vm.newExistingMedicine !== undefined){
+                    // We store all informations
+                    vm.newO.existingMedicine = true;
+                    vm.newO.medicine = vm.existingMedicinePrescription[vm.newExistingMedicine];
+                    vm.newO.dosage = vm.existingMedicinePrescription[vm.newExistingMedicine].dosage;
+                    vm.newO.frequence = vm.newExistingMedicineFrequence;
+                }
+            }
+            else{
+                if (vm.newOther !== undefined){
+                    // We store all informations
+                    vm.newO.existingMedicine = false;
+                    vm.newO.medicine = vm.newOther;
+                    vm.newO.dosage = vm.newOtherDosage;
+                    vm.newO.frequence = vm.newOtherFrequence;
+                }
+            }
+            
+            vm.listOtherPrescription.push(
+                new Object({
+                    "other": vm.newO
+                })
+            );
 
-                // We store all informations
-                vm.newO.medicine = vm.newOther;
-                vm.newO.dosage = vm.newOtherDosage;
-                vm.newO.frequence = vm.newOtherFrequence;
-                
-                vm.listOtherPrescription.push(
-                    new Object({
-                        "other": vm.newO
-                    })
-                );
-                
-                // we reinitialize content of inputs
-                vm.newOther = undefined;
-                vm.newOtherDosage = undefined;
-                vm.newOtherFrequence = undefined;
-        	}
+            // we reinitialize content of inputs
+            vm.newOther = undefined;
+            vm.newOtherDosage = undefined;
+            vm.newOtherFrequence = undefined;
+            
+            vm.newExistingMedicine = undefined;
+            vm.getOtherPrescription();
+            vm.newExistingMedicineFrequence = undefined;
             
             $ionicScrollDelegate.resize(); 
 		}

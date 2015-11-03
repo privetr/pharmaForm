@@ -80,7 +80,14 @@
                                     </select>
                                 </div>
                             </div>
-                        </ul>   
+                        </ul> 
+                        
+                        <!-- Fréquence -->
+                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
+                        <label class="item item-input">
+                            <input type="text" ng-model="vm.newExistingMedicineFrequence" 
+                                   placeholder="Exemple : Toutes les 8h / 3 fois par jour">
+                        </label>
 
                     </em>
                     
@@ -93,7 +100,7 @@
 
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
                         <label class="item item-input">
-                            <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 0,5 mg">
+                            <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 2 unités - 0,5 mg">
                         </label>
 
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
@@ -136,10 +143,17 @@
                                 ng-click="vm.editOther(key_objectO, objectO)">	
                                 
                                 <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
-                                    {{objectO.other.medicine}}
+                                    <em ng-if="!objectO.other.existingMedicine">{{objectO.other.medicine}}</em>
+                                    <em ng-if="objectO.other.existingMedicine">{{objectO.other.medicine.name}}</em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                                    {{objectO.other.dosage}}
+                                    <em ng-if="!objectO.other.existingMedicine">{{objectO.other.dosage}}</em>
+                                    <em ng-if="objectO.other.existingMedicine">
+                                        <em ng-repeat="dosage in objectO.other.medicine.dosage" 
+                                            ng-if="dosage.selected" style="padding-right:30px";>
+                                            {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                                        </em>
+                                    </em>
                                 </p>
                                 <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
                                     {{objectO.other.frequence}}

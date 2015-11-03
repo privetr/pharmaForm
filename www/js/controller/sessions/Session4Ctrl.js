@@ -8,17 +8,30 @@
 	 * Page : seance_4.html
 	 * Goal : Managing seance 4
 	 */
-
+    
+    // amazing trick to fix problem of dynamic number of slides : https://github.com/driftyco/ionic/issues/1890
+	.directive('dynamicSlides', function() {
+	    return {
+	        require: ['^ionSlideBox'],
+	        link: function(scope, elem, attrs, slider) {
+	            scope.$watch(function() {
+	                return scope.$eval(attrs.dynamicSlides).length;
+	            }, function(val) {
+	                slider[0].__slider.update();
+	            });
+	        }
+	    };
+	})
     
 	.controller('Session4Ctrl', Session4Ctrl);
 	
 	Session4Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate'];
 
 	/* @ngInject */
 	function Session4Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
 
 		var vm = this;
         
@@ -49,6 +62,7 @@
                         console.log('Patient : ', vm.patient);
                         
                         vm.getTrueFalseQuestion();
+                        vm.getQuestions();
                         
                         break;
                     }
@@ -65,6 +79,7 @@
                     if (vm.patient.listSessionsAnswers[i].id === $stateParams.sessionId) {
                         vm.listTrueFalseQuestions = vm.patient.listSessionsAnswers[i].answer.listTrueFalseQuestions;
                         vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
+                        console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
                     }
                 }
             }
@@ -73,10 +88,29 @@
                 .then(function (result) {
                     vm.listTrueFalseQuestions = result.data.question; 
                     vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
+                    console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
                 });
             }
+         }
+         
+         vm.getQuestions = function() {
              
-            console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
+            // We can display the session if it has already be done
+            if(vm.alreadyDone === '1'){
+                
+            }
+            else{
+                pfLookUpService.getQuestionsSession4()
+                .then(function (result) {
+                    vm.listQuestions = result.data.question; 
+                    console.log('getQuestions return : ', vm.listTrueFalseQuestions);
+                });
+            }
+         }
+         
+         $scope.checkAnswerQuestion = function(index){
+             vm.listQuestions[index].validated = !vm.listQuestions[index].validated;
+             $ionicScrollDelegate.resize(); 
          }
         
         
