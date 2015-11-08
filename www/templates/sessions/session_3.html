@@ -22,46 +22,11 @@
         <ion-nav-view>
             <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
                 
-                <!--<ion-slide-box> 
-                    
-                    <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-50" id="drag_1">
-                                    http://codef0rmer.github.io/angular-dragdrop/#/filter
-                                    http://angular-dragdrop.github.io/angular-dragdrop/
-                                    <img style="height: 50px;" src="img/home/chuGrenoble.jpg" data-drag="true" jqyoui-draggable>
-                                </div>
-                                <div class="col-50" id="id_1">
-                                </div>
-                            </div>
-                            
-                            
-                        </ion-content>
-                    </ion-slide>
-
-			     </ion-slide-box>-->
-                <!--<div class="row" style="position: absolute; top:100px; width:100%; z-index:100;">
-                    <div class="col-20"></div>
-                    <div class="col-10" ng-repeat="value in vm.listHours.values">
-                        {{value.name}}
-                    </div>
-                </div>-->
-                
                 <ion-content class="has-header has-subheader has-footer">
                     <div class="row" data-drop="true">
-                        <em ng-repeat="medicine in vm.listHours.listMedicine" ng-init="medIndex = $index">
+                        <em ng-repeat="medicine in vm.listImages" ng-init="medIndex = $index">
                             <em ng-repeat="dosage in medicine.dosage" ng-init="imageIndex = $index">
-                                <img style="height: 50px; z-index:100" src="{{dosage.imagePath}}"
+                                <img style="height: 70px; z-index:100" src="{{dosage.imagePath}}"
                                      data-drag="true" jqyoui-draggable="{animate:true}" 
                                      name="{{dosage.imagePath}}"
                                      id="img-{{medIndex}}-{{imageIndex}}"
@@ -83,7 +48,7 @@
                                 <em ng-if="med.type === 'antireject'">{{med.medicine.antireject.medicine.name}}</em>
                                 <em ng-if="med.type === 'antiinfection'">{{med.medicine.antiinfection.medicine.name}}</em>
                             </div>
-                            <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index" >
+                            <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index">
                                 <li class="item item-checkbox">
                                     <label class="checkbox" 
                                            ng-class="{ 'checkbox-assertive': frequence.class === -1,
@@ -98,16 +63,42 @@
                             </div>
                         </div>
                         
-                        <div class="col">
-                            <label class="item item-input">
-                                <input type="text" ng-model="med.indication" placeholder="Indication">
-                            </label>
+                        <div class="row">
+                            <div class="col">
+                                <label class="item item-input">
+                                    <input type="text" ng-model="med.indication" placeholder="Indication">
+                                </label>
+                            </div>
                         </div>
                         
-                        <div class="col">
-                            <label class="item item-input">
-                                <input type="text" ng-model="med.comment" placeholder="Commentaire">
-                            </label>
+                        <div class="row">
+                            <div class="col">
+                                <label class="item item-input">
+                                    <input type="text" ng-model="med.comment" placeholder="Commentaire">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                Dosages : 
+                                <em  ng-repeat="dosage in med.dosage" ng-if="med.type === 'antireject'">
+                                    {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |  
+                                </em>
+                                <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
+                                    ng-if="dosage.selected && med.type === 'antiinfection' &&
+                                           !med.medicine.antiinfection.specialfrequence.selected">
+                                    {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                                </em>
+                                <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
+                                    ng-if="dosage.selected && med.type === 'antiinfection' &&
+                                           med.medicine.antiinfection.specialfrequence.selected">
+                                    <em ng-if="med.medicine.antiinfection.specialfrequence.value == 'monthOnly'">
+                                        Chaque mois, le
+                                    </em>
+                                    {{dosage.nbMedicine}} : {{dosage.name}}
+                                </em>
+                            </div>
                         </div>
                         
                         <em ng-if="med.type === 'antireject'">

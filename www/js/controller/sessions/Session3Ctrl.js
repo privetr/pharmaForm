@@ -77,8 +77,8 @@
                     }
                     else if(_.contains(vm.listHours.listKey, frequence.id) && frequence.selected){  
                         // If the frequence already exists, we also need to push the medicine
-                        tmpFrequence.push(frequence);
                         antiRejectHasHours = true;
+                        tmpFrequence.push(frequence);
                     }
                 })
                 
@@ -128,7 +128,7 @@
                     }
                     else if(_.contains(vm.listHours.listKey, frequence.id) && frequence.selected){  
                         // If the frequence already exists, we also need to push the medicine
-                        antiRejectHasHours = true;
+                        antiInfectionHasHours = true;
                         tmpFrequence.push(frequence);
                     }
                 })
@@ -192,8 +192,15 @@
                 })
             });
             
+            vm.listImages = [];
+            // We store images to be able to shuffle it
+            angular.forEach(vm.listHours.listMedicine, function(med) {
+                vm.listImages.push(med);
+                vm.listImages = _.shuffle(vm.listImages);
+            });
+            console.log("Liste images", vm.listImages);
+            
             console.log("Formatted medicine PDP : ", vm.listHours);
-                
         }
 
         
@@ -254,7 +261,6 @@
             
             // We have to try if the image dropped corresponds to the medicine
             for(var i=0; i < med.dosage.length; i++){
-                
                 if(med.dosage[i].imagePath === ui.helper[0].name){
                     rightAnswer = true;
                     break;
