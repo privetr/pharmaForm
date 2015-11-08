@@ -1,0 +1,36 @@
+{  
+   "vaccin":[  
+      {  
+         "id":"vaccin_1",
+         "title":"Diphtérie – Tétanos – Poliomyélite (dTP)"
+      },
+      {  
+         "id":"vaccin_2",
+         "title":"Diphtérie – Tétanos – Poliomyélite – Coqueluche (dTPca)"
+      },
+      {  
+         "id":"vaccin_3",
+         "title":"Grippe saisonnière"
+      },
+      {  
+         "id":"vaccin_4",
+         "title":"Haemophilus influenzae (Hib)"
+      },
+      {  
+         "id":"vaccin_5",
+         "title":"Méningocoque de type C"
+      },
+      {  
+         "id":"vaccin_6",
+         "title":"Méningocoques de type A et C"
+      },
+      {  
+         "id":"vaccin_7",
+         "title":"Méningocoques de type A, C, W135 et Y"
+      },
+      {  
+         "id":"vaccin_8",
+         "title":"Pneumocoques"
+      }
+   ]
+}

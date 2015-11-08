@@ -2,7 +2,7 @@
    "question":[  
       {  
          "id":"truefalse_1",
-         "title":"Mon traitement antirejet, je le prendrai toute ma vie.",
+         "title":"Mon traitement anti-rejet, je le prendrai toute ma vie.",
          "answer":"true"
       },
       {  
@@ -22,7 +22,7 @@
       },
       {  
          "id":"truefalse_5",
-         "title":"Les traitements antirejet augmentent le risque de cancer de la peau.",
+         "title":"Les traitements anti-rejet augmentent le risque de cancer de la peau.",
          "answer":"true"
       },
       {  
@@ -72,7 +72,7 @@
       },
       {  
          "id":"truefalse_15",
-         "title":"Consommer de la viande ou des poissons crus ou peu cuit est conseillé chez un patient transplanté.",
+         "title":"Consommer de la viande ou des poissons crus ou peu cuits est conseillé chez un patient transplanté.",
          "answer":"false"
       },
       {  
@@ -107,7 +107,7 @@
       },
       {  
          "id":"truefalse_22",
-         "title":"La consommation de pamplemousse modifie l’efficacité du traitement antirejet.",
+         "title":"La consommation de pamplemousse modifie l’efficacité du traitement anti-rejet.",
          "answer":"true"
       },
       {  
@@ -132,7 +132,7 @@
       },
       {  
          "id":"truefalse_27",
-         "title":"En prenant de façon irrégulière un traitement antirejet, le patient transplanté prend des risques pour sa santé et sa vie.",
+         "title":"En prenant de façon irrégulière un traitement anti-rejet, le patient transplanté prend des risques pour sa santé et sa vie.",
          "answer":"true"
       }
    ]

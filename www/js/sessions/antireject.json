@@ -8,19 +8,19 @@
                  "id":"dosage_1_1",
                  "name":"0,5 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_1_1.jpg"
               },
               {  
                  "id":"dosage_1_2",
                  "name":"1 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_1_2.jpg"
               },
               {  
                  "id":"dosage_1_3",
                  "name":"5 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_1_3.jpg"
               }
           ]
       },
@@ -32,25 +32,25 @@
                  "id":"dosage_2_1",
                  "name":"0,5 mg LP",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_2_1.jpg"
               },
               {  
                  "id":"dosage_2_2",
                  "name":"1 mg LP",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_2_2.jpg"
               },
               {  
                  "id":"dosage_2_3",
                  "name":"3 mg LP",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_2_3.jpg"
               },
               {  
                  "id":"dosage_2_4",
                  "name":"5 mg LP",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_2_4.jpg"
               }
           ]      
       },
@@ -61,12 +61,12 @@
               {  
                  "id":"dosage_3_1",
                  "name":"0,2 mg",
-                  "imagePath": "img/home/chuGrenoble.jpg"
+                  "imagePath": "img/medicine/antireject_3_1.jpg"
               },
               {  
                  "id":"dosage_3_2",
                  "name":"1 mg",
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_3_2.jpg"
               }
           ]
       },
@@ -78,31 +78,31 @@
                  "id":"dosage_4_1",
                  "name":"10 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_4_1.jpg"
               },
               {  
                  "id":"dosage_4_2",
                  "name":"25 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_4_2.jpg"
               },
               {  
                  "id":"dosage_4_3",
                  "name":"50 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_4_3.jpg"
               },
               {  
                  "id":"dosage_4_4",
                  "name":"100 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_4_4.jpg"
               },
               {  
                  "id":"dosage_4_5",
                  "name":"100 mg/mL",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_4_5.jpg"
               }
           ]
       },
@@ -114,19 +114,19 @@
                  "id":"dosage_5_1",
                  "name":"250 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_5_1.jpg"
               },
               {  
                  "id":"dosage_5_2",
                  "name":"500 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_5_2.jpg"
               },
               {  
                  "id":"dosage_5_3",
                  "name":"1g/5mL",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_5_3.jpg"
               }
           ]
       },
@@ -138,13 +138,13 @@
                  "id":"dosage_6_1",
                  "name":"180 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_6_1.jpg"
               },
               {  
                  "id":"dosage_6_2",
                  "name":"360 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_6_2.jpg"
               }
           ]
       },
@@ -156,37 +156,37 @@
                  "id":"dosage_7_1",
                  "name":"0,1 mg dispersible",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_7_1.jpg"
               },
               {  
                  "id":"dosage_7_2",
                  "name":"0,1 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_7_2.jpg"
               },
               {  
                  "id":"dosage_7_3",
                  "name":"0,25 mg dispersible",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_7_3.jpg"
               },
               {  
                  "id":"dosage_7_4",
                  "name":"0,25 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_7_4.jpg"
               },
               {  
                  "id":"dosage_7_5",
                  "name":"0,5 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_7_5.jpg"
               },
               {  
                  "id":"dosage_7_6",
                  "name":"0,75 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_7_6.jpg"
               }
           ]
       },
@@ -198,13 +198,13 @@
                  "id":"dosage_8_1",
                  "name":"25 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_8_1.jpg"
               },
               {  
                  "id":"dosage_8_2",
                  "name":"50 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_8_2.jpg"
               }
           ]
       },
@@ -216,19 +216,19 @@
                  "id":"dosage_9_1",
                  "name":"1 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_9_1.jpg"
               },
               {  
                  "id":"dosage_9_2",
                  "name":"5 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_9_2.jpg"
               },
               {  
                  "id":"dosage_9_3",
                  "name":"20 mg",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_9_3.jpg"
               }
           ]
       },
@@ -240,31 +240,31 @@
                  "id":"dosage_10_1",
                  "name":"5 mg effervescent",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_10_1.jpg"
               },
               {  
                  "id":"dosage_10_2",
                  "name":"5 mg orodispersible",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_10_2.jpg"
               },
               {  
                  "id":"dosage_10_3",
                  "name":"20 mg effervescent",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_10_3.jpg"
               },
               {  
                  "id":"dosage_10_4",
                  "name":"20 mg orodispersible",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_10_4.jpg"
               },
               {  
                  "id":"dosage_10_5",
                  "name":"1 mg/mL",
                  "selected":false,
-                 "imagePath": "img/home/chuGrenoble.jpg"
+                 "imagePath": "img/medicine/antireject_10_5.jpg"
               }
           ]
       }

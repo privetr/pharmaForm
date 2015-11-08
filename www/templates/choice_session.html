@@ -37,19 +37,19 @@
                                           vm.patient.listSessionsOver.indexOf(vm.sessions[$index-1].id) > -1 || 
                                           vm.patient.listSessionsOver == undefined && $index == 0"
                                    >
-                                  Démarrer
+                                  <i class="icon ion-play"></i> Démarrer
                                 </a>
                                 <a class="button button-energized" style="margin-left:30px;"
                                    ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
                                    ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id, alreadyDone: 1} )'
                                    >
-                                  Revoir
+                                  <i class="icon ion-refresh"></i> Revoir
                                 </a>
                                 <a class="button button-energized" style="margin-left:30px;"
                                    ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
                                    ng-click="vm.generatePdfSession()"
                                    >
-                                  Réalisée
+                                  <i class="icon ion-email"></i> Générer PDF
                                 </a>
                             </ion-item>
                         </div>

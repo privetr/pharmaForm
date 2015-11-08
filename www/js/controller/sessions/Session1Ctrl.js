@@ -78,8 +78,10 @@
                 if (vm.patient.listSessionsAnswers[i].id === $stateParams.sessionId) {
                     // Slide1
                     vm.rangeFeeling = vm.patient.listSessionsAnswers[i].answer.rangeFeeling;
+                    vm.rangeFeelingText = vm.patient.listSessionsAnswers[i].answer.rangeFeelingText;
                     vm.rangeRespiratory = vm.patient.listSessionsAnswers[i].answer.rangeRespiratory;
                     vm.rangePain = vm.patient.listSessionsAnswers[i].answer.rangePain;
+                    vm.rangePainText = vm.patient.listSessionsAnswers[i].answer.rangePainText;
 
                     // Slide 2
                     vm.rangeDayLife = vm.patient.listSessionsAnswers[i].answer.rangeDayLife;
@@ -205,8 +207,10 @@
             
             // Slide1
             vm.session.answer.rangeFeeling = vm.rangeFeeling;
+            vm.session.answer.rangeFeelingText = vm.rangeFeelingText;
             vm.session.answer.rangeRespiratory = vm.rangeRespiratory;
             vm.session.answer.rangePain = vm.rangePain;
+            vm.session.answer.rangePainText = vm.rangePainText;
             
             // Slide 2
             vm.session.answer.rangeDayLife = vm.rangeDayLife;
@@ -292,10 +296,35 @@
             
             console.log(vm.session.answer);
             
+            var tmpAlreadyDone = false;
+            
             // We save session
             if (vm.patient.listSessionsOver !== undefined) {    // Some sessions have already been saved
-                vm.patient.listSessionsOver.push(vm.session.id);    // List of sessions over
-                vm.patient.listSessionsAnswers.push(vm.session);
+                // We have to check if the current session has already been saved
+                for (var i = 0 ; i < vm.patient.listSessionsOver.length ; i++) {
+                    if (vm.patient.listSessionsOver[i] === vm.session.id) {
+                        tmpAlreadyDone = true;
+                        
+                        // We have to delete the last version saved from vm.listSessionsOver
+                        vm.patient.listSessionsOver.splice(i, 1);
+                        vm.patient.listSessionsOver.push(vm.session.id);    // List of sessions over
+                        
+                        // We have to remove the previous answers from vm.patient.listSessionsAnswers
+                        for (var j = 0 ; j < vm.patient.listSessionsAnswers.length ; j++) {
+                            if (vm.patient.listSessionsAnswers[j].id === vm.session.id) {
+                                vm.patient.listSessionsAnswers.splice(j, 1);
+                                vm.patient.listSessionsAnswers.push(vm.session);
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                // If tmpAlreadyDone is false, it means that this session has never been saved before
+                if(!tmpAlreadyDone){
+                    vm.patient.listSessionsOver.push(vm.session.id);
+                    vm.patient.listSessionsAnswers.push(vm.session);
+                }
             }
             else {  // None session has already been saved
                 vm.patient.listSessionsOver = [];   // List of sessions over

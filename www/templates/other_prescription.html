@@ -74,9 +74,10 @@
                                     </li>
                                 </div>
                                 <div class="col" ng-if="dosage.selected">
-                                    <select class="ion-input-select-large item"	
+                                    <select class="ion-input-select-large item"	style="border: thin solid #444"
                                             ng-options="key as item for (key, item) in vm.listDosageTimes"
                                             ng-model="dosage.nbMedicine"> 
+                                            <option value="">Choisir nombre d'unité(s)</option>
                                     </select>
                                 </div>
                             </div>
@@ -110,20 +111,12 @@
                     </em>
                     
                     <div class="row" style="margin-top:10px;">
-                        <div class="col">
+                        <div class="col col-50">
                             <button class="button button-block button-positive icon-left" ng-click="vm.addOther()">
                                 <i class="icon ion-plus-round"></i> Ajouter traitement associé
                             </button>
                         </div>
-                    </div>
-
-                    <!-- Liste Other prescription -->
-                    <div class="row" style="margin-top:20px;">
-                        <div class="button-bar col-50">
-                            <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
-                            ng-if="vm.patient.listOtherPrescription">Liste des traitements associés</h4>
-                        </div>
-                        <div class="col-25 col-offset-25">
+                        <div class="col col-50">
                             <button class="button button-clear button-assertive icon ion-close-round"
                                 ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
                             </button>
@@ -133,6 +126,14 @@
                             <button class="button button-clear button-dark icon ion-edit"
                                  ng-click="vm.showDelete = false; vm.showReorder = false">
                             </button>
+                        </div>
+                    </div>
+
+                    <!-- Liste Other prescription -->
+                    <div class="row" style="margin-top:20px;">
+                        <div class="col">
+                            <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                            ng-if="vm.patient.listOtherPrescription">Liste des traitements associés</h4>
                         </div>
                     </div>
                     

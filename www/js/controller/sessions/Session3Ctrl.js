@@ -33,7 +33,6 @@
 		 * Get Patient
 		 */		
 		vm.getPatient = function() {
-
             pfLocalForageService.getListPatients()
             .then (function(listPatients) {
                 vm.listPatients = pfUtilsService.transformationToArray(listPatients);
@@ -69,12 +68,17 @@
             angular.forEach(vm.patient.listAntiReject, function(med) {  // Loop medicine
                 angular.forEach(med.antireject.frequence, function(frequence) {     // Loop frequence
                     // We test if frequence is not yet in the array 
-                    if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
+                    if(!_.contains(vm.listHours.listKey, frequence.id) && frequence.selected){
                         antiRejectHasHours = true;
                         
                         vm.listHours.listKey.push(frequence.id);
                         vm.listHours.values.push(frequence);
                         tmpFrequence.push(frequence);
+                    }
+                    else if(_.contains(vm.listHours.listKey, frequence.id) && frequence.selected){  
+                        // If the frequence already exists, we also need to push the medicine
+                        tmpFrequence.push(frequence);
+                        antiRejectHasHours = true;
                     }
                 })
                 
@@ -115,11 +119,16 @@
             angular.forEach(vm.patient.listAntiInfection, function(med) {   // Loop medicine
                 angular.forEach(med.antiinfection.frequence, function(frequence) {  // Loop frequence
                     // We test if frequence is not yet in the array 
-                    if(!pfUtilsService.getIndexOfInList(vm.listHours.listKey, frequence.id) && frequence.selected){
+                    if(!_.contains(vm.listHours.listKey, frequence.id) && frequence.selected){
                         antiInfectionHasHours = true;
                         
                         vm.listHours.listKey.push(frequence.id);
                         vm.listHours.values.push(frequence);
+                        tmpFrequence.push(frequence);
+                    }
+                    else if(_.contains(vm.listHours.listKey, frequence.id) && frequence.selected){  
+                        // If the frequence already exists, we also need to push the medicine
+                        antiRejectHasHours = true;
                         tmpFrequence.push(frequence);
                     }
                 })
@@ -276,10 +285,35 @@
             // Slide1
             
             
+            var tmpAlreadyDone = false;
+            
             // We save session
             if (vm.patient.listSessionsOver !== undefined) {    // Some sessions have already been saved
-                vm.patient.listSessionsOver.push(vm.session.id);    // List of sessions over
-                vm.patient.listSessionsAnswers.push(vm.session);
+                // We have to check if the current session has already been saved
+                for (var i = 0 ; i < vm.patient.listSessionsOver.length ; i++) {
+                    if (vm.patient.listSessionsOver[i] === vm.session.id) {
+                        tmpAlreadyDone = true;
+                        
+                        // We have to delete the last version saved from vm.listSessionsOver
+                        vm.patient.listSessionsOver.splice(i, 1);
+                        vm.patient.listSessionsOver.push(vm.session.id);    // List of sessions over
+                        
+                        // We have to remove the previous answers from vm.patient.listSessionsAnswers
+                        for (var j = 0 ; j < vm.patient.listSessionsAnswers.length ; j++) {
+                            if (vm.patient.listSessionsAnswers[j].id === vm.session.id) {
+                                vm.patient.listSessionsAnswers.splice(j, 1);
+                                vm.patient.listSessionsAnswers.push(vm.session);
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                // If tmpAlreadyDone is false, it means that this session has never been saved before
+                if(!tmpAlreadyDone){
+                    vm.patient.listSessionsOver.push(vm.session.id);
+                    vm.patient.listSessionsAnswers.push(vm.session);
+                }
             }
             else {  // None session has already been saved
                 vm.patient.listSessionsOver = [];   // List of sessions over

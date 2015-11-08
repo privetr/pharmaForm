@@ -13,11 +13,12 @@
 	
 	ViewPatientCtrl.$inject = ['$state', '$scope',
                                'pfLocalForageService', 'pfUtilsService', '$stateParams',
-                               '$localForage', '$ionicScrollDelegate'
+                               '$localForage', '$ionicScrollDelegate', 'pfLookUpService'
 		               ];
 
 	/* @ngInject */
-	function ViewPatientCtrl($state, $scope, pfLocalForageService, pfUtilsService, $stateParams, $localForage, $ionicScrollDelegate) {
+	function ViewPatientCtrl($state, $scope, pfLocalForageService, pfUtilsService, $stateParams, $localForage, 
+                              $ionicScrollDelegate, pfLookUpService) {
 
 		var vm = this;        
         
@@ -30,6 +31,12 @@
         
         vm.showDelete = false;
         vm.showReorder = false;
+        
+        // Vaccins
+        vm.listVaccins = [];
+        
+        // Comments
+        vm.listComments = [];
         
         vm.patientId = $stateParams.patientId;
         console.log('Patient id : ' + vm.patientId);
@@ -50,8 +57,10 @@
                             vm.indexExistingPatient = i;
                             vm.lastname = vm.listPatients[i].patient.lastname;
                             vm.firstname = vm.listPatients[i].patient.firstname;
+                            vm.address = vm.listPatients[i].patient.address;
                             vm.birthdate = vm.listPatients[i].patient.birthdate;
                             vm.graftdate = vm.listPatients[i].patient.graftdate;
+                            vm.listVaccins = vm.listPatients[i].patient.listVaccins;
                             vm.listComments = vm.listPatients[i].patient.listComments;
                             
                             vm.graftType = vm.listPatients[i].patient.graftType;
@@ -69,6 +78,7 @@
                             vm.ebvStatusReceiver = vm.listPatients[i].patient.ebvStatusReceiver;
                             vm.ebvStatusDonor = vm.listPatients[i].patient.ebvStatusDonor;
                             
+                            console.log('Patient: ', vm.listPatients[i].patient);
                             break;
                         }
                     }
@@ -81,9 +91,18 @@
 		} 
         vm.loadPatient();
         
-        // Comments
-        vm.listComments = [];
-
+        /*
+        * Get Anti reject prescription
+        */
+        vm.getVaccin = function() {
+            pfLookUpService.getVaccin()
+            .then(function (result) {
+                vm.vaccins = result.data.vaccin;
+                console.log('getVaccin return : ', vm.vaccins);
+            });
+        }
+        vm.getVaccin();
+        
         
         /*
          * SAVE PATIENTS
@@ -96,8 +115,10 @@
                 // We store all informations
                 vm.new_patient.lastname = pfUtilsService.capitalizeFirstLetter(vm.lastname);
                 vm.new_patient.firstname = pfUtilsService.capitalizeFirstLetter(vm.firstname);
+                vm.new_patient.address = vm.address;
                 vm.new_patient.birthdate = vm.birthdate;
                 vm.new_patient.graftdate = vm.graftdate;
+                vm.new_patient.listVaccins = vm.listVaccins;
                 vm.new_patient.listComments = vm.listComments;
                 
                 vm.new_patient.graftType = vm.graftType;
@@ -121,8 +142,10 @@
             else {
                 vm.listPatients[vm.indexExistingPatient].patient.lastname = vm.lastname;
                 vm.listPatients[vm.indexExistingPatient].patient.firstname = vm.firstname;
+                vm.listPatients[vm.indexExistingPatient].patient.address = vm.address;
                 vm.listPatients[vm.indexExistingPatient].patient.birthdate = vm.birthdate;
                 vm.listPatients[vm.indexExistingPatient].patient.graftdate = vm.graftdate;
+                vm.listPatients[vm.indexExistingPatient].patient.listVaccins = vm.listVaccins;
                 vm.listPatients[vm.indexExistingPatient].patient.listComments = vm.listComments;
                 
                 vm.listPatients[vm.indexExistingPatient].patient.graftType = vm.graftType;
@@ -141,9 +164,54 @@
                 .then(function() {
                     pfUtilsService.showAlert('Sauvegarde réussie', 'Informations du patient enregistrées');
                     vm.edition = false;
+                    $ionicScrollDelegate.resize(); 
                 })
             }
 		}
+        
+        /*
+         * VACCINS
+         * Functions to manage vaccins
+         */
+        vm.addVaccin = function(vaccin, vaccinComment, vaccinDate) {
+        	if (vaccin !== undefined){
+        		vm.listVaccins.push(
+                    new Object({
+                		"vaccin": vm.vaccins[vaccin],
+                        "comment": vaccinComment,
+                        "date": vaccinDate
+                	})
+                );
+        		
+                // we remove content of input
+                vm.newVaccin = undefined;
+                vm.newVaccinComment = undefined;
+                vm.newVaccinDate = undefined;
+        	}
+            $ionicScrollDelegate.resize(); 
+		}
+        
+        vm.removeVaccin = function(idToDelete) {
+			vm.listVaccins.splice(idToDelete, 1);
+            $ionicScrollDelegate.resize(); 
+		} 
+        
+        vm.editVaccin = function(idToEdit, vaccin) {
+        	// At first we remove it from the list
+        	vm.listVaccins.splice(idToEdit, 1);
+        	
+        	// Then we set the input with these values
+        	vm.newVaccin = pfUtilsService.getIndexOf(vm.vaccins, vaccin.vaccin.id, 'id').toString();
+            vm.newVaccinComment = vaccin.comment;
+            vm.newVaccinDate = vaccin.date;
+            
+            $ionicScrollDelegate.resize();  
+		} 
+        
+        vm.reorderVaccin = function(vaccin, fromIndex, toIndex) {
+        	vm.listVaccins.splice(fromIndex, 1);
+        	vm.listVaccins.splice(toIndex, 0, vaccin);
+        };
         
         
         /*
@@ -182,7 +250,7 @@
             $ionicScrollDelegate.resize();  
 		} 
         
-        vm.reorderItem = function(comment, fromIndex, toIndex) {
+        vm.reorderComment = function(comment, fromIndex, toIndex) {
         	vm.listComments.splice(fromIndex, 1);
         	vm.listComments.splice(toIndex, 0, comment);
         };
