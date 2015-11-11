@@ -139,8 +139,13 @@
        //cordova.plugins.Keyboard.disableScroll(true); 
       
       $( "#id_button_home" ).click(function() {
-          pfUtilsService.popupBackHome();
+          pfUtilsService.popupBackHome('home');
       });
+        
+      $( "#id_button_list" ).click(function() {
+          pfUtilsService.popupBackHome('list_patients');
+      });
+        
     });
   })
 

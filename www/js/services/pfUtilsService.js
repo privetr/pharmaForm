@@ -138,9 +138,9 @@
      	};
         
         /*
-    	 * Function to display a Pop-up to confirm we want to getbackto home
+    	 * Function to display a Pop-up to confirm we want to get back to home
     	 */
-    	function popupBackHome() {
+    	function popupBackHome(state) {
             var myPopup = $ionicPopup.show ({
                 template: '<em class="item-center item-text-wrap">Etes-vous sûr de vouloir quitter la page ? Toutes les données non enregistrées seront perdues.</em>',
                 title: 'Attention',
@@ -153,12 +153,12 @@
                           text: '<b>Continuer</b>',
                           type: 'button-energized button-clear',
                           onTap: function(e) {
-                              $state.go('home');
+                              $state.go(state);
                           }
                       }
                 ]
             });
      	};
-
+        
     }
 })();

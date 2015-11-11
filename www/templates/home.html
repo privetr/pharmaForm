@@ -22,13 +22,29 @@
 				<!-- The content of the page -->
 				<ion-content class="has-header has-subheader">
 				
-				<div class="row">
-					<div class="col-33 col-offset-33">
-						
-							<img class="img-responsive" src="img/home/chuGrenoble.jpg" ui-sref="list_patients">
-						
-					<div class="col">
-				</div>
+                    <div class="col">
+                        <form class="simple-form" name="formConnexion" ng-submit="vm.doLogin()">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="list">
+                                      <label class="item item-input">
+                                        <input type="password" ng-model="vm.password" placeholder="Mot de passe">
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row button-bar" style="margin-top:20px;">
+                                <input type="submit" class="button button-positive" value="Connexion">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-33 col-offset-33">
+                            <img class="img-responsive" src="img/home/chuGrenoble.jpg">
+                        </div>
+                    </div>
 					
 				</ion-content>
 				

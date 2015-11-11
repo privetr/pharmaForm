@@ -270,7 +270,7 @@
                         <div class="col col-33">
                             <label class="item item-input">
                                 <input id="input_new_comment" type="text" 
-                                       ng-model="vm.newVaccinComment" placeholder="Remarque...">
+                                       ng-model="vm.newVaccinComment" placeholder="Nom spécialité...">
                             </label>
                         </div>
                         <div class="col col-33">
@@ -306,7 +306,7 @@
                             <ion-item ng-repeat="(key_vaccin, vaccin) in vm.listVaccins" class="item-text-wrap item-icon-right"
                                       ng-click="!vm.edition || vm.editVaccin(key_vaccin, vaccin)">
                                 <b>Vaccin :</b> {{vaccin.vaccin.title}} <b>effectué le</b> {{vaccin.date | date:'dd/MM/yyyy'}}<br>
-                                <b>Remarque :</b> {{vaccin.comment}}<br>
+                                <b>Nom spécialité :</b> {{vaccin.comment}}<br>
 
                                 <ion-delete-button class="ion-minus-circled"
                                     ng-click="vm.removeVaccin(key_vaccin)" ng-if="vm.edition">

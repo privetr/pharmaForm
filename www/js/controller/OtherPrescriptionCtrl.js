@@ -137,13 +137,24 @@
 		} 
         
         vm.editOther = function(idToEdit, object) {
+            console.log('iciiii', object);
         	// At first we remove it from the list
         	vm.listOtherPrescription.splice(idToEdit, 1);
         	
         	// Then we set the input with these values
-        	vm.newOther = object.other.medicine;
-            vm.newOtherDosage = object.other.dosage;
-            vm.newOtherFrequence = object.other.frequence;
+            if(object.other.existingMedicine === false){
+                vm.existingMedicine = false;
+                vm.newOther = object.other.medicine;
+                vm.newOtherDosage = object.other.dosage;
+                vm.newOtherFrequence = object.other.frequence;
+            }
+            else{        
+                vm.existingMedicine = true;
+                vm.newExistingMedicine = pfUtilsService.getIndexOf(vm.existingMedicinePrescription, 
+                                                                   object.other.medicine.id, 'id').toString();
+                vm.existingMedicinePrescription[vm.newExistingMedicine].dosage = object.other.dosage;
+                vm.newExistingMedicineFrequence = object.other.frequence;
+            }
             
             $ionicScrollDelegate.resize(); 
 		} 
