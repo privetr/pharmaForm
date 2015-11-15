@@ -5,7 +5,7 @@
 	</head>
 	
 	<body>
-		<ion-header-bar class="bar-positive">
+		<ion-header-bar class="bar-positive" align-title="center">
             <a class="button button-icon icon ion-chevron-left white" 
                ng-click="vm.popupBack()"> Liste séances</a>
 			<h1 class="title">
@@ -24,44 +24,62 @@
                 
                 <ion-slide-box> 
 				
-              
                     <!-- Slide 0 -->
-                    <ion-slide>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
-                            
+                    <ion-slide> 
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(0, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(0, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-0" style="padding-top:60px;">
                             <div class="row" style="padding-top:30px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Dans un premier temps, nous allons aborder votre vie au quotidien.
+                                    Bienvenue dans la première séance !
                                 </h3>
                             </div>
+                                
+                            <div class="list" style="padding-top: 30px">
+                                <div class="item item-divider">
+                                    <b>Objectif de la séance : Identifier vos besoins et attentes</b>
+                                </div>
+                                <a class="item item-icon-left"><i class="icon ion-ionic color-energized"></i> 
+                                    D’abord, quelques questions sur votre vie quotidienne</a>
+                                <a class="item item-icon-left"><i class="icon ion-ionic color-energized"></i>
+                                    Ensuite, quelques questions sur la transplantation</a>
+                            </div>
+
                             <div class="row" style="padding-top:30px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Puis nous verrons ensemble la transplantation et son traitement.
+                                    Etes-vous prêt ?
                                 </h3>
                             </div>
-                            
                         </ion-content>
                     </ion-slide>
                     
                     <!-- SLIDE 1 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(1, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(1, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-1" style="padding-top:60px;">
                             
                             <div class="row">
                                 <h3 class="color-grey" style="padding-left:10px;">
@@ -154,19 +172,24 @@
                     
                     <!-- SLIDE 2 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(2, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(2, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-2" style="padding-top:60px;">
                             
                             <div class="row">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Dans votre vie quotidienne...
+                                    A propos de votre vie quotidienne...
                                 </h3>
                             </div>
                             
@@ -420,19 +443,25 @@
                     
                     <!-- Slide 3 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(3, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(3, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-3" style="padding-top:60px;">
                             
                             <div class="row">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Comment vous sentez-vous dans ces différents domaines ?
+                                    A propos de ces différent domaines...<br>
+                                    Comment vous sentez-vous ?
                                 </h3>
                             </div>
                             
@@ -443,12 +472,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-50 col-offset-25">
+                                <div class="col col-25">
+                                    <em class="item-center">Ca ne va pas</em>
+                                </div>
+                                <div class="col col-50">
                                     <div class="item range range-positive">
                                         <i class="icon ion-sad-outline color-positive"></i>
                                         <input type="range" ng-model="vm.domaine1" name="rangePain" min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
+                                </div>
+                                <div class="col col-25">
+                                    <em class="item-center">Ca va bien</em>
                                 </div>
                             </div>
                             
@@ -459,12 +494,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-50 col-offset-25">
+                                <div class="col col-25">
+                                    <em class="item-center">Ca ne va pas</em>
+                                </div>
+                                <div class="col col-50">
                                     <div class="item range range-positive">
                                         <i class="icon ion-sad-outline color-positive"></i>
                                         <input type="range" ng-model="vm.domaine2" name="rangePain" min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
+                                </div>
+                                <div class="col col-25">
+                                    <em class="item-center">Ca va bien</em>
                                 </div>
                             </div>
                             
@@ -476,12 +517,17 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-50 col-offset-25">
+                                <div class="col col-25">
+                                    <em class="item-center">Ca ne va pas</em>
+                                </div>
+                                <div class="col col-50">
                                     <div class="item range range-positive">
                                         <i class="icon ion-sad-outline color-positive"></i>
                                         <input type="range" ng-model="vm.domaine3" name="rangePain" min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
+                                </div><div class="col col-25">
+                                    <em class="item-center">Ca va bien</em>
                                 </div>
                             </div>
                             
@@ -492,12 +538,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-50 col-offset-25">
+                                <div class="col col-25">
+                                    <em class="item-center">Ca ne va pas</em>
+                                </div>
+                                <div class="col col-50">
                                     <div class="item range range-positive">
                                         <i class="icon ion-sad-outline color-positive"></i>
                                         <input type="range" ng-model="vm.domaine4" name="rangePain" min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
+                                </div>
+                                <div class="col col-25">
+                                    <em class="item-center">Ca va bien</em>
                                 </div>
                             </div>
                             
@@ -508,12 +560,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-50 col-offset-25">
+                                <div class="col col-25">
+                                    <em class="item-center">Ca ne va pas</em>
+                                </div>
+                                <div class="col col-50">
                                     <div class="item range range-positive">
                                         <i class="icon ion-sad-outline color-positive"></i>
                                         <input type="range" ng-model="vm.domaine5" name="rangePain" min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
+                                </div>
+                                <div class="col col-25">
+                                    <em class="item-center">Ca va bien</em>
                                 </div>
                             </div>
                             
@@ -522,16 +580,20 @@
                         
                     <!-- SLIDE 4 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
-                            
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(4, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(4, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-4" style="padding-top:60px;">
                             <div class="row" style="padding-top:30px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
                                     A propos de votre travail ou de vos études...
@@ -635,15 +697,20 @@
                     
                     <!-- SLIDE 5 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(5, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(5, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-5" style="padding-top:60px;">
                             
                             <div class="row" style="padding-top:30px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
@@ -755,14 +822,25 @@
               
                     <!-- SLIDE 6 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(6, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(6, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-6" style="padding-top:60px;">
+                            
                             <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
+                                <h3 class="color-grey" style="padding-left:10px;">
+                                    En général...
+                                </h3>
                             </div>
                             
                             <!-- vm.doYouSmoke -->
@@ -846,19 +924,25 @@
                             
                     <!-- Slide 7 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(7, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(7, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-7" style="padding-top:60px;">
                             
                             <div class="row" style="padding-top:30px;">
-                                <h3 class="color-grey" style="padding-left:10px;">
-                                    Maintenant, nous allons voir la transplantation et son traitement. 
+                                <h3 class="maincolor item-center" style="padding-left:10px;">
+                                    La première partie est finie ! <br><br>
+                                    Passons à la seconde partie, sur la transplantation.
                                 </h3>
                             </div>
                             
@@ -867,15 +951,20 @@
                             
                     <!-- Slide 8 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(8, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(8, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-8" style="padding-top:60px;">
                             
                             <div class="row" style="padding-top:10px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
@@ -954,19 +1043,24 @@
                     
                     <!-- Slide 9 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(9, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(9, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-9" style="padding-top:60px;">
                             
                             <div class="row" style="padding-top:10px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Déroulement d’une journée-type...
+                                    Une journée-type, c'est...
                                 </h3>
                             </div>
                             
@@ -987,49 +1081,61 @@
                     
                     <!-- Slide 10 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(10, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(10, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-10" style="padding-top:60px;">
                             
                             <div class="row" style="padding-top:10px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Dans votre vie quotidienne...
+                                    Le traitement au quotidien...
                                 </h3>
                             </div>
                             
-                            <!-- vm.positiveElements & vm.negativeElements -->
-                            <div class="row" style="padding-top:20px;">
-                                <div class="col">
-                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                        Quels sont les éléments plutôt positifs ?         
-                                    </h4>
-                                </div>
-                                <div class="col">
-                                    <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                        Quels sont les éléments plutôt difficiles ?
+                            <!-- vm.feelingNewTreatmentRange & vm.feelingNewTreatment -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Comment vivez-vous votre nouveau traitement ? 
                                     </h4>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
-                                    <label class="item item-input" style="padding-bottom:30px;">
-                                        <textarea ng-model="vm.positiveElements" 
-                                               placeholder="Ajouter du texte ..."></textarea>
-                                    </label>
+                                <div class="col color-grey col-20 item-text-wrap" style="padding-top:20px;">
+                                    <em class="item-center">Pas bien du tout</em>
                                 </div>
-                                <div class="col">
-                                    <label class="item item-input" style="padding-bottom:30px;">
-                                        <textarea ng-model="vm.negativeElements" 
-                                               placeholder="Ajouter du texte ..."></textarea>
-                                    </label>
+                                <div class="col col-60">
+                                    <div class="item range range-positive">
+                                        <i class="icon ion-sad-outline color-positive"></i>
+                                        <input type="range" ng-model="vm.feelingNewTreatmentRange" min="0" max="100" value="50">
+                                        <i class="icon ion-happy-outline color-positive"></i>
+                                    </div>
+                                </div>
+                                <div class="col color-grey col-20 item-text-wrap" style="padding-top:20px;">
+                                    <em class="item-center">Très bien</em>
                                 </div>
                             </div>
+                            
+                            <!-- vm.whatIsBiggetProblemTreatment -->
+                            <div class="row" style="padding-top:20px;">
+                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
+                                    Qu’est-ce qui vous parait le plus contraignant dans ce traitement ?
+                                </h4>
+                            </div>
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.whatIsBiggetProblemTreatment" 
+                                       placeholder="Ajouter du texte ..."></textarea>
+                            </label>
                             
                             <!-- vm.someDifficultiesTreatment -->
                             <div class="row" style="padding-top:20px;">
@@ -1053,29 +1159,38 @@
                                        placeholder="Ajouter du texte ..."></textarea>
                             </label>
                             
-                            <!-- vm.secondaryMedicine -->
-                            <div class="row" style="padding-top:20px;">
-                                <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Que pensez-vous des médecines complémentaires : homéopathie, acupuncture, ostéopathie, phytothérapie, etc.?
-                                </h4>
-                            </div>
-                            <label class="item item-input" style="padding-bottom:30px;">
-                                <textarea ng-model="vm.secondaryMedicine" 
-                                       placeholder="Ajouter du texte ..."></textarea>
-                            </label>
-
-                        </ion-content>
-                    </ion-slide>
-                    
-                    <!-- Slide 11 -->
-                    <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                            <!-- vm.otherDoctorTrueFalse & vm.otherDoctor -->
+                            <div class="row" style="margin-top:20px">
+                                <div class="col item-text-wrap">
+                                    <h4 class="color-energized" style="padding-left:10px;">
+                                        Prenez-vous des médicaments prescrits par un autre médecin que celui référent de la transplantation ?
+                                    </h4>
                                 </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                            </div>
+                            <div class="row">
+                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                                    Non 
+                                    <label class="toggle toggle-assertive">
+                                        <input type="radio" value="0" ng-model="vm.otherDoctorTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                                    Oui
+                                    <label class="toggle toggle-balanced">
+                                        <input type="radio" value="1" ng-model="vm.otherDoctorTrueFalse">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col col-60">
+                                    <label class="item item-input" style="padding-bottom:30px;">
+                                        <textarea ng-model="vm.otherDoctor" 
+                                               placeholder="Lesquels ?"></textarea>
+                                    </label>
                                 </div>
                             </div>
                             
@@ -1114,79 +1229,15 @@
                                 </div>
                             </div>
                             
-                            <!-- vm.otherDoctorTrueFalse & vm.otherDoctor -->
-                            <div class="row" style="margin-top:20px">
-                                <div class="col item-text-wrap">
-                                    <h4 class="color-energized" style="padding-left:10px;">
-                                        Prenez-vous des médicaments prescrits par un autre médecin que celui référent de la transplantation ?
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
-                                    Non 
-                                    <label class="toggle toggle-assertive">
-                                        <input type="radio" value="0" ng-model="vm.otherDoctorTrueFalse">
-                                        <div class="track">
-                                            <div class="handle"></div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
-                                    Oui
-                                    <label class="toggle toggle-balanced">
-                                        <input type="radio" value="1" ng-model="vm.otherDoctorTrueFalse">
-                                        <div class="track">
-                                            <div class="handle"></div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="col col-60">
-                                    <label class="item item-input" style="padding-bottom:30px;">
-                                        <textarea ng-model="vm.otherDoctor" 
-                                               placeholder="Lesquels ?"></textarea>
-                                    </label>
-                                </div>
-                            </div>
                             
-                            <!-- vm.feelingNewTreatmentRange & vm.feelingNewTreatment -->
-                            <div class="row" style="margin-top:20px">
-                                <div class="col item-text-wrap">
-                                    <h4 class="color-energized" style="padding-left:10px;">
-                                        Comment vivez-vous votre nouveau traitement ? 
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col color-grey" style="padding-top:20px;">
-                                    <em class="item-center">Pas bien du tout</em>
-                                </div>
-                                <div class="col">
-                                    <div class="item range range-positive">
-                                        <i class="icon ion-sad-outline color-positive"></i>
-                                        <input type="range" ng-model="vm.feelingNewTreatmentRange" min="0" max="100" value="50">
-                                        <i class="icon ion-happy-outline color-positive"></i>
-                                    </div>
-                                </div>
-                                <div class="col color-grey" style="padding-top:20px;">
-                                    <em class="item-center">Très bien</em>
-                                </div>
-                                <div class="col col-50">
-                                    <label class="item item-input" style="padding-bottom:30px;">
-                                        <textarea ng-model="vm.feelingNewTreatment" 
-                                               placeholder="Ajouter du texte ..."></textarea>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <!-- vm.whatIsBiggetProblemTreatment -->
+                            <!-- vm.secondaryMedicine -->
                             <div class="row" style="padding-top:20px;">
                                 <h4 class="color-energized" style="padding-left:10px; margin-top: 20px;">
-                                    Qu’est-ce qui vous parait le plus contraignant dans ce traitement ?
+                                    Que pensez-vous des médecines complémentaires : homéopathie, acupuncture, ostéopathie, phytothérapie, etc.?
                                 </h4>
                             </div>
                             <label class="item item-input" style="padding-bottom:30px;">
-                                <textarea ng-model="vm.whatIsBiggetProblemTreatment" 
+                                <textarea ng-model="vm.secondaryMedicine" 
                                        placeholder="Ajouter du texte ..."></textarea>
                             </label>
                             
@@ -1200,27 +1251,32 @@
                                 <textarea ng-model="vm.risksMedicine" 
                                        placeholder="Ajouter du texte ..."></textarea>
                             </label>
-                            
+
                         </ion-content>
                     </ion-slide>
                     
-                    <!-- Slide 12 -->
+                    <!-- Slide 11 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(11, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(11, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-11" style="padding-top:60px;">
                             
                             <!-- vm.changeDecisionTeamRange -->
                             <div class="row" style="margin-top:20px">
                                 <div class="col item-text-wrap">
                                     <h4 class="color-energized" style="padding-left:10px;">
-                                        Estimez-vous pouvoir discuter les décisions de l’équipe soignante ?
+                                        L'équipe soignante et vous...
                                     </h4>
                                 </div>
                             </div>
@@ -1249,20 +1305,22 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col color-grey" style="padding-top:20px;">
+                                <div class="col color-grey col-20 item-text-wrap" style="padding-top:20px;">
                                     <em class="item-center">Aucun</em>
                                 </div>
                                 <div class="col">
-                                    <div class="item range range-positive">
+                                    <div class="item range range-positive col-60">
                                         <i class="icon ion-sad-outline color-positive"></i>
                                         <input type="range" ng-model="vm.libertyDecisionTeamRange"min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
                                 </div>
-                                <div class="col color-grey" style="padding-top:20px;">
+                                <div class="col color-grey col-20 item-text-wrap" style="padding-top:20px;">
                                     <em class="item-center">Total</em>
                                 </div>
-                                <div class="col col-50">
+                            </div>
+                            <div class="row">
+                                <div class="col">
                                     <label class="item item-input" style="padding-bottom:30px;">
                                         <textarea ng-model="vm.libertyDecisionTeam" 
                                                placeholder="Dans quel(s) domaine(s) ?"></textarea>
@@ -1295,27 +1353,33 @@
                         </ion-content>
                     </ion-slide>
                     
-                    <!-- Slide 13 -->
+                    <!-- Slide 12 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(12, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(12, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-12" style="padding-top:60px;">
                             
                             <div class="row" style="padding-top:10px;">
-                                <h3 class="color-grey" style="padding-left:10px;">
-                                    Merci d’avoir participé à ce questionnaire !
+                                <h3 class="color-grey item-center" style="padding-left:10px;">
+                                    La séance est finie ! Merci de votre participation à ce questionnaire !
                                 </h3>
                             </div>
                             
                             <div class="row" style="padding-top:30px;">
-                                <h3 class="color-grey" style="padding-left:10px;">
-                                    A partir de vos réponses, nous pouvons mieux définir vos besoins.
+                                <h3 class="color-grey item-center" style="padding-left:10px;">
+                                    Objectif de la prochaine séance : 
+                                    Répondre à vos besoins pour vous aider à mieux gérer la transplantation et son traitement.
                                 </h3>
                             </div>
                             

@@ -30,11 +30,11 @@
 	
 	Session1Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate'];
 
 	/* @ngInject */
 	function Session1Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
 
 		var vm = this;
         
@@ -45,6 +45,8 @@
         vm.patient.id = $stateParams.patientId;
         
         vm.alreadyDone = $stateParams.alreadyDone;
+        
+        var currentScrollYPosition = 0;
         
 		/*
 		 * Get Patient
@@ -142,23 +144,18 @@
                     vm.organizationDay = vm.patient.listSessionsAnswers[i].answer.organizationDay;
 
                     // Slide 10
-                    vm.positiveElements = vm.patient.listSessionsAnswers[i].answer.positiveElements;
-                    vm.negativeElements = vm.patient.listSessionsAnswers[i].answer.negativeElements;
+                    vm.feelingNewTreatmentRange = vm.patient.listSessionsAnswers[i].answer.feelingNewTreatmentRange;
+                    vm.whatIsBiggetProblemTreatment = vm.patient.listSessionsAnswers[i].answer.whatIsBiggetProblemTreatment;
                     vm.someDifficultiesTreatment = vm.patient.listSessionsAnswers[i].answer.someDifficultiesTreatment;
-                    vm.whatIsGoodTakeTreatement = vm.patient.listSessionsAnswers[i].answer.whatIsGoodTakeTreatement;
-                    vm.secondaryMedicine = vm.patient.listSessionsAnswers[i].answer.whatIsGoodTakeTreatement;
-
-                    // Slide 11
-                    vm.automedicationTrueFalse = vm.patient.listSessionsAnswers[i].answer.automedicationTrueFalse;
-                    vm.automedication = vm.patient.listSessionsAnswers[i].answer.automedication;
                     vm.otherDoctorTrueFalse = vm.patient.listSessionsAnswers[i].answer.otherDoctorTrueFalse;
                     vm.otherDoctor = vm.patient.listSessionsAnswers[i].answer.otherDoctor;
-                    vm.feelingNewTreatmentRange = vm.patient.listSessionsAnswers[i].answer.feelingNewTreatmentRange;
-                    vm.feelingNewTreatment = vm.patient.listSessionsAnswers[i].answer.feelingNewTreatment;
-                    vm.whatIsBiggetProblemTreatment = vm.patient.listSessionsAnswers[i].answer.whatIsBiggetProblemTreatment;
+                    vm.automedicationTrueFalse = vm.patient.listSessionsAnswers[i].answer.automedicationTrueFalse;
+                    vm.automedication = vm.patient.listSessionsAnswers[i].answer.automedication;
+                    vm.whatIsGoodTakeTreatement = vm.patient.listSessionsAnswers[i].answer.whatIsGoodTakeTreatement;
+                    vm.secondaryMedicine = vm.patient.listSessionsAnswers[i].answer.secondaryMedicine;
                     vm.risksMedicine = vm.patient.listSessionsAnswers[i].answer.risksMedicine;
 
-                    // Slide 12
+                    // Slide 11
                     vm.changeDecisionTeamRange = vm.patient.listSessionsAnswers[i].answer.changeDecisionTeamRange;
                     vm.libertyDecisionTeamRange = vm.patient.listSessionsAnswers[i].answer.libertyDecisionTeamRange;
                     vm.libertyDecisionTeam = vm.patient.listSessionsAnswers[i].answer.libertyDecisionTeam;
@@ -271,23 +268,18 @@
             vm.session.answer.organizationDay = vm.organizationDay;
             
             // Slide 10
-            vm.session.answer.positiveElements = vm.positiveElements;
-            vm.session.answer.negativeElements = vm.negativeElements;
+            vm.session.answer.feelingNewTreatmentRange = vm.feelingNewTreatmentRange;
+            vm.session.answer.whatIsBiggetProblemTreatment = vm.whatIsBiggetProblemTreatment;
             vm.session.answer.someDifficultiesTreatment = vm.someDifficultiesTreatment;
             vm.session.answer.whatIsGoodTakeTreatement = vm.whatIsGoodTakeTreatement;
-            vm.session.answer.secondaryMedicine = vm.secondaryMedicine;
-            
-            // Slide 11
-            vm.session.answer.automedicationTrueFalse = vm.automedicationTrueFalse;
-            vm.session.answer.automedication = vm.automedication;
             vm.session.answer.otherDoctorTrueFalse = vm.otherDoctorTrueFalse;
             vm.session.answer.otherDoctor = vm.otherDoctor;
-            vm.session.answer.feelingNewTreatmentRange = vm.feelingNewTreatmentRange;
-            vm.session.answer.feelingNewTreatment = vm.feelingNewTreatment;
-            vm.session.answer.whatIsBiggetProblemTreatment = vm.whatIsBiggetProblemTreatment;
+            vm.session.answer.automedicationTrueFalse = vm.automedicationTrueFalse;
+            vm.session.answer.automedication = vm.automedication;
+            vm.session.answer.secondaryMedicine = vm.secondaryMedicine;
             vm.session.answer.risksMedicine = vm.risksMedicine;
             
-            // Slide 12
+            // Slide 11
             vm.session.answer.changeDecisionTeamRange = vm.changeDecisionTeamRange;
             vm.session.answer.libertyDecisionTeamRange = vm.libertyDecisionTeamRange;
             vm.session.answer.libertyDecisionTeam = vm.libertyDecisionTeam;
@@ -376,7 +368,30 @@
 		}
 		vm.previousSlide = function() {
 			$ionicSlideBoxDelegate.previous();
-		}  	
+		}  
+        
+        vm.scroll = function(indexSlide, scrollDirection) {
+            var nameContent = 'mainScroll-' + indexSlide;
+            
+            // Here is a ticket on Github to fix up a problem which can happens with scroll-delegate with dynamic slides
+            // https://github.com/driftyco/ionic/issues/1865
+            
+            var instances = $ionicScrollDelegate['_instances'];
+            
+            console.log(instances, nameContent);
+
+            var instance = _(instances).find(function(ins) {
+                return ins.$element[0].id === nameContent;
+            });
+
+            if (scrollDirection === 'down') {
+                currentScrollYPosition = instance.getScrollPosition().top + 300;
+            }
+            else if (scrollDirection === 'top') {
+                currentScrollYPosition = instance.getScrollPosition().top - 300;
+            }
+            $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
+        };
         
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};
