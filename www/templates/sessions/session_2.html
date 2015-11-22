@@ -24,17 +24,48 @@
                 
                 <ion-slide-box> 
 				
-              
                     <!-- Slide 1 -->
                     <ion-slide prevent-drag>
-                        <ion-content class="has-header has-subheader has-footer">
+                        
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(1, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(1, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-1" style="padding-top:60px;">
+                            
+                            <div class="row item-center">
+                                <h4 class="color-grey">
+                                    La transplantation pulmonaire consiste à remplacer vos poumons malades par d’autres, sains.
+                                </h4>
+                            </div>
                             <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
+                                <div class="col col-20" style="padding:30px";>
+                                    <img class="img-responsive" src="img/session2/transplantation1.png">
                                 </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                <div class="col col-25" style="padding:30px";>
+                                    <img class="img-responsive" src="img/session2/transplantation2.png">
                                 </div>
+                                <div class="col col-33" style="padding:30px";>
+                                    <img class="img-responsive" src="img/session2/transplantation3.png">
+                                </div>
+                                <div class="col col-20" style="padding:30px";>
+                                    <img class="img-responsive" src="img/session2/transplantation4.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    L’intérêt de la transplantation pulmonaire est de vous redonner votre capacité respiratoire de base, 
+                                    afin de reprendre vos activités quotidiennes.
+                                </h4>
                             </div>
                             
                             
@@ -42,22 +73,482 @@
                     </ion-slide>
                     
                     <!-- Slide 2 -->
-                    <ion-slide>
-                        <ion-content class="has-header has-subheader has-footer">
+                    <ion-slide prevent-drag>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(2, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(2, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-2" style="padding-top:60px;">
                             <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
+                                <h4 class="color-grey">
+                                    Votre corps possède un système de défense composé d’anticorps, 
+                                    qui vous protège des agressions extérieures, comme les infections.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Cependant, ces anticorps reconnaissent les poumons greffés comme « étrangers ». 
+                                    Ils vont donc essayer de les éliminer.
+                                </h4>
+                            </div>
+                            <div class="row item-center">
+                                <h4 class="color-grey">
+                                    C’est le phénomène de rejet.
+                                </h4>
+                            </div>
+                            <div class="col col-33 col-offset-33" style="padding:30px";>
+                                <img class="img-responsive" src="img/session2/rejet1.gif">
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Pour éviter le rejet du greffon, 
+                                    on apporte des médicaments qui vont diminuer le nombre d’anticorps et donc protéger les poumons.
+                                </h4>
+                            </div>
+                            <div class="col col-33 col-offset-33" style="padding:30px";>
+                                <img class="img-responsive" src="img/session2/rejet2.png">
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Ces médicaments s’appellent des anti-rejets ou des immunosuppresseurs. Ils sont au nombre de 3.
+                                </h4>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Le phénomène de rejet peut apparaitre à tout moment.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    C’est pourquoi les médicaments anti-rejets sont à prendre à vie, 
+                                    à heures régulières et tous les jours, sans exception.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    En cas de prise non régulière : risque de rejet.
+                                </h4>
+                            </div>
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col">
+                                    <button class="button button-block button-energized" 
+                                            ng-click="vm.openModalAntiReject();">
+                                        <i class="icon ion-search"></i> Voir vos médicaments anti-rejets
+                                    </button>
                                 </div>
                             </div>
                             
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Ces médicaments vont être régulièrement réévalués selon :</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    La réponse de votre corps
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    La tolérance 
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    L’apparition de signes de rejet
+                                </a>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Les signes d’appel du rejet peuvent être une baisse de votre capacité 
+                                    respiratoire avec essoufflement, diminution de vos valeurs au spiromètre, 
+                                    une surinfection avec présence de fièvre, d’encombrement bronchique, ...
+                                </h4>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    <b>Que faire en cas d’oubli de prise ?</b>
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Prenez-la dès que possible, mais ne doublez jamais la dose suivante.
+                                </h4>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    <b>Que faire en cas de vomissements dans les 30 minutes suivant la prise ?</b>
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Reprenez une prise. <br>
+                                    Au-delà, ne rien faire, le médicament a été suffisamment absorbé.
+                                </h4>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    <b>Pour éviter les nausées et vomissements :</b> privilégiez une alimentation peu grasse et sans odeur.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    <b>Pour réduire les diarrhées :</b> privilégiez un régime sans fibre (pommes, carottes, riz et pain blanc) 
+                                        et sans laitage.
+                                </h4>
+                            </div>
+                            
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Conseils généraux avec les anti-rejets :</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Bonne hydratation
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Hygiène rigoureuse
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Protection solaire
+                                </a>
+                            </div>
+
+
+                        </ion-content>
+                    </ion-slide>
+                    
+                    <!-- Slide 3 -->
+                    <ion-slide prevent-drag>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(3, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(3, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-3" style="padding-top:60px;">
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Le système immunitaire a pour rôle de protéger le corps des agressions extérieures, 
+                                    dont les micro-organismes responsables d’infections.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Le nombre d’anticorps étant diminué par les médicaments, 
+                                    les infections peuvent plus facilement se développer.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    On dit que l’on est immunodéprimé.
+                                </h4>
+                            </div>
+                            <div class="col col-33 col-offset-33" style="padding:30px";>
+                                <img class="img-responsive" src="img/session2/immunodeprime.png">
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    On apporte d’autres médicaments pour protéger le corps des infections : 
+                                    des médicaments anti-infectieux.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Il existe plusieurs sortes de micro-organismes donc plusieurs types de médicaments anti-infectieux.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Certains sont donnés systématiquement, d’autres uniquement en cas de besoin. 
+                                    Ils vont donc également être régulièrement réévalués.
+                                </h4>
+                            </div>
+                            <div class="col col-33 col-offset-33" style="padding:30px";>
+                                <img class="img-responsive" src="img/session2/medicament_antiinfection.png">
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Les différents germes :
+                                </h4>
+                            </div>
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Virus : </b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    ROVALCYTE : CMV
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    ZELITREX : Herpès, varicelle
+                                </a>
+                                <div class="item item-divider">
+                                    <b>Champignons : </b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    NOXAFIL VFEND : : aspergillose, candidose
+                                </a>
+                                <div class="item item-divider">
+                                    <b>Parasite : </b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    PENTACARINAT FANSIDAR BACTRIM : Pneumocystose
+                                </a>
+                            </div>
+                            
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col">
+                                    <button class="button button-block button-energized" 
+                                            ng-click="vm.openModalAntiInfection();">
+                                        <i class="icon ion-search"></i> Voir vos médicaments anti-infectieux
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    La durée du traitement dépend du médicament.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Certains sont à prendre tous les jours, ...
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Si ces traitements ne sont pas pris correctement : risque d’infection, pouvant abimer le greffon.
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Signes d’infection et Surveillance : cf IS
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    CAT si oubli/vomissements
+                                </h4>
+                            </div>
+                            
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Afin d’éviter de développer une infection, des précautions simples sont à prendre au quotidien :</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Se laver les mains régulièrement
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Eviter le contact avec des personnes malades
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Porter un masque et des gants
+                                </a>
+                            </div>
+                            
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Mise en place d’une surveillance rapprochée avec des consultations au centre de référence : </b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Tous les mois
+                                </a>
+                                <div class="item item-divider">
+                                    <b>Examens généralement réalisés :</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Clinique +/- radiographie
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    EFR +/- entrainement à l’effort
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Bilan biologique avec dosages sanguins : immunosuppresseurs, cholestérol, sucre, cellules du sang, ...
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Surveillance de la fonction rénale et hépatique
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Recherche microbienne
+                                </a>
+                            </div>
                             
                         </ion-content>
                     </ion-slide>
                     
-                    
+                    <!-- Slide 4 -->
+                    <ion-slide prevent-drag>
+                        <!-- Left / Right buttons -->
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(4, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(4, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-4" style="padding-top:60px;">
+                            <div class="row">
+                                <h3 class="maincolor">
+                                    EFR : Exploration Fonctionnelle Respiratoire
+                                </h3>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Suivi des capacités respiratoires : volume d’air inspiré et vitesse d’expiratoire
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    - Amélioration dans l’année suivante la greffe
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    - Diminution : signe d’alerte d’une infection ou d’un rejet
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 40px">
+                                <h4 class="color-grey">
+                                    - Multiplication d’examens : radio, fibroscopie, LBA, biopsie
+                                </h4>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    <b>Entre deux consultations au centre de référence : </b>
+                                </h4>
+                            </div>
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Suivi dans un laboratoire en ville :</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Bilan biologique avec dosages sanguins : immunosuppresseurs, cholestérol, sucre, cellules du sang, ...
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Surveillance de la fonction rénale et hépatique
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Recherche microbienne
+                                </a>
+                                <div class="item item-divider">
+                                    <b>Suivi au domicile :</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Clinique
+                                </a>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Tout résultat d’examen/contrôle effectué en dehors du centre doit lui être apporté lors des rdv.
+                                </h4>
+                            </div>
+                            
+                            <div class="row item-center" style="padding-top:20px">
+                                <h4 class="color-grey">
+                                    <b>Suivi clinique</b>
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    Fièvre
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    Douleurs
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    Difficultés respiratoires, essoufflement
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    Toux
+                                </h4>
+                            </div>
+                            <div class="row" style="padding-left: 20px">
+                                <h4 class="color-grey">
+                                    Diminution du souffle
+                                </h4>
+                            </div>
+                            
+                             <div class="row item-center" style="padding-top:20px">
+                                <h4 class="color-grey">
+                                    <b>Suivi biologique</b>
+                                </h4>
+                            </div>
+                            <div class="list" style="padding-top: 20px">
+                                <div class="item item-divider">
+                                    <b>Dosages sanguins programmés</b>
+                                </div>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Immunosuppresseurs : adaptation posologie médicaments selon taux sanguins
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    Taux de cellules sanguines (globules blancs, rouges, ...)
+                                </a>
+                                <a class="item item-icon-left">
+                                    <i class="icon ion-ionic color-energized"></i> 
+                                    ...
+                                </a>
+                            </div>
+                            <div class="row">
+                                <h4 class="color-grey">
+                                    Présence de bactéries/virus/champignons : prélèvements pour culture
+                                </h4>
+                            </div>
+                            
+                        </ion-content>
+                    </ion-slide>
               
 			     </ion-slide-box>
             </ion-view>

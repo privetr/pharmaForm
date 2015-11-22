@@ -13,11 +13,11 @@
 	
 	Session2Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$ionicModal'];
 
 	/* @ngInject */
 	function Session2Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate, $ionicModal) {
 
 		var vm = this;
         
@@ -26,6 +26,8 @@
         
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
+        
+        var currentScrollYPosition = 0;
         
 		/*
 		 * Get Patient
@@ -40,6 +42,7 @@
                         vm.patient = vm.listPatients[i].patient;
                         vm.patient.id = $stateParams.patientId;
                         vm.patient.indexPatient = i;
+                        console.log('Patient : ', vm.patient);
                         break;
                     }
                 }
@@ -135,6 +138,25 @@
             displayButtonSaveSession();
         }
         
+        vm.openModalAntiReject = function() {
+            $ionicModal.fromTemplateUrl('templates/modals/modalAntiReject.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.modalAntiReject = modal;
+                $scope.modalAntiReject.show();
+            });
+        }
+
+        vm.openModalAntiInfection = function() {
+            $ionicModal.fromTemplateUrl('templates/modals/modalAntiInfection.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.modalAntiInfection = modal;
+                $scope.modalAntiInfection.show();
+            });
+        }
         
         /*
      	 * UI BUTTONS
@@ -165,7 +187,30 @@
 		}
 		vm.previousSlide = function() {
 			$ionicSlideBoxDelegate.previous();
-		}  	
+		}  
+        
+        vm.scroll = function(indexSlide, scrollDirection) {
+            var nameContent = 'mainScroll-' + indexSlide;
+            
+            // Here is a ticket on Github to fix up a problem which can happens with scroll-delegate with dynamic slides
+            // https://github.com/driftyco/ionic/issues/1865
+            
+            var instances = $ionicScrollDelegate['_instances'];
+            
+            console.log(instances, nameContent);
+
+            var instance = _(instances).find(function(ins) {
+                return ins.$element[0].id === nameContent;
+            });
+
+            if (scrollDirection === 'down') {
+                currentScrollYPosition = instance.getScrollPosition().top + 300;
+            }
+            else if (scrollDirection === 'top') {
+                currentScrollYPosition = instance.getScrollPosition().top - 300;
+            }
+            $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
+        };
         
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};

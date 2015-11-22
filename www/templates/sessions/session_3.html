@@ -23,14 +23,14 @@
             <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
                 
                 <ion-content class="has-header has-subheader has-footer">
-                    <div class="row" data-drop="true">
+                    <div class="row item-text-wrap" data-drop="true">
                         <em ng-repeat="medicine in vm.listImages" ng-init="medIndex = $index">
                             <em ng-repeat="dosage in medicine.dosage" ng-init="imageIndex = $index">
                                 <img style="height: 70px; z-index:100" src="{{dosage.imagePath}}"
                                      data-drag="true" jqyoui-draggable="{animate:true}" 
                                      name="{{dosage.imagePath}}"
                                      id="img-{{medIndex}}-{{imageIndex}}"
-                                     ng-model="dosage.imagePath" >
+                                     ng-model="dosage.imagePath">
                             </em>
                         </em>
                     </div>
@@ -47,6 +47,12 @@
                             <div class="col-20 item-text-wrap" style="margin-left:-10px">
                                 <em ng-if="med.type === 'antireject'">{{med.medicine.antireject.medicine.name}}</em>
                                 <em ng-if="med.type === 'antiinfection'">{{med.medicine.antiinfection.medicine.name}}</em>
+                                <em ng-if="med.type === 'other' && med.medicine.other.existingMedicine">
+                                    {{med.medicine.other.medicine.name}}
+                                </em>
+                                <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
+                                    {{med.medicine.other.medicine}}
+                                </em>
                             </div>
                             <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index">
                                 <li class="item item-checkbox">
@@ -81,14 +87,18 @@
                         
                         <div class="row">
                             <div class="col">
-                                Dosages : 
-                                <em  ng-repeat="dosage in med.dosage" ng-if="med.type === 'antireject'">
+                                <em ng-hide="med.dosage === undefined && med.type ==='other' ">
+                                    Dosages : 
+                                </em>
+                                <!-- Antireject -->
+                                <em  ng-repeat="dosage in med.dosage track by $index" ng-if="med.type === 'antireject'">
                                     {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |  
                                 </em>
+                                 <!-- Antiinfection -->
                                 <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
                                     ng-if="dosage.selected && med.type === 'antiinfection' &&
                                            !med.medicine.antiinfection.specialfrequence.selected">
-                                    {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                                    {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |
                                 </em>
                                 <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
                                     ng-if="dosage.selected && med.type === 'antiinfection' &&
@@ -98,6 +108,22 @@
                                     </em>
                                     {{dosage.nbMedicine}} : {{dosage.name}}
                                 </em>
+                                 <!-- Others -->
+                                <em ng-repeat="dosage in med.medicine.other.dosage track by $index" 
+                                    ng-if="dosage.selected && med.type === 'other' &&
+                                           med.medicine.other.existingMedicine"
+                                    >
+                                    {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                                </em>
+                                <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
+                                    {{med.dosage}}
+                                </em>
+                            </div>
+                        </div>
+                        
+                        <div class="row" ng-if="med.type === 'other' && med.frequence">
+                            <div class="col">
+                                Fréquence : {{med.frequence}}
                             </div>
                         </div>
                         

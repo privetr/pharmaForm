@@ -1,0 +1,48 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive" align-title="center">
+        <h1 class="title">Quelques précisions...</h1>
+        <button class="button button-energized button-clear icon ion-close-round"
+                data-ng-click="modalAntiInfection.remove();"> 
+            <b>Fermer</b>          
+        </button>
+    </ion-header-bar>
+    
+    <div class="bar bar-subheader bar-positive">
+      <h2 class="title">Vos Anti-infectieux</h2>
+    </div>
+    
+    <ion-slide-box> 
+				
+        <!-- Slide 1 with ng repeat -->
+        <ion-slide ng-repeat="(key_med, medicine) in vm.patient.listAntiInfection"
+                                  ng-init="medIndex = $index" dynamic-slides="vm.patient.listAntiInfection">
+
+            <ion-content class="has-header has-subheader" id="mainScroll-{{$index + 100}}" style="padding-top:20px;">
+                
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
+                    {{medicine.antiinfection.medicine.name}}
+                </h4>
+                
+                <div class="row" class="color-grey" style="padding-top: 10px; padding-left: 10px;">
+                    <em ng-if="medicine.antiinfection.medicine.infos.family">{{medicine.antiinfection.medicine.infos.family}}<br></em> 
+                    <em ng-if="medicine.antiinfection.medicine.infos.dosage">{{medicine.antiinfection.medicine.infos.dosage}}<br></em>
+                    <em ng-if="medicine.antiinfection.medicine.infos.frequence">{{medicine.antiinfection.medicine.infos.frequence}}<br></em>
+                    <em ng-if="medicine.antiinfection.medicine.infos.time">{{medicine.antiinfection.medicine.infos.time}}<br></em>
+                </div>
+                
+                <div class="list" style="padding-top: 20px">
+                    <div class="item item-divider">
+                        <b>Surveillance</b>
+                    </div>
+                    <a class="item item-icon-left" ng-repeat="surveillance in medicine.antiinfection.medicine.infos.surveillance">
+                        <i class="icon ion-ionic color-energized"></i> 
+                        {{surveillance.name}}
+                    </a>
+                </div>
+
+                
+                            
+            </ion-content>
+        </ion-slide>
+    </ion-slide-box>
+</ion-modal-view>

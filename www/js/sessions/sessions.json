@@ -2,19 +2,19 @@
    "session":[  
       {  
          "id":"session_1",
-         "title":"La maladie et les traitements immunosuppresseurs"
+         "title":"Diagnostic éducatif"
       },
       {  
          "id":"session_2",
-         "title":"Les anti-infectieux"
+         "title":"La transplantation et son traitement"
       },
       {  
          "id":"session_3",
-         "title":"Gestion pratique des médicaments et les médicaments associés"
+         "title":"Plan de prise"
       },
       {  
          "id":"session_4",
-         "title":"Modalité d’utilisation des médicaments"
+         "title":"Gestion pratique au quotidien"
       }
    ]
 }

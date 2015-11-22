@@ -198,6 +198,24 @@
                 vm.listImages.push(med);
                 vm.listImages = _.shuffle(vm.listImages);
             });
+            
+            // Other prescription (médicaments associés)
+            angular.forEach(vm.patient.listOtherPrescription, function(med) {  // Loop medicine
+                
+                vm.listHours.listMedicine.push(
+                    {
+                        "medicine": med,
+                        "frequence": med.other.frequence,
+                        "type": "other",
+                        "dosage": med.other.dosage,
+                        "special": true,
+                        "listHours": [],
+                        "indication": "",
+                        "comment": ""
+                    }
+                );
+            });
+            
             console.log("Liste images", vm.listImages);
             
             console.log("Formatted medicine PDP : ", vm.listHours);

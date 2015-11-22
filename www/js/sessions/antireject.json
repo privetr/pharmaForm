@@ -8,21 +8,41 @@
                  "id":"dosage_1_1",
                  "name":"0,5 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antireject_1_1.jpg"
+                 "imagePath": "img/antireject/prograf-0,5mg.gif"
               },
               {  
                  "id":"dosage_1_2",
                  "name":"1 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antireject_1_2.jpg"
+                 "imagePath": "img/antireject/prograf-1mg.gif"
               },
               {  
                  "id":"dosage_1_3",
                  "name":"5 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antireject_1_3.jpg"
+                 "imagePath": "img/antireject/prograf-5.gif"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des anticalcineurines",
+              "dosage":"Posologie adaptée à votre poids et au taux sanguin",
+              "frequence":"2 comprimés par jour",
+              "time":"A distance des repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }
       },
       {  
          "id":"antireject_2",
@@ -52,7 +72,27 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_2_4.jpg"
               }
-          ]      
+          ],
+          "infos":{
+              "family":"Famille des anticalcineurines",
+              "dosage":"Posologie adaptée à votre poids et au taux sanguin",
+              "frequence":"A distance des repas",
+              "time":"1 prise par jour",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_3",
@@ -68,7 +108,26 @@
                  "name":"1 mg",
                  "imagePath": "img/medicine/antireject_3_2.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des anticalcineurines",
+              "dosage":"Posologie adaptée à votre poids et au taux sanguin",
+              "frequence":"A distance des repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_4",
@@ -104,7 +163,28 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_4_5.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des anticalcineurines",
+              "dosage":"Posologie adaptée à votre poids et au taux sanguin",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  },
+                  {
+                      "name":"Hypertrophie des gencives"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_5",
@@ -128,7 +208,25 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_5_3.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des ???",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_6",
@@ -146,7 +244,25 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_6_2.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des ???",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_7",
@@ -188,7 +304,25 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_7_6.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des ???",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_8",
@@ -206,7 +340,25 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_8_2.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des ???",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_9",
@@ -230,7 +382,25 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_9_3.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des ???",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       },
       {  
          "id":"antireject_10",
@@ -266,7 +436,25 @@
                  "selected":false,
                  "imagePath": "img/medicine/antireject_10_5.jpg"
               }
-          ]
+          ],
+          "infos":{
+              "family":"Famille des ???",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Tremblement des mains"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }     
       }
    ]
 }
