@@ -29,15 +29,20 @@
                     <ion-slide ng-repeat="(key_question, question) in vm.listQuestions"
                                               ng-init="questionIndex = $index"
                                dynamic-slides="vm.listQuestions">
-                        <ion-content class="has-header has-subheader has-footer">
-                            <div class="row">
-                                <div class="col col-20 col-offset-20">
-                                    <button class="button button-clear icon ion-chevron-left" ng-click="vm.previousSlide()"></button>
-                                </div>
-                                <div class="col col-20 col-offset-33">
-                                    <button class="button button-clear icon ion-chevron-right" ng-click="vm.nextSlide()"></button>
-                                </div>
-                            </div>
+                        
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll($index, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll($index, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-{{$index}}" style="padding-top:60px;">
                             
                             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
                                 {{questionIndex + 1}}. {{question.title}}
@@ -59,8 +64,14 @@
                             <div class="row" style="margin-top:10px;">
                                 <div class="col">
                                     <button class="button button-block button-energized icon-left" 
-                                            ng-click="checkAnswerQuestion(questionIndex)">
+                                            ng-click="checkAnswerQuestion(questionIndex);"
+                                            ng-if="!vm.listQuestions[questionIndex].validated">
                                         <i class="icon ion-checkmark-round"></i> Valider la réponse
+                                    </button>
+                                    <button class="button button-block button-energized icon-left" 
+                                            ng-click="checkAnswerQuestion(questionIndex);"
+                                            ng-if="vm.listQuestions[questionIndex].validated">
+                                        <i class="icon ion-close-round"></i> Masquer la réponse
                                     </button>
                                 </div>
                             </div>
@@ -75,7 +86,8 @@
                     
                     <!-- Slide 2 -->
                     <ion-slide prevent-drag>
-                        <div class="row" style="position:absolute; top:90px; z-index:1">
+                        
+                        <div class="row" style="position:absolute; top:110px; z-index:1">
                             <div class="col col-40" style="margin-top: 20px; padding-bottom:0px">
                             </div>
                             <div class="col col-20" style="margin-top: 20px;">
@@ -110,7 +122,19 @@
                             
                         </div>
                         
-                        <ion-content class="has-header has-subheader has-footer">
+                        <div class="row" style="position:absolute; top:70px; z-index:1">
+                            <button class="button button-clear icon ion-chevron-left" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.previousSlide()"></button>
+                            <button class="button button-clear icon ion-chevron-right" style="margin-left:10px; margin-top:30px;" 
+                                    ng-click="vm.nextSlide()"></button>
+
+                            <button class="button button-clear icon ion-chevron-down" style="position:absolute; margin-top:30px; right:10px;" 
+                                    ng-click="vm.scroll(100, 'down')"></button>
+                            <button class="button button-clear icon ion-chevron-up" style="position:absolute; margin-top:30px; right:70px;" 
+                                    ng-click="vm.scroll(100, 'top')"></button>
+                        </div>
+                        
+                        <ion-content class="has-header has-subheader has-footer" id="mainScroll-100" style="padding-top:60px;">
                             <div class="row" style="height:40px;">
                             </div>
                             <ion-list>
@@ -217,8 +241,14 @@
                             <div class="row" style="margin-top:10px;">
                                 <div class="col">
                                     <button class="button button-block button-energized icon-left" 
-                                            ng-click="vm.displayAnswerTrueFalse = !vm.displayAnswerTrueFalse">
+                                            ng-click="vm.displayAnswerTrueFalse = !vm.displayAnswerTrueFalse"
+                                            ng-if="!vm.displayAnswerTrueFalse">
                                         <i class="icon ion-wand"></i> Afficher les réponses
+                                    </button>
+                                    <button class="button button-block button-energized icon-left" 
+                                            ng-click="vm.displayAnswerTrueFalse = !vm.displayAnswerTrueFalse"
+                                            ng-if="vm.displayAnswerTrueFalse">
+                                        <i class="icon ion-close-round"></i> Masquer les réponses
                                     </button>
                                 </div>
                             </div>

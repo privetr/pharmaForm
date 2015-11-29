@@ -30,7 +30,8 @@
                                      data-drag="true" jqyoui-draggable="{animate:true}" 
                                      name="{{dosage.imagePath}}"
                                      id="img-{{medIndex}}-{{imageIndex}}"
-                                     ng-model="dosage.imagePath">
+                                     ng-model="dosage.imagePath"
+                                     ng-if="dosage.imagePath !== 'false'">
                             </em>
                         </em>
                     </div>

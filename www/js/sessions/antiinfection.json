@@ -8,13 +8,13 @@
                  "id":"dosage_1_1",
                  "name":"100 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_1_1.jpg"
+                 "imagePath": "false"
               },
               {  
                  "id":"dosage_1_2",
                  "name":"40 mg/mL",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_1_2.jpg"
+                 "imagePath": "img/antiinfection/noxafil.gif"
               }
           ],
           "specialfrequence":false
@@ -27,19 +27,19 @@
                  "id":"dosage_2_1",
                  "name":"50 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_2_1.jpg"
+                 "imagePath": "img/antiinfection/vfend50.gif"
               },
               {  
                  "id":"dosage_2_2",
                  "name":"200 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_2_2.jpg"
+                 "imagePath": "img/antiinfection/vfend200.gif"
               },
               {  
                  "id":"dosage_2_3",
                  "name":"40 mg/ml",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_2_3.jpg"
+                 "imagePath": "false"
               }
           ],
           "specialfrequence":false
@@ -53,13 +53,13 @@
                  "name":"400mg-80mg",
                  "selected":false,
                  "choicedays":"",
-                 "imagePath": "img/medicine/antiinfection_3_1.jpg"
+                 "imagePath": "false"
               },
               {  
                  "id":"dosage_3_2",
                  "name":"800mg-160 (FORTE)",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_3_2.jpg"
+                 "imagePath": "img/antiinfection/bactrim-forte.gif"
               }
           ],
           "specialfrequence":{
@@ -76,7 +76,7 @@
                  "id":"dosage_4_1",
                  "name":"500mg-25mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_4_1.jpg"
+                 "imagePath": "img/antiinfection/fansidar.gif"
               }
           ],
           "specialfrequence":{
@@ -93,7 +93,7 @@
                  "id":"dosage_5_1",
                  "name":"300 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_5_1.jpg"
+                 "imagePath": "false"
               }
           ],
           "specialfrequence":{
@@ -110,7 +110,7 @@
                  "id":"dosage_6_1",
                  "name":"450 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_6_1.jpg"
+                 "imagePath": "false"
               },
               {  
                  "id":"dosage_6_2",
@@ -128,7 +128,7 @@
                  "id":"dosage_7_1",
                  "name":"500 mg",
                  "selected":false,
-                 "imagePath": "img/medicine/antiinfection_7_1.jpg"
+                 "imagePath": "img/antiinfection/zelitrex-500mg.gif"
               }
           ],
           "specialfrequence":false

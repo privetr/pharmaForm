@@ -23,6 +23,7 @@
                     {{medicine.antiinfection.medicine.name}}
                 </h4>
                 
+                <!--
                 <div class="row" class="color-grey" style="padding-top: 10px; padding-left: 10px;">
                     <em ng-if="medicine.antiinfection.medicine.infos.family">{{medicine.antiinfection.medicine.infos.family}}<br></em> 
                     <em ng-if="medicine.antiinfection.medicine.infos.dosage">{{medicine.antiinfection.medicine.infos.dosage}}<br></em>
@@ -39,9 +40,45 @@
                         {{surveillance.name}}
                     </a>
                 </div>
-
+                -->
                 
-                            
+                <div class="list" style="padding-top: 20px">
+                     <em ng-if="medicine.antiinfection.medicine.infos.family">
+                         <a class="item item-icon-left">
+                            <i class="icon ion-ionic color-energized"></i> 
+                            {{medicine.antiinfection.medicine.infos.family}}
+                         </a>
+                     </em>
+                     <em ng-if="medicine.antiinfection.medicine.infos.dosage">
+                         <a class="item item-icon-left">
+                            <i class="icon ion-ionic color-energized"></i> 
+                            {{medicine.antiinfection.medicine.infos.dosage}}
+                         </a> 
+                     </em>
+                     <em ng-if="medicine.antiinfection.medicine.infos.frequence">
+                         <a class="item item-icon-left">
+                            <i class="icon ion-ionic color-energized"></i> 
+                            {{medicine.antiinfection.medicine.infos.frequence}}
+                         </a>
+                     </em>
+                     <em ng-if="medicine.antiinfection.medicine.infos.time">
+                         <a class="item item-icon-left">
+                            <i class="icon ion-ionic color-energized"></i> 
+                            {{medicine.antiinfection.medicine.infos.time}}
+                         </a>
+                     </em>
+                </div>
+                
+                <h4 style="margin-top:20px; padding-left:10px">
+                    Surveillance :
+                </h4>
+                <div class="color-grey" style="padding-left: 10px;">
+                    <div class="col" ng-repeat="surveillance in medicine.antiinfection.medicine.infos.surveillance">
+                        - {{surveillance.name}}
+                    </div>
+                </div>
+
+             
             </ion-content>
         </ion-slide>
     </ion-slide-box>
