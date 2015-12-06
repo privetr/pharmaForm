@@ -19,6 +19,9 @@
 
 		var vm = this;
         
+        // we hide bottom menu tabs at the moment
+	    document.getElementById("bottom_tabs_app").style.visibility = "hidden" ;
+        
         vm.doLogin = function(){
             if(vm.password === '2701'){
                 $state.go('list_patients');

@@ -143,19 +143,19 @@
                  "id":"dosage_4_2",
                  "name":"25 mg",
                  "selected":false,
-                 "imagePath": "img/antireject/néoral 25.gif"
+                 "imagePath": "img/antireject/neoral 25.gif"
               },
               {  
                  "id":"dosage_4_3",
                  "name":"50 mg",
                  "selected":false,
-                 "imagePath": "img/antireject/néoral-50.gif"
+                 "imagePath": "img/antireject/neoral-50.gif"
               },
               {  
                  "id":"dosage_4_4",
                  "name":"100 mg",
                  "selected":false,
-                 "imagePath": "img/antireject/néoral-100.gif"
+                 "imagePath": "img/antireject/neoral-100.gif"
               },
               {  
                  "id":"dosage_4_5",

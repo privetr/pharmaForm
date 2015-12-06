@@ -47,10 +47,11 @@
                                 </a>
                                 <a class="button button-energized" style="margin-left:30px;"
                                    ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
-                                   ng-click="vm.generatePdfSession()"
+                                   ng-click="vm.generatePdfSession($index + 1)"
                                    >
                                   <i class="icon ion-email"></i> Générer PDF
                                 </a>
+    
                             </ion-item>
                         </div>
                     </ion-list> 

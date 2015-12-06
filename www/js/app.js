@@ -7,7 +7,7 @@
   
   'use strict';
 
-  var app = angular.module('starter', ['ionic', 'LocalForageModule', 'ngDragDrop'])
+  var app = angular.module('starter', ['ionic', 'LocalForageModule', 'ngDragDrop', 'ngCordova.plugins.file'])
 
   .config(function($ionicConfigProvider){
         $ionicConfigProvider.tabs.position('top');

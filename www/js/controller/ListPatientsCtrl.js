@@ -19,6 +19,9 @@
 
 		var vm = this;
         
+        // we hide bottom menu tabs at the moment
+	    document.getElementById("bottom_tabs_app").style.visibility="visible" ;
+        
         // Initialize sort orderBy
         $scope.predicate = 'patient.creationDate';
         $scope.reverse = true;
