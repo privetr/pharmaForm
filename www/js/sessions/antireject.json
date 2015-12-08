@@ -24,10 +24,10 @@
               }
           ],
           "infos":{
-              "family":"Famille des anticalcineurines",
+              "family":"Famille des anti-calcineurines",
               "dosage":"Posologie adaptée à votre poids et au taux sanguin",
-              "frequence":"2 comprimés par jour",
-              "time":"A distance des repas",
+              "frequence":"1 prise par jour, le matin",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
                       "name":"Tremblement des mains"
@@ -74,10 +74,10 @@
               }
           ],
           "infos":{
-              "family":"Famille des anticalcineurines",
+              "family":"Famille des anti-calcineurines",
               "dosage":"Posologie adaptée à votre poids et au taux sanguin",
-              "frequence":"A distance des repas",
-              "time":"1 prise par jour",
+              "frequence":"1 prise par jour, le matin",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
                       "name":"Tremblement des mains"
@@ -110,9 +110,10 @@
               }
           ],
           "infos":{
-              "family":"Famille des anticalcineurines",
+              "family":"Famille des anti-calcineurines",
               "dosage":"Posologie adaptée à votre poids et au taux sanguin",
-              "frequence":"A distance des repas",
+              "frequence":"2 prises par jour à 12h d’intervalle",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
                       "name":"Tremblement des mains"
@@ -165,8 +166,10 @@
               }
           ],
           "infos":{
-              "family":"Famille des anticalcineurines",
+              "family":"Famille des anti-calcineurines",
               "dosage":"Posologie adaptée à votre poids et au taux sanguin",
+              "frequence":"2 prises par jour à 12h d’intervalle",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
                       "name":"Tremblement des mains"
@@ -210,20 +213,21 @@
               }
           ],
           "infos":{
-              "family":"Famille des ???",
-              "time":"Pendant les repas",
+              "family":"Famille des anti-métabolites",
+              "frequence":"2 prises par jour à 12h d’intervalle",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
-                      "name":"Tremblement des mains"
+                      "name":"Fatigue importante"
                   },
                   {
-                      "name":"Maux de tête"
+                      "name":"Pâleur"
                   },
                   {
-                      "name":"Tension artérielle"
+                      "name":"Vertiges"
                   },
                   {
-                      "name":"Fonction rénale"
+                      "name":"Battements cardiaques accélérés "
                   }
               ]
           }     
@@ -246,20 +250,21 @@
               }
           ],
           "infos":{
-              "family":"Famille des ???",
-              "time":"Pendant les repas",
+              "family":"Famille des anti-métabolites",
+              "frequence":"2 prises par jour à 12h d’intervalle",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
-                      "name":"Tremblement des mains"
+                      "name":"Fatigue importante"
                   },
                   {
-                      "name":"Maux de tête"
+                      "name":"Pâleur"
                   },
                   {
-                      "name":"Tension artérielle"
+                      "name":"Vertiges"
                   },
                   {
-                      "name":"Fonction rénale"
+                      "name":"Battements cardiaques accélérés"
                   }
               ]
           }     
@@ -306,20 +311,22 @@
               }
           ],
           "infos":{
-              "family":"Famille des ???",
-              "time":"Pendant les repas",
+              "family":"Famille des inhibiteurs de la m-TOR",
+              "dosage":"Posologie adaptée à votre poids et au taux sanguin",
+              "frequence":"2 prises par jour à 12h d’intervalle",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
-                      "name":"Tremblement des mains"
+                      "name":"Fatigue importante"
                   },
                   {
-                      "name":"Maux de tête"
+                      "name":"Pâleur"
                   },
                   {
-                      "name":"Tension artérielle"
+                      "name":"Vertiges"
                   },
                   {
-                      "name":"Fonction rénale"
+                      "name":"Battements cardiaques accélérés"
                   }
               ]
           }     
@@ -342,20 +349,21 @@
               }
           ],
           "infos":{
-              "family":"Famille des ???",
-              "time":"Pendant les repas",
+              "family":"Famille des anti-métabolites",
+              "frequence":"1 prise par jour",
+              "time":"Pendant ou en dehors des repas",
               "surveillance":[
                   {
-                      "name":"Tremblement des mains"
+                      "name":"Fatigue importante"
                   },
                   {
-                      "name":"Maux de tête"
+                      "name":"Pâleur"
                   },
                   {
-                      "name":"Tension artérielle"
+                      "name":"Vertiges"
                   },
                   {
-                      "name":"Fonction rénale"
+                      "name":"Battements cardiaques accélérés"
                   }
               ]
           }     
@@ -384,20 +392,21 @@
               }
           ],
           "infos":{
-              "family":"Famille des ???",
+              "family":"Famille des glucocorticoïdes",
+              "frequence":"1 prise par jour, le matin",
               "time":"Pendant les repas",
               "surveillance":[
                   {
-                      "name":"Tremblement des mains"
+                      "name":"Oedèmes"
                   },
                   {
-                      "name":"Maux de tête"
+                      "name":"Diabète"
                   },
                   {
                       "name":"Tension artérielle"
                   },
                   {
-                      "name":"Fonction rénale"
+                      "name":"Fragilité osseuse"
                   }
               ]
           }     
@@ -438,20 +447,21 @@
               }
           ],
           "infos":{
-              "family":"Famille des ???",
+              "family":"Famille des glucocorticoïdes",
+              "frequence":"1 prise par jour, le matin",
               "time":"Pendant les repas",
               "surveillance":[
                   {
-                      "name":"Tremblement des mains"
+                      "name":"Oedèmes"
                   },
                   {
-                      "name":"Maux de tête"
+                      "name":"Diabète"
                   },
                   {
                       "name":"Tension artérielle"
                   },
                   {
-                      "name":"Fonction rénale"
+                      "name":"Fragilité osseuse"
                   }
               ]
           }     

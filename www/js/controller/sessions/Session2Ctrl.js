@@ -158,6 +158,16 @@
             });
         }
         
+        vm.openModalOtherPrescription = function() {
+            $ionicModal.fromTemplateUrl('templates/modals/modalOtherPrescription.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.modalOtherPrescription = modal;
+                $scope.modalOtherPrescription.show();
+            });
+        }
+        
         /*
      	 * UI BUTTONS
      	 * Function to process with waiting time when saving a new Session

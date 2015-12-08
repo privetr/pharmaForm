@@ -17,7 +17,26 @@
                  "imagePath": "img/antiinfection/noxafil.gif"
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "infos":{
+              "family":"Antifongique : Aspergillus, Candida",
+              "dosage":"Posologie variable",
+              "time":" Pendant ou en dehors des repas",
+              "surveillance":[
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Troubles visuels"
+                  },
+                  {
+                      "name":"Fatigue importante"
+                  },
+                  {
+                      "name":"Fonction hépatique"
+                  }
+              ]
+          }
       },
       {  
          "id":"antiinfection_2",
@@ -42,7 +61,26 @@
                  "imagePath": "false"
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "infos":{
+              "family":"Antifongique : Aspergillus, Candida",
+              "dosage":"Posologie variable",
+              "time":"Pendant ou en dehors des repas",
+              "surveillance":[
+                  {
+                      "name":"Tension artérielle"
+                  },
+                  {
+                      "name":"Troubles visuels"
+                  },
+                  {
+                      "name":"Fatigue importante"
+                  },
+                  {
+                      "name":"Fonction hépatique"
+                  }
+              ]
+          }
       },
       {  
          "id":"antiinfection_3",
@@ -66,6 +104,22 @@
                   "value":"weekDay",
                   "name":"3 fois par semaine",
                   "selected": false
+          },
+          "infos":{
+              "family":"Antibiotique - Antiparasitaire : Pneumocystis",
+              "dosage":"Posologie variable",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Eruption cutanée, prurit"
+                  },
+                  {
+                      "name":"Fatigue importante"
+                  },
+                  {
+                      "name":"Neuropathie"
+                  }
+              ]
           }          
       },
       {  
@@ -83,6 +137,22 @@
                   "value":"weekDayOnly",
                   "name":"1 fois par semaine",
                   "selected": true
+          },
+          "infos":{
+              "family":"Antibiotique - Antiparasitaire : Pneumocystis",
+              "dosage":"Prise unique, renouvelable",
+              "time":"Pendant ou en dehors des repas",
+              "surveillance":[
+                  {
+                      "name":"Eruption cutanée, prurit"
+                  },
+                  {
+                      "name":"Fatigue importante"
+                  },
+                  {
+                      "name":"Fonctions rénale et hépatique"
+                  }
+              ]
           }
       },
       {  
@@ -100,6 +170,21 @@
                   "value":"monthOnly",
                   "name":"1 fois par mois",
                   "selected": true
+          },
+          "infos":{
+              "family":"Antiparasitaire : Pneumocystis",
+              "frequence":"1 aérosol par mois",
+              "surveillance":[
+                  {
+                      "name":"Toux et essoufflement"
+                  },
+                  {
+                      "name":"Eruption cutanée, prurit"
+                  },
+                  {
+                      "name":"Troubles du goût"
+                  }
+              ]
           }
       },
       {  
@@ -118,7 +203,26 @@
                  "selected":false
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "infos":{
+              "family":"Antiviral : CMV (Cytomégalovirus)",
+              "frequence":"1 prise par jour",
+              "time":"Pendant les repas",
+              "surveillance":[
+                  {
+                      "name":"Candidose buccale"
+                  },
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Fatigue importante"
+                  },
+                  {
+                      "name":"Fonction hépatique"
+                  }
+              ]
+          }
       },
       {  
          "id":"antiinfection_7",
@@ -131,7 +235,26 @@
                  "imagePath": "img/antiinfection/zelitrex-500mg.gif"
               }
           ],
-          "specialfrequence":false
+          "specialfrequence":false,
+          "infos":{
+              "family":"Antiviral : Herpès, Varicelle",
+              "frequence":"2 prises par jour",
+              "time":"Pendant ou en dehors des repas",
+              "surveillance":[
+                  {
+                      "name":"Maux de tête"
+                  },
+                  {
+                      "name":"Fatigue importante"
+                  },
+                  {
+                      "name":"Photosensibilité, prurit"
+                  },
+                  {
+                      "name":"Fonction rénale"
+                  }
+              ]
+          }
       }
    ]
 }

@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive" align-title="center">
+        <h1 class="title">Quelques précisions...</h1>
+        <button class="button button-energized button-clear icon ion-close-round"
+                data-ng-click="modalOtherPrescription.remove();"> 
+            <b>Fermer</b>          
+        </button>
+    </ion-header-bar>
+    
+    <div class="bar bar-subheader bar-positive">
+      <h2 class="title">Vos traitements associés</h2>
+    </div>
+    
+    <ion-content class="has-header has-subheader">
+
+        <div class="list" style="padding-top: 20px">
+             <em ng-repeat="(key_med, medicine) in vm.patient.listOtherPrescription"
+                                  ng-init="medIndex = $index">
+                 <a class="item item-icon-left">
+                    <i class="icon ion-ionic color-energized"></i> 
+                     <em ng-if="medicine.other.existingMedicine">{{medicine.other.medicine.name}}</em>
+                     <em ng-if="!medicine.other.existingMedicine">{{medicine.other.medicine}}</em>
+                 </a>
+             </em>
+        </div>
+        
+    </ion-content>
+    
+    
+</ion-modal-view>
