@@ -45,6 +45,8 @@
         
         vm.alreadyDone = $stateParams.alreadyDone;
         
+        vm.bilanFinal = {};
+        
         var currentScrollYPosition = 0;
         
 		/*
@@ -65,6 +67,7 @@
                         
                         vm.getTrueFalseQuestion();
                         vm.getQuestions();
+                        vm.getBilanSession();
                         
                         break;
                     }
@@ -92,6 +95,19 @@
                     vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
                     console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
                 });
+            }
+         }
+        
+         vm.getBilanSession = function() {
+            // We can display the bilan if it has already be done
+            if(vm.alreadyDone === '1'){
+                for (var i = 0 ; i < vm.patient.listSessionsAnswers.length ; i++) {
+                    if (vm.patient.listSessionsAnswers[i].id === $stateParams.sessionId) {
+                        vm.bilanFinal = vm.patient.listSessionsAnswers[i].answer.bilanFinal;
+                        console.log('getBilanSession return : ', vm.bilanFinal);
+                        break;
+                    }
+                }
             }
          }
          
@@ -163,6 +179,8 @@
             // Slide 2
             vm.session.answer.listTrueFalseQuestions = vm.listTrueFalseQuestions;
             
+            // Slide 3
+            vm.session.answer.bilanFinal = vm.bilanFinal;
             
             var tmpAlreadyDone = false;
             
@@ -211,6 +229,22 @@
                 $state.go('choice_session', {patientId: vm.patient.id} );
             })
             
+            // http://stackoverflow.com/questions/22184659/cannot-make-pdf-from-html-div-by-jspdf
+            /*var doc = new jsPDF();
+
+            var specialElementHandlers = {
+                  'test': function(element, renderer){
+                   return true;
+                }
+            };
+
+            var html=$(".wrap_all").html();
+            doc.fromHTML(html,15,15, {
+                'width': 300,
+                'elementHandlers': specialElementHandlers
+            });
+            doc.output("dataurlnewwindow");*/
+
             displayButtonSaveSession();
         }
         

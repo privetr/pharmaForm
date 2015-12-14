@@ -8,7 +8,7 @@
                  "id":"dosage_1_1",
                  "name":"100 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antiinfection/noxafil100mg.JPG"
               },
               {  
                  "id":"dosage_1_2",
@@ -58,7 +58,7 @@
                  "id":"dosage_2_3",
                  "name":"40 mg/ml",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antiinfection/Vfend40 mgml.GIF"
               }
           ],
           "specialfrequence":false,
@@ -91,11 +91,11 @@
                  "name":"400mg-80mg",
                  "selected":false,
                  "choicedays":"",
-                 "imagePath": "false"
+                 "imagePath": "img/antiinfection/bactrim80-400.JPG"
               },
               {  
                  "id":"dosage_3_2",
-                 "name":"800mg-160 (FORTE)",
+                 "name":"800mg-160mg (FORTE)",
                  "selected":false,
                  "imagePath": "img/antiinfection/bactrim-forte.gif"
               }
@@ -195,7 +195,7 @@
                  "id":"dosage_6_1",
                  "name":"450 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antiinfection/rovalcyte450mg.jpg"
               },
               {  
                  "id":"dosage_6_2",

@@ -7,7 +7,7 @@
 	<body>
 		<ion-header-bar class="bar-positive" align-title="center">
 			<h1 class="title">
-				<img class="title-image" src="img/home/chuGrenoble.jpg" width="40" height="20" /> 
+				<img class="title-image" src="img/logo.png" width="30" height="30" /> 
 				Greathe
 			</h1>
 	  	</ion-header-bar>
@@ -22,7 +22,13 @@
 				<!-- The content of the page -->
 				<ion-content class="has-header has-subheader">
 				
-                    <div class="col">
+                    <div class="row" ng-click="vm.displayGif = !vm.displayGif" ng-if="vm.displayGif">
+                        <div class="col col-50 col-offset-25">
+                            <img class="img-responsive" src="img/logogif.gif">
+                        </div>
+                    </div>
+                    
+                    <div class="col" ng-if="!vm.displayGif">
                         <form class="simple-form" name="formConnexion" ng-submit="vm.doLogin()">
                             <div class="row">
                                 <div class="col">
@@ -39,14 +45,17 @@
                             </div>
                         </form>
                     </div>
-
-                    <div class="row">
-                        <div class="col col-33 col-offset-33">
-                            <img class="img-responsive" src="img/home/chuGrenoble.jpg">
-                        </div>
-                    </div>
 					
 				</ion-content>
+                
+                <!-- align to the bottom of the page -->
+                <div style="position: absolute; bottom: 0px; width: 100%">
+                    <div style="text-align: center">
+                        <button class="button button-clear button-stable" ng-click="vm.openModalPurpose();">
+                            <i class="icon ion-information-circled"></i> A propos
+                        </button>
+                    </div>
+                </div>
 				
 			</ion-view>
 		</ion-nav-view>

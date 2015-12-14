@@ -64,7 +64,7 @@
                  "id":"dosage_2_3",
                  "name":"3 mg LP",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/advagraf3mg.gif"
               },
               {  
                  "id":"dosage_2_4",
@@ -101,12 +101,12 @@
               {  
                  "id":"dosage_3_1",
                  "name":"0,2 mg",
-                  "imagePath": "false"
+                  "imagePath": "img/antireject/modigraf0.2mg.png"
               },
               {  
                  "id":"dosage_3_2",
                  "name":"1 mg",
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/modigraf1mg.jpg"
               }
           ],
           "infos":{
@@ -209,7 +209,7 @@
                  "id":"dosage_5_3",
                  "name":"1g/5mL",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/cellcept1g5ml.jpg"
               }
           ],
           "infos":{
@@ -240,13 +240,13 @@
                  "id":"dosage_6_1",
                  "name":"180 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/myfortic180mg.jpg"
               },
               {  
                  "id":"dosage_6_2",
                  "name":"360 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/myfortic360mg.jpg"
               }
           ],
           "infos":{
@@ -283,7 +283,7 @@
                  "id":"dosage_7_2",
                  "name":"0,1 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/certican0.1mg.jpg"
               },
               {  
                  "id":"dosage_7_3",
@@ -301,7 +301,7 @@
                  "id":"dosage_7_5",
                  "name":"0,5 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/certican0.5mg.jpg"
               },
               {  
                  "id":"dosage_7_6",
@@ -339,7 +339,7 @@
                  "id":"dosage_8_1",
                  "name":"25 mg",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/imurel25mg.jpg"
               },
               {  
                  "id":"dosage_8_2",
@@ -431,7 +431,7 @@
                  "id":"dosage_10_3",
                  "name":"20 mg effervescent",
                  "selected":false,
-                 "imagePath": "false"
+                 "imagePath": "img/antireject/solupred20mg.jpg"
               },
               {  
                  "id":"dosage_10_4",
