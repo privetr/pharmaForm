@@ -168,7 +168,7 @@
                     console.log('Email sent');
                 };
                 
-                window.plugin.email.isServiceAvailable(
+                window.plugin.email.isAvailable(
                     function(isAvailable) {
                         window.plugin.email.open(emailProperties, emailCallback, this);
                     }
