@@ -84,14 +84,19 @@
             // https://github.com/cunneen/Cordova-PDF-Example-using-jsPDF/blob/master/www/js/jutoPDFCreator.js
             // https://parall.ax/products/jspdf
             var pdfOutput;
+            var bodyOutput;
             if(indexSession === 1){
                 pdfOutput = pfPdfGeneratorService.generatePdfSession1(vm.patient, indexSession);
+                bodyOutput = pfPdfGeneratorService.generateBodySession1(vm.patient, indexSession);
             } else if(indexSession === 2){
                 pdfOutput = pfPdfGeneratorService.generatePdfSession2(vm.patient, indexSession);
+                bodyOutput = pfPdfGeneratorService.generateBodySession2(vm.patient, indexSession);
             } else if(indexSession === 3){
                 pdfOutput = pfPdfGeneratorService.generatePdfSession3(vm.patient, indexSession);
+                bodyOutput = pfPdfGeneratorService.generateBodySession3(vm.patient, indexSession);
             } else if(indexSession === 4){
                 pdfOutput = pfPdfGeneratorService.generatePdfSession4(vm.patient, indexSession);
+                bodyOutput = pfPdfGeneratorService.generateBodySession4(vm.patient, indexSession);
             }
             
             
@@ -100,54 +105,6 @@
             } 
             else {
                 
-                /*window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-
-                   console.log(fileSystem.name);
-                   console.log(fileSystem.root.name);
-                   console.log(fileSystem.root.fullPath);
-
-                   fileSystem.root.getFile("test.pdf", {create: true}, function(entry) {
-                        var fileEntry = entry;
-                        console.log(entry);
-
-                        entry.createWriter(function(writer) {
-                            writer.onwrite = function(evt) {
-                                alert("write success");
-                            };
-
-                            console.log("writing to file");
-                            writer.write( pdfOutput );
-                        }, function(error) {
-                            console.log(error);
-                        });
-
-                   }, function(error){
-                      console.log(error);
-                   });
-                });*/
-                /*$cordovaFile.writeFile(cordova.file.dataDirectory, 'myFile.txt', "testttttt", true)
-                .then(function(success){
-
-                    alert("ok");
-                }, function(error){
-                    alert('did not create file ' + error.code);
-                });*/
-                
-                
-                                         
-                
-                
-                // iciii
-                /*var reader = new FileReader;
-                var myBlob = new Blob([moddeduristring], {type: 'application/pdf'});
-                var fileURL = URL.createObjectURL(myBlob);
-                window.open(fileURL);*/
-                
-                /*reader.onload = function() {
-                    window.open(this.result.replace(/data:.+?\/[^;]+/, "data:application/octet-stream"));
-                };
-                reader.readAsDataURL(myBlob);*/
-                // ici
                 
                 var pdfOutpurUri = pdfOutput.output('datauristring');
                 
@@ -161,7 +118,7 @@
                     attachments: [moddeduristring], // paths to the files you want to attach or base64 encoded data streams
                     subject: 'Bilan session', // subject of the email
                     body: 'Document PDF Comportant le bilan de la session numéro X de ' + 
-                        vm.patient.lastname + ' ' + vm.patient.firstname + '<br/>',
+                        vm.patient.lastname + ' ' + vm.patient.firstname + '<br/>' + bodyOutput,
                     isHtml: true // indicats if the body is HTML or plain text
                 };
                 var emailCallback = function() {
