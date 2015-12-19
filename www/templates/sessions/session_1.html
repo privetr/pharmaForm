@@ -9,8 +9,7 @@
             <a class="button button-icon icon ion-chevron-left white" 
                ng-click="vm.popupBack()"> Liste séances</a>
 			<h1 class="title">
-				<img class="title-image" src="img/logo.png " width="30" height="30" /> 
-				Greathe
+				<img class="title-image" src="img/logo.png" width="100" height="25" /> 
 			</h1>
             <a id="button_save_session" class="button button-icon icon ion-paper-airplane white" ng-click="vm.popupSaveSession()"> Terminer</a>
 	  	</ion-header-bar>
@@ -40,7 +39,14 @@
                         </div>
                         
                         <ion-content class="has-header has-subheader has-footer" id="mainScroll-0" style="padding-top:60px;">
-                            <div class="row" style="padding-top:30px;">
+                            
+                            <div class="row item-center" style="padding-top:30px;">
+                                <h1 class="maincolor">
+                                    <b>Séance 1 : Diagnostic éducatif</b>
+                                </h1>
+                            </div>
+                            
+                            <div class="row item-center" style="padding-top:30px;">
                                 <h3 class="maincolor" style="padding-left:10px;">
                                     Bienvenue dans la première séance !
                                 </h3>
@@ -48,17 +54,17 @@
                                 
                             <div class="list" style="padding-top: 30px">
                                 <div class="item item-divider">
-                                    <b>Objectif de la séance : Identifier vos besoins et attentes</b>
+                                    <b>Objectifs de la séance</b>
                                 </div>
                                 <a class="item item-icon-left"><i class="icon ion-ionic color-energized"></i> 
-                                    D’abord, quelques questions sur votre vie quotidienne</a>
+                                    D’abord, identifier vos besoins et attentes sur votre vie quotidienne</a>
                                 <a class="item item-icon-left"><i class="icon ion-ionic color-energized"></i>
-                                    Ensuite, quelques questions sur la transplantation</a>
+                                    Ensuite, identifier vos besoins et attentes sur la transplantation</a>
                             </div>
 
-                            <div class="row" style="padding-top:30px;">
+                            <div class="row item-center" style="padding-top:30px;">
                                 <h3 class="color-grey" style="padding-left:10px;">
-                                    Etes-vous prêt ?
+                                    Etes-vous prêt ? 
                                 </h3>
                             </div>
                         </ion-content>
@@ -218,7 +224,7 @@
                             <!-- vm.selectFamilySituation -->
                             <div class="row" style="margin-top:20px;">
                                 <div class="col col-25 item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Quelle est votre situation familiale ? </h4>
                                 </div>
                                 <div class="col col-75">
@@ -235,7 +241,7 @@
                             <!-- vm.doYouHaveChildren -->
                             <div class="row">
                                 <div class="col col-25 item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Avez-vous des enfants ?
                                     </h4>
                                 </div>
@@ -250,7 +256,7 @@
                             <!-- vm.doYouHaveGrandChildren -->
                             <div class="row">
                                 <div class="col col-25 item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Avez-vous des petits-enfants ?
                                     </h4>
                                 </div>
@@ -265,7 +271,7 @@
                             <!-- vm.contraceptionTrueFalse &  vm.contraceptionWhich -->
                             <div class="row">
                                 <div class="col item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Avez-vous un ou des moyens de contraception ? 
                                     </h4>
                                 </div>
@@ -298,7 +304,7 @@
                             <!-- vm.pregnantTrueFalse &  vm.pregnantWhen -->
                             <div class="row">
                                 <div class="col item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Avez-vous un projet de grossesse ?  
                                     </h4>
                                 </div>
@@ -331,7 +337,7 @@
                             <!-- vm.selectOwner -->
                             <div class="row" style="margin-top:20px;">
                                 <div class="col col-25 item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">Êtes-vous ? </h4>
+                                    <h4 class="color-grey" style="padding-left:10px;">Êtes-vous ? </h4>
                                 </div>
                                 <div class="col col-75">
                                     <select class="ion-input-select-large"
@@ -346,7 +352,7 @@
                             <!-- vm.typeHome -->
                             <div class="row" style="margin-top:20px;">
                                 <div class="col col-25 item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">Vivez vous en ? </h4>
+                                    <h4 class="color-grey" style="padding-left:10px;">Vivez vous en ? </h4>
                                 </div>
                                 <div class="col col-75">
                                     <select class="ion-input-select-large"
@@ -360,7 +366,7 @@
                             <!-- vm.homeAdapted &  vm.homeDescription -->
                             <div class="row">
                                 <div class="col item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Votre logement est-il adapté ? 
                                     </h4>
                                 </div>
@@ -393,7 +399,7 @@
                             <!-- vm.doYouHavePets &  vm.whichPets -->
                             <div class="row">
                                 <div class="col item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Avez-vous des animaux domestiques ?
                                     </h4>
                                 </div>
@@ -426,7 +432,7 @@
                             <!-- vm.doYouHaveAllocation -->
                             <div class="row">
                                 <div class="col col-25 item-text-wrap">
-                                    <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                                    <h4 class="color-grey" style="padding-left:10px;">
                                         Avez-vous des allocations ?
                                     </h4>
                                 </div>
@@ -472,7 +478,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Pas bien du tout</em>
                                 </div>
                                 <div class="col col-50">
@@ -482,7 +488,7 @@
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
                                 </div>
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Très bien</em>
                                 </div>
                             </div>
@@ -494,7 +500,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Pas bien du tout</em>
                                 </div>
                                 <div class="col col-50">
@@ -504,7 +510,7 @@
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
                                 </div>
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Très bien</em>
                                 </div>
                             </div>
@@ -517,7 +523,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Pas bien du tout</em>
                                 </div>
                                 <div class="col col-50">
@@ -526,7 +532,7 @@
                                         <input type="range" ng-model="vm.domaine3" name="rangePain" min="0" max="100" value="50">
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
-                                </div><div class="col col-25">
+                                </div><div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Très bien</em>
                                 </div>
                             </div>
@@ -538,7 +544,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Pas bien du tout</em>
                                 </div>
                                 <div class="col col-50">
@@ -548,7 +554,7 @@
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
                                 </div>
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Très bien</em>
                                 </div>
                             </div>
@@ -560,7 +566,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Pas bien du tout</em>
                                 </div>
                                 <div class="col col-50">
@@ -570,7 +576,7 @@
                                         <i class="icon ion-happy-outline color-positive"></i>
                                     </div>
                                 </div>
-                                <div class="col col-25">
+                                <div class="col col-25" style="padding-top:20px;">
                                     <em class="item-center">Très bien</em>
                                 </div>
                             </div>
@@ -939,10 +945,9 @@
                         
                         <ion-content class="has-header has-subheader has-footer" id="mainScroll-7" style="padding-top:60px;">
                             
-                            <div class="row" style="padding-top:30px;">
+                            <div class="row item-center-100" style="padding-top:30px;">
                                 <h3 class="maincolor item-center" style="padding-left:10px;">
-                                    La première partie est finie ! <br><br>
-                                    Passons à la seconde partie, sur la transplantation.
+                                    Passons maintenant à la partie sur la transplantation !
                                 </h3>
                             </div>
                             
