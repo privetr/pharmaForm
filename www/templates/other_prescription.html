@@ -31,20 +31,18 @@
                         <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements associés
                     </h3>
                     
-                    <div class="row">
-                        <div class="col">
-                            <ul class="list item-text-wrap">
-                                <ion-radio ng-model="vm.existingMedicine" ng-value="true" 
-                                           ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
-                                    Médicament fréquent
-                                </ion-radio>
-                                <ion-radio ng-model="vm.existingMedicine" ng-value="false" 
-                                           ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
-                                    Médicament hors liste
-                                </ion-radio>
-                            </ul>
-                        </div>
-                    </div>
+                    <ion-list>
+                        <ion-radio ng-model="vm.existingMedicine" ng-value="true" 
+                                   ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
+                            Médicament fréquent
+                        </ion-radio>
+                        <ion-radio ng-model="vm.existingMedicine" ng-value="false" 
+                                   ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
+                            Médicament hors liste
+                        </ion-radio>
+                    </ion-list>
+                    
+                    
                     
                     
                     <!-- existing medicine prescription -->

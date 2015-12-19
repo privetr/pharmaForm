@@ -32,6 +32,9 @@
         vm.showDelete = false;
         vm.showReorder = false;
         
+        vm.showDeleteComment = false;
+        vm.showReorderComment = false;
+        
         // Vaccins
         vm.listVaccins = [];
         

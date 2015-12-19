@@ -26,8 +26,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 /*  MAIN COLORS */
 
-$mainColor : #A1006B;
-$secondaryColor : #009688;
+$mainColor : #D9004D;
+$secondaryColor : #2196F3;
 
 $greyColor : #616161;
 $blackColor : #000000;
@@ -190,7 +190,7 @@ select#siteSelector.ion-input-select-large.has-error {
 }
 .button.button-positive.active, .button.button-positive.activated {
   	border-color: $mainColor;
-  	background-color: #830057;
+  	background-color: #BC0142;
   	color: white;
   	font-weight: bold;
 }

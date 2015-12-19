@@ -7704,13 +7704,13 @@ a.button {
 /*  MAIN COLORS */
 /* Ionic colors */
 .background-maincolor {
-  background-color: #A1006B; }
+  background-color: #D9004D; }
 
 .maincolor {
-  color: #A1006B; }
+  color: #D9004D; }
 
 .secondarycolor {
-  color: #009688; }
+  color: #2196F3; }
 
 .color-energized {
   color: #ffc900; }
@@ -7743,7 +7743,7 @@ body, .ionic-body {
 
 /* NAV BAR */
 .bar.bar-positive {
-  background-color: #009688;
+  background-color: #2196F3;
   border-color: #DADADA;
   /*padding-top:0px;*/
   border: none;
@@ -7754,7 +7754,7 @@ body, .ionic-body {
 
 .tab-nav {
   color: white;
-  background-color: #009688 !important; }
+  background-color: #2196F3 !important; }
 
 .bar.bar-positive .title {
   font-size: 15px;
@@ -7771,7 +7771,7 @@ body, .ionic-body {
   box-shadow: 0px -1px 1px #b4b4b4; }
 
 .tabs-striped .tabs {
-  background-color: #009688 !important; }
+  background-color: #2196F3 !important; }
 
 .tab-nav.tabs {
   -webkit-box-shadow: none;
@@ -7824,27 +7824,27 @@ select#siteSelector.ion-input-select-large.has-error {
 
 /* BUTTONS */
 .button.button-positive {
-  border-color: #A1006B;
-  background-color: #A1006B;
+  border-color: #D9004D;
+  background-color: #D9004D;
   color: white;
   font-weight: bold; }
 
 .button.button-positive.active, .button.button-positive.activated {
-  border-color: #A1006B;
-  background-color: #830057;
+  border-color: #D9004D;
+  background-color: #BC0142;
   color: white;
   font-weight: bold; }
 
 .button.button-positive.button-outline {
-  border-color: #A1006B;
-  background-color: #009688;
-  color: #A1006B;
+  border-color: #D9004D;
+  background-color: #2196F3;
+  color: #D9004D;
   font-weight: bold; }
 
 .button.button-positive.button-outline.active, .button.button-positive.button-outline.activated {
-  border-color: #009688;
-  background-color: #A1006B;
-  color: #009688;
+  border-color: #2196F3;
+  background-color: #D9004D;
+  color: #2196F3;
   font-weight: bold; }
 
 .ion-input-select-large, .ion-input-select, select {

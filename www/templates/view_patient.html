@@ -95,13 +95,14 @@
 
                         <!-- graftType -->
                         <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Type de transplantation</h4>
-                        <select class="ion-input-select-large"	ng-options="id as grafttype for (id, grafttype) in vm.listGraftType"
+                        <select class="ion-input-select-large col-50"	style="border: thin solid #9E9E9E" 
+                                ng-options="id as grafttype for (id, grafttype) in vm.listGraftType"
                                 ng-model="vm.graftType" ng-init="vm.graftType=vm.graftType"
                                 ng-disabled="!vm.edition">         
                         </select>
                         
                         <!-- isReGraft -->
-                        <ul class="list" ng-if="vm.isReGraft || vm.edition">
+                        <ul class="list col-50" ng-if="vm.isReGraft || vm.edition">
                             <li class="item item-checkbox">
                                 <label class="checkbox">
                                     <input type="checkbox" ng-model="vm.isReGraft" ng-init="vm.isReGraft=vm.isReGraft" ng-disabled="!vm.edition">
@@ -259,7 +260,8 @@
                     </div>
                     
                     <!-- Vaccins -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Vaccins</h4>
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px"
+                        ng-if="vm.listVaccins.length > 0 || vm.edition">Vaccins</h4>
                     <div class="row" ng-if="vm.edition">
                         <div class="col col-33">
                             <select class="ion-input-select-large"	
@@ -319,7 +321,8 @@
                     </ion-list>
 
                     <!-- Comments -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Commentaires</h4>
+                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px" 
+                        ng-if="vm.listComments.length > 0 || vm.edition">Commentaires</h4>
                     <div class="col" ng-if="vm.edition">
                         <label class="item item-input">
                             <input id="input_new_comment" type="text" 
@@ -335,21 +338,21 @@
                         </div>
                        <div class="col-50 col">
                             <button class="button button-clear button-assertive icon ion-close-round"
-                                ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false"
+                                ng-click="vm.showDeleteComment = !vm.showDeleteComment; vm.showReorderComment = false"
                                 ng-if="vm.edition">
                             </button>
                             <button class="button button-clear button-energized icon ion-shuffle"
-                                ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder"
+                                ng-click="vm.showDeleteComment = false; vm.showReorderComment = !vm.showReorderComment"
                                 ng-if="vm.edition">
                             </button>
                             <button class="button button-clear button-dark icon ion-edit"
-                                 ng-click="vm.showDelete = false; vm.showReorder = false"
+                                 ng-click="vm.showDeleteComment = false; vm.showReorderComment = false"
                                  ng-if="vm.edition">
                             </button>
                         </div>
                     </div>
 
-                    <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+                    <ion-list show-delete="vm.showDeleteComment" show-reorder="vm.showReorderComment">
                         <div class="list list-inset">
                             <ion-item ng-repeat="(key_comment, comment) in vm.listComments" class="item-text-wrap item-icon-right"
                                       ng-click="!vm.edition || vm.editComment(key_comment, comment)">

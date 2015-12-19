@@ -22,15 +22,15 @@
       },
       {  
          "id":"vaccin_6",
-         "title":"Méningocoques de type A et C"
+         "title":"Méningocoque de type A et C"
       },
       {  
          "id":"vaccin_7",
-         "title":"Méningocoques de type A, C, W135 et Y"
+         "title":"Méningocoque de type A, C, W135 et Y"
       },
       {  
          "id":"vaccin_8",
-         "title":"Pneumocoques"
+         "title":"Pneumocoque"
       }
    ]
 }
