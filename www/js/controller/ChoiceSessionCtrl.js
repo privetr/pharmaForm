@@ -86,21 +86,21 @@
             var pdfOutput;
             var bodyOutput;
             if(indexSession === 1){
-                pdfOutput = pfPdfGeneratorService.generatePdfSession1(vm.patient, indexSession);
+                //pdfOutput = pfPdfGeneratorService.generatePdfSession1(vm.patient, indexSession);
                 bodyOutput = pfPdfGeneratorService.generateBodySession1(vm.patient, indexSession);
             } else if(indexSession === 2){
-                pdfOutput = pfPdfGeneratorService.generatePdfSession2(vm.patient, indexSession);
+                //pdfOutput = pfPdfGeneratorService.generatePdfSession2(vm.patient, indexSession);
                 bodyOutput = pfPdfGeneratorService.generateBodySession2(vm.patient, indexSession);
             } else if(indexSession === 3){
-                pdfOutput = pfPdfGeneratorService.generatePdfSession3(vm.patient, indexSession);
+                //pdfOutput = pfPdfGeneratorService.generatePdfSession3(vm.patient, indexSession);
                 bodyOutput = pfPdfGeneratorService.generateBodySession3(vm.patient, indexSession);
             } else if(indexSession === 4){
-                pdfOutput = pfPdfGeneratorService.generatePdfSession4(vm.patient, indexSession);
+                //pdfOutput = pfPdfGeneratorService.generatePdfSession4(vm.patient, indexSession);
                 bodyOutput = pfPdfGeneratorService.generateBodySession4(vm.patient, indexSession);
             }
             
             
-            if (!window.plugin || !window.plugin.email) {
+            /*if (!window.plugin || !window.plugin.email) {
                pdfOutput.save(vm.patient.lastname + '_' + vm.patient.firstname + '_BilanSession_' + vm.nowDate + '.pdf');
             } 
             else {
@@ -111,20 +111,23 @@
                 var uristringparts = pdfOutpurUri.split(',');
                 uristringparts[0] = 'base64:' + escape(vm.patient.lastname + 'BilanSession-' + vm.nowDate + '.pdf') + '//';
 
-                var moddeduristring =  uristringparts.join('');
+                var moddeduristring =  uristringparts.join('');*/
 
+            if (!window.plugin || !window.plugin.email) {
+                pfUtilsService.showAlert('Erreur', 'Impossible d\'envoyer un mail');
+            } 
+            else {
                 var emailProperties = {
-                    to: ['privet.remi@gmail.com'],
-                    attachments: [moddeduristring], // paths to the files you want to attach or base64 encoded data streams
+                    to: [],
+                    attachments: [], // paths to the files you want to attach or base64 encoded data streams
                     subject: 'Bilan session', // subject of the email
-                    body: 'Document PDF Comportant le bilan de la session numéro X de ' + 
-                        vm.patient.lastname + ' ' + vm.patient.firstname + '<br/>' + bodyOutput,
+                    body: bodyOutput,
                     isHtml: true // indicats if the body is HTML or plain text
                 };
                 var emailCallback = function() {
                     console.log('Email sent');
                 };
-                
+
                 window.plugin.email.isAvailable(
                     function(isAvailable) {
                         window.plugin.email.open(emailProperties, emailCallback, this);

@@ -166,28 +166,8 @@
                                 </h4>
                             </div>
                             <div class="row">
-                                <div class="col col-33 col-offset-33" style="padding:30px";>
-                                    <img class="img-responsive" src="img/session2/rejet4.png">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-33 col-offset-33" style="padding:30px";>
-                                    <img class="img-responsive" src="img/session2/rejet5.png">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-33 col-offset-33" style="padding:30px";>
-                                    <img class="img-responsive" src="img/session2/rejet6.png">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-33 col-offset-33" style="padding:30px";>
-                                    <img class="img-responsive" src="img/session2/rejet7.png">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-33 col-offset-33" style="padding:30px";>
-                                    <img class="img-responsive" src="img/session2/rejet8.png">
+                                <div class="col col-80 col-offset-10" style="padding:30px";>
+                                    <img class="img-responsive" src="img/session2/oubli_complet.png">
                                 </div>
                             </div>
                             
@@ -358,30 +338,20 @@
                                     On dit que l’on est immunodéprimé.
                                 </h4>
                             </div>
-                            <div class="col col-33 col-offset-33" style="padding:30px";>
-                                <img class="img-responsive" src="img/session2/immunodeprime.png">
+                            <div class="col col-80 col-offset-10" style="padding:30px";>
+                                <img class="img-responsive" src="img/session2/immunodepr_complet.png">
                             </div>
-                            <div class="col col-33 col-offset-33" style="padding:30px";>
-                                <img class="img-responsive" src="img/session2/immunodeprime2.png">
-                            </div>
-                            <div class="col col-33 col-offset-33" style="padding:30px";>
-                                <img class="img-responsive" src="img/session2/immunodeprime3.png">
-                            </div>
+                            
                             
                             <div class="row">
                                 <h4 class="color-grey">
                                     On apporte d’autres médicaments pour protéger le corps des infections : des médicaments anti-infectieux : 
                                 </h4>
                             </div>
-                            <div class="col col-33 col-offset-33" style="padding:30px";>
-                                <img class="img-responsive" src="img/session2/antiinfection1.png">
+                            <div class="col col-80 col-offset-10" style="padding:30px";>
+                                <img class="img-responsive" src="img/session2/infection_complet.png">
                             </div>
-                            <div class="col col-33 col-offset-33" style="padding:30px";>
-                                <img class="img-responsive" src="img/session2/antiinfection2.png">
-                            </div>
-                            <div class="col col-33 col-offset-33" style="padding:30px";>
-                                <img class="img-responsive" src="img/session2/antiinfection3.png">
-                            </div>
+                            
                             
                             <div class="row">
                                 <h4 class="color-grey">
@@ -539,61 +509,18 @@
                                 </h3>
                             </div>
                             
-                            <div class="row">
+                            <div class="row item-center">
                                 <h3 class="color-grey">
                                     <b>Mise en place d’une surveillance rapprochée avec des consultations au centre de référence : 
                                         Tous les mois</b>
                                 </h3>
                             </div>
                             <div class="list" style="padding-top: 30px">
-                                <div class="item item-divider item-text-wrap">
-                                    Examens généralement réalisés :
+                                <div class="item item-divider item-text-wrap" 
+                                     ng-click="vm.suiviClinique = ! vm.suiviClinique" ng-init="vm.suiviClinique = false">
+                                    Clinique +/- radiographie
                                 </div>
-                                <a class="item">
-                                    <div class="col">
-                                        <i class="icon ion-ionic color-energized"></i> 
-                                        <em class="item-text-wrap" style="padding-left:5px;">
-                                            Clinique +/- radiographie
-                                        </em>
-                                        <br>
-                                    </div>
-                                    <div class="col">
-                                        <i class="icon ion-ionic color-energized"></i> 
-                                        <em class="item-text-wrap" style="padding-left:5px;">
-                                            EFR +/- entrainement à l’effort
-                                        </em>
-                                        <br>
-                                    </div>
-                                    <div class="col">
-                                        <i class="icon ion-ionic color-energized"></i> 
-                                        <em class="item-text-wrap" style="padding-left:5px;">
-                                            Bilan biologique avec dosages sanguins : 
-                                            immunosuppresseurs, cholestérol, sucre, cellules du sang, ...
-                                        </em>
-                                        <br>
-                                    </div>
-                                    <div class="col">
-                                        <i class="icon ion-ionic color-energized"></i> 
-                                        <em class="item-text-wrap" style="padding-left:5px;">
-                                            Surveillance de la fonction rénale et hépatique
-                                        </em>
-                                        <br>
-                                    </div>
-                                    <div class="col">
-                                        <i class="icon ion-ionic color-energized"></i> 
-                                        <em class="item-text-wrap" style="padding-left:5px;">
-                                            Recherche de micro-organismes
-                                        </em>
-                                        <br>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="list" style="padding-top: 30px">
-                                <div class="item item-divider item-text-wrap">
-                                    Suivi clinique
-                                </div>
-                                <a class="item">
+                                <a class="item" ng-if="vm.suiviClinique">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -639,15 +566,11 @@
                                         <br>
                                     </div>
                                 </a>
-                            </div>
-                            
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    EFR : Exploration Fonctionnelle Respiratoire
-                                </h3>
-                            </div>
-                            <div class="list" style="padding-top: 30px">
-                                <a class="item">
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.suiviEfr = ! vm.suiviEfr" ng-init="vm.suiviEfr = false">
+                                    EFR +/- entrainement à l’effort
+                                </div>
+                                <a class="item" ng-if="vm.suiviEfr">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -664,18 +587,12 @@
                                         <br>
                                     </div>
                                 </a>
-                            </div>
-                            
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    Suivi biologique
-                                </h3>
-                            </div>
-                            <div class="list" style="padding-top: 30px">
-                                <div class="item item-divider item-text-wrap">
-                                    Dosages sanguins programmés :
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.suiviBio = ! vm.suiviBio" ng-init="vm.suiviBio = false">
+                                    Bilan biologique avec dosages sanguins : 
+                                            immunosuppresseurs, cholestérol, sucre, cellules du sang, ...
                                 </div>
-                                <a class="item">
+                                <a class="item" ng-if="vm.suiviBio">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -712,15 +629,11 @@
                                         <br>
                                     </div>
                                 </a>
-                            </div>
-                            
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    Suivi rénal et hépatique
-                                </h3>
-                            </div>
-                            <div class="list" style="padding-top: 30px">
-                                <a class="item">
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.suiviRenal = ! vm.suiviRenal" ng-init="vm.suiviRenal = false">
+                                    Surveillance de la fonction rénale et hépatique
+                                </div>
+                                <a class="item" ng-if="vm.suiviRenal">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -736,15 +649,11 @@
                                         <br>
                                     </div>
                                 </a>
-                            </div>
-                            
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    Suivi infectieux
-                                </h3>
-                            </div>
-                            <div class="list" style="padding-top: 30px">
-                                <a class="item">
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.suiviInfectieux = ! vm.suiviInfectieux" ng-init="vm.suiviRenal = false">
+                                     Suivi infectieux
+                                </div>
+                                <a class="item" ng-if="vm.suiviInfectieux">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -755,20 +664,19 @@
                                     </div>
                                 </a>
                             </div>
-                            
-                            <div class="row">
+                        
+                            <div class="row item-center" style="padding-top: 30px">
                                 <h3 class="color-grey">
                                     <b>Entre deux consultations au centre de référence : </b>
                                 </h3>
                             </div>
-                            
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    Suivi dans un <b>laboratoire en ville </b>
-                                </h3>
-                            </div>
+ 
                             <div class="list" style="padding-top: 30px">
-                                <a class="item">
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.labo = ! vm.labo" ng-init="vm.labo = false">
+                                     Suivi dans un <b>laboratoire en ville </b>
+                                </div>
+                                <a class="item" ng-if="vm.labo">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -791,15 +699,11 @@
                                         <br>
                                     </div>
                                 </a>
-                            </div>
-                            
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    Suivi au <b>domicile</b> :
-                                </h3>
-                            </div>
-                            <div class="list" style="padding-top: 30px">
-                                <a class="item">
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.domicile = ! vm.domicile" ng-init="vm.domicile = false">
+                                     Suivi au <b>domicile</b>
+                                </div>
+                                <a class="item" ng-if="vm.domicile">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -809,17 +713,25 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
+
+                            <div class="row">
+                                <h4 class="color-grey">
                                     Tout résultat d’examen/contrôle effectué en dehors du centre doit être apporté lors des rendez-vous.
+                                </h4>
+                            </div>
+                            
+                            <div class="row item-center" style="padding-top: 30px">
+                                <h3 class="color-grey">
+                                    <b>Les complications</b>
                                 </h3>
                             </div>
 
                             <div class="list" style="padding-top: 30px">
-                                <div class="item item-divider item-text-wrap">
-                                    La transplantation pulmonaire et ses traitements peuvent entrainer des complications dont :
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.complications = ! vm.complications" ng-init="vm.complications = false">
+                                    La transplantation pulmonaire et ses traitements peuvent entrainer des complications
                                 </div>
-                                <a class="item">
+                                <a class="item" ng-if="vm.complications">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -864,10 +776,10 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
+                            <div class="row" style="padding-top:20px">
+                                <h4 class="color-grey">
                                     D’autres médicaments peuvent alors être ajoutés en cas de nécessité.
-                                </h3>
+                                </h4>
                             </div>
                             
                             <div class="row" style="margin-top:10px;">
@@ -880,10 +792,11 @@
                             </div>
                             
                             <div class="list" style="padding-top: 30px">
-                                <div class="item item-divider item-text-wrap">
-                                    D’autres surveillances peuvent être effectuée
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.surveillance = ! vm.surveillance" ng-init="vm.surveillance = false">
+                                    D’autres surveillances peuvent être effectuées
                                 </div>
-                                <a class="item">
+                                <a class="item" ng-if="vm.surveillance">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -928,18 +841,20 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
-                                    Au quotidien : privilégier une alimentation saine et équilibre
-	                               pratiquer une activité physique régulière 
-                                </h3>
+                            <div class="row" style="padding-top:20px">
+                                <h4 class="color-grey">
+                                    Au quotidien : 
+                                    Privilégier une alimentation saine et équilibrée et
+	                                pratiquer une activité physique régulière 
+                                </h4>
                             </div>
                              
                             <div class="list" style="padding-top: 30px">
-                                <div class="item item-divider item-text-wrap">
+                                <div class="item item-divider item-text-wrap"
+                                     ng-click="vm.interaction = ! vm.interaction" ng-init="vm.interaction = false">
                                     Parmi les médicaments que vous avez, vous devez éviter de prendre : 
                                 </div>
-                                <a class="item">
+                                <a class="item" ng-if="vm.interaction">
                                     <div class="col">
                                         <i class="icon ion-ionic color-energized"></i> 
                                         <em class="item-text-wrap" style="padding-left:5px;">
@@ -970,10 +885,10 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="row item-center" style="padding-top:20px">
-                                <h3 class="color-grey">
+                            <div class="row" style="padding-top:20px">
+                                <h4 class="color-grey">
                                     Tous ces produits peuvent interagir avec vos médicaments et le rendre inactifs ou toxiques.
-                                </h3>
+                                </h4>
                             </div>
                             
                         </ion-content>
