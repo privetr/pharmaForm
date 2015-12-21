@@ -8515,3 +8515,7 @@ Sliders
 
 .img-right {
   border: 4px solid #33cd5f; }
+
+.swiper-container-horizontal > .swiper-pagination {
+  top: 100px;
+  bottom: auto; }

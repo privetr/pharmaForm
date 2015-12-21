@@ -344,18 +344,12 @@
      	 * Function to process with waiting time when saving a new Session
      	 */
     	function hideButtonSaveSession(){
-    		$( "#button_save_session" ).toggle( "fast", function() {
-				// Animation complete
-			});
     		$ionicLoading.show({
     			template: '<ion-spinner icon="android"></ion-spinner><br>Enregistrement...'
 		    });
     	}
     	
     	function displayButtonSaveSession(){
-    		$( "#button_save_session" ).toggle( "fast", function() {
-				// Animation complete
-			});
     		$ionicLoading.hide();
     	}
         
