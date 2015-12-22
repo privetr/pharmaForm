@@ -14,17 +14,34 @@
         restrict :  'A',
         link : function(scope, elem, attrs, e) {
           var reportEvent = function (e){
-            if  (e.target.tagName.toLowerCase() == 'input' || e.target.tagName.toLowerCase() == 'img'){
+              
+            if  (e.target.tagName.toLowerCase() == 'input'){
                 $ionicSlideBoxDelegate.enableSlide(false);
+                scope.swiper.detachEvents();
             }
             else{
                 $ionicSlideBoxDelegate.enableSlide(true);
+                scope.swiper.attachEvents();
             }
           };
           $ionicGesture.on('drag', reportEvent, elem);
         }
       };
     })
+    
+    // amazing trick to fix problem of dynamic number of slides : https://github.com/driftyco/ionic/issues/1890		
+ 	.directive('dynamicSlides', function() {		
+ 	    return {		
+ 	        require: ['^ionSlideBox'],		
+ 	        link: function(scope, elem, attrs, slider) {		
+ 	            scope.$watch(function() {		
+ 	                return scope.$eval(attrs.dynamicSlides).length;		
+ 	            }, function(val) {		
+ 	                slider[0].__slider.update();		
+ 	            });		
+ 	        }		
+ 	    };		
+ 	})
     
 	.controller('Session1Ctrl', Session1Ctrl);
 	
@@ -358,22 +375,11 @@
         	pfUtilsService.popupBack('choice_session', params);
         };
         
-        $scope.showPager = false;
         $scope.swiperOptions = {
-            
-            //effect: 'slide',
             initialSlide: 0,
-            //autoplay: 3000,
-            /*paginationBulletRender: function (index, className) {
-                return '<span class="' + className + '" style="padding-top:5px;">' + (index + 1) + '</span>';
-            },*/
-            /* Initialize a scope variable with the swiper */
             onInit: function(swiper){
                 $scope.swiper = swiper;
-            },
-            /*onSlideChangeEnd: function(swiper){
-                console.log('The active index is ' + swiper.activeIndex); 
-            }*/
+            }
         };
         
         

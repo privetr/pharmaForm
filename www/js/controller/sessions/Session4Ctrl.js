@@ -9,15 +9,35 @@
 	 * Goal : Managing seance 4
 	 */
     
+    .directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
+      return {
+        restrict :  'A',
+        link : function(scope, elem, attrs, e) {
+          var reportEvent = function (e){
+              
+            if  (e.target.tagName.toLowerCase() == 'input'){
+                $ionicSlideBoxDelegate.enableSlide(false);
+                scope.swiper.detachEvents();
+            }
+            else{
+                $ionicSlideBoxDelegate.enableSlide(true);
+                scope.swiper.attachEvents();
+            }
+          };
+          $ionicGesture.on('drag', reportEvent, elem);
+        }
+      };
+    })
+    
 	.controller('Session4Ctrl', Session4Ctrl);
 	
 	Session4Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$timeout'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$timeout', '$ionicScrollDelegate'];
 
 	/* @ngInject */
 	function Session4Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $timeout) {
+                            $ionicPopup, $ionicLoading, $localForage, $timeout, $ionicScrollDelegate) {
 
         $timeout(4000, function () {  // $timeout is used to be sure that the DOM is created
             $scope.showPager = true;
@@ -262,19 +282,10 @@
         };
         
         $scope.swiperOptions = {
-            
-            //effect: 'slide',
             initialSlide: 0,
-            /*paginationBulletRender: function (index, className) {
-                return '<span class="' + className + '" style="padding-top:5px;">' + (index + 1) + '</span>';
-            },*/
-            /* Initialize a scope variable with the swiper */
             onInit: function(swiper){
                 $scope.swiper = swiper;
-            },
-            /*onSlideChangeEnd: function(swiper){
-                console.log('The active index is ' + swiper.activeIndex); 
-            }*/
+            }
         };
         
 	}

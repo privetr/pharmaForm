@@ -9,7 +9,6 @@
 	 * Goal : Managing seance 2
 	 */
     
-    
 	.controller('Session2Ctrl', Session2Ctrl);
 	
 	Session2Ctrl.$inject = ['$state', '$scope', '$stateParams',
@@ -187,6 +186,13 @@
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};
         	pfUtilsService.popupBack('choice_session', params);
+        };
+        
+        $scope.swiperOptions = {
+            initialSlide: 0,
+            onInit: function(swiper){
+                $scope.swiper = swiper;
+            }
         };
         
         
