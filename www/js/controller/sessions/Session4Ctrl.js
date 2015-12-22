@@ -9,20 +9,6 @@
 	 * Goal : Managing seance 4
 	 */
     
-    // amazing trick to fix problem of dynamic number of slides : https://github.com/driftyco/ionic/issues/1890
-	/*.directive('dynamicSlides', function() {
-	    return {
-	        require: ['^ionSlideBox'],
-	        link: function(scope, elem, attrs, slider) {
-	            scope.$watch(function() {
-	                return scope.$eval(attrs.dynamicSlides).length;
-	            }, function(val) {
-	                slider[0].__slider.update();
-	            });
-	        }
-	    };
-	})*/
-    
 	.controller('Session4Ctrl', Session4Ctrl);
 	
 	Session4Ctrl.$inject = ['$state', '$scope', '$stateParams',
@@ -269,39 +255,6 @@
     	function displayButtonSaveSession(){
     		$ionicLoading.hide();
     	}
-        
-        /*
-		 * SLIDERS
-		 * Functions to manage sliding mode
-		 */
-		/*vm.nextSlide = function() {
-			$ionicSlideBoxDelegate.next();
-		}
-		vm.previousSlide = function() {
-			$ionicSlideBoxDelegate.previous();
-		}  	
-        vm.scroll = function(indexSlide, scrollDirection) {
-            var nameContent = 'mainScroll-' + indexSlide;
-            
-            // Here is a ticket on Github to fix up a problem which can happens with scroll-delegate with dynamic slides
-            // https://github.com/driftyco/ionic/issues/1865
-            
-            var instances = $ionicScrollDelegate['_instances'];
-            
-            console.log(instances, nameContent);
-
-            var instance = _(instances).find(function(ins) {
-                return ins.$element[0].id === nameContent;
-            });
-
-            if (scrollDirection === 'down') {
-                currentScrollYPosition = instance.getScrollPosition().top + 300;
-            }
-            else if (scrollDirection === 'top') {
-                currentScrollYPosition = instance.getScrollPosition().top - 300;
-            }
-            $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
-        };*/
         
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};

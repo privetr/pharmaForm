@@ -14,12 +14,12 @@
 	
 	Session2Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', 
+                             '$ionicPopup', '$ionicLoading', '$localForage', 
                             '$ionicModal', '$timeout'];
 
 	/* @ngInject */
 	function Session2Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate, $ionicModal, $timeout) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicModal, $timeout) {
 
 		var vm = this;
         
@@ -183,40 +183,6 @@
     	function displayButtonSaveSession(){
     		$ionicLoading.hide();
     	}
-        
-        /*
-		 * SLIDERS
-		 * Functions to manage sliding mode
-		 */
-		vm.nextSlide = function() {
-			$ionicSlideBoxDelegate.next();
-		}
-		vm.previousSlide = function() {
-			$ionicSlideBoxDelegate.previous();
-		}  
-        
-        vm.scroll = function(indexSlide, scrollDirection) {
-            var nameContent = 'mainScroll-' + indexSlide;
-            
-            // Here is a ticket on Github to fix up a problem which can happens with scroll-delegate with dynamic slides
-            // https://github.com/driftyco/ionic/issues/1865
-            
-            var instances = $ionicScrollDelegate['_instances'];
-            
-            console.log(instances, nameContent);
-
-            var instance = _(instances).find(function(ins) {
-                return ins.$element[0].id === nameContent;
-            });
-
-            if (scrollDirection === 'down') {
-                currentScrollYPosition = instance.getScrollPosition().top + 300;
-            }
-            else if (scrollDirection === 'top') {
-                currentScrollYPosition = instance.getScrollPosition().top - 300;
-            }
-            $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
-        };
         
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};

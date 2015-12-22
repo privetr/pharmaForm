@@ -13,11 +13,11 @@
 	
 	Session3Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate'];
+                             '$ionicPopup', '$ionicLoading', '$localForage'];
 
 	/* @ngInject */
 	function Session3Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate) {
+                            $ionicPopup, $ionicLoading, $localForage) {
 
 		var vm = this;
         
@@ -374,16 +374,6 @@
     		$ionicLoading.hide();
     	}
         
-        /*
-		 * SLIDERS
-		 * Functions to manage sliding mode
-		 */
-		vm.nextSlide = function() {
-			$ionicSlideBoxDelegate.next();
-		}
-		vm.previousSlide = function() {
-			$ionicSlideBoxDelegate.previous();
-		}  	
         
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};

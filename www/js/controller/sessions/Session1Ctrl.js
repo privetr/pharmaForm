@@ -9,7 +9,7 @@
 	 * Goal : Managing seance 1
 	 */
 	
-    /*.directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
+    .directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
       return {
         restrict :  'A',
         link : function(scope, elem, attrs, e) {
@@ -24,17 +24,17 @@
           $ionicGesture.on('drag', reportEvent, elem);
         }
       };
-    })*/
+    })
     
 	.controller('Session1Ctrl', Session1Ctrl);
 	
 	Session1Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate'];
 
 	/* @ngInject */
 	function Session1Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate) {
 
 		var vm = this;
         
@@ -353,40 +353,6 @@
     		$ionicLoading.hide();
     	}
         
-        /*
-		 * SLIDERS
-		 * Functions to manage sliding mode
-		 */
-		/*vm.nextSlide = function() {
-			$ionicSlideBoxDelegate.next();
-		}
-		vm.previousSlide = function() {
-			$ionicSlideBoxDelegate.previous();
-		}  
-        
-        vm.scroll = function(indexSlide, scrollDirection) {
-            var nameContent = 'mainScroll-' + indexSlide;
-            
-            // Here is a ticket on Github to fix up a problem which can happens with scroll-delegate with dynamic slides
-            // https://github.com/driftyco/ionic/issues/1865
-            
-            var instances = $ionicScrollDelegate['_instances'];
-            
-            console.log(instances, nameContent);
-
-            var instance = _(instances).find(function(ins) {
-                return ins.$element[0].id === nameContent;
-            });
-
-            if (scrollDirection === 'down') {
-                currentScrollYPosition = instance.getScrollPosition().top + 300;
-            }
-            else if (scrollDirection === 'top') {
-                currentScrollYPosition = instance.getScrollPosition().top - 300;
-            }
-            $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
-        };
-        */
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};
         	pfUtilsService.popupBack('choice_session', params);
