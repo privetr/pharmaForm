@@ -3,7 +3,7 @@
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.2.1",
-    "angular-dragdrop" : "~1.0.12",
-    "underscore":"1.8.3"
+    "angular-dragdrop": "~1.0.12",
+    "underscore": "1.8.3"
   }
 }

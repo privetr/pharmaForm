@@ -1,73 +1,65 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	</head>
-	
-	<body>
-		<ion-header-bar class="bar-positive" align-title="center">
-			<h1 class="title">
-				<img class="title-image" src="img/logo.png" width="100" height="25" /> 
-			</h1>
-	  	</ion-header-bar>
-	  	
-	  	<div class="bar bar-subheader bar-positive">
-		  	<h2 class="title">Accueil</h2>
-		</div>
-		
-		<ion-nav-view>
-			<ion-view view-title="ETP Greffe Pulmonaire - Accueil"  hide-back-button="true">
-					
-				<!-- The content of the page -->
-				<ion-content class="has-header has-subheader has-footer">
-				
-                    <div class="row" ng-click="vm.displayGif = !vm.displayGif" ng-if="vm.displayGif">
-                        <div class="col col-50 col-offset-25">
-                            <img class="img-responsive" src="img/logogif.gif">
-                        </div>
-                        
-                    </div>
-                    <div class="row" ng-if="vm.displayGif">
-                        <div class="col col-33 col-offset-33">
-                            <img class="img-responsive" src="img/logochu.png">
-                        </div>
-                    </div>
-                    
-                    <div class="col" ng-if="!vm.displayGif">
-                        <div class="col col-50 col-offset-25">
-                            <img class="img-responsive" src="img/logo_plat.png">
-                        </div>
-                        <form class="simple-form" name="formConnexion" ng-submit="vm.doLogin()" style="padding-top: 40px">
-                            <div class="row">
-                                <div class="col col-33 col-offset-33">
-                                    <div class="list">
-                                      <label class="item item-input" style="border-color: #D9004D">
-                                        <input type="password" ng-model="vm.password" placeholder="Mot de passe">
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row" style="margin-top:20px;">
-                                <button type="submit" class="button button-positive col-33 col-offset-33">
-                                    <i class="icon ion-log-in"></i> Connexion
-                                </button>
+<ion-header-bar class="bar-positive" align-title="center">
+    <h1 class="title">
+        <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+    </h1>
+</ion-header-bar>
+
+<div class="bar bar-subheader bar-positive">
+    <h2 class="title">Accueil</h2>
+</div>
+
+<ion-nav-view>
+    <ion-view view-title="ETP Greffe Pulmonaire - Accueil"  hide-back-button="true">
+
+        <!-- The content of the page -->
+        <ion-content class="has-header has-subheader has-footer">
+
+            <div class="row" ng-click="vm.displayGif = !vm.displayGif" ng-if="vm.displayGif">
+                <div class="col col-50 col-offset-25">
+                    <img class="img-responsive" src="img/logogif.gif">
+                </div>
+
+            </div>
+            <div class="row" ng-if="vm.displayGif">
+                <div class="col col-33 col-offset-33">
+                    <img class="img-responsive" src="img/logochu.png">
+                </div>
+            </div>
+
+            <div class="col" ng-if="!vm.displayGif">
+                <div class="col col-50 col-offset-25">
+                    <img class="img-responsive" src="img/logo_plat.png">
+                </div>
+                <form class="simple-form" name="formConnexion" ng-submit="vm.doLogin()" style="padding-top: 40px">
+                    <div class="row">
+                        <div class="col col-33 col-offset-33">
+                            <div class="list">
+                              <label class="item item-input" style="border-color: #D9004D">
+                                <input type="password" ng-model="vm.password" placeholder="Mot de passe">
+                              </label>
                             </div>
-                        </form>
+                        </div>
                     </div>
-					
-				</ion-content>
-                
-                <!-- align to the bottom of the page -->
-                <div style="position: absolute; bottom: 0px; width: 100%">
-                    <div style="text-align: center">
-                        <button class="button button-clear button-stable" ng-click="vm.openModalPurpose();">
-                            <i class="icon ion-information-circled"></i> A propos
+
+                    <div class="row" style="margin-top:20px;">
+                        <button type="submit" class="button button-positive col-33 col-offset-33">
+                            <i class="icon ion-log-in"></i> Connexion
                         </button>
                     </div>
-                </div>
-				
-			</ion-view>
-		</ion-nav-view>
-	</body>
-</html>
+                </form>
+            </div>
+
+        </ion-content>
+
+        <!-- align to the bottom of the page -->
+        <div style="position: absolute; bottom: 0px; width: 100%">
+            <div style="text-align: center">
+                <button class="button button-clear button-stable" ng-click="vm.openModalPurpose();">
+                    <i class="icon ion-information-circled"></i> A propos
+                </button>
+            </div>
+        </div>
+
+    </ion-view>
+</ion-nav-view>

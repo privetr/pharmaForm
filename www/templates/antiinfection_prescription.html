@@ -1,232 +1,224 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	</head>
-	
-	<body>
-		<ion-header-bar class="bar-positive" align-title="center">
-			<a class="button button-icon icon ion-chevron-left white" 
-               ng-click="vm.popupBack()"> Prescription</a>
-			<h1 class="title">
-				<img class="title-image" src="img/logo.png" width="100" height="25" /> 
-			</h1>
-            <a id="button_save_antiinfection" class="button button-icon icon ion-checkmark-round white" 
-               ng-click="vm.saveAntiInfection()"> 
-                Enregistrer
-            </a>
-	  	</ion-header-bar>
-	  	
-	  	<div class="bar bar-subheader bar-positive">
-		  	<h2 class="title">Modification des traitements anti-infectieux</h2>
-		</div>
-			
-        <ion-nav-view>
-            <ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
 
-                <ion-content  class="has-header has-subheader has-footer">
+<ion-header-bar class="bar-positive" align-title="center">
+    <a class="button button-icon icon ion-chevron-left white" 
+       ng-click="vm.popupBack()"> Prescription</a>
+    <h1 class="title">
+        <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+    </h1>
+    <a id="button_save_antiinfection" class="button button-icon icon ion-checkmark-round white" 
+       ng-click="vm.saveAntiInfection()"> 
+        Enregistrer
+    </a>
+</ion-header-bar>
 
-                    <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                        <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-infectieux
-                    </h3>
+<div class="bar bar-subheader bar-positive">
+    <h2 class="title">Modification des traitements anti-infectieux</h2>
+</div>
 
-                    <!-- antiinfection -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Anti-infectieux</h4>
-                    <select class="ion-input-select-large"	
-                            ng-options="index as item.name for (index, item) in vm.antiInfectionPrescription"
-                            ng-model="vm.newAntiInfection"> 
-                    </select>
+<ion-nav-view>
+    <ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
 
-                    <!-- dosage -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                    <div class="row" style="padding-left:20px" ng-if="!vm.newAntiInfection">
-                        Aucun
-                    </div>
-                    <div class="col" ng-if="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence">
-                        <li class="item item-checkbox item-text-wrap">
+        <ion-content  class="has-header has-subheader has-footer">
+
+            <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-infectieux
+            </h3>
+
+            <!-- antiinfection -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Anti-infectieux</h4>
+            <select class="ion-input-select-large"	
+                    ng-options="index as item.name for (index, item) in vm.antiInfectionPrescription"
+                    ng-model="vm.newAntiInfection"> 
+            </select>
+
+            <!-- dosage -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+            <div class="row" style="padding-left:20px" ng-if="!vm.newAntiInfection">
+                Aucun
+            </div>
+            <div class="col" ng-if="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence">
+                <li class="item item-checkbox item-text-wrap">
+                    <label class="checkbox">
+                        <input type="checkbox" value="true"
+                               ng-model="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected"
+                               ng-disabled="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'monthOnly' ||
+                                            vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDayOnly'">    
+                    </label>
+                    {{vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.name}}
+                </li>
+            </div>
+            <ul class="list" style="padding-top:10px;">
+                <div class="row" ng-repeat="dosage in vm.antiInfectionPrescription[vm.newAntiInfection].dosage">
+                    <div class="col" style="padding:0px; margin:0px;">
+                        <li class="item item-checkbox">
                             <label class="checkbox">
-                                <input type="checkbox" value="true"
-                                       ng-model="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected"
-                                       ng-disabled="vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'monthOnly' ||
-                                                    vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDayOnly'">    
+                                <input type="checkbox" value="{{dosage.id}}" 
+                                       ng-model="dosage.selected">                 
                             </label>
-                            {{vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.name}}
+                            {{dosage.name}}
                         </li>
                     </div>
-                    <ul class="list" style="padding-top:10px;">
-                        <div class="row" ng-repeat="dosage in vm.antiInfectionPrescription[vm.newAntiInfection].dosage">
-                            <div class="col" style="padding:0px; margin:0px;">
-                                <li class="item item-checkbox">
-                                    <label class="checkbox">
-                                        <input type="checkbox" value="{{dosage.id}}" 
-                                               ng-model="dosage.selected">                 
-                                    </label>
-                                    {{dosage.name}}
-                                </li>
-                            </div>
-                            <!-- normal -->
-                            <div class="col" 
-                                 ng-if="dosage.selected && !vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
-                                <select class="ion-input-select-large item"	style="border: thin solid #444"
-                                        ng-options="key as item for (key, item) in vm.listDosageTimes"
-                                        ng-model="dosage.nbMedicine"> 
-                                        <option value="">Choisir nombre d'unité(s)</option>
-                                </select>
-                            </div>
-                            <!-- weekDay -->
-                            <div class="col-50"
-                                 ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
-                                        && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDay'">
-                                 <label class="item item-input" style="border: thin solid #444">
-                                     <input type="text" 
-                                            ng-model="dosage.nbMedicine"
-                                            placeholder="Saisir Jours, Ex : Lundi, mercredi, vendredi">
-                                </label>
-                            </div>
-                            <!-- weekDayOnly -->
-                            <div class="col-50"
-                                 ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
-                                        && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDayOnly'">
-                                 <label class="item item-input" style="border: thin solid #444">
-                                     <input type="text" 
-                                            ng-model="dosage.nbMedicine"
-                                            placeholder="Saisir Jour, Ex : Lundi">
-                                </label>
-                            </div>
-                            <!-- monthOnly -->
-                            <div class="col-50"
-                                 ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
-                                        && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'monthOnly'">
-                                <label class="item item-input">
-                                    <input type="text" 
-                                        ng-model="dosage.nbMedicine"
-                                        placeholder="Saisir Date du mois, Ex : 26">
-                                </label>
-                            </div>
-                        </div>
-                    </ul>   
-
-                    <!-- horaires -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px"
-                        ng-if="!vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
-                        Fréquence
-                    </h4>
-                    <ul class="list" style="padding-top:10px;" 
-                        ng-if="!vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
-                        <div ng-repeat="frequence in vm.antiInfectionListFrequence" 
-                             ng-if="$index % 4 === 0" class="row">
-                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index].name">
-                                <li class="item item-checkbox item-text-wrap">
-                                    <label class="checkbox">
-                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index].id}}" 
-                                               ng-model="vm.antiInfectionListFrequence[$index].selected">                 
-                                    </label>
-                                    {{vm.antiInfectionListFrequence[$index].name}}
-                                </li>
-                            </div>
-                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+1].name">
-                                <li class="item item-checkbox item-text-wrap">
-                                    <label class="checkbox">
-                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+1].id}}" 
-                                               ng-model="vm.antiInfectionListFrequence[$index+1].selected">                 
-                                    </label>
-                                    {{vm.antiInfectionListFrequence[$index+1].name}}
-                                </li>
-                            </div>
-                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+2].name">
-                                <li class="item item-checkbox item-text-wrap">
-                                    <label class="checkbox">
-                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+2].id}}" 
-                                               ng-model="vm.antiInfectionListFrequence[$index+2].selected">                 
-                                    </label>
-                                    {{vm.antiInfectionListFrequence[$index+2].name}}
-                                </li>
-                            </div>
-                            <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+3].name">
-                                <li class="item item-checkbox item-text-wrap">
-                                    <label class="checkbox">
-                                        <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+3].id}}" 
-                                               ng-model="vm.antiInfectionListFrequence[$index+3].selected">                 
-                                    </label>
-                                    {{vm.antiInfectionListFrequence[$index+3].name}}
-                                </li>
-                            </div>
-                        </div>
-                    </ul>  
-                    
-                    <div class="row" style="margin-top:10px;">
-                        <div class="col col-50">
-                            <button class="button button-block button-positive icon-left" ng-click="vm.addAntiInfection()">
-                                <i class="icon ion-plus-round"></i> Ajouter anti-infectieux
-                            </button>
-                        </div>
-                        <div class="col col-50">
-                            <button class="button button-clear button-assertive icon ion-close-round"
-                                ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
-                            </button>
-                            <button class="button button-clear button-energized icon ion-shuffle"
-                                ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
-                            </button>
-                            <button class="button button-clear button-dark icon ion-edit"
-                                 ng-click="vm.showDelete = false; vm.showReorder = false">
-                            </button>
-                        </div>
+                    <!-- normal -->
+                    <div class="col" 
+                         ng-if="dosage.selected && !vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
+                        <select class="ion-input-select-large item"	style="border: thin solid #444"
+                                ng-options="key as item for (key, item) in vm.listDosageTimes"
+                                ng-model="dosage.nbMedicine"> 
+                                <option value="">Choisir nombre d'unité(s)</option>
+                        </select>
                     </div>
-
-                    <!-- Liste Anti-infectieux -->
-                    <div class="row" style="margin-top:20px;">
-                        <div class="col">
-                            <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
-                            ng-if="vm.patient.listAntiInfection">Liste des Anti-infectieux</h4>
-                        </div>
+                    <!-- weekDay -->
+                    <div class="col-50"
+                         ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
+                                && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDay'">
+                         <label class="item item-input" style="border: thin solid #444">
+                             <input type="text" 
+                                    ng-model="dosage.nbMedicine"
+                                    placeholder="Saisir Jours, Ex : Lundi, mercredi, vendredi">
+                        </label>
                     </div>
-                    
-                    <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
-                        <div class="list list-inset">
-                            <ion-item ng-repeat="(key_objectAI, objectAI) in vm.listAntiInfection" 
-                                class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-                                ng-click="vm.editAntiInfection(key_objectAI, objectAI)">	
-                                
-                                <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
-                                    {{objectAI.antiinfection.medicine.name}}
-                                </p>
-                                <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                                    <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
-                                        ng-if="dosage.selected && !objectAI.antiinfection.specialfrequence.selected" 
-                                        style="padding-right:30px";>
-                                        {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
-                                    </em>
-                                    <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
-                                        ng-if="dosage.selected && objectAI.antiinfection.specialfrequence.selected" 
-                                        style="padding-right:30px";>
-                                        <em ng-if="objectAI.antiinfection.specialfrequence.value == 'monthOnly'">
-                                            Chaque mois, le
-                                        </em>
-                                        {{dosage.nbMedicine}} : {{dosage.name}}
-                                    </em>
-                                </p>
-                                <p ng-if="!objectAI.antiinfection.specialfrequence.selected">
-                                    <color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                                    <em ng-repeat="frequence in objectAI.antiinfection.frequence" 
-                                        ng-if="frequence.selected" style="padding-right:30px";>
-                                        {{frequence.name}}
-                                    </em>
-                                </p>
-                                
-                                <ion-delete-button class="ion-minus-circled"
-                                    ng-click="vm.removeAntiInfection(key_objectAI)">
-                                </ion-delete-button>
-                                <ion-reorder-button class="ion-navicon"
-                                    on-reorder="vm.reorderItem(objectAI, $fromIndex, $toIndex)">
-                                </ion-reorder-button>
-                             </ion-item>
-                         </div>
-                    </ion-list>
+                    <!-- weekDayOnly -->
+                    <div class="col-50"
+                         ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
+                                && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'weekDayOnly'">
+                         <label class="item item-input" style="border: thin solid #444">
+                             <input type="text" 
+                                    ng-model="dosage.nbMedicine"
+                                    placeholder="Saisir Jour, Ex : Lundi">
+                        </label>
+                    </div>
+                    <!-- monthOnly -->
+                    <div class="col-50"
+                         ng-if="dosage.selected && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected
+                                && vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.value == 'monthOnly'">
+                        <label class="item item-input">
+                            <input type="text" 
+                                ng-model="dosage.nbMedicine"
+                                placeholder="Saisir Date du mois, Ex : 26">
+                        </label>
+                    </div>
+                </div>
+            </ul>   
+
+            <!-- horaires -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px"
+                ng-if="!vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
+                Fréquence
+            </h4>
+            <ul class="list" style="padding-top:10px;" 
+                ng-if="!vm.antiInfectionPrescription[vm.newAntiInfection].specialfrequence.selected">
+                <div ng-repeat="frequence in vm.antiInfectionListFrequence" 
+                     ng-if="$index % 4 === 0" class="row">
+                    <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index].name">
+                        <li class="item item-checkbox item-text-wrap">
+                            <label class="checkbox">
+                                <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index].id}}" 
+                                       ng-model="vm.antiInfectionListFrequence[$index].selected">                 
+                            </label>
+                            {{vm.antiInfectionListFrequence[$index].name}}
+                        </li>
+                    </div>
+                    <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+1].name">
+                        <li class="item item-checkbox item-text-wrap">
+                            <label class="checkbox">
+                                <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+1].id}}" 
+                                       ng-model="vm.antiInfectionListFrequence[$index+1].selected">                 
+                            </label>
+                            {{vm.antiInfectionListFrequence[$index+1].name}}
+                        </li>
+                    </div>
+                    <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+2].name">
+                        <li class="item item-checkbox item-text-wrap">
+                            <label class="checkbox">
+                                <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+2].id}}" 
+                                       ng-model="vm.antiInfectionListFrequence[$index+2].selected">                 
+                            </label>
+                            {{vm.antiInfectionListFrequence[$index+2].name}}
+                        </li>
+                    </div>
+                    <div class="col-25" ng-if="vm.antiInfectionListFrequence[$index+3].name">
+                        <li class="item item-checkbox item-text-wrap">
+                            <label class="checkbox">
+                                <input type="checkbox" value="{{vm.antiInfectionListFrequence[$index+3].id}}" 
+                                       ng-model="vm.antiInfectionListFrequence[$index+3].selected">                 
+                            </label>
+                            {{vm.antiInfectionListFrequence[$index+3].name}}
+                        </li>
+                    </div>
+                </div>
+            </ul>  
+
+            <div class="row" style="margin-top:10px;">
+                <div class="col col-50">
+                    <button class="button button-block button-positive icon-left" ng-click="vm.addAntiInfection()">
+                        <i class="icon ion-plus-round"></i> Ajouter anti-infectieux
+                    </button>
+                </div>
+                <div class="col col-50">
+                    <button class="button button-clear button-assertive icon ion-close-round"
+                        ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
+                    </button>
+                    <button class="button button-clear button-energized icon ion-shuffle"
+                        ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
+                    </button>
+                    <button class="button button-clear button-dark icon ion-edit"
+                         ng-click="vm.showDelete = false; vm.showReorder = false">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Liste Anti-infectieux -->
+            <div class="row" style="margin-top:20px;">
+                <div class="col">
+                    <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                    ng-if="vm.patient.listAntiInfection">Liste des Anti-infectieux</h4>
+                </div>
+            </div>
+
+            <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+                <div class="list list-inset">
+                    <ion-item ng-repeat="(key_objectAI, objectAI) in vm.listAntiInfection" 
+                        class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                        ng-click="vm.editAntiInfection(key_objectAI, objectAI)">	
+
+                        <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                            {{objectAI.antiinfection.medicine.name}}
+                        </p>
+                        <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                            <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
+                                ng-if="dosage.selected && !objectAI.antiinfection.specialfrequence.selected" 
+                                style="padding-right:30px";>
+                                {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                            </em>
+                            <em ng-repeat="dosage in objectAI.antiinfection.dosage" 
+                                ng-if="dosage.selected && objectAI.antiinfection.specialfrequence.selected" 
+                                style="padding-right:30px";>
+                                <em ng-if="objectAI.antiinfection.specialfrequence.value == 'monthOnly'">
+                                    Chaque mois, le
+                                </em>
+                                {{dosage.nbMedicine}} : {{dosage.name}}
+                            </em>
+                        </p>
+                        <p ng-if="!objectAI.antiinfection.specialfrequence.selected">
+                            <color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                            <em ng-repeat="frequence in objectAI.antiinfection.frequence" 
+                                ng-if="frequence.selected" style="padding-right:30px";>
+                                {{frequence.name}}
+                            </em>
+                        </p>
+
+                        <ion-delete-button class="ion-minus-circled"
+                            ng-click="vm.removeAntiInfection(key_objectAI)">
+                        </ion-delete-button>
+                        <ion-reorder-button class="ion-navicon"
+                            on-reorder="vm.reorderItem(objectAI, $fromIndex, $toIndex)">
+                        </ion-reorder-button>
+                     </ion-item>
+                 </div>
+            </ion-list>
 
 
 
-                </ion-content>
-            </ion-view>
-        </ion-nav-view>
-	</body>
-</html>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

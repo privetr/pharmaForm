@@ -239,10 +239,7 @@ Sliders
 	padding: 0px;
 }
 
-.slider-pager {
-	top: 100px;
-	bottom: none;
-}
+
 
 .img-responsive{
 	width: 100%;
@@ -322,6 +319,16 @@ Sliders
 }
 .img-right { 
    border:4px solid $balancedColor;
+}
+
+.swiper-container-horizontal > .swiper-pagination{
+    bottom:auto;
+    top:100px;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
 }
 
 

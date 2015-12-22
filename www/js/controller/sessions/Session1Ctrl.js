@@ -9,7 +9,7 @@
 	 * Goal : Managing seance 1
 	 */
 	
-    .directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
+    /*.directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
       return {
         restrict :  'A',
         link : function(scope, elem, attrs, e) {
@@ -24,17 +24,17 @@
           $ionicGesture.on('drag', reportEvent, elem);
         }
       };
-    })
+    })*/
     
 	.controller('Session1Ctrl', Session1Ctrl);
 	
 	Session1Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate'];
+                             '$ionicPopup', '$ionicLoading', '$localForage'];
 
 	/* @ngInject */
 	function Session1Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
+                            $ionicPopup, $ionicLoading, $localForage) {
 
 		var vm = this;
         
@@ -357,7 +357,7 @@
 		 * SLIDERS
 		 * Functions to manage sliding mode
 		 */
-		vm.nextSlide = function() {
+		/*vm.nextSlide = function() {
 			$ionicSlideBoxDelegate.next();
 		}
 		vm.previousSlide = function() {
@@ -386,10 +386,28 @@
             }
             $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
         };
-        
+        */
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};
         	pfUtilsService.popupBack('choice_session', params);
+        };
+        
+        $scope.showPager = false;
+        $scope.swiperOptions = {
+            
+            //effect: 'slide',
+            initialSlide: 0,
+            //autoplay: 3000,
+            /*paginationBulletRender: function (index, className) {
+                return '<span class="' + className + '" style="padding-top:5px;">' + (index + 1) + '</span>';
+            },*/
+            /* Initialize a scope variable with the swiper */
+            onInit: function(swiper){
+                $scope.swiper = swiper;
+            },
+            /*onSlideChangeEnd: function(swiper){
+                console.log('The active index is ' + swiper.activeIndex); 
+            }*/
         };
         
         

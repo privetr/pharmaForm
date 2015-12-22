@@ -9,15 +9,17 @@
 	 * Goal : Managing seance 2
 	 */
     
+    
 	.controller('Session2Ctrl', Session2Ctrl);
 	
 	Session2Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$ionicModal'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', 
+                            '$ionicModal', '$timeout'];
 
 	/* @ngInject */
 	function Session2Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate, $ionicModal) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate, $ionicModal, $timeout) {
 
 		var vm = this;
         

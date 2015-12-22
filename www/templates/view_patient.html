@@ -1,374 +1,366 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	</head>
-	
-	<body>
-		<ion-header-bar class="bar-positive" align-title="center">
-            <a class="button button-icon icon ion-chevron-left white" 
-               ng-click="vm.popupBack()"> Liste patients</a>
-			<h1 class="title">
-				<img class="title-image" src="img/logo.png" width="100" height="25" /> 
-			</h1>
-            <a id="button_save_patient" class="button button-icon icon ion-checkmark-round white" 
-               ng-click="vm.savePatient()" ng-if="vm.edition"> 
-                Enregistrer
-            </a>
-            <a id="button_save_patient" class="button button-icon icon ion-edit white" 
-               ng-click="vm.edition = !vm.edition" ng-if="!vm.edition"> 
-                Modifier
-            </a>
-	  	</ion-header-bar>
-	  	
-	  	<div class="bar bar-subheader bar-positive">
-		  	<h2 class="title">Fiche patient</h2>
-		</div>
-			
-        <ion-nav-view>
-            <ion-view  title="ETP Transplantation Pulmonaire - Liste patients">
 
-                <ion-content  class="has-header has-subheader has-footer">
+<ion-header-bar class="bar-positive" align-title="center">
+    <a class="button button-icon icon ion-chevron-left white" 
+       ng-click="vm.popupBack()"> Liste patients</a>
+    <h1 class="title">
+        <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+    </h1>
+    <a id="button_save_patient" class="button button-icon icon ion-checkmark-round white" 
+       ng-click="vm.savePatient()" ng-if="vm.edition"> 
+        Enregistrer
+    </a>
+    <a id="button_save_patient" class="button button-icon icon ion-edit white" 
+       ng-click="vm.edition = !vm.edition" ng-if="!vm.edition"> 
+        Modifier
+    </a>
+</ion-header-bar>
 
-                    <div class="list">
-                        <div class="row">
-                            <!-- lastname -->
-                            <div class="col col-50">
-                                <h4 class="maincolor" style="padding-left:10px">Nom</h4>
-                                <label class="item item-input">
-                                    <input type="text" name="lastname" ng-model="vm.lastname" placeholder="Nom" required
-                                           ng-readonly="!vm.edition">
-                                </label>
-                            </div>
+<div class="bar bar-subheader bar-positive">
+    <h2 class="title">Fiche patient</h2>
+</div>
 
-                            <!-- firstname -->
-                            <div class="col col-50">
-                                <h4 class="maincolor" style="padding-left:10px">Prénom</h4>
-                                <label class="item item-input">
-                                    <input type="text" name="firstname" ng-model="vm.firstname" placeholder="Prénom" required
-                                           ng-readonly="!vm.edition">
-                                </label> 
-                            </div>
-                        </div>
+<ion-nav-view>
+    <ion-view  title="ETP Transplantation Pulmonaire - Liste patients">
 
-                        <!-- Button Access sessions -->
-                        <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
-                            <div class="col">
-                                <button class="button button-block button-energized icon-left" 
-                                        ui-sref='choice_session ( {patientId: vm.patientId} )'>
-                                    <i class="icon ion-filing"></i> Accéder aux séances
-                                </button>
-                            </div>
-                        </div>
+        <ion-content  class="has-header has-subheader has-footer">
 
-                        <!-- Button Access prescription -->
-                        <div class="row" ng-if="vm.patientId != -1">
-                            <div class="col">
-                                <button class="button button-block button-energized icon-left" 
-                                        ui-sref='display_prescription ( {patientId: vm.patientId} )'>
-                                    <i class="icon ion-medkit"></i> Accéder à la prescription
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- address -->
-                        <h4 class="maincolor" style="padding-left:10px">Adresse</h4>
+            <div class="list">
+                <div class="row">
+                    <!-- lastname -->
+                    <div class="col col-50">
+                        <h4 class="maincolor" style="padding-left:10px">Nom</h4>
                         <label class="item item-input">
-                            <input type="text" name="lastname" ng-model="vm.address" placeholder="Adresse" required
+                            <input type="text" name="lastname" ng-model="vm.lastname" placeholder="Nom" required
                                    ng-readonly="!vm.edition">
                         </label>
-                        
-                        <!-- birthdate -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de naissance</h4>
-                        <label class="item item-input">
-                            <input type="date" ng-model="vm.birthdate" class="bold"
-                                   ng-readonly="!vm.edition">
-                        </label>
+                    </div>
 
-                        <!-- graftdate -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de transplantation</h4>
+                    <!-- firstname -->
+                    <div class="col col-50">
+                        <h4 class="maincolor" style="padding-left:10px">Prénom</h4>
                         <label class="item item-input">
-                            <input type="date" ng-model="vm.graftdate" class="bold"
+                            <input type="text" name="firstname" ng-model="vm.firstname" placeholder="Prénom" required
                                    ng-readonly="!vm.edition">
                         </label> 
-
-                        <!-- graftType -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Type de transplantation</h4>
-                        <select class="ion-input-select-large col-50"	style="border: thin solid #9E9E9E" 
-                                ng-options="id as grafttype for (id, grafttype) in vm.listGraftType"
-                                ng-model="vm.graftType" ng-init="vm.graftType=vm.graftType"
-                                ng-disabled="!vm.edition">         
-                        </select>
-                        
-                        <!-- isReGraft -->
-                        <ul class="list col-50" ng-if="vm.isReGraft || vm.edition">
-                            <li class="item item-checkbox">
-                                <label class="checkbox">
-                                    <input type="checkbox" ng-model="vm.isReGraft" ng-init="vm.isReGraft=vm.isReGraft" ng-disabled="!vm.edition">
-                                </label>
-                                Retransplantation
-                            </li>
-                        </ul>
-
-                        <!-- graftIndication -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la transplantation</h4>
-                        <ul class="list" style="padding-top:10px;">
-                            <li class="item item-checkbox" ng-repeat="graftindication in vm.listGraftIndication"  
-                                ng-if="graftindication.selected || vm.edition">
-                                <label class="checkbox">
-                                    <input type="checkbox" value="{{graftindication.name}}" 
-                                           ng-model="graftindication.selected" ng-disabled="!vm.edition">                 
-                                </label>
-                                {{graftindication.name}}
-                            </li>
-                        </ul>                        
-
-                        <!-- cmvStatus -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
-                            Statut CMV 
-                            <em ng-if="vm.cmvStatusReceiver || vm.cmvStatusDonor">
-                            ( 
-                                <em ng-if="vm.cmvStatusDonor==0">-</em><em ng-if="vm.cmvStatusDonor==1">+</em>
-                                /
-                                <em ng-if="vm.cmvStatusReceiver==0">-</em><em ng-if="vm.cmvStatusReceiver==1">+</em>
-                            )
-                            </em>
-                        </h4>
-                        <div class="row">
-                            <div class="col-20" style="padding-left: 10px;">
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <i class="ion-minus assertive"> Négatif</i>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <i class="ion-plus balanced"> Positif</i>
-                            </div>
-                        </div>
-
-                        <div class="row" ng-init="vm.cmvStatusDonor = vm.cmvStatusDonor">
-                            <div class="col-20" style="padding-left: 10px;">
-                                Donneur
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-assertive">
-                                    <input type="radio" value="0" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-balanced">
-                                    <input type="radio" value="1" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="row" ng-init="vm.cmvStatusReceiver = vm.cmvStatusReceiver">
-                            <div class="col-20" style="padding-left: 10px;">
-                                Receveur
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-assertive">
-                                    <input type="radio" ng-model="vm.cmvStatusReceiver" value="0" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-balanced">
-                                    <input type="radio" ng-model="vm.cmvStatusReceiver" value="1" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-
-                        
-
-                        <!-- ebvStatus -->
-                        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
-                            Statut EBV
-                            <em ng-if="vm.ebvStatusReceiver || vm.ebvStatusDonor">
-                            ( 
-                                <em ng-if="vm.ebvStatusDonor==0">-</em><em ng-if="vm.ebvStatusDonor==1">+</em>
-                                /
-                                <em ng-if="vm.ebvStatusReceiver==0">-</em><em ng-if="vm.ebvStatusReceiver==1">+</em>
-                            )
-                            </em>
-                        </h4>
-                        <div class="row">
-                            <div class="col-20" style="padding-left: 10px;">
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <i class="ion-minus assertive"> Négatif</i>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <i class="ion-plus balanced"> Positif</i>
-                            </div>
-                        </div>
-
-                        <div class="row" ng-init="vm.ebvStatusDonor = vm.ebvStatusDonor">
-                            <div class="col-20" style="padding-left: 10px;">
-                                Donneur
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-assertive">
-                                    <input type="radio" value="0" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-balanced">
-                                    <input type="radio" value="1" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="row" ng-init="vm.ebvStatusReceiver = vm.ebvStatusReceiver">
-                            <div class="col-20" style="padding-left: 10px;">
-                                Receveur
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-assertive">
-                                    <input type="radio" ng-model="vm.ebvStatusReceiver" value="0" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="col-20" style="padding-left: 10px;">
-                                <label class="toggle toggle-balanced">
-                                    <input type="radio" ng-model="vm.ebvStatusReceiver" value="1" ng-disabled="!vm.edition">
-                                    <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
                     </div>
-                    
-                    <!-- Vaccins -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px"
-                        ng-if="vm.listVaccins.length > 0 || vm.edition">Vaccins</h4>
-                    <div class="row" ng-if="vm.edition">
-                        <div class="col col-33">
-                            <select class="ion-input-select-large"	
-                                    ng-options="index as item.title for (index, item) in vm.vaccins"
-                                    ng-model="vm.newVaccin">  
-                            </select>
-                        </div>
-                        <div class="col col-33">
-                            <label class="item item-input">
-                                <input id="input_new_comment" type="text" 
-                                       ng-model="vm.newVaccinComment" placeholder="Nom spécialité...">
-                            </label>
-                        </div>
-                        <div class="col col-33">
-                            <label class="item item-input">
-                                <input type="date" ng-model="vm.newVaccinDate" class="bold">
-                            </label>
-                        </div>
+                </div>
+
+                <!-- Button Access sessions -->
+                <div class="row" style="margin-top:10px;" ng-if="vm.patientId != -1">
+                    <div class="col">
+                        <button class="button button-block button-energized icon-left" 
+                                ui-sref='choice_session ( {patientId: vm.patientId} )'>
+                            <i class="icon ion-filing"></i> Accéder aux séances
+                        </button>
                     </div>
+                </div>
 
-                    <div class="row" style="margin-top:20px;" ng-if="vm.edition">
-                        <div class="col col-50">
-                            <button class="button button-block button-positive icon-left ion-plus-round"
-                                    ng-click="vm.addVaccin(vm.newVaccin, vm.newVaccinComment, vm.newVaccinDate)">Ajouter</button>
-                        </div>
-                       <div class="col col-50">
-                            <button class="button button-clear button-assertive icon ion-close-round"
-                                ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false"
-                                ng-if="vm.edition">
-                            </button>
-                            <button class="button button-clear button-energized icon ion-shuffle"
-                                ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder"
-                                ng-if="vm.edition">
-                            </button>
-                            <button class="button button-clear button-dark icon ion-edit"
-                                 ng-click="vm.showDelete = false; vm.showReorder = false"
-                                 ng-if="vm.edition">
-                            </button>
-                        </div>
+                <!-- Button Access prescription -->
+                <div class="row" ng-if="vm.patientId != -1">
+                    <div class="col">
+                        <button class="button button-block button-energized icon-left" 
+                                ui-sref='display_prescription ( {patientId: vm.patientId} )'>
+                            <i class="icon ion-medkit"></i> Accéder à la prescription
+                        </button>
                     </div>
+                </div>
 
-                    <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
-                        <div class="list list-inset">
-                            <ion-item ng-repeat="(key_vaccin, vaccin) in vm.listVaccins" class="item-text-wrap item-icon-right"
-                                      ng-click="!vm.edition || vm.editVaccin(key_vaccin, vaccin)">
-                                <b>Vaccin :</b> {{vaccin.vaccin.title}} <b>effectué le</b> {{vaccin.date | date:'dd/MM/yyyy'}}<br>
-                                <b>Nom spécialité :</b> {{vaccin.comment}}<br>
+                <!-- address -->
+                <h4 class="maincolor" style="padding-left:10px">Adresse</h4>
+                <label class="item item-input">
+                    <input type="text" name="lastname" ng-model="vm.address" placeholder="Adresse" required
+                           ng-readonly="!vm.edition">
+                </label>
 
-                                <ion-delete-button class="ion-minus-circled"
-                                    ng-click="vm.removeVaccin(key_vaccin)" ng-if="vm.edition">
-                                </ion-delete-button>
-                                <ion-reorder-button class="ion-navicon"
-                                    on-reorder="vm.reorderVaccin(vaccin, $fromIndex, $toIndex)" ng-if="vm.edition">
-                                </ion-reorder-button>
-                            </ion-item>
-                        </div>
-                    </ion-list>
+                <!-- birthdate -->
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de naissance</h4>
+                <label class="item item-input">
+                    <input type="date" ng-model="vm.birthdate" class="bold"
+                           ng-readonly="!vm.edition">
+                </label>
 
-                    <!-- Comments -->
-                    <h4 class="maincolor" style="margin-top:20px; padding-left:10px" 
-                        ng-if="vm.listComments.length > 0 || vm.edition">Commentaires</h4>
-                    <div class="col" ng-if="vm.edition">
-                        <label class="item item-input">
-                            <input id="input_new_comment" type="text" 
-                                   ng-model="vm.new_comment" placeholder="Nouveau commentaire"
-                                   ng-readonly="!vm.edition">
+                <!-- graftdate -->
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Date de transplantation</h4>
+                <label class="item item-input">
+                    <input type="date" ng-model="vm.graftdate" class="bold"
+                           ng-readonly="!vm.edition">
+                </label> 
+
+                <!-- graftType -->
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Type de transplantation</h4>
+                <select class="ion-input-select-large col-50"	style="border: thin solid #9E9E9E" 
+                        ng-options="id as grafttype for (id, grafttype) in vm.listGraftType"
+                        ng-model="vm.graftType" ng-init="vm.graftType=vm.graftType"
+                        ng-disabled="!vm.edition">         
+                </select>
+
+                <!-- isReGraft -->
+                <ul class="list col-50" ng-if="vm.isReGraft || vm.edition">
+                    <li class="item item-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="vm.isReGraft" ng-init="vm.isReGraft=vm.isReGraft" ng-disabled="!vm.edition">
+                        </label>
+                        Retransplantation
+                    </li>
+                </ul>
+
+                <!-- graftIndication -->
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Indication de la transplantation</h4>
+                <ul class="list" style="padding-top:10px;">
+                    <li class="item item-checkbox" ng-repeat="graftindication in vm.listGraftIndication"  
+                        ng-if="graftindication.selected || vm.edition">
+                        <label class="checkbox">
+                            <input type="checkbox" value="{{graftindication.name}}" 
+                                   ng-model="graftindication.selected" ng-disabled="!vm.edition">                 
+                        </label>
+                        {{graftindication.name}}
+                    </li>
+                </ul>                        
+
+                <!-- cmvStatus -->
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
+                    Statut CMV 
+                    <em ng-if="vm.cmvStatusReceiver || vm.cmvStatusDonor">
+                    ( 
+                        <em ng-if="vm.cmvStatusDonor==0">-</em><em ng-if="vm.cmvStatusDonor==1">+</em>
+                        /
+                        <em ng-if="vm.cmvStatusReceiver==0">-</em><em ng-if="vm.cmvStatusReceiver==1">+</em>
+                    )
+                    </em>
+                </h4>
+                <div class="row">
+                    <div class="col-20" style="padding-left: 10px;">
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <i class="ion-minus assertive"> Négatif</i>
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <i class="ion-plus balanced"> Positif</i>
+                    </div>
+                </div>
+
+                <div class="row" ng-init="vm.cmvStatusDonor = vm.cmvStatusDonor">
+                    <div class="col-20" style="padding-left: 10px;">
+                        Donneur
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-assertive">
+                            <input type="radio" value="0" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
                         </label>
                     </div>
-
-                    <div class="row" style="margin-top:20px;" ng-if="vm.edition">
-                        <div class="col col-50">
-                            <button class="button button-block button-positive icon-left ion-plus-round"
-                                    ng-click="vm.addComment(vm.new_comment)">Ajouter</button>
-                        </div>
-                       <div class="col-50 col">
-                            <button class="button button-clear button-assertive icon ion-close-round"
-                                ng-click="vm.showDeleteComment = !vm.showDeleteComment; vm.showReorderComment = false"
-                                ng-if="vm.edition">
-                            </button>
-                            <button class="button button-clear button-energized icon ion-shuffle"
-                                ng-click="vm.showDeleteComment = false; vm.showReorderComment = !vm.showReorderComment"
-                                ng-if="vm.edition">
-                            </button>
-                            <button class="button button-clear button-dark icon ion-edit"
-                                 ng-click="vm.showDeleteComment = false; vm.showReorderComment = false"
-                                 ng-if="vm.edition">
-                            </button>
-                        </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-balanced">
+                            <input type="radio" value="1" ng-model="vm.cmvStatusDonor" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </div>
+                </div>
 
-                    <ion-list show-delete="vm.showDeleteComment" show-reorder="vm.showReorderComment">
-                        <div class="list list-inset">
-                            <ion-item ng-repeat="(key_comment, comment) in vm.listComments" class="item-text-wrap item-icon-right"
-                                      ng-click="!vm.edition || vm.editComment(key_comment, comment)">
-                                {{comment.text}}
+                <div class="row" ng-init="vm.cmvStatusReceiver = vm.cmvStatusReceiver">
+                    <div class="col-20" style="padding-left: 10px;">
+                        Receveur
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-assertive">
+                            <input type="radio" ng-model="vm.cmvStatusReceiver" value="0" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-balanced">
+                            <input type="radio" ng-model="vm.cmvStatusReceiver" value="1" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-                                <ion-delete-button class="ion-minus-circled"
-                                    ng-click="vm.removeComment(key_comment)" ng-if="vm.edition">
-                                </ion-delete-button>
-                                <ion-reorder-button class="ion-navicon"
-                                    on-reorder="vm.reorderComment(comment, $fromIndex, $toIndex)" ng-if="vm.edition">
-                                </ion-reorder-button>
-                            </ion-item>
-                        </div>
-                    </ion-list>
 
-                </ion-content>
-            </ion-view>
-        </ion-nav-view>
-	</body>
-</html>
+
+                <!-- ebvStatus -->
+                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
+                    Statut EBV
+                    <em ng-if="vm.ebvStatusReceiver || vm.ebvStatusDonor">
+                    ( 
+                        <em ng-if="vm.ebvStatusDonor==0">-</em><em ng-if="vm.ebvStatusDonor==1">+</em>
+                        /
+                        <em ng-if="vm.ebvStatusReceiver==0">-</em><em ng-if="vm.ebvStatusReceiver==1">+</em>
+                    )
+                    </em>
+                </h4>
+                <div class="row">
+                    <div class="col-20" style="padding-left: 10px;">
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <i class="ion-minus assertive"> Négatif</i>
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <i class="ion-plus balanced"> Positif</i>
+                    </div>
+                </div>
+
+                <div class="row" ng-init="vm.ebvStatusDonor = vm.ebvStatusDonor">
+                    <div class="col-20" style="padding-left: 10px;">
+                        Donneur
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-assertive">
+                            <input type="radio" value="0" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-balanced">
+                            <input type="radio" value="1" ng-model="vm.ebvStatusDonor" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row" ng-init="vm.ebvStatusReceiver = vm.ebvStatusReceiver">
+                    <div class="col-20" style="padding-left: 10px;">
+                        Receveur
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-assertive">
+                            <input type="radio" ng-model="vm.ebvStatusReceiver" value="0" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-20" style="padding-left: 10px;">
+                        <label class="toggle toggle-balanced">
+                            <input type="radio" ng-model="vm.ebvStatusReceiver" value="1" ng-disabled="!vm.edition">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vaccins -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px"
+                ng-if="vm.listVaccins.length > 0 || vm.edition">Vaccins</h4>
+            <div class="row" ng-if="vm.edition">
+                <div class="col col-33">
+                    <select class="ion-input-select-large"	
+                            ng-options="index as item.title for (index, item) in vm.vaccins"
+                            ng-model="vm.newVaccin">  
+                    </select>
+                </div>
+                <div class="col col-33">
+                    <label class="item item-input">
+                        <input id="input_new_comment" type="text" 
+                               ng-model="vm.newVaccinComment" placeholder="Nom spécialité...">
+                    </label>
+                </div>
+                <div class="col col-33">
+                    <label class="item item-input">
+                        <input type="date" ng-model="vm.newVaccinDate" class="bold">
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:20px;" ng-if="vm.edition">
+                <div class="col col-50">
+                    <button class="button button-block button-positive icon-left ion-plus-round"
+                            ng-click="vm.addVaccin(vm.newVaccin, vm.newVaccinComment, vm.newVaccinDate)">Ajouter</button>
+                </div>
+               <div class="col col-50">
+                    <button class="button button-clear button-assertive icon ion-close-round"
+                        ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false"
+                        ng-if="vm.edition">
+                    </button>
+                    <button class="button button-clear button-energized icon ion-shuffle"
+                        ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder"
+                        ng-if="vm.edition">
+                    </button>
+                    <button class="button button-clear button-dark icon ion-edit"
+                         ng-click="vm.showDelete = false; vm.showReorder = false"
+                         ng-if="vm.edition">
+                    </button>
+                </div>
+            </div>
+
+            <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+                <div class="list list-inset">
+                    <ion-item ng-repeat="(key_vaccin, vaccin) in vm.listVaccins" class="item-text-wrap item-icon-right"
+                              ng-click="!vm.edition || vm.editVaccin(key_vaccin, vaccin)">
+                        <b>Vaccin :</b> {{vaccin.vaccin.title}} <b>effectué le</b> {{vaccin.date | date:'dd/MM/yyyy'}}<br>
+                        <b>Nom spécialité :</b> {{vaccin.comment}}<br>
+
+                        <ion-delete-button class="ion-minus-circled"
+                            ng-click="vm.removeVaccin(key_vaccin)" ng-if="vm.edition">
+                        </ion-delete-button>
+                        <ion-reorder-button class="ion-navicon"
+                            on-reorder="vm.reorderVaccin(vaccin, $fromIndex, $toIndex)" ng-if="vm.edition">
+                        </ion-reorder-button>
+                    </ion-item>
+                </div>
+            </ion-list>
+
+            <!-- Comments -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px" 
+                ng-if="vm.listComments.length > 0 || vm.edition">Commentaires</h4>
+            <div class="col" ng-if="vm.edition">
+                <label class="item item-input">
+                    <input id="input_new_comment" type="text" 
+                           ng-model="vm.new_comment" placeholder="Nouveau commentaire"
+                           ng-readonly="!vm.edition">
+                </label>
+            </div>
+
+            <div class="row" style="margin-top:20px;" ng-if="vm.edition">
+                <div class="col col-50">
+                    <button class="button button-block button-positive icon-left ion-plus-round"
+                            ng-click="vm.addComment(vm.new_comment)">Ajouter</button>
+                </div>
+               <div class="col-50 col">
+                    <button class="button button-clear button-assertive icon ion-close-round"
+                        ng-click="vm.showDeleteComment = !vm.showDeleteComment; vm.showReorderComment = false"
+                        ng-if="vm.edition">
+                    </button>
+                    <button class="button button-clear button-energized icon ion-shuffle"
+                        ng-click="vm.showDeleteComment = false; vm.showReorderComment = !vm.showReorderComment"
+                        ng-if="vm.edition">
+                    </button>
+                    <button class="button button-clear button-dark icon ion-edit"
+                         ng-click="vm.showDeleteComment = false; vm.showReorderComment = false"
+                         ng-if="vm.edition">
+                    </button>
+                </div>
+            </div>
+
+            <ion-list show-delete="vm.showDeleteComment" show-reorder="vm.showReorderComment">
+                <div class="list list-inset">
+                    <ion-item ng-repeat="(key_comment, comment) in vm.listComments" class="item-text-wrap item-icon-right"
+                              ng-click="!vm.edition || vm.editComment(key_comment, comment)">
+                        {{comment.text}}
+
+                        <ion-delete-button class="ion-minus-circled"
+                            ng-click="vm.removeComment(key_comment)" ng-if="vm.edition">
+                        </ion-delete-button>
+                        <ion-reorder-button class="ion-navicon"
+                            on-reorder="vm.reorderComment(comment, $fromIndex, $toIndex)" ng-if="vm.edition">
+                        </ion-reorder-button>
+                    </ion-item>
+                </div>
+            </ion-list>
+
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

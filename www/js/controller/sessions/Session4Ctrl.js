@@ -10,7 +10,7 @@
 	 */
     
     // amazing trick to fix problem of dynamic number of slides : https://github.com/driftyco/ionic/issues/1890
-	.directive('dynamicSlides', function() {
+	/*.directive('dynamicSlides', function() {
 	    return {
 	        require: ['^ionSlideBox'],
 	        link: function(scope, elem, attrs, slider) {
@@ -21,18 +21,22 @@
 	            });
 	        }
 	    };
-	})
+	})*/
     
 	.controller('Session4Ctrl', Session4Ctrl);
 	
 	Session4Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
-                             '$ionicPopup', '$ionicLoading', '$localForage', '$ionicSlideBoxDelegate', '$ionicScrollDelegate'];
+                             '$ionicPopup', '$ionicLoading', '$localForage', '$timeout'];
 
 	/* @ngInject */
 	function Session4Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
+                            $ionicPopup, $ionicLoading, $localForage, $timeout) {
 
+        $timeout(4000, function () {  // $timeout is used to be sure that the DOM is created
+            $scope.showPager = true;
+        });
+        
 		var vm = this;
         
         vm.session = {};
@@ -174,8 +178,11 @@
             vm.session.answer = {};
             
             // Slide1
+            for (var i = 0 ; i < vm.listQuestions.length ; i++) {   // We reinitialize answers
+                vm.listQuestions[i].validated = false;
+            }
             vm.session.answer.listQuestions = vm.listQuestions;
-            
+                        
             // Slide 2
             vm.session.answer.listTrueFalseQuestions = vm.listTrueFalseQuestions;
             
@@ -267,7 +274,7 @@
 		 * SLIDERS
 		 * Functions to manage sliding mode
 		 */
-		vm.nextSlide = function() {
+		/*vm.nextSlide = function() {
 			$ionicSlideBoxDelegate.next();
 		}
 		vm.previousSlide = function() {
@@ -294,11 +301,27 @@
                 currentScrollYPosition = instance.getScrollPosition().top - 300;
             }
             $ionicScrollDelegate.scrollTo(0, currentScrollYPosition, true);
-        };
+        };*/
         
         vm.popupBack = function() {
             var params = { patientId: vm.patient.id};
         	pfUtilsService.popupBack('choice_session', params);
+        };
+        
+        $scope.swiperOptions = {
+            
+            //effect: 'slide',
+            initialSlide: 0,
+            /*paginationBulletRender: function (index, className) {
+                return '<span class="' + className + '" style="padding-top:5px;">' + (index + 1) + '</span>';
+            },*/
+            /* Initialize a scope variable with the swiper */
+            onInit: function(swiper){
+                $scope.swiper = swiper;
+            },
+            /*onSlideChangeEnd: function(swiper){
+                console.log('The active index is ' + swiper.activeIndex); 
+            }*/
         };
         
 	}
