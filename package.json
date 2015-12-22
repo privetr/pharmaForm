@@ -24,7 +24,8 @@
     {
       "locator": "https://github.com/privetr/cordova-plugin-email-composer.git",
       "id": "de.appplant.cordova.plugin.email-composer"
-    }
+    },
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "android",
