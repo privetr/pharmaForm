@@ -11,34 +11,20 @@
       <h2 class="title">Vos Anti-rejets</h2>
     </div>
     
-    <ion-slide-box> 
-				
-        <!-- Slide 1 with ng repeat -->
-        <ion-slide ng-repeat="(key_med, medicine) in vm.patient.listAntiReject"
-                                  ng-init="medIndex = $index" dynamic-slides="vm.patient.listAntiReject">
 
-            <ion-content class="has-header has-subheader" id="mainScroll-{{$index + 100}}" style="padding-top:20px;">
+    <ion-content class="has-header has-subheader">
+        
+        <!-- Slide 1 with ng repeat -->
+        <ul class="list">
+
+            <li class="item" ng-repeat="(key_med, medicine) in vm.patient.listAntiReject"
+                                  ng-init="medIndex = $index">
                 
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
-                    {{medicine.antireject.medicine.name}}
-                </h4>
-                
-                <!--
-                <div class="color-grey" style="padding-top: 10px; padding-left: 10px;">
-                    <em ng-if="medicine.antireject.medicine.infos.family">
-                        <div class="col">{{medicine.antireject.medicine.infos.family}}</div>
-                    </em>  
-                    <em ng-if="medicine.antireject.medicine.infos.dosage">
-                        <div class="col">{{medicine.antireject.medicine.infos.dosage}}</div>
-                    </em>
-                    <em ng-if="medicine.antireject.medicine.infos.frequence">
-                        <div class="col">{{medicine.antireject.medicine.infos.frequence}}</div>
-                    </em>
-                    <em ng-if="medicine.antireject.medicine.infos.time">
-                        <div class="col">{{medicine.antireject.medicine.infos.time}}</div>
-                    </em>
+                <div class="item item-divider">
+                    <h2 class="maincolor" style="margin-top:20px; padding-left:10px">
+                        <b>{{medicine.antireject.medicine.name}}</b>
+                    </h2>
                 </div>
-                -->
                 
                  <div class="list" style="padding-top: 20px">
                      <em ng-if="medicine.antireject.medicine.infos.family">
@@ -86,10 +72,9 @@
                     </a>
                 </div>
                 -->
-
                 
-                            
-            </ion-content>
-        </ion-slide>
-    </ion-slide-box>
+                </li>
+
+        </ul>
+    </ion-content>
 </ion-modal-view>

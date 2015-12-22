@@ -11,36 +11,20 @@
       <h2 class="title">Vos Anti-infectieux</h2>
     </div>
     
-    <ion-slide-box> 
-				
+    <ion-content class="has-header has-subheader">
+        
         <!-- Slide 1 with ng repeat -->
-        <ion-slide ng-repeat="(key_med, medicine) in vm.patient.listAntiInfection"
-                                  ng-init="medIndex = $index" dynamic-slides="vm.patient.listAntiInfection">
-
-            <ion-content class="has-header has-subheader" id="mainScroll-{{$index + 100}}" style="padding-top:20px;">
+        <ul class="list">
+				
+            <!-- Slide 1 with ng repeat -->
+            <li class="item" ng-repeat="(key_med, medicine) in vm.patient.listAntiInfection" ng-init="medIndex = $index">
                 
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">
-                    {{medicine.antiinfection.medicine.name}}
-                </h4>
-                
-                <!--
-                <div class="row" class="color-grey" style="padding-top: 10px; padding-left: 10px;">
-                    <em ng-if="medicine.antiinfection.medicine.infos.family">{{medicine.antiinfection.medicine.infos.family}}<br></em> 
-                    <em ng-if="medicine.antiinfection.medicine.infos.dosage">{{medicine.antiinfection.medicine.infos.dosage}}<br></em>
-                    <em ng-if="medicine.antiinfection.medicine.infos.frequence">{{medicine.antiinfection.medicine.infos.frequence}}<br></em>
-                    <em ng-if="medicine.antiinfection.medicine.infos.time">{{medicine.antiinfection.medicine.infos.time}}<br></em>
+                <div class="item item-divider">
+                    <h2 class="maincolor" style="margin-top:20px; padding-left:10px">
+                        <b>{{medicine.antiinfection.medicine.name}}</b>
+                    </h2>
                 </div>
                 
-                <div class="list" style="padding-top: 20px">
-                    <div class="item item-divider">
-                        <b>Surveillance</b>
-                    </div>
-                    <a class="item item-icon-left" ng-repeat="surveillance in medicine.antiinfection.medicine.infos.surveillance">
-                        <i class="icon ion-ionic color-energized"></i> 
-                        {{surveillance.name}}
-                    </a>
-                </div>
-                -->
                 
                 <div class="list" style="padding-top: 20px">
                      <em ng-if="medicine.antiinfection.medicine.infos.family">
@@ -79,7 +63,7 @@
                 </div>
 
              
-            </ion-content>
-        </ion-slide>
-    </ion-slide-box>
+            </li>
+        </ul>
+    </ion-content>
 </ion-modal-view>

@@ -14,11 +14,11 @@
 	Session2Ctrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService',
                              '$ionicPopup', '$ionicLoading', '$localForage', 
-                            '$ionicModal', '$timeout'];
+                            '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate'];
 
 	/* @ngInject */
 	function Session2Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
-                            $ionicPopup, $ionicLoading, $localForage, $ionicModal, $timeout) {
+                            $ionicPopup, $ionicLoading, $localForage, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
 
 		var vm = this;
         
