@@ -19,8 +19,7 @@
 
             <!-- Slide 1 with ng repeat -->
             <ion-slide-page ng-repeat="(key_question, question) in vm.listQuestions"
-                                      ng-init="questionIndex = $index"
-                       dynamic-slides="vm.listQuestions">
+                                      ng-init="questionIndex = $index">
 
                 <ion-content class="has-header has-subheader has-footer" id="mainScroll-{{$index}}" style="padding-top:20px;">
 

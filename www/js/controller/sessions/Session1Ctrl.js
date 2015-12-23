@@ -29,20 +29,6 @@
       };
     })
     
-    // amazing trick to fix problem of dynamic number of slides : https://github.com/driftyco/ionic/issues/1890		
- 	.directive('dynamicSlides', function() {		
- 	    return {		
- 	        require: ['^ionSlideBox'],		
- 	        link: function(scope, elem, attrs, slider) {		
- 	            scope.$watch(function() {		
- 	                return scope.$eval(attrs.dynamicSlides).length;		
- 	            }, function(val) {		
- 	                slider[0].__slider.update();		
- 	            });		
- 	        }		
- 	    };		
- 	})
-    
 	.controller('Session1Ctrl', Session1Ctrl);
 	
 	Session1Ctrl.$inject = ['$state', '$scope', '$stateParams',
