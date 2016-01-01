@@ -10,7 +10,7 @@
     <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
-    <!-- ATTENTION, METTRE A JOUR QUAND CHANGEMENT IONIC VERSION -->
+    <!-- ATTENTION, METTRE A JOUR QUAND CHANGEMENT IONIC VERSION et supprimer limit 10 avec showPager -->
     <script src="js/ionic.bundle.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -48,25 +48,26 @@
     <script src="js/services/pfLocalForageService.js"></script>
     <script src="js/services/pfUtilsService.js"></script>
     <script src="js/services/pfLookUpService.js"></script>
-      <script src="js/services/pfPdfGeneratorService.js"></script>
+    <script src="js/services/pfPdfGeneratorService.js"></script>
 
     <!-- Controllers -->
     <script src="js/controller/HomeCtrl.js"></script>
     <script src="js/controller/ListPatientsCtrl.js"></script>
     <script src="js/controller/ViewPatientCtrl.js"></script>
     <script src="js/controller/ChoiceSessionCtrl.js"></script>
+    <script src="js/controller/EvaluateSessionCtrl.js"></script>
     <script src="js/controller/DisplayPrescriptionCtrl.js"></script>
     <script src="js/controller/AntiRejectPrescriptionCtrl.js"></script>
     <script src="js/controller/AntiInfectionPrescriptionCtrl.js"></script>
     <script src="js/controller/OtherPrescriptionCtrl.js"></script>
-      
+
     <script src="js/controller/sessions/Session1Ctrl.js"></script>
     <script src="js/controller/sessions/Session2Ctrl.js"></script>
     <script src="js/controller/sessions/Session3Ctrl.js"></script>
     <script src="js/controller/sessions/Session4Ctrl.js"></script>
 
-
   </head>
+
   <body>
 
     <div>
@@ -77,8 +78,8 @@
       <div id="bottom_tabs_app" class="tabs tabs-icon-top background-color-lightgrey" style="padding-left:-50px; padding-right:-50px;">
 
             <a class="tab-item" id="id_button_home">
-                <i class="icon ion-home white"></i>
-                Accueil
+                <i class="icon ion-log-out white"></i>
+                Déconnexion
             </a>
             <a class="tab-item" id="id_button_list">
                 <i class="icon ion-android-list white"></i>

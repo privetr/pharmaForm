@@ -9,26 +9,6 @@
 	 * Goal : Managing seance 4
 	 */
     
-    .directive('preventDrag', function($ionicGesture, $ionicSlideBoxDelegate) {
-      return {
-        restrict :  'A',
-        link : function(scope, elem, attrs, e) {
-          var reportEvent = function (e){
-              
-            if  (e.target.tagName.toLowerCase() == 'input'){
-                $ionicSlideBoxDelegate.enableSlide(false);
-                scope.swiper.detachEvents();
-            }
-            else{
-                $ionicSlideBoxDelegate.enableSlide(true);
-                scope.swiper.attachEvents();
-            }
-          };
-          $ionicGesture.on('drag', reportEvent, elem);
-        }
-      };
-    })
-    
 	.controller('Session4Ctrl', Session4Ctrl);
 	
 	Session4Ctrl.$inject = ['$state', '$scope', '$stateParams',
@@ -54,9 +34,7 @@
         vm.displayAnswerTrueFalse = false;
         
         vm.alreadyDone = $stateParams.alreadyDone;
-        
-        vm.bilanFinal = {};
-        
+                
         var currentScrollYPosition = 0;
         
 		/*
@@ -77,7 +55,6 @@
                         
                         vm.getTrueFalseQuestion();
                         vm.getQuestions();
-                        vm.getBilanSession();
                         
                         break;
                     }
@@ -105,19 +82,6 @@
                     vm.listTrueFalseQuestions = _.shuffle(vm.listTrueFalseQuestions);
                     console.log('getTrueFalseQuestions return : ', vm.listTrueFalseQuestions);
                 });
-            }
-         }
-        
-         vm.getBilanSession = function() {
-            // We can display the bilan if it has already be done
-            if(vm.alreadyDone === '1'){
-                for (var i = 0 ; i < vm.patient.listSessionsAnswers.length ; i++) {
-                    if (vm.patient.listSessionsAnswers[i].id === $stateParams.sessionId) {
-                        vm.bilanFinal = vm.patient.listSessionsAnswers[i].answer.bilanFinal;
-                        console.log('getBilanSession return : ', vm.bilanFinal);
-                        break;
-                    }
-                }
             }
          }
          
@@ -191,9 +155,6 @@
                         
             // Slide 2
             vm.session.answer.listTrueFalseQuestions = vm.listTrueFalseQuestions;
-            
-            // Slide 3
-            vm.session.answer.bilanFinal = vm.bilanFinal;
             
             var tmpAlreadyDone = false;
             

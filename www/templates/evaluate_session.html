@@ -1,0 +1,1750 @@
+
+<ion-header-bar class="bar-positive" align-title="center">
+    <a class="button button-icon icon ion-chevron-left white" ui-sref="choice_session ( {patientId: vm.patient.id} )"> Liste séances</a>
+    <h1 class="title">
+        <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+    </h1>
+    <a id="button_save_session" class="button button-icon icon ion-checkmark-round white" ng-click="vm.saveEvaluation()"> Enregistrer</a>
+</ion-header-bar>
+
+<div class="bar bar-subheader bar-positive">
+    <h2 class="title">Choix de la séance</h2>
+</div>
+
+<ion-nav-view>
+    <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
+
+        <ion-content  class="has-header has-subheader has-footer">
+
+            <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Evaluation Séance {{vm.session_number}}
+            </h3>
+            
+            <div class="row item-center">
+                <h3 class="maincolor" style="margin-top:20px; padding-left:10px">
+                    Bilan
+                </h3>
+            </div>
+            
+            <div class="row" style="margin-top:10px;">
+                <div class="col">
+                    <button class="button button-block button-positive icon-left" ng-click="vm.generatePdfSession ( vm.session_number )">
+                        <i class="icon ion-email"></i> Envoyer le bilan
+                    </button>
+                </div>
+            </div>
+
+            <ion-list>
+                <div class="list list-inset">
+                    <div class="item item-divider item-text-wrap">
+                        <div class="row item-text-wrap bold">
+                            <div class="col-33 col col-center">
+                                Thème
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col-66 col col-center">
+                                        Compétences du patient ou entourage proche
+                                    </div>
+                                    <div class="col-10 col col-center">
+                                        Acquis
+                                    </div>
+                                    <div class="col-10 col col-center">
+                                        En cours
+                                    </div>
+                                    <div class="col-10 col col-center">
+                                        Non
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TITLE 1 -->
+                    <div class="item item-divider item-text-wrap">
+                        <b>1. Connaissance de la maladie</b>
+                    </div>
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Compréhension de la maladie</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître le principe de la greffe et savoir l’expliquer.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan100">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan100">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan100">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre la notion de rejet et reconnaître les signes d’appel associés.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan101">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan101">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan101">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre la notion d’immunosuppression et le risque infectieux associé.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan102">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan102">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan102">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les complications de la greffe à court, moyen et long terme.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan103">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan103">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan103">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 2 -->
+                    <div class="item item-divider item-text-wrap">
+                        <b>2. Connaissance des traitements</b>
+                    </div>
+                    <!-- TITLE 2 ITEM 1 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Anti-rejets : </b><br>
+                                <em ng-repeat="medicine in vm.patient.listAntiReject">
+                                    {{medicine.antireject.medicine.name}}<br>
+                                </em>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître leur rôle.<br>
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan200">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan200">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan200">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’une prise au long cours et d’une bonne observance.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan201">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan201">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan201">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’évolution de la stratégie thérapeutique.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan202">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan202">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan202">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les précautions à suivre au cours du traitement 
+                                        (risque infectieux, hydratation, protection solaire ...).
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan203">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan203">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan203">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les surveillances cliniques et biologiques.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan204">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan204">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan204">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Savoir détecter et gérer les principaux effets indésirables.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan205">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan205">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan205">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre et connaître les principales interactions 
+                                        médicamenteuses et alimentaires associées.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan206">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan206">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan206">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 2 ITEM 2 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Anti-infectieux :</b> <br>
+                                Posaconazole : NOXAFIL® / Voriconazole : VFEND®<br>
+                                Sulfaméthoxazole + Triméthoprime : BACTRIM®<br>
+                                Sulfadoxine + Pyriméthamine : FANSIDAR® Pentamidine : PENTACARINAT®<br>
+                                Valganciclovir : ROVALCYTE®<br>
+                                Valaciclovir : ZELITREX®<br>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître leur rôle et leur intérêt dans la prise en charge thérapeutique.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan210">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan210">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan210">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les principaux germes ou pathologies sur lesquels ces médicaments sont actifs.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan211">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan211">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan211">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’évolution de la stratégie thérapeutique concernant 
+                                        la prise en charge prophylactique, préemptive et curative.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan212">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan212">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan212">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les surveillances cliniques et biologiques.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan213">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan213">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan213">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Savoir détecter et gérer les principaux effets indésirables.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan214">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan214">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan214">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre et connaître les principales interactions
+                                        médicamenteuses et alimentaires associées.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan215">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan215">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan215">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 2 ITEM 3 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Médicaments associés :</b> <br>
+                                Prévention ostéoporose, Anti-HTA, Antidiabétiques, 
+                                <br>IPP, Statine, IgG, Supplémentation,...
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître leur rôle et leur intérêt dans la prise en charge thérapeutique.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan220">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan220">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan220">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les surveillances cliniques et biologiques liées à chaque médicament.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan221">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan221">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan221">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Savoir détecter et gérer les principaux effets indésirables.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan222">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan222">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan222">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre et connaître les principales interactions médicamenteuses 
+                                        et alimentaires associées.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan223">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan223">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan223">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>                                             
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 3 -->
+                    <div class="item item-divider item-text-wrap">
+                        <b>3. Modalités d’utilisation des médicaments</b>
+                    </div>
+                    <!-- TITLE 3 ITEM 1 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Anti-rejets</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les modalités de prise (respect des horaires, alimentation ...).
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan300">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan300">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan300">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître la conduite à tenir en cas d’oubli.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan301">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan301">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan301">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître la conduite à tenir en cas de vomissements.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan302">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan302">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan302">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les règles hygiéno-diététiques associées.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan303">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan303">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                        <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan303">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 3 ITEM 2 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Anti-infectieux</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les modalités de prise.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan310">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan310">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan310">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître la durée de prise de chaque médicament.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan311">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan311">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan311">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>         
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 3 ITEM 3 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Médicaments associés</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les mesures hygiéno-diététiques associées.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan320">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan320">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan320">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 -->
+                    <div class="item item-divider item-text-wrap">
+                        <b>4. Gestion pratique de la maladie</b>
+                    </div>
+                    <!-- TITLE 4 ITEM 1 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Médicaments</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les modalités de délivrance des médicaments 
+                                        (pharmacie hospitalière ou d’officine).
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan400">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan400">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan400">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Savoir gérer les modalités d’approvisionnement : qui, quand, quoi, où, comment.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan401">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan401">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan401">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 ITEM 2 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Surveillance</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’un suivi médical régulier et connaître son rythme.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan410">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan410">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan410">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître et comprendre les examens réalisés.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan411">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan411">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan411">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Savoir anticiper les venues programmées en apportant le traitement 
+                                        et les résultats des examens réalisés en ville.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan412">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan412">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan412">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les modalités de la surveillance biologique ambulatoire 
+                                        (rythme, paramètres biologiques, horaires de prise des immunosuppresseurs ...).
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan413">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan413">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan413">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt du contrôle quotidien de la fonction ventilatoire 
+                                        (Spirotel®) et connaître ses modalités de réalisation.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan414">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan414">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan414">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 ITEM 3 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Hygiène et alimentation</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                       Reconnaître les situations à risque infectieux et savoir les gérer 
+                                        (port de masque, alimentation protégée ...).
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan420">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan420">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan420">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître l’alimentation à privilégier ou à éviter.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan421">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan421">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan421">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 ITEM 4 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Activité physique</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’une activité physique régulière.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan430">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan430">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan430">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Connaître les sports à privilégier ou à éviter.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan431">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan431">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan431">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 ITEM 5 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Grossesse / désir d’enfant</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’une contraception « efficace ».
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan440">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan440">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan440">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’informer l’équipe soignante de tout désir de grossesse.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan441">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan441">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>          
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan441">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>         
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 ITEM 6 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Voyages</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’informer l’équipe soignante de tout projet de voyage.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan450">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan450">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan450">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <!-- TITLE 4 ITEM 7 -->
+                    <ion-item>
+                        <div class="row item-text-wrap">
+                            <div class="col col-33 col-top">
+                                <b>Communication</b>
+                            </div>
+                            <div class="col col-66">
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt d’informer tout professionnel de santé des traitements en cours.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan460">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan460">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan460">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt de signaler toute modification de traitement.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan461">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan461">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan461">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt de ne pas avoir recours à l’automédication, sans avis médical ou 
+                                        pharmaceutique.
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan462">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan462">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan462">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-66">
+                                        Comprendre l’intérêt de signaler tout événement 
+                                        (ex : diminution de la fonction ventilatoire, infection ...).
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="3" 
+                                                   ng-model="vm.bilanFinal.bilan463">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                    <div class="col col-10">
+                                         <label class="toggle toggle-energized">
+                                            <input type="radio" value="2" 
+                                                   ng-model="vm.bilanFinal.bilan463">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>        
+                                    </div>
+                                    <div class="col col-10">
+                                          <label class="toggle toggle-energized">
+                                            <input type="radio" value="1" 
+                                                   ng-model="vm.bilanFinal.bilan463">
+                                            <div class="track">
+                                                <div class="handle"></div>
+                                            </div>
+                                        </label>       
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </ion-item>
+
+
+                </div>
+            </ion-list>
+
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

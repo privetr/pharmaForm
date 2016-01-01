@@ -17,14 +17,14 @@
         <ion-content  class="has-header has-subheader has-footer">
 
             <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Séances
+                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}
             </h3>
 
             <ion-list>
                 <div class="list list-inset">
                     <ion-item ng-repeat="session in vm.sessions track by $index"
                     class="item-text-wrap">			  
-                        Séance {{$index + 1}}. {{session.title}}
+                        {{session.title}}
                         <a class="button button-balanced" style="margin-left:30px;"
                            ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id, alreadyDone: 0} )'
                            ng-if="vm.patient.listSessionsOver.indexOf(session.id) == -1 &&
@@ -41,10 +41,17 @@
                         </a>
                         <a class="button button-energized" style="margin-left:30px;"
                            ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1 
-                                  && session.id != 'session_2' && session.id != 'session_3'"
+                                  && session.id != 'session_2' && session.id != 'session_3' && session.id != 'session_4'"
                            ng-click="vm.generatePdfSession($index + 1)"
                            >
                           <i class="icon ion-email"></i> Générer Bilan
+                        </a>
+                        
+                        <a class="button button-energized" style="margin-left:30px;"
+                           ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
+                           ui-sref="evaluate_session ( {patientId: vm.patient.id, sessionId: session.id} )"
+                           >
+                          <i class="icon ion-ribbon-b"></i> Evaluation
                         </a>
 
                     </ion-item>

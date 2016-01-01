@@ -25,9 +25,7 @@
         
         vm.patient = {};
         vm.patient.id = $stateParams.patientId;
-        
-        vm.pdfReady = false;
-		
+        		
         /*
          * Get Sessions
          */
@@ -88,31 +86,8 @@
             if(indexSession === 1){
                 //pdfOutput = pfPdfGeneratorService.generatePdfSession1(vm.patient, indexSession);
                 bodyOutput = pfPdfGeneratorService.generateBodySession1(vm.patient, indexSession);
-            } else if(indexSession === 2){
-                //pdfOutput = pfPdfGeneratorService.generatePdfSession2(vm.patient, indexSession);
-                bodyOutput = pfPdfGeneratorService.generateBodySession2(vm.patient, indexSession);
-            } else if(indexSession === 3){
-                //pdfOutput = pfPdfGeneratorService.generatePdfSession3(vm.patient, indexSession);
-                bodyOutput = pfPdfGeneratorService.generateBodySession3(vm.patient, indexSession);
-            } else if(indexSession === 4){
-                //pdfOutput = pfPdfGeneratorService.generatePdfSession4(vm.patient, indexSession);
-                bodyOutput = pfPdfGeneratorService.generateBodySession4(vm.patient, indexSession);
             }
             
-            
-            /*if (!window.plugin || !window.plugin.email) {
-               pdfOutput.save(vm.patient.lastname + '_' + vm.patient.firstname + '_BilanSession_' + vm.nowDate + '.pdf');
-            } 
-            else {
-                
-                
-                var pdfOutpurUri = pdfOutput.output('datauristring');
-                
-                var uristringparts = pdfOutpurUri.split(',');
-                uristringparts[0] = 'base64:' + escape(vm.patient.lastname + 'BilanSession-' + vm.nowDate + '.pdf') + '//';
-
-                var moddeduristring =  uristringparts.join('');*/
-
             if (!window.plugin || !window.plugin.email) {
                 pfUtilsService.showAlert('Erreur', 'Impossible d\'envoyer un mail');
             } 

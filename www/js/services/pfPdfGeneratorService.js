@@ -13,9 +13,7 @@
             generatePdfSession3: generatePdfSession3,
             generatePdfSession4: generatePdfSession4,
             generateBodySession1: generateBodySession1,
-            generateBodySession2: generateBodySession2,
-            generateBodySession3: generateBodySession3,
-            generateBodySession4: generateBodySession4
+            generateBodyBilan: generateBodyBilan
         };
         return service;
 
@@ -332,33 +330,16 @@
             return body;
         }
         
-        // This function generates BODY for session 2
-        function generateBodySession2(patient, indexSession) {
-            
-            var body = '';
-            
-            return body;
-        }
-        
-        // This function generates BODY for session 3
-        function generateBodySession3(patient, indexSession) {
-
-            var body = '';
-            
-            
-            return body;
-        }
-        
         // This function generates BODY for session 4
-        function generateBodySession4(patient, indexSession) {
+        function generateBodyBilan(patient, indexSession) {
             
-            var body = '<h2><font color="#2196F3">Bilan de la session 4 - ' + patient.lastname + ' ' + patient.firstname + ' </font></h2>';
+            var body = '<h2><font color="#2196F3">Evaluation de la session ' + indexSession + ' - ' + patient.lastname + ' ' + patient.firstname + ' </font></h2>';
             body += '<h3><font color="#D9004D">Auto-évaluation</font></h3>';
             var session = {};
 
             for (var i = 0 ; i < patient.listSessionsAnswers.length ; i++) {
-                if (patient.listSessionsAnswers[i].id === 'session_4') {
-                    session = patient.listSessionsAnswers[i].answer.bilanFinal;
+                if (patient.listEvaluationsAnswers[i].id === 'session_' + indexSession) {
+                    session = patient.listEvaluationsAnswers[i].answer.bilanFinal;
                     console.log('Session which will be sent : ', session);
                     break;
                 }
@@ -397,12 +378,6 @@
                 if(session.bilan103 === '3') itemOK++;
                 if(session.bilan103 === '2') itemNOK++;
                 if(session.bilan103 === '1') itemKO++;
-            }
-            if(session.bilan100){
-                answersBody += 'Connaître le principe de la greffe et savoir l’expliquer.' + ' ' + getResultBilanSession4(session.bilan100) + '<br>';
-                if(session.bilan100 === '3') itemOK++;
-                if(session.bilan100 === '2') itemNOK++;
-                if(session.bilan100 === '1') itemKO++;
             }
             
             // TITLE 2
@@ -615,7 +590,7 @@
                 answersBody += 'Comprendre l’intérêt du contrôle quotidien de la fonction ventilatoire (Spirotel®) et connaître ses modalités de réalisation.' + ' ' + getResultBilanSession4(session.bilan414) + '<br>';
                 if(session.bilan414 === '3') itemOK++;
                 if(session.bilan414 === '2') itemNOK++;
-                if(session.bilan410 === '1') itemKO++;
+                if(session.bilan414 === '1') itemKO++;
             }
             
             // TITLE 4 ITEM 3

@@ -49,7 +49,7 @@
                 buttons: [
                       {
                           text: '<b>OK</b>',
-                          type: 'button-royal button-clear'
+                          type: 'button-assertive button-clear'
                       }
                 ]
             });
@@ -128,7 +128,7 @@
                       },
                       {
                           text: '<b>Continuer</b>',
-                          type: 'button-energized button-clear',
+                          type: 'button-assertive button-clear',
                           onTap: function(e) {
                               $state.go(stateToGo, params);
                           }
@@ -151,7 +151,7 @@
                       },
                       {
                           text: '<b>Continuer</b>',
-                          type: 'button-energized button-clear',
+                          type: 'button-assertive button-clear',
                           onTap: function(e) {
                               $state.go(state);
                           }

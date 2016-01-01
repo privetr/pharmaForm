@@ -57,6 +57,16 @@
         }
       })
       
+      // evaluate session
+      .state('evaluate_session', {
+        url: '/evaluate_session/:patientId/:sessionId', 
+        templateUrl: 'templates/evaluate_session.html',
+        controller: 'EvaluateSessionCtrl as vm',
+        data: {
+            auth: true
+        }
+      })
+      
       // Display prescription
       .state('display_prescription', {
         url: '/display_prescription/:patientId', 
