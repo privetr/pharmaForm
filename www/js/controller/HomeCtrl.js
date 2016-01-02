@@ -11,21 +11,34 @@
 	
 	.controller('HomeCtrl', HomeCtrl);
 	
-	HomeCtrl.$inject = ['$state', '$scope', 'pfUtilsService', '$ionicModal'
+	HomeCtrl.$inject = ['$state', '$scope', 'pfUtilsService', '$ionicModal', '$localForage'
 		               ];
 
 	/* @ngInject */
-	function HomeCtrl($state, $scope, pfUtilsService, $ionicModal) {
+	function HomeCtrl($state, $scope, pfUtilsService, $ionicModal, $localForage) {
 
 		var vm = this;
         
         vm.displayGif = true;
         
+        vm.getActualPassword = function(){
+            $localForage.getItem('actualPassword')
+            .then(function(password) {
+                if(password){
+                    vm.actualPassword = password;
+                } else {
+                    vm.actualPassword = '2701';     // First use of the application
+                }
+            });
+        }
+        vm.getActualPassword();
+        
+        
         // we hide bottom menu tabs at the moment
 	    document.getElementById("bottom_tabs_app").style.visibility = "hidden" ;
         
         vm.doLogin = function(){
-            if(vm.password === '2701'){
+            if(vm.password === 'gr3ath3_2015#laura' || vm.password === vm.actualPassword){
                 $state.go('list_patients');
             }
             else{

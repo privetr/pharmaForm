@@ -9,7 +9,7 @@
 </ion-header-bar>
 
 <div class="bar bar-subheader bar-positive">
-    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Séance 2</h2>
+    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
 </div>
 
 <ion-nav-view >
@@ -99,11 +99,12 @@
 
 
                     <div class="list" style="padding-top: 30px">
-                        <div class="item item-divider item-text-wrap">
+                        <div class="item item-divider item-text-wrap"
+                            ng-click="vm.rejetApparition = ! vm.rejetApparition" ng-init="vm.rejetApparition = false">
                             Le phénomène de rejet peut apparaitre à tout moment. 
                             C’est pourquoi les médicaments anti-rejets sont à prendre : 
                         </div>
-                        <a class="item">
+                        <a class="item" ng-if="vm.rejetApparition">
                             <div class="col">
                                 <i class="icon ion-ionic color-energized"></i> 
                                 <em class="item-text-wrap" style="padding-left:5px;">
@@ -156,14 +157,15 @@
                     </div>
 
                     <div class="list" style="padding-top: 30px">
-                        <div class="item item-divider item-text-wrap">
+                        <div class="item item-divider item-text-wrap"
+                             ng-click="vm.medocReevaluation = ! vm.medocReevaluation" ng-init="vm.medocReevaluation = false">
                             Ces médicaments vont être régulièrement réévalués selon :
                         </div>
-                        <a class="item">
+                        <a class="item" ng-if="vm.medocReevaluation">
                             <div class="col">
                                 <i class="icon ion-ionic color-energized"></i> 
                                 <em class="item-text-wrap" style="padding-left:5px;">
-                                    la réponse de votre corps
+                                    la réponse
                                 </em>
                                 <br>
                             </div>
@@ -185,54 +187,91 @@
                         </a>
                     </div>
 
-                    <div class="row">
+                    <div class="row" ng-if="vm.medocReevaluation">
                         <h4 class="color-grey">
                             Les signes d’appel du rejet peuvent être une baisse de votre capacité 
-                            respiratoire avec essoufflement, diminution de vos valeurs au spiromètre, 
-                            une infection avec présence de fièvre, d’encombrement bronchique, ...
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <h4 class="color-grey">
-                            <b>Que faire en cas d’oubli de prise ?</b>
-                        </h4>
-                    </div>
-                    <div class="row">
-                        <h4 class="color-grey">
-                            Prenez-la dès que possible, mais ne doublez jamais la dose suivante.
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <h4 class="color-grey">
-                            <b>Que faire en cas de vomissements dans les 30 minutes suivant la prise ?</b>
-                        </h4>
-                    </div>
-                    <div class="row">
-                        <h4 class="color-grey">
-                            Reprenez une prise. <br>
-                            Au-delà, ne rien faire, le médicament a été suffisamment absorbé.
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <h4 class="color-grey">
-                            <b>Pour éviter les nausées et vomissements :</b> privilégiez une alimentation peu grasse et sans odeur.
-                        </h4>
-                    </div>
-                    <div class="row">
-                        <h4 class="color-grey">
-                            <b>Pour réduire les diarrhées :</b> privilégiez un régime sans fibre (pommes, carottes, riz et pain blanc) 
-                                et sans laitage.
+                            respiratoire avec essoufflement, une diminution de vos valeurs au spiromètre, 
+                            une infection avec présence de fièvre, un encombrement bronchique, ...
                         </h4>
                     </div>
 
                     <div class="list" style="padding-top: 30px">
-                        <div class="item item-divider item-text-wrap">
+                        <div class="item item-divider item-text-wrap"
+                            ng-click="vm.oubliPrise = ! vm.oubliPrise" ng-init="vm.oubliPrise = false">
+                            Que faire en cas d’oubli de prise ?
+                        </div>
+                        <a class="item" ng-if="vm.oubliPrise">
+                            <div class="col">
+                                <i class="icon ion-ionic color-energized"></i> 
+                                <em class="item-text-wrap" style="padding-left:5px;">
+                                    Prenez-la dès que possible, mais ne doublez jamais la dose suivante.
+                                </em>
+                                <br>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="list" style="padding-top: 30px">
+                        <div class="item item-divider item-text-wrap"
+                            ng-click="vm.vomissement = ! vm.vomissement" ng-init="vm.vomissement = false">
+                            Que faire en cas de vomissements dans les 30 minutes suivant la prise ?
+                        </div>
+                        <a class="item" ng-if="vm.vomissement">
+                            <div class="col">
+                                <i class="icon ion-ionic color-energized"></i> 
+                                <em class="item-text-wrap" style="padding-left:5px;">
+                                    Reprenez une prise.
+                                </em>
+                                <br>
+                            </div>
+                            <div class="col">
+                                <i class="icon ion-ionic color-energized"></i> 
+                                <em class="item-text-wrap" style="padding-left:5px;">
+                                    Au-delà, ne rien faire, le médicament a été suffisamment absorbé.
+                                </em>
+                                <br>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="list" style="padding-top: 30px">
+                        <div class="item item-divider item-text-wrap"
+                            ng-click="vm.avoidVomissement = ! vm.avoidVomissement" ng-init="vm.avoidVomissement = false">
+                            Pour éviter les nausées et vomissements :
+                        </div>
+                        <a class="item" ng-if="vm.avoidVomissement">
+                            <div class="col">
+                                <i class="icon ion-ionic color-energized"></i> 
+                                <em class="item-text-wrap" style="padding-left:5px;">
+                                    privilégiez une alimentation peu grasse et sans odeur.
+                                </em>
+                                <br>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="list" style="padding-top: 30px">
+                        <div class="item item-divider item-text-wrap"
+                            ng-click="vm.reduireDiarrhees = ! vm.reduireDiarrhees" ng-init="vm.reduireDiarrhees = false">
+                            Pour réduire les diarrhées :
+                        </div>
+                        <a class="item" ng-if="vm.reduireDiarrhees">
+                            <div class="col">
+                                <i class="icon ion-ionic color-energized"></i> 
+                                <em class="item-text-wrap" style="padding-left:5px;">
+                                    privilégiez un régime sans fibre (pommes, carottes, riz et pain blanc) et sans laitage.
+                                </em>
+                                <br>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="list" style="padding-top: 30px; padding-bottom:50px;">
+                        <div class="item item-divider item-text-wrap"
+                             ng-click="vm.conseilAntiReject = ! vm.conseilAntiReject" ng-init="vm.conseilAntiReject = false">
                             Conseils généraux avec les anti-rejets :
                         </div>
-                        <a class="item">
+                        <a class="item" ng-if="vm.conseilAntiReject">
                             <div class="col">
                                 <i class="icon ion-ionic color-energized"></i> 
                                 <em class="item-text-wrap" style="padding-left:5px;">
@@ -302,17 +341,20 @@
 
                     <div class="row">
                         <h4 class="color-grey">
-                            On apporte d’autres médicaments pour protéger le corps des infections : des médicaments anti-infectieux : 
+                            On apporte des médicaments anti-infectieux 
+                            <img style="height:40px; width:50px" src="img/session2/antiinfection1.png">
+                            pour se protéger :  
                         </h4>
                     </div>
                     <div class="col col-80 col-offset-10" style="padding:30px";>
                         <img class="img-responsive" src="img/session2/infection_complet.png">
                     </div>
 
+                    
 
                     <div class="row">
                         <h4 class="color-grey">
-                            On apporte d’autres médicaments pour protéger le corps des infections : des médicaments anti-infectieux : 
+                            L'objectif de la prise en charge est un équilibre entre l'immunosuppression et l'infection. 
                         </h4>
                     </div>
                     <div class="col col-80 col-offset-10" style="padding:30px";>
@@ -364,13 +406,25 @@
                             </div>
                         </a>
                         <div class="item item-divider">
-                            Parasite  : 
+                            Parasites : 
                         </div>
                         <a class="item">
                             <div class="col">
                                 <i class="icon ion-ionic color-energized"></i> 
                                 <em class="item-text-wrap" style="padding-left:5px;">
                                     Pneumocystis -> PENTACARINAT®, FANSIDAR®, BACTRIM®
+                                </em>
+                                <br>
+                            </div>
+                        </a>
+                        <div class="item item-divider">
+                            Bactéries : 
+                        </div>
+                        <a class="item">
+                            <div class="col">
+                                <i class="icon ion-ionic color-energized"></i> 
+                                <em class="item-text-wrap" style="padding-left:5px;">
+                                    Uniquement si infection...
                                 </em>
                                 <br>
                             </div>
@@ -388,7 +442,7 @@
 
                     <div class="row">
                         <h4 class="color-grey">
-                            La durée du traitement dépend notamment du médicament.
+                            La durée du traitement dépend du contexte, du micro-organisme, du médicament, du patient.
                         </h4>
                     </div>
                     <div class="row">
@@ -406,8 +460,8 @@
                         <h4 class="color-grey">
                             Les signes d’infection sont les mêmes que les signes d’appel du rejet : 
                             une baisse de votre capacité respiratoire avec essoufflement, 
-                            diminution de vos valeurs au spiromètre, une infection avec présence de fièvre, 
-                            d’encombrement bronchique, ...
+                            une diminution de vos valeurs au spiromètre, une fièvre, 
+                            un encombrement bronchique, ...
                         </h4>
                     </div>
 
@@ -456,8 +510,7 @@
 
                     <div class="row item-center">
                         <h3 class="color-grey">
-                            <b>Mise en place d’une surveillance rapprochée avec des consultations au centre de référence : 
-                                Tous les mois</b>
+                            <b>Mise en place d’une surveillance rapprochée avec des consultations au centre de référence</b>
                         </h3>
                     </div>
                     <div class="list" style="padding-top: 30px">
@@ -680,7 +733,7 @@
                             <div class="col">
                                 <i class="icon ion-ionic color-energized"></i> 
                                 <em class="item-text-wrap" style="padding-left:5px;">
-                                    Rejet chronique
+                                    Dysfonction chronique
                                 </em>
                                 <br>
                             </div>
@@ -832,7 +885,7 @@
                     </div>
                     <div class="row" style="padding-top:20px">
                         <h4 class="color-grey">
-                            Tous ces produits peuvent interagir avec vos médicaments et le rendre inactifs ou toxiques.
+                            Tous ces produits peuvent interagir avec vos médicaments et les rendre inactifs ou toxiques.
                         </h4>
                     </div>
 

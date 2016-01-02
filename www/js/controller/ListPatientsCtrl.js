@@ -12,10 +12,10 @@
 	.controller('ListPatientsCtrl', ListPatientsCtrl);
 	
 	ListPatientsCtrl.$inject = ['$state', '$scope',
-                                'pfLocalForageService', 'pfUtilsService', '$ionicPopup', '$localForage'];
+                                'pfLocalForageService', 'pfUtilsService', '$ionicPopup', '$localForage', '$ionicSideMenuDelegate'];
 
 	/* @ngInject */
-	function ListPatientsCtrl($state, $scope, pfLocalForageService, pfUtilsService, $ionicPopup, $localForage) {
+	function ListPatientsCtrl($state, $scope, pfLocalForageService, pfUtilsService, $ionicPopup, $localForage, $ionicSideMenuDelegate) {
 
 		var vm = this;
         
@@ -76,7 +76,11 @@
                 ]
             });
             
-		} 
+		}
+        
+        vm.toggleLeftSideMenu = function() {
+            $ionicSideMenuDelegate.toggleRight();
+        };
 	}
 
 })();

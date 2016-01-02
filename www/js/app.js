@@ -67,6 +67,16 @@
         }
       })
       
+      // change password
+      .state('change_password', {
+        url: '/change_password', 
+        templateUrl: 'templates/change_password.html',
+        controller: 'ChangePasswordCtrl as vm',
+        data: {
+            auth: true
+        }
+      })
+      
       // Display prescription
       .state('display_prescription', {
         url: '/display_prescription/:patientId', 

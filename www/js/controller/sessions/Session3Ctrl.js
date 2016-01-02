@@ -237,7 +237,7 @@
                       },
                       {
                           text: '<b>Enregistrer</b>',
-                          type: 'button-energized button-clear',
+                          type: 'button-assertive button-clear',
                           onTap: function(e) {
                               vm.saveSession();
                           }

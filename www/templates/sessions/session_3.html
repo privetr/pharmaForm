@@ -9,7 +9,7 @@
 </ion-header-bar>
 
 <div class="bar bar-subheader bar-positive">
-    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Séance 3</h2>
+    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
 </div>
 
 <ion-nav-view>
@@ -39,13 +39,13 @@
                 </div>
                 <div class="row">
                     <div class="col-20 item-text-wrap" style="margin-left:-10px">
-                        <em ng-if="med.type === 'antireject'">{{med.medicine.antireject.medicine.name}}</em>
-                        <em ng-if="med.type === 'antiinfection'">{{med.medicine.antiinfection.medicine.name}}</em>
+                        <em ng-if="med.type === 'antireject'"><b>{{med.medicine.antireject.medicine.name}}</b></em>
+                        <em ng-if="med.type === 'antiinfection'"><b>{{med.medicine.antiinfection.medicine.name}}</b></em>
                         <em ng-if="med.type === 'other' && med.medicine.other.existingMedicine">
-                            {{med.medicine.other.medicine.name}}
+                            <b>{{med.medicine.other.medicine.name}}</b>
                         </em>
                         <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
-                            {{med.medicine.other.medicine}}
+                            <b>{{med.medicine.other.medicine}}</b>
                         </em>
                     </div>
                     <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index">
@@ -127,7 +127,7 @@
                          name="dropzone-{{med.medicine.antireject.medicine.name}}"
                          data-jqyoui-options 
                          >
-
+                        <h3>Présentation du médicament : </h3>
                     </div>
                 </em>
                 <em ng-if="med.type === 'antiinfection'">
@@ -136,7 +136,7 @@
                          name="dropzone-{{med.medicine.antiinfection.medicine.name}}"
                          data-jqyoui-options 
                          >
-
+                        <h3>Présentation du médicament : </h3>
                     </div>
                 </em>
 

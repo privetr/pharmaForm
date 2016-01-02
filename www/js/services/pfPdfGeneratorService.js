@@ -306,6 +306,36 @@
             if(session.risksMedicine){
                 body += 'Quels risques à long terme des médicaments percevez-vous ?' + ' ' + session.risksMedicine + '<br>';
             }
+            
+            // Slide 110
+            if(session.doYouThinkHavingSideEffectsTrueFalse){
+                body += 'Pensez-vous avoir des effets indésirables ?' + ' ' + getTrueFalse(session.doYouThinkHavingSideEffectsTrueFalse) + '<br>';
+            }
+            if(session.doYouThinkHavingSideEffects){
+                body += 'Lesquels ?' + ' ' + session.doYouThinkHavingSideEffects + '<br>';
+            }
+            if(session.whatChangeHoursMedicine){
+                body += 'Quelles situations vous amènent à changer les heures de prise ?' + ' ' + session.whatChangeHoursMedicine + '<br>';
+            }
+            if(session.whatChangeDosageMedicine){
+                body += 'Quelles situations vous amènent à changer les doses par prise ?' + ' ' + session.whatChangeDosageMedicine + '<br>';
+            }
+            if(session.whatDoYouDoWhenMissingMed){
+                body += 'Que faites-vous quand vous oubliez une prise ?' + ' ' + session.whatDoYouDoWhenMissingMed + '<br>';
+            }
+            if(session.whatDoYouDoWhenVomit){
+                body += 'Que faites-vous en cas de vomissements ?' + ' ' + session.whatDoYouDoWhenVomit + '<br>';
+            }
+            if(session.whatCanInterferAntiReject){
+                body += 'Qu\'est-ce qui peut perturber l\'efficacité du traitement anti-rejet ?' + ' ' + session.whatCanInterferAntiReject + '<br>';
+            }
+            if(session.doYouKnowTargetAntiRejectTrueFalse){
+                body += 'Connaissez-vous la zone cible (taux sanguin) de votre traitement anti-rejet ?' + ' ' + getTrueFalse(session.doYouKnowTargetAntiRejectTrueFalse) + '<br>';
+            }
+            if(session.doYouKnowTargetAntiReject){
+                body += 'Commentaire : ' + ' ' + session.doYouKnowTargetAntiReject + '<br>';
+            }
+
 
             // Slide 11
             body += '<h4><font color="#D9004D"> L\'équipe soignante et vous...</font></h4>';

@@ -18,10 +18,6 @@
 	/* @ngInject */
 	function Session4Ctrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService,
                             $ionicPopup, $ionicLoading, $localForage, $timeout, $ionicScrollDelegate) {
-
-        $timeout(4000, function () {  // $timeout is used to be sure that the DOM is created
-            $scope.showPager = true;
-        });
         
 		var vm = this;
         
@@ -126,7 +122,7 @@
                       },
                       {
                           text: '<b>Enregistrer</b>',
-                          type: 'button-energized button-clear',
+                          type: 'button-assertive button-clear',
                           onTap: function(e) {
                               vm.saveSession();
                           }

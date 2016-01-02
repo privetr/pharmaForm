@@ -9,7 +9,7 @@
 </ion-header-bar>
 
 <div class="bar bar-subheader bar-positive">
-    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Séance 1</h2>
+    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
 </div>
 
 <ion-nav-view>
@@ -24,7 +24,7 @@
 
                     <div class="row item-center" style="padding-top:30px;">
                         <h1 class="maincolor">
-                            <b>Séance 1 : Diagnostic éducatif</b>
+                            <b>Diagnostic éducatif</b>
                         </h1>
                     </div>
 
@@ -1122,6 +1122,167 @@
 
                 </ion-content>
             </ion-slide-page>
+            
+            <!-- Slide 110 -->
+            <ion-slide-page prevent-drag>
+
+
+                <ion-content class="has-header has-subheader has-footer" id="mainScroll-110" style="padding-top:20px;">
+
+                    <div class="row" style="padding-top:10px;padding-top:30px;">
+                        <h3 class="maincolor" style="padding-left:10px;">
+                            Et maintenant...
+                        </h3>
+                    </div>
+
+                    <!-- vm.medicineImportant -->
+                    <div class="row" style="margin-top:20px">
+                        <div class="col item-text-wrap">
+                            <h4 class="color-grey" style="padding-left:10px;">
+                                Vos médicaments sont-ils indispensables ?
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col color-grey col-20 item-text-wrap" style="padding-top:20px;">
+                            <em class="item-center">Non</em>
+                        </div>
+                        <div class="col col-60">
+                            <div class="item range range-positive">
+                                <i class="icon ion-sad-outline color-positive"></i>
+                                <input type="range" ng-model="vm.medicineImportant" min="0" max="100" value="50">
+                                <i class="icon ion-happy-outline color-positive"></i>
+                            </div>
+                        </div>
+                        <div class="col color-grey col-20 item-text-wrap" style="padding-top:20px;">
+                            <em class="item-center">Oui</em>
+                        </div>
+                    </div>
+
+                    <!-- vm.doYouThinkHavingSideEffects and vm.doYouThinkHavingSideEffectsTrueFalse -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Pensez-vous avoir des effets indésirables ?
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                            Non 
+                            <label class="toggle toggle-assertive">
+                                <input type="radio" value="0" ng-model="vm.doYouThinkHavingSideEffectsTrueFalse">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                            Oui
+                            <label class="toggle toggle-balanced">
+                                <input type="radio" value="1" ng-model="vm.doYouThinkHavingSideEffectsTrueFalse">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col col-60">
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.doYouThinkHavingSideEffects" 
+                                       placeholder="Lesquels ? Causes ?"></textarea>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- vm.whatChangeHoursMedicine -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Quelles situations vous amènent à changer les heures de prise ?
+                        </h4>
+                    </div>
+                    <label class="item item-input" style="padding-bottom:30px;">
+                        <textarea ng-model="vm.whatChangeHoursMedicine" 
+                               placeholder="Ajouter du texte ..."></textarea>
+                    </label>
+
+                    <!-- vm.whatChangeDosageMedicine -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Quelles situations vous amènent à changer les doses par prise ?
+                        </h4>
+                    </div>
+                    <label class="item item-input" style="padding-bottom:30px;">
+                        <textarea ng-model="vm.whatChangeDosageMedicine" 
+                               placeholder="Ajouter du texte ..."></textarea>
+                    </label>
+                    
+                    <!-- vm.whatDoYouDoWhenMissingMed -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Que faites-vous quand vous oubliez une prise ?
+                        </h4>
+                    </div>
+                    <label class="item item-input" style="padding-bottom:30px;">
+                        <textarea ng-model="vm.whatDoYouDoWhenMissingMed" 
+                               placeholder="Ajouter du texte ..."></textarea>
+                    </label>
+
+                    <!-- vm.whatDoYouDoWhenVomit -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Que faites-vous en cas de vomissements ?
+                        </h4>
+                    </div>
+                    <label class="item item-input" style="padding-bottom:30px;">
+                        <textarea ng-model="vm.whatDoYouDoWhenVomit" 
+                               placeholder="Ajouter du texte ..."></textarea>
+                    </label>
+                    
+                    <!-- vm.whatCanInterferAntiReject -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Qu'est-ce qui peut perturber l'efficacité du traitement anti-rejet ?
+                        </h4>
+                    </div>
+                    <label class="item item-input" style="padding-bottom:30px;">
+                        <textarea ng-model="vm.whatCanInterferAntiReject" 
+                               placeholder="Ajouter du texte ..."></textarea>
+                    </label>
+                    
+                    <!-- vm.doYouKnowTargetAntiReject and vm.doYouKnowTargetAntiRejectTrueFalse -->
+                    <div class="row" style="padding-top:20px;">
+                        <h4 class="color-grey" style="padding-left:10px; margin-top: 20px;">
+                            Connaissez-vous la zone cible (taux sanguin) de votre traitement anti-rejet ?
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                            Non 
+                            <label class="toggle toggle-assertive">
+                                <input type="radio" value="0" ng-model="vm.doYouKnowTargetAntiRejectTrueFalse">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-20 col" style="padding-left: 10px; margin-top:20px;">
+                            Oui
+                            <label class="toggle toggle-balanced">
+                                <input type="radio" value="1" ng-model="vm.doYouKnowTargetAntiRejectTrueFalse">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col col-60">
+                            <label class="item item-input" style="padding-bottom:30px;">
+                                <textarea ng-model="vm.doYouKnowTargetAntiReject" 
+                                       placeholder="Ajouter du texte..."></textarea>
+                            </label>
+                        </div>
+                    </div>
+                   
+
+                </ion-content>
+            </ion-slide-page>
 
             <!-- Slide 11 -->
             <ion-slide-page prevent-drag>
@@ -1223,7 +1384,12 @@
 
                     <div class="row item-center" style="padding-top:30px;">
                         <h3 class="maincolor" style="padding-left:10px;">
-                            La séance est finie ! Merci de votre participation à ce questionnaire !
+                            La séance est finie !
+                        </h3>
+                    </div>
+                    <div class="row item-center" style="padding-top:30px;">
+                        <h3 class="maincolor" style="padding-left:10px;">
+                            Merci de votre participation à ce questionnaire !
                         </h3>
                     </div>
 

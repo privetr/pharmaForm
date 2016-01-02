@@ -157,6 +157,20 @@
                     vm.whatIsGoodTakeTreatement = vm.patient.listSessionsAnswers[i].answer.whatIsGoodTakeTreatement;
                     vm.secondaryMedicine = vm.patient.listSessionsAnswers[i].answer.secondaryMedicine;
                     vm.risksMedicine = vm.patient.listSessionsAnswers[i].answer.risksMedicine;
+                    
+                    // Slide 110
+                    vm.doYouThinkHavingSideEffects = vm.patient.listSessionsAnswers[i].answer.doYouThinkHavingSideEffects;
+                    vm.doYouThinkHavingSideEffectsTrueFalse = vm.patient.listSessionsAnswers[i].answer.doYouThinkHavingSideEffectsTrueFalse;
+                    vm.whatChangeHoursMedicine = vm.patient.listSessionsAnswers[i].answer.whatChangeHoursMedicine;
+                    vm.whatChangeDosageMedicine = vm.patient.listSessionsAnswers[i].answer.whatChangeDosageMedicine;
+                    vm.whatDoYouDoWhenMissingMed = vm.patient.listSessionsAnswers[i].answer.whatDoYouDoWhenMissingMed;
+                    vm.whatDoYouDoWhenVomit = vm.patient.listSessionsAnswers[i].answer.whatDoYouDoWhenVomit;
+                    vm.whatCanInterferAntiReject = vm.patient.listSessionsAnswers[i].answer.whatCanInterferAntiReject;
+                    vm.doYouKnowTargetAntiRejectTrueFalse = vm.patient.listSessionsAnswers[i].answer.doYouKnowTargetAntiRejectTrueFalse;
+                    vm.doYouKnowTargetAntiReject = vm.patient.listSessionsAnswers[i].answer.doYouKnowTargetAntiReject;
+                    
+                    
+                    
 
                     // Slide 11
                     vm.changeDecisionTeamRange = vm.patient.listSessionsAnswers[i].answer.changeDecisionTeamRange;
@@ -184,7 +198,7 @@
                       },
                       {
                           text: '<b>Enregistrer</b>',
-                          type: 'button-energized button-clear',
+                          type: 'button-assertive button-clear',
                           onTap: function(e) {
                               vm.saveSession();
                           }
@@ -281,6 +295,17 @@
             vm.session.answer.automedication = vm.automedication;
             vm.session.answer.secondaryMedicine = vm.secondaryMedicine;
             vm.session.answer.risksMedicine = vm.risksMedicine;
+            
+            // Slide 110
+            vm.session.answer.doYouThinkHavingSideEffects = vm.doYouThinkHavingSideEffects;
+            vm.session.answer.doYouThinkHavingSideEffectsTrueFalse = vm.doYouThinkHavingSideEffectsTrueFalse;
+            vm.session.answer.whatChangeHoursMedicine = vm.whatChangeHoursMedicine;
+            vm.session.answer.whatChangeDosageMedicine = vm.whatChangeDosageMedicine;
+            vm.session.answer.whatDoYouDoWhenMissingMed = vm.whatDoYouDoWhenMissingMed;
+            vm.session.answer.whatDoYouDoWhenVomit = vm.whatDoYouDoWhenVomit;
+            vm.session.answer.whatCanInterferAntiReject = vm.whatCanInterferAntiReject;
+            vm.session.answer.doYouKnowTargetAntiRejectTrueFalse = vm.doYouKnowTargetAntiRejectTrueFalse;
+            vm.session.answer.doYouKnowTargetAntiReject = vm.doYouKnowTargetAntiReject;
             
             // Slide 11
             vm.session.answer.changeDecisionTeamRange = vm.changeDecisionTeamRange;
