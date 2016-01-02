@@ -57,6 +57,16 @@
         }
       })
       
+      // Main menu
+      .state('main_menu', {
+        url: '/main_menu', 
+        templateUrl: 'templates/main_menu.html',
+        controller: 'MainMenuCtrl as vm',
+        data: {
+            auth: true
+        }
+      })
+      
       // evaluate session
       .state('evaluate_session', {
         url: '/evaluate_session/:patientId/:sessionId', 
