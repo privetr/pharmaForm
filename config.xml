@@ -73,7 +73,6 @@
         <splash height="480" src="www/img/logoentierwhite.png" width="320" />
         <preference name="Orientation" value="default" />
     </platform>
-    <plugin name="com.ionic.keyboard" spec="^1.0.4" />
     <plugin name="cordova-plugin-console" spec="^1.0.2" />
     <plugin name="cordova-plugin-device" spec="^1.1.0" />
     <plugin name="cordova-plugin-splashscreen" spec="^3.0.0" />

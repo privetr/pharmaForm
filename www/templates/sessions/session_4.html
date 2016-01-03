@@ -1,19 +1,19 @@
 
-<ion-header-bar class="bar-positive" align-title="center">
-    <a class="button button-icon icon ion-chevron-left white" 
-       ng-click="vm.popupBack()"> Liste séances</a>
-    <h1 class="title">
-        <img class="title-image" src="img/logo.png" width="100" height="25" /> 
-    </h1>
-    <a id="button_save_session" class="button button-icon icon ion-paper-airplane white" ng-click="vm.popupSaveSession()"> Terminer</a>
-</ion-header-bar>
-
-<div class="bar bar-subheader bar-positive">
-    <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
-</div>
-
 <ion-nav-view class="wrap_all">
     <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
+        
+        <ion-header-bar class="bar-positive" align-title="center">
+            <a class="button button-icon icon ion-chevron-left white" 
+               ng-click="vm.popupBack()"> Liste séances</a>
+            <h1 class="title">
+                <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+            </h1>
+            <a id="button_save_session" class="button button-icon icon ion-paper-airplane white" ng-click="vm.popupSaveSession()"> Terminer</a>
+        </ion-header-bar>
+
+        <div class="bar bar-subheader bar-positive">
+            <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
+        </div>
 
         <ion-slides slider="swiper" options="swiperOptions">
 
