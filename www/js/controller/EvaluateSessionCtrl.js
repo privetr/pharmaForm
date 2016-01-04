@@ -13,11 +13,11 @@
 	
 	EvaluateSessionCtrl.$inject = ['$state', '$scope', '$stateParams',
                                 'pfLocalForageService', 'pfUtilsService', 'pfLookUpService', 
-                                'pfPdfGeneratorService', '$cordovaFile', '$localForage'];
+                                'pfPdfGeneratorService', '$localForage'];
 
 	/* @ngInject */
 	function EvaluateSessionCtrl($state, $scope, $stateParams, pfLocalForageService, pfUtilsService, pfLookUpService, 
-                                pfPdfGeneratorService, $cordovaFile, $localForage) {
+                                pfPdfGeneratorService, $localForage) {
 
 		var vm = this;
         
