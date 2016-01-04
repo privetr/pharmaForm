@@ -26,31 +26,40 @@
                     </h2>
                 </div>
                 
-                 <div class="list" style="padding-top: 20px">
-                     <em ng-if="medicine.antireject.medicine.infos.family">
-                         <a class="item item-icon-left">
+                <h4 style="margin-top:20px; padding-left:10px">
+                    Votre traitement :
+                </h4>
+                <div class="row" style="padding-left: 10px;">
+                    <div class="col" ng-repeat="dosage in medicine.antireject.dosage" ng-if="dosage.selected">
+                        <img style="height: 70px" src="{{dosage.imagePath}}">
+                    </div>
+                </div>
+                
+                <div class="list">
+                    <em ng-if="medicine.antireject.medicine.infos.family">
+                        <a class="item item-icon-left">
                             <i class="icon ion-ionic color-energized"></i> 
                             {{medicine.antireject.medicine.infos.family}}
-                         </a>
-                     </em>
-                     <em ng-if="medicine.antireject.medicine.infos.dosage">
-                         <a class="item item-icon-left">
+                        </a>
+                    </em>
+                    <em ng-if="medicine.antireject.medicine.infos.dosage">
+                        <a class="item item-icon-left">
                             <i class="icon ion-ionic color-energized"></i> 
                             {{medicine.antireject.medicine.infos.dosage}}
-                         </a>
-                     </em>
-                     <em ng-if="medicine.antireject.medicine.infos.frequence">
-                         <a class="item item-icon-left">
+                        </a>
+                    </em>
+                    <em ng-if="medicine.antireject.medicine.infos.frequence">
+                        <a class="item item-icon-left">
                             <i class="icon ion-ionic color-energized"></i> 
                             {{medicine.antireject.medicine.infos.frequence}}
-                         </a>
-                     </em>
-                     <em ng-if="medicine.antireject.medicine.infos.time">
-                         <a class="item item-icon-left">
+                        </a>
+                    </em>
+                    <em ng-if="medicine.antireject.medicine.infos.time">
+                        <a class="item item-icon-left">
                             <i class="icon ion-ionic color-energized"></i> 
                             {{medicine.antireject.medicine.infos.time}}
-                         </a>
-                     </em>
+                        </a>
+                    </em>
                 </div>
                 
                 <h4 style="margin-top:20px; padding-left:10px">
@@ -61,19 +70,8 @@
                         - {{surveillance.name}}
                     </div>
                 </div>
-                <!--
-                <div class="list" style="padding-top: 20px">
-                    <div class="item item-divider">
-                        <b>Surveillance</b>
-                    </div>
-                    <a class="item item-icon-left" ng-repeat="surveillance in medicine.antireject.medicine.infos.surveillance">
-                        <i class="icon ion-ionic color-energized"></i> 
-                        {{surveillance.name}}
-                    </a>
-                </div>
-                -->
                 
-                </li>
+            </li>
 
         </ul>
     </ion-content>

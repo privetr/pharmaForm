@@ -1,70 +1,68 @@
-<ion-nav-view>
-    <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
-         
-        <ion-header-bar class="bar-positive" align-title="center">
-            <a class="button button-icon icon ion-chevron-left white" ui-sref="view_patient ( {patientId: vm.patient.id} )"> Fiche patient</a>
-            <h1 class="title">
-                <img class="title-image" src="img/logo.png" width="100" height="25" /> 
-            </h1>
-            <a></a>
-        </ion-header-bar>
+<ion-view  title="ETP Greffe Pulmonaire - Choix séance">
 
-        <div class="bar bar-subheader bar-positive">
-            <h2 class="title">Choix de la séance</h2>
-        </div>
+    <ion-header-bar class="bar-positive" align-title="center">
+        <a class="button button-icon icon ion-chevron-left white" ui-sref="view_patient ( {patientId: vm.patient.id} )"> Fiche patient</a>
+        <h1 class="title">
+            <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+        </h1>
+        <a></a>
+    </ion-header-bar>
 
-        <ion-content  class="has-header has-subheader has-footer">
+    <div class="bar bar-subheader bar-positive">
+        <h2 class="title">Choix de la séance</h2>
+    </div>
 
-            <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}
-            </h3>
+    <ion-content  class="has-header has-subheader has-footer">
 
-            <ion-list>
-                <div class="list list-inset">
-                    <ion-item ng-repeat="session in vm.sessions track by $index"
-                    class="item-text-wrap">			  
-                        {{session.title}}
-                        <a class="button button-balanced" style="margin-left:30px;"
-                           ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id, alreadyDone: 0} )'
-                           ng-if="vm.patient.listSessionsOver.indexOf(session.id) == -1 &&
-                                  vm.patient.listSessionsOver.indexOf(vm.sessions[$index-1].id) > -1 || 
-                                  vm.patient.listSessionsOver == undefined && $index == 0"
-                           >
-                          <i class="icon ion-play"></i> Démarrer
-                        </a>
-                        <a class="button button-energized" style="margin-left:30px;"
-                           ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
-                           ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id, alreadyDone: 1} )'
-                           >
-                          <i class="icon ion-refresh"></i> Revoir
-                        </a>
-                        <a class="button button-energized" style="margin-left:30px;"
-                           ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1 
-                                  && session.id != 'session_2' && session.id != 'session_3' && session.id != 'session_4'"
-                           ng-click="vm.generatePdfSession($index + 1)"
-                           >
-                          <i class="icon ion-email"></i> Générer Bilan
-                        </a>
-                        
-                        <a class="button button-energized" style="margin-left:30px;"
-                           ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
-                           ui-sref="evaluate_session ( {patientId: vm.patient.id, sessionId: session.id} )"
-                           >
-                          <i class="icon ion-ribbon-b"></i> Evaluation
-                        </a>
+        <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}
+        </h3>
 
-                    </ion-item>
-                    <ion-item ng-if="vm.patient.listSessionsOver.length >= 4"
-                        class="item-text-wrap" >			  
-                        Retour sur expérience du patient
-                        <a class="button button-balanced" style="margin-left:30px;" href="#"
-                           onclick="cordova.InAppBrowser.open('http://goo.gl/forms/h08LReHRXx', '_blank', 'location=yes'); return false;">
-                            <i class="icon ion-play"></i> Démarrer
-                        </a>
-                    </ion-item>
-                </div>
-            </ion-list> 
+        <ion-list>
+            <div class="list list-inset">
+                <ion-item ng-repeat="session in vm.sessions track by $index"
+                class="item-text-wrap">			  
+                    {{session.title}}
+                    <a class="button button-balanced" style="margin-left:30px;"
+                       ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id, alreadyDone: 0} )'
+                       ng-if="vm.patient.listSessionsOver.indexOf(session.id) == -1 &&
+                              vm.patient.listSessionsOver.indexOf(vm.sessions[$index-1].id) > -1 || 
+                              vm.patient.listSessionsOver == undefined && $index == 0"
+                       >
+                      <i class="icon ion-play"></i> Démarrer
+                    </a>
+                    <a class="button button-energized" style="margin-left:30px;"
+                       ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
+                       ui-sref='session_{{$index + 1}} ( {patientId: vm.patient.id, sessionId: session.id, alreadyDone: 1} )'
+                       >
+                      <i class="icon ion-refresh"></i> Revoir
+                    </a>
+                    <a class="button button-energized" style="margin-left:30px;"
+                       ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1 
+                              && session.id != 'session_2' && session.id != 'session_3' && session.id != 'session_4'"
+                       ng-click="vm.generatePdfSession($index + 1)"
+                       >
+                      <i class="icon ion-email"></i> Générer Bilan
+                    </a>
 
-        </ion-content>
-    </ion-view>
-</ion-nav-view>
+                    <a class="button button-energized" style="margin-left:30px;"
+                       ng-if="vm.patient.listSessionsOver.indexOf(session.id) > -1"
+                       ui-sref="evaluate_session ( {patientId: vm.patient.id, sessionId: session.id} )"
+                       >
+                      <i class="icon ion-ribbon-b"></i> Evaluation
+                    </a>
+
+                </ion-item>
+                <ion-item ng-if="vm.patient.listSessionsOver.length >= 4"
+                    class="item-text-wrap" >			  
+                    Retour sur expérience du patient
+                    <a class="button button-balanced" style="margin-left:30px;" href="#"
+                       onclick="cordova.InAppBrowser.open('http://goo.gl/forms/h08LReHRXx', '_blank', 'location=yes'); return false;">
+                        <i class="icon ion-play"></i> Démarrer
+                    </a>
+                </ion-item>
+            </div>
+        </ion-list> 
+
+    </ion-content>
+</ion-view>

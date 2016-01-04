@@ -703,6 +703,9 @@
                 if(session.bilan463 === '2') itemNOK++;
                 if(session.bilan463 === '1') itemKO++;
             }
+            if(session.mainComment){
+                answersBody += 'Commentaire Global : ' + session.mainComment + '<br>';
+            }
             
             // Set results
             body += '<br><br>';

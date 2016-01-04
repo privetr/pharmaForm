@@ -1,168 +1,166 @@
 
-<ion-nav-view>
-    <ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
-        
-        <ion-header-bar class="bar-positive" align-title="center">
-             <a class="button button-icon icon ion-chevron-left white" 
-               ng-click="vm.popupBack()"> Prescription</a>
-            <h1 class="title">
-                <img class="title-image" src="img/logo.png" width="100" height="25" /> 
-            </h1>
-            <a id="button_save_antireject" class="button button-icon icon ion-checkmark-round white" 
-               ng-click="vm.saveAntiReject()"> 
-                Enregistrer
-            </a>
-        </ion-header-bar>
+<ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
 
-        <div class="bar bar-subheader bar-positive">
-            <h2 class="title">Modification des traitements anti-rejets</h2>
+    <ion-header-bar class="bar-positive" align-title="center">
+         <a class="button button-icon icon ion-chevron-left white" 
+           ng-click="vm.popupBack()"> Prescription</a>
+        <h1 class="title">
+            <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+        </h1>
+        <a id="button_save_antireject" class="button button-icon icon ion-checkmark-round white" 
+           ng-click="vm.saveAntiReject()"> 
+            Enregistrer
+        </a>
+    </ion-header-bar>
+
+    <div class="bar bar-subheader bar-positive">
+        <h2 class="title">Modification des traitements anti-rejets</h2>
+    </div>
+
+    <ion-content  class="has-header has-subheader has-footer">
+
+        <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-rejets
+        </h3>
+
+        <!-- antireject -->
+        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Anti-rejet</h4>
+        <select class="ion-input-select-large"	
+                ng-options="index as item.name for (index, item) in vm.antiRejectPrescription"
+                ng-model="vm.newAntiReject"> 
+        </select>
+
+        <!-- Dosage -->
+        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+        <div class="row" style="padding-left:20px" ng-if="!vm.newAntiReject">
+            Aucun
+        </div>
+        <ul class="list" style="padding-top:10px;">
+            <div class="row" ng-repeat="dosage in vm.antiRejectPrescription[vm.newAntiReject].dosage">
+                <div class="col" style="padding:0px; margin:0px;">
+                    <li class="item item-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox" value="{{dosage.id}}" 
+                                   ng-model="dosage.selected">                 
+                        </label>
+                        {{dosage.name}}
+                    </li>
+                </div>
+                <div class="col" ng-if="dosage.selected">
+                    <select class="ion-input-select-large item"	style="border: thin solid #444"
+                            ng-options="key as item for (key, item) in vm.listDosageTimes"
+                            ng-model="dosage.nbMedicine"> 
+                        <option value="">Choisir nombre d'unité(s)</option>
+                    </select>
+                </div>
+            </div>
+        </ul>   
+
+        <!-- fréquence -->
+        <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Horaires</h4>
+        <ul class="list" style="padding-top:10px;">
+            <div ng-repeat="frequence in vm.antiRejectListFrequence" 
+                 ng-if="$index % 4 === 0" class="row">
+                <div class="col-25" ng-if="vm.antiRejectListFrequence[$index].name">
+                    <li class="item item-checkbox item-text-wrap">
+                        <label class="checkbox">
+                            <input type="checkbox" value="{{vm.antiRejectListFrequence[$index].id}}" 
+                                   ng-model="vm.antiRejectListFrequence[$index].selected">                 
+                        </label>
+                        {{vm.antiRejectListFrequence[$index].name}}
+                    </li>
+                </div>
+                <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+1].name">
+                    <li class="item item-checkbox item-text-wrap">
+                        <label class="checkbox">
+                            <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+1].id}}" 
+                                   ng-model="vm.antiRejectListFrequence[$index+1].selected">                 
+                        </label>
+                        {{vm.antiRejectListFrequence[$index+1].name}}
+                    </li>
+                </div>
+                <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+2].name">
+                    <li class="item item-checkbox item-text-wrap">
+                        <label class="checkbox">
+                            <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+2].id}}" 
+                                   ng-model="vm.antiRejectListFrequence[$index+2].selected">                 
+                        </label>
+                        {{vm.antiRejectListFrequence[$index+2].name}}
+                    </li>
+                </div>
+                <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+3].name">
+                    <li class="item item-checkbox item-text-wrap">
+                        <label class="checkbox">
+                            <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+3].id}}" 
+                                   ng-model="vm.antiRejectListFrequence[$index+3].selected">                 
+                        </label>
+                        {{vm.antiRejectListFrequence[$index+3].name}}
+                    </li>
+                </div>
+            </div>
+
+        </ul>  
+
+
+        <div class="row" style="margin-top:10px;">
+            <div class="col col-50">
+                <button class="button button-block button-positive icon-left" ng-click="vm.addAntiReject()">
+                    <i class="icon ion-plus-round"></i> Ajouter anti-rejet
+                </button>
+            </div>
+            <div class="col col-50">
+                <button class="button button-clear button-assertive icon ion-close-round"
+                    ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
+                </button>
+                <button class="button button-clear button-energized icon ion-shuffle"
+                    ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
+                </button>
+                <button class="button button-clear button-dark icon ion-edit"
+                     ng-click="vm.showDelete = false; vm.showReorder = false">
+                </button>
+            </div>
         </div>
 
-        <ion-content  class="has-header has-subheader has-footer">
-
-            <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements anti-rejets
-            </h3>
-
-            <!-- antireject -->
-            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Anti-rejet</h4>
-            <select class="ion-input-select-large"	
-                    ng-options="index as item.name for (index, item) in vm.antiRejectPrescription"
-                    ng-model="vm.newAntiReject"> 
-            </select>
-
-            <!-- Dosage -->
-            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-            <div class="row" style="padding-left:20px" ng-if="!vm.newAntiReject">
-                Aucun
+        <!-- Liste Anti-rejets -->
+        <div class="row" style="margin-top:20px;">
+            <div class="col">
+                <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                ng-if="vm.patient.listAntiReject">Liste des Anti-rejets</h4>
             </div>
-            <ul class="list" style="padding-top:10px;">
-                <div class="row" ng-repeat="dosage in vm.antiRejectPrescription[vm.newAntiReject].dosage">
-                    <div class="col" style="padding:0px; margin:0px;">
-                        <li class="item item-checkbox">
-                            <label class="checkbox">
-                                <input type="checkbox" value="{{dosage.id}}" 
-                                       ng-model="dosage.selected">                 
-                            </label>
-                            {{dosage.name}}
-                        </li>
-                    </div>
-                    <div class="col" ng-if="dosage.selected">
-                        <select class="ion-input-select-large item"	style="border: thin solid #444"
-                                ng-options="key as item for (key, item) in vm.listDosageTimes"
-                                ng-model="dosage.nbMedicine"> 
-                            <option value="">Choisir nombre d'unité(s)</option>
-                        </select>
-                    </div>
-                </div>
-            </ul>   
+        </div>
 
-            <!-- fréquence -->
-            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Horaires</h4>
-            <ul class="list" style="padding-top:10px;">
-                <div ng-repeat="frequence in vm.antiRejectListFrequence" 
-                     ng-if="$index % 4 === 0" class="row">
-                    <div class="col-25" ng-if="vm.antiRejectListFrequence[$index].name">
-                        <li class="item item-checkbox item-text-wrap">
-                            <label class="checkbox">
-                                <input type="checkbox" value="{{vm.antiRejectListFrequence[$index].id}}" 
-                                       ng-model="vm.antiRejectListFrequence[$index].selected">                 
-                            </label>
-                            {{vm.antiRejectListFrequence[$index].name}}
-                        </li>
-                    </div>
-                    <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+1].name">
-                        <li class="item item-checkbox item-text-wrap">
-                            <label class="checkbox">
-                                <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+1].id}}" 
-                                       ng-model="vm.antiRejectListFrequence[$index+1].selected">                 
-                            </label>
-                            {{vm.antiRejectListFrequence[$index+1].name}}
-                        </li>
-                    </div>
-                    <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+2].name">
-                        <li class="item item-checkbox item-text-wrap">
-                            <label class="checkbox">
-                                <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+2].id}}" 
-                                       ng-model="vm.antiRejectListFrequence[$index+2].selected">                 
-                            </label>
-                            {{vm.antiRejectListFrequence[$index+2].name}}
-                        </li>
-                    </div>
-                    <div class="col-25" ng-if="vm.antiRejectListFrequence[$index+3].name">
-                        <li class="item item-checkbox item-text-wrap">
-                            <label class="checkbox">
-                                <input type="checkbox" value="{{vm.antiRejectListFrequence[$index+3].id}}" 
-                                       ng-model="vm.antiRejectListFrequence[$index+3].selected">                 
-                            </label>
-                            {{vm.antiRejectListFrequence[$index+3].name}}
-                        </li>
-                    </div>
-                </div>
+        <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+            <div class="list list-inset">
+                <ion-item ng-repeat="(key_objectAR, objectAR) in vm.listAntiReject" 
+                    class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                    ng-click="vm.editAntiReject(key_objectAR, objectAR)">	
 
-            </ul>  
+                    <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                        {{objectAR.antireject.medicine.name}}
+                    </p>
+                    <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                        <em ng-repeat="dosage in objectAR.antireject.dosage" 
+                            ng-if="dosage.selected" style="padding-right:30px";>
+                            {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                        </em>
+                    </p>
+                    <p><color class="maincolor" style="padding-right:20px"><b>Horaires</b></color> 
+                        <em ng-repeat="frequence in objectAR.antireject.frequence" 
+                            ng-if="frequence.selected" style="padding-right:30px";>
+                            {{frequence.name}}
+                        </em>
+                    </p>
+
+                    <ion-delete-button class="ion-minus-circled"
+                        ng-click="vm.removeAntiReject(key_objectAR)">
+                    </ion-delete-button>
+                    <ion-reorder-button class="ion-navicon"
+                        on-reorder="vm.reorderItem(objectAR, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+                 </ion-item>
+             </div>
+        </ion-list>
 
 
-            <div class="row" style="margin-top:10px;">
-                <div class="col col-50">
-                    <button class="button button-block button-positive icon-left" ng-click="vm.addAntiReject()">
-                        <i class="icon ion-plus-round"></i> Ajouter anti-rejet
-                    </button>
-                </div>
-                <div class="col col-50">
-                    <button class="button button-clear button-assertive icon ion-close-round"
-                        ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
-                    </button>
-                    <button class="button button-clear button-energized icon ion-shuffle"
-                        ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
-                    </button>
-                    <button class="button button-clear button-dark icon ion-edit"
-                         ng-click="vm.showDelete = false; vm.showReorder = false">
-                    </button>
-                </div>
-            </div>
-
-            <!-- Liste Anti-rejets -->
-            <div class="row" style="margin-top:20px;">
-                <div class="col">
-                    <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
-                    ng-if="vm.patient.listAntiReject">Liste des Anti-rejets</h4>
-                </div>
-            </div>
-
-            <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
-                <div class="list list-inset">
-                    <ion-item ng-repeat="(key_objectAR, objectAR) in vm.listAntiReject" 
-                        class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-                        ng-click="vm.editAntiReject(key_objectAR, objectAR)">	
-
-                        <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
-                            {{objectAR.antireject.medicine.name}}
-                        </p>
-                        <p><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                            <em ng-repeat="dosage in objectAR.antireject.dosage" 
-                                ng-if="dosage.selected" style="padding-right:30px";>
-                                {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
-                            </em>
-                        </p>
-                        <p><color class="maincolor" style="padding-right:20px"><b>Horaires</b></color> 
-                            <em ng-repeat="frequence in objectAR.antireject.frequence" 
-                                ng-if="frequence.selected" style="padding-right:30px";>
-                                {{frequence.name}}
-                            </em>
-                        </p>
-
-                        <ion-delete-button class="ion-minus-circled"
-                            ng-click="vm.removeAntiReject(key_objectAR)">
-                        </ion-delete-button>
-                        <ion-reorder-button class="ion-navicon"
-                            on-reorder="vm.reorderItem(objectAR, $fromIndex, $toIndex)">
-                        </ion-reorder-button>
-                     </ion-item>
-                 </div>
-            </ion-list>
-
-
-        </ion-content>
-    </ion-view>
-</ion-nav-view>
+    </ion-content>
+</ion-view>

@@ -1,146 +1,144 @@
 
-<ion-nav-view>
-    <ion-view  title="ETP Greffe Pulmonaire - Choix séance">
-        
-        <ion-header-bar class="bar-positive" align-title="center">
-            <a class="button button-icon icon ion-chevron-left white" 
-               ng-click="vm.popupBack()"> Liste séances</a>
-            <h1 class="title">
-                <img class="title-image" src="img/logo.png" width="100" height="25" /> 
-            </h1>
-            <a id="button_save_session" class="button button-icon icon ion-paper-airplane white" ng-click="vm.popupSaveSession()"> Terminer</a>
-        </ion-header-bar>
+<ion-view  title="ETP Greffe Pulmonaire - Choix séance">
 
-        <div class="bar bar-subheader bar-positive">
-            <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
+    <ion-header-bar class="bar-positive" align-title="center">
+        <a class="button button-icon icon ion-chevron-left white" 
+           ng-click="vm.popupBack()"> Liste séances</a>
+        <h1 class="title">
+            <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+        </h1>
+        <a id="button_save_session" class="button button-icon icon ion-paper-airplane white" ng-click="vm.popupSaveSession()"> Terminer</a>
+    </ion-header-bar>
+
+    <div class="bar bar-subheader bar-positive">
+        <h2 class="title"><em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}}</h2>
+    </div>
+
+    <ion-content class="has-header has-subheader has-footer">
+        <div class="row item-text-wrap" data-drop="true">
+            <em ng-repeat="medicine in vm.listImages" ng-init="medIndex = $index">
+                <em ng-repeat="dosage in medicine.dosage" ng-init="imageIndex = $index">
+                    <img style="height: 70px; z-index:100" src="{{dosage.imagePath}}"
+                         data-drag="true" jqyoui-draggable="{animate:true}" 
+                         name="{{dosage.imagePath}}"
+                         id="img-{{medIndex}}-{{imageIndex}}"
+                         ng-model="dosage.imagePath"
+                         ng-if="dosage.imagePath !== 'false'">
+                </em>
+            </em>
         </div>
 
-        <ion-content class="has-header has-subheader has-footer">
-            <div class="row item-text-wrap" data-drop="true">
-                <em ng-repeat="medicine in vm.listImages" ng-init="medIndex = $index">
-                    <em ng-repeat="dosage in medicine.dosage" ng-init="imageIndex = $index">
-                        <img style="height: 70px; z-index:100" src="{{dosage.imagePath}}"
-                             data-drag="true" jqyoui-draggable="{animate:true}" 
-                             name="{{dosage.imagePath}}"
-                             id="img-{{medIndex}}-{{imageIndex}}"
-                             ng-model="dosage.imagePath"
-                             ng-if="dosage.imagePath !== 'false'">
+        <div class="item" ng-repeat="med in vm.listHours.listMedicine" ng-init="medIndex = $index" 
+             style="padding-top:20px; z-index:1;">
+            <div class="row">
+                <div class="col-20"></div>
+                <div class="col-10" ng-repeat="hours in med.listHours" ng-if="!med.special">
+                    {{hours.name}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-20 item-text-wrap" style="margin-left:-10px">
+                    <em ng-if="med.type === 'antireject'"><b>{{med.medicine.antireject.medicine.name}}</b></em>
+                    <em ng-if="med.type === 'antiinfection'"><b>{{med.medicine.antiinfection.medicine.name}}</b></em>
+                    <em ng-if="med.type === 'other' && med.medicine.other.existingMedicine">
+                        <b>{{med.medicine.other.medicine.name}}</b>
                     </em>
-                </em>
+                    <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
+                        <b>{{med.medicine.other.medicine}}</b>
+                    </em>
+                </div>
+                <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index">
+                    <li class="item item-checkbox">
+                        <label class="checkbox" 
+                               ng-class="{ 'checkbox-assertive': frequence.class === -1,
+                                         'checkbox-balanced': frequence.class === 1
+                                         }">
+                            <input type="checkbox" name="checkbox-{{medIndex}}-{{medFrequence}}"
+                                   ng-model="frequence.answerPatient"
+                                   ng-change="vm.answerPatientFrequenceChange(frequence, medIndex, medFrequence)"
+                                   >
+                        </label>
+                    </li>
+                </div>
             </div>
 
-            <div class="item" ng-repeat="med in vm.listHours.listMedicine" ng-init="medIndex = $index" 
-                 style="padding-top:20px; z-index:1;">
-                <div class="row">
-                    <div class="col-20"></div>
-                    <div class="col-10" ng-repeat="hours in med.listHours" ng-if="!med.special">
-                        {{hours.name}}
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input">
+                        <input type="text" ng-model="med.indication" placeholder="Indication">
+                    </label>
                 </div>
-                <div class="row">
-                    <div class="col-20 item-text-wrap" style="margin-left:-10px">
-                        <em ng-if="med.type === 'antireject'"><b>{{med.medicine.antireject.medicine.name}}</b></em>
-                        <em ng-if="med.type === 'antiinfection'"><b>{{med.medicine.antiinfection.medicine.name}}</b></em>
-                        <em ng-if="med.type === 'other' && med.medicine.other.existingMedicine">
-                            <b>{{med.medicine.other.medicine.name}}</b>
-                        </em>
-                        <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
-                            <b>{{med.medicine.other.medicine}}</b>
-                        </em>
-                    </div>
-                    <div class="col-10" ng-repeat="frequence in med.listHours" ng-if="!med.special" ng-init="medFrequence = $index">
-                        <li class="item item-checkbox">
-                            <label class="checkbox" 
-                                   ng-class="{ 'checkbox-assertive': frequence.class === -1,
-                                             'checkbox-balanced': frequence.class === 1
-                                             }">
-                                <input type="checkbox" name="checkbox-{{medIndex}}-{{medFrequence}}"
-                                       ng-model="frequence.answerPatient"
-                                       ng-change="vm.answerPatientFrequenceChange(frequence, medIndex, medFrequence)"
-                                       >
-                            </label>
-                        </li>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label class="item item-input">
-                            <input type="text" ng-model="med.indication" placeholder="Indication">
-                        </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label class="item item-input">
-                            <input type="text" ng-model="med.comment" placeholder="Commentaire">
-                        </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <em ng-hide="med.dosage === undefined && med.type ==='other' ">
-                            Dosages : 
-                        </em>
-                        <!-- Antireject -->
-                        <em  ng-repeat="dosage in med.dosage track by $index" ng-if="med.type === 'antireject'">
-                            {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |  
-                        </em>
-                         <!-- Antiinfection -->
-                        <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
-                            ng-if="dosage.selected && med.type === 'antiinfection' &&
-                                   !med.medicine.antiinfection.specialfrequence.selected">
-                            {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |
-                        </em>
-                        <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
-                            ng-if="dosage.selected && med.type === 'antiinfection' &&
-                                   med.medicine.antiinfection.specialfrequence.selected">
-                            <em ng-if="med.medicine.antiinfection.specialfrequence.value == 'monthOnly'">
-                                Chaque mois, le
-                            </em>
-                            {{dosage.nbMedicine}} : {{dosage.name}}
-                        </em>
-                         <!-- Others -->
-                        <em ng-repeat="dosage in med.medicine.other.dosage track by $index" 
-                            ng-if="dosage.selected && med.type === 'other' &&
-                                   med.medicine.other.existingMedicine"
-                            >
-                            {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
-                        </em>
-                        <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
-                            {{med.dosage}}
-                        </em>
-                    </div>
-                </div>
-
-                <div class="row" ng-if="med.type === 'other' && med.frequence">
-                    <div class="col">
-                        Fréquence : {{med.frequence}}
-                    </div>
-                </div>
-
-                <em ng-if="med.type === 'antireject'">
-                    <div class="row" style="height:80px;"
-                         data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback(med)'}" 
-                         name="dropzone-{{med.medicine.antireject.medicine.name}}"
-                         data-jqyoui-options 
-                         >
-                        <h3>Présentation du médicament : </h3>
-                    </div>
-                </em>
-                <em ng-if="med.type === 'antiinfection'">
-                    <div class="row" style="height:80px;"
-                         data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback(med)'}" 
-                         name="dropzone-{{med.medicine.antiinfection.medicine.name}}"
-                         data-jqyoui-options 
-                         >
-                        <h3>Présentation du médicament : </h3>
-                    </div>
-                </em>
-
             </div>
-        </ion-content>
-    </ion-view>
-</ion-nav-view>
+
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input">
+                        <input type="text" ng-model="med.comment" placeholder="Commentaire">
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <em ng-hide="med.dosage === undefined && med.type ==='other' ">
+                        Dosages : 
+                    </em>
+                    <!-- Antireject -->
+                    <em  ng-repeat="dosage in med.dosage track by $index" ng-if="med.type === 'antireject'">
+                        {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |  
+                    </em>
+                     <!-- Antiinfection -->
+                    <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
+                        ng-if="dosage.selected && med.type === 'antiinfection' &&
+                               !med.medicine.antiinfection.specialfrequence.selected">
+                        {{dosage.nbMedicine}} unité(s) - {{dosage.name}} |
+                    </em>
+                    <em ng-repeat="dosage in med.medicine.antiinfection.dosage" 
+                        ng-if="dosage.selected && med.type === 'antiinfection' &&
+                               med.medicine.antiinfection.specialfrequence.selected">
+                        <em ng-if="med.medicine.antiinfection.specialfrequence.value == 'monthOnly'">
+                            Chaque mois, le
+                        </em>
+                        {{dosage.nbMedicine}} : {{dosage.name}}
+                    </em>
+                     <!-- Others -->
+                    <em ng-repeat="dosage in med.medicine.other.dosage track by $index" 
+                        ng-if="dosage.selected && med.type === 'other' &&
+                               med.medicine.other.existingMedicine"
+                        >
+                        {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
+                    </em>
+                    <em ng-if="med.type === 'other' && !med.medicine.other.existingMedicine">
+                        {{med.dosage}}
+                    </em>
+                </div>
+            </div>
+
+            <div class="row" ng-if="med.type === 'other' && med.frequence">
+                <div class="col">
+                    Fréquence : {{med.frequence}}
+                </div>
+            </div>
+
+            <em ng-if="med.type === 'antireject'">
+                <div class="row" style="height:80px;"
+                     data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback(med)'}" 
+                     name="dropzone-{{med.medicine.antireject.medicine.name}}"
+                     data-jqyoui-options 
+                     >
+                    <h3>Présentation du médicament : </h3>
+                </div>
+            </em>
+            <em ng-if="med.type === 'antiinfection'">
+                <div class="row" style="height:80px;"
+                     data-drop="true" jqyoui-droppable="{ onDrop : 'dropCallback(med)'}" 
+                     name="dropzone-{{med.medicine.antiinfection.medicine.name}}"
+                     data-jqyoui-options 
+                     >
+                    <h3>Présentation du médicament : </h3>
+                </div>
+            </em>
+
+        </div>
+    </ion-content>
+</ion-view>

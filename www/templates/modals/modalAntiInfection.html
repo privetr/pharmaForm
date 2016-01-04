@@ -25,8 +25,16 @@
                     </h2>
                 </div>
                 
+                <h4 style="margin-top:20px; padding-left:10px">
+                    Votre traitement :
+                </h4>
+                <div class="row" style="padding-left: 10px;">
+                    <div class="col" ng-repeat="dosage in medicine.antiinfection.dosage" ng-if="dosage.selected">
+                        <img style="height: 70px" src="{{dosage.imagePath}}">
+                    </div>
+                </div>
                 
-                <div class="list" style="padding-top: 20px">
+                <div class="list">
                      <em ng-if="medicine.antiinfection.medicine.infos.family">
                          <a class="item item-icon-left">
                             <i class="icon ion-ionic color-energized"></i> 

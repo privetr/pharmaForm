@@ -1,167 +1,165 @@
-<ion-nav-view>
-    <ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
-        
-        <ion-header-bar class="bar-positive" align-title="center">
-            <a class="button button-icon icon ion-chevron-left white" 
-               ng-click="vm.popupBack()"> Prescription</a>
-            <h1 class="title">
-                <img class="title-image" src="img/logo.png" width="100" height="25" /> 
-            </h1>
-            <a id="button_save_other" class="button button-icon icon ion-checkmark-round white" 
-               ng-click="vm.saveOtherPrescription()"> 
-                Enregistrer
-            </a>
-        </ion-header-bar>
+<ion-view  title="ETP Greffe Pulmonaire - Modifier Prescription">
 
-        <div class="bar bar-subheader bar-positive">
-            <h2 class="title">Modification des traitements associés</h2>
+    <ion-header-bar class="bar-positive" align-title="center">
+        <a class="button button-icon icon ion-chevron-left white" 
+           ng-click="vm.popupBack()"> Prescription</a>
+        <h1 class="title">
+            <img class="title-image" src="img/logo.png" width="100" height="25" /> 
+        </h1>
+        <a id="button_save_other" class="button button-icon icon ion-checkmark-round white" 
+           ng-click="vm.saveOtherPrescription()"> 
+            Enregistrer
+        </a>
+    </ion-header-bar>
+
+    <div class="bar bar-subheader bar-positive">
+        <h2 class="title">Modification des traitements associés</h2>
+    </div>
+
+    <ion-content  class="has-header has-subheader has-footer">
+
+        <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
+            <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements associés
+        </h3>
+
+        <ion-list>
+            <ion-radio ng-model="vm.existingMedicine" ng-value="true" 
+                       ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
+                Médicament fréquent
+            </ion-radio>
+            <ion-radio ng-model="vm.existingMedicine" ng-value="false" 
+                       ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
+                Médicament hors liste
+            </ion-radio>
+        </ion-list>
+
+
+
+
+        <!-- existing medicine prescription -->
+        <em ng-if="vm.existingMedicine">
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Traitement associé</h4>
+            <select class="ion-input-select-large"	
+                    ng-options="index as item.name for (index, item) in vm.existingMedicinePrescription"
+                    ng-model="vm.newExistingMedicine"> 
+            </select>
+
+            <!-- Dosage -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px" 
+                ng-if="vm.existingMedicinePrescription[vm.newExistingMedicine].dosage || !vm.newExistingMedicine">Dosage</h4>
+            <div class="row" style="padding-left:20px" 
+                 ng-if="!vm.newExistingMedicine">
+                Aucun
+            </div>
+            <ul class="list" style="padding-top:10px;">
+                <div class="row" ng-repeat="dosage in vm.existingMedicinePrescription[vm.newExistingMedicine].dosage">
+                    <div class="col" style="padding:0px; margin:0px;">
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" value="{{dosage.id}}" 
+                                       ng-model="dosage.selected">                 
+                            </label>
+                            {{dosage.name}}
+                        </li>
+                    </div>
+                    <div class="col" ng-if="dosage.selected">
+                        <select class="ion-input-select-large item"	style="border: thin solid #444"
+                                ng-options="key as item for (key, item) in vm.listDosageTimes"
+                                ng-model="dosage.nbMedicine"> 
+                                <option value="">Choisir nombre d'unité(s)</option>
+                        </select>
+                    </div>
+                </div>
+            </ul> 
+
+            <!-- Fréquence -->
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
+            <label class="item item-input">
+                <input type="text" ng-model="vm.newExistingMedicineFrequence" 
+                       placeholder="Exemple : Toutes les 8h / 3 fois par jour">
+            </label>
+
+        </em>
+
+        <!-- custom prescription -->
+        <em ng-if="!vm.existingMedicine">
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Princeps + DCI</h4>
+            <label class="item item-input">
+                <input type="text" ng-model="vm.newOther" placeholder="Exemple : PROGRAF® Tacrolimus">
+            </label>
+
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
+            <label class="item item-input">
+                <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 2 unités - 0,5 mg">
+            </label>
+
+            <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
+            <label class="item item-input">
+                <input type="text" ng-model="vm.newOtherFrequence" placeholder="Exemple : Toutes les 8h / 3 fois par jour">
+            </label>
+        </em>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="col col-50">
+                <button class="button button-block button-positive icon-left" ng-click="vm.addOther()">
+                    <i class="icon ion-plus-round"></i> Ajouter traitement associé
+                </button>
+            </div>
+            <div class="col col-50">
+                <button class="button button-clear button-assertive icon ion-close-round"
+                    ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
+                </button>
+                <button class="button button-clear button-energized icon ion-shuffle"
+                    ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
+                </button>
+                <button class="button button-clear button-dark icon ion-edit"
+                     ng-click="vm.showDelete = false; vm.showReorder = false">
+                </button>
+            </div>
         </div>
 
-        <ion-content  class="has-header has-subheader has-footer">
-
-            <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
-                <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements associés
-            </h3>
-
-            <ion-list>
-                <ion-radio ng-model="vm.existingMedicine" ng-value="true" 
-                           ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
-                    Médicament fréquent
-                </ion-radio>
-                <ion-radio ng-model="vm.existingMedicine" ng-value="false" 
-                           ng-init="vm.existingMedicine" ng-change="vm.changeExistingMedicine();">
-                    Médicament hors liste
-                </ion-radio>
-            </ion-list>
-
-
-
-
-            <!-- existing medicine prescription -->
-            <em ng-if="vm.existingMedicine">
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Traitement associé</h4>
-                <select class="ion-input-select-large"	
-                        ng-options="index as item.name for (index, item) in vm.existingMedicinePrescription"
-                        ng-model="vm.newExistingMedicine"> 
-                </select>
-
-                <!-- Dosage -->
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px" 
-                    ng-if="vm.existingMedicinePrescription[vm.newExistingMedicine].dosage || !vm.newExistingMedicine">Dosage</h4>
-                <div class="row" style="padding-left:20px" 
-                     ng-if="!vm.newExistingMedicine">
-                    Aucun
-                </div>
-                <ul class="list" style="padding-top:10px;">
-                    <div class="row" ng-repeat="dosage in vm.existingMedicinePrescription[vm.newExistingMedicine].dosage">
-                        <div class="col" style="padding:0px; margin:0px;">
-                            <li class="item item-checkbox">
-                                <label class="checkbox">
-                                    <input type="checkbox" value="{{dosage.id}}" 
-                                           ng-model="dosage.selected">                 
-                                </label>
-                                {{dosage.name}}
-                            </li>
-                        </div>
-                        <div class="col" ng-if="dosage.selected">
-                            <select class="ion-input-select-large item"	style="border: thin solid #444"
-                                    ng-options="key as item for (key, item) in vm.listDosageTimes"
-                                    ng-model="dosage.nbMedicine"> 
-                                    <option value="">Choisir nombre d'unité(s)</option>
-                            </select>
-                        </div>
-                    </div>
-                </ul> 
-
-                <!-- Fréquence -->
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
-                <label class="item item-input">
-                    <input type="text" ng-model="vm.newExistingMedicineFrequence" 
-                           placeholder="Exemple : Toutes les 8h / 3 fois par jour">
-                </label>
-
-            </em>
-
-            <!-- custom prescription -->
-            <em ng-if="!vm.existingMedicine">
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Princeps + DCI</h4>
-                <label class="item item-input">
-                    <input type="text" ng-model="vm.newOther" placeholder="Exemple : PROGRAF® Tacrolimus">
-                </label>
-
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Dosage</h4>
-                <label class="item item-input">
-                    <input type="text" ng-model="vm.newOtherDosage" placeholder="Exemple : 2 unités - 0,5 mg">
-                </label>
-
-                <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Fréquence</h4>
-                <label class="item item-input">
-                    <input type="text" ng-model="vm.newOtherFrequence" placeholder="Exemple : Toutes les 8h / 3 fois par jour">
-                </label>
-            </em>
-
-            <div class="row" style="margin-top:10px;">
-                <div class="col col-50">
-                    <button class="button button-block button-positive icon-left" ng-click="vm.addOther()">
-                        <i class="icon ion-plus-round"></i> Ajouter traitement associé
-                    </button>
-                </div>
-                <div class="col col-50">
-                    <button class="button button-clear button-assertive icon ion-close-round"
-                        ng-click="vm.showDelete = !vm.showDelete; vm.showReorder = false">
-                    </button>
-                    <button class="button button-clear button-energized icon ion-shuffle"
-                        ng-click="vm.showDelete = false; vm.showReorder = !vm.showReorder">
-                    </button>
-                    <button class="button button-clear button-dark icon ion-edit"
-                         ng-click="vm.showDelete = false; vm.showReorder = false">
-                    </button>
-                </div>
+        <!-- Liste Other prescription -->
+        <div class="row" style="margin-top:20px;">
+            <div class="col">
+                <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
+                ng-if="vm.patient.listOtherPrescription">Liste des traitements associés</h4>
             </div>
+        </div>
 
-            <!-- Liste Other prescription -->
-            <div class="row" style="margin-top:20px;">
-                <div class="col">
-                    <h4 class="maincolor" style="margin-bottom: 0px; padding-left:10px"
-                    ng-if="vm.patient.listOtherPrescription">Liste des traitements associés</h4>
-                </div>
-            </div>
+        <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
+            <div class="list list-inset">
+                <ion-item ng-repeat="(key_objectO, objectO) in vm.listOtherPrescription" 
+                    class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
+                    ng-click="vm.editOther(key_objectO, objectO)">	
 
-            <ion-list show-delete="vm.showDelete" show-reorder="vm.showReorder">
-                <div class="list list-inset">
-                    <ion-item ng-repeat="(key_objectO, objectO) in vm.listOtherPrescription" 
-                        class="item-text-wrap item-icon-right" class="item" type="item-text-wrap"
-                        ng-click="vm.editOther(key_objectO, objectO)">	
-
-                        <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
-                            <em ng-if="!objectO.other.existingMedicine">{{objectO.other.medicine}}</em>
-                            <em ng-if="objectO.other.existingMedicine">{{objectO.other.medicine.name}}</em>
-                        </p>
-                        <p ng-if="objectO.other.dosage"><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
-                            <em ng-if="!objectO.other.existingMedicine">{{objectO.other.dosage}}</em>
-                            <em ng-if="objectO.other.existingMedicine">
-                                <em ng-repeat="dosage in objectO.other.medicine.dosage" 
-                                    ng-if="dosage.selected" style="padding-right:30px";>
-                                    {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
-                                </em>
+                    <p><color class="maincolor" style="padding-right:20px"><b>Nom</b></color> 
+                        <em ng-if="!objectO.other.existingMedicine">{{objectO.other.medicine}}</em>
+                        <em ng-if="objectO.other.existingMedicine">{{objectO.other.medicine.name}}</em>
+                    </p>
+                    <p ng-if="objectO.other.dosage"><color class="maincolor" style="padding-right:20px"><b>Dosage</b></color>
+                        <em ng-if="!objectO.other.existingMedicine">{{objectO.other.dosage}}</em>
+                        <em ng-if="objectO.other.existingMedicine">
+                            <em ng-repeat="dosage in objectO.other.medicine.dosage" 
+                                ng-if="dosage.selected" style="padding-right:30px";>
+                                {{dosage.nbMedicine}} unité(s) - {{dosage.name}}
                             </em>
-                        </p>
-                        <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
-                            {{objectO.other.frequence}}
-                        </p>
+                        </em>
+                    </p>
+                    <p><color class="maincolor" style="padding-right:20px"><b>Fréquence</b></color> 
+                        {{objectO.other.frequence}}
+                    </p>
 
-                        <ion-delete-button class="ion-minus-circled"
-                            ng-click="vm.removeOther(key_objectO)">
-                        </ion-delete-button>
-                        <ion-reorder-button class="ion-navicon"
-                            on-reorder="vm.reorderItem(objectO, $fromIndex, $toIndex)">
-                        </ion-reorder-button>
-                     </ion-item>
-                 </div>
-            </ion-list>
+                    <ion-delete-button class="ion-minus-circled"
+                        ng-click="vm.removeOther(key_objectO)">
+                    </ion-delete-button>
+                    <ion-reorder-button class="ion-navicon"
+                        on-reorder="vm.reorderItem(objectO, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+                 </ion-item>
+             </div>
+        </ion-list>
 
 
 
-        </ion-content>
-    </ion-view>
-</ion-nav-view>
+    </ion-content>
+</ion-view>
