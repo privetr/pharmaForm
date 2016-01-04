@@ -19,13 +19,11 @@
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
-    "org.apache.cordova.file",
     {
       "locator": "https://github.com/privetr/cordova-plugin-email-composer.git",
       "id": "de.appplant.cordova.plugin.email-composer"
     },
-    "cordova-plugin-inappbrowser",
-    "com.ionic.keyboard"
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "android",

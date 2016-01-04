@@ -704,6 +704,7 @@
                 if(session.bilan463 === '1') itemKO++;
             }
             if(session.mainComment){
+                answersBody += '<h4><font color="#D9004D">Commentaires</font></h4>';
                 answersBody += 'Commentaire Global : ' + session.mainComment + '<br>';
             }
             
