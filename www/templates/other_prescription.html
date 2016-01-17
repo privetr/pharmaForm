@@ -21,6 +21,8 @@
         <h3 class="maincolor" style="padding-top:20px; padding-left:10px;">
             <em class="uppercase">{{vm.patient.lastname}}</em> {{vm.patient.firstname}} - Traitements associés
         </h3>
+        
+        <input type="text" ng-if="false">
 
         <ion-list>
             <ion-radio ng-model="vm.existingMedicine" ng-value="true" 
@@ -80,6 +82,7 @@
 
         <!-- custom prescription -->
         <em ng-if="!vm.existingMedicine">
+            <input type="text" ng-if="false">
             <h4 class="maincolor" style="margin-top:20px; padding-left:10px">Princeps + DCI</h4>
             <label class="item item-input">
                 <input type="text" ng-model="vm.newOther" placeholder="Exemple : PROGRAF® Tacrolimus">
