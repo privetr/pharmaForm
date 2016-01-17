@@ -64,7 +64,7 @@
                     <h4 class="color-grey">
                         Votre corps possède un système de défense composé d’anticorps :
                         <img style="height:50px; width:50px; margin-right: 20px" src="img/session2/anticorps.png">
-                        Ces anticorps vous protègent des agressions extérieures, comme les infections. Cependant, 
+                        <br>Ces anticorps vous protègent des agressions extérieures, comme les infections. Cependant, 
                         ils reconnaissent les poumons greffés comme « étrangers ». Ils vont donc essayer de les éliminer.
                     </h4>
                 </div>
@@ -85,7 +85,7 @@
                     <h4 class="color-grey">
                         Pour éviter le rejet du greffon, on apporte des médicaments : 
                         <img style="height:50px; width:50px; margin-right: 20px" src="img/session2/medoc1.png">
-                        Ils vont diminuer le nombre d’anticorps et donc protéger les poumons.
+                        <br>Ils vont diminuer le nombre d’anticorps et donc protéger les poumons.
                         Ces médicaments s’appellent des anti-rejets ou des immunosuppresseurs. 
                     </h4>
                 </div>
@@ -323,8 +323,8 @@
                 <div class="row">
                     <h4 class="color-grey">
                         Le nombre d’anticorps étant diminué par les médicaments anti-rejets 
-                        <img style="height:50px; width:50px" src="img/session2/medoc1.png">
-                        les infections peuvent plus facilement se développer.
+                        <img style="height:50px; width:50px" src="img/session2/medoc1.png">,
+                         les infections peuvent plus facilement se développer.
                     </h4>
                 </div>
 
@@ -342,7 +342,7 @@
                     <h4 class="color-grey">
                         On apporte des médicaments anti-infectieux 
                         <img style="height:40px; width:50px" src="img/session2/antiinfection1.png">
-                        pour se protéger :  
+                        pour se protéger.
                     </h4>
                 </div>
                 <div class="col col-80 col-offset-10" style="padding:30px";>
@@ -372,10 +372,11 @@
                     </h4>
                 </div>
                 <div class="list" style="padding-top: 30px">
-                    <div class="item item-divider item-text-wrap">
+                    <div class="item item-divider item-text-wrap"
+                         ng-click="vm.germesVirus = ! vm.germesVirus" ng-init="vm.germesVirus = false">
                         Virus : 
                     </div>
-                    <a class="item">
+                    <a class="item" ng-if="vm.germesVirus">
                         <div class="col">
                             <i class="icon ion-ionic color-energized"></i> 
                             <em class="item-text-wrap" style="padding-left:5px;">
@@ -392,10 +393,11 @@
                             <br>
                         </div>
                     </a>
-                    <div class="item item-divider">
+                    <div class="item item-divider"
+                          ng-click="vm.germesChampi = ! vm.germesChampi" ng-init="vm.germesChampi = false">
                         Champignons : 
                     </div>
-                    <a class="item">
+                    <a class="item" ng-if="vm.germesChampi">
                         <div class="col">
                             <i class="icon ion-ionic color-energized"></i> 
                             <em class="item-text-wrap" style="padding-left:5px;">
@@ -404,10 +406,11 @@
                             <br>
                         </div>
                     </a>
-                    <div class="item item-divider">
+                    <div class="item item-divider"
+                        ng-click="vm.germesParasites = ! vm.germesParasites" ng-init="vm.germesParasites = false">
                         Parasites : 
                     </div>
-                    <a class="item">
+                    <a class="item" ng-if="vm.germesParasites">
                         <div class="col">
                             <i class="icon ion-ionic color-energized"></i> 
                             <em class="item-text-wrap" style="padding-left:5px;">
@@ -416,10 +419,11 @@
                             <br>
                         </div>
                     </a>
-                    <div class="item item-divider">
+                    <div class="item item-divider"
+                         ng-click="vm.germesBacteries = ! vm.germesBacteries" ng-init="vm.germesBacteries = false">
                         Bactéries : 
                     </div>
-                    <a class="item">
+                    <a class="item" ng-if="vm.germesBacteries">
                         <div class="col">
                             <i class="icon ion-ionic color-energized"></i> 
                             <em class="item-text-wrap" style="padding-left:5px;">
@@ -446,7 +450,7 @@
                 </div>
                 <div class="row">
                     <h4 class="color-grey">
-                        Certains sont donnés systématiquement, d’autres uniquement en cas de besoin. 
+                        Certains médicaments sont donnés systématiquement, d’autres uniquement en cas de besoin. 
                         Ils vont donc également être régulièrement réévalués.
                     </h4>
                 </div>
@@ -465,10 +469,11 @@
                 </div>
 
                 <div class="list" style="padding-top: 30px">
-                    <div class="item item-divider item-text-wrap">
+                    <div class="item item-divider item-text-wrap"
+                         ng-click="vm.precautionsQuotidien = ! vm.precautionsQuotidien" ng-init="vm.precautionsQuotidien = false">
                         Afin d’éviter de développer une infection, des précautions simples sont à prendre au quotidien :
                     </div>
-                    <a class="item">
+                    <a class="item" ng-if="vm.precautionsQuotidien">
                         <div class="col">
                             <i class="icon ion-ionic color-energized"></i> 
                             <em class="item-text-wrap" style="padding-left:5px;">
@@ -726,7 +731,7 @@
                 <div class="list" style="padding-top: 30px">
                     <div class="item item-divider item-text-wrap"
                          ng-click="vm.complications = ! vm.complications" ng-init="vm.complications = false">
-                        La transplantation pulmonaire et ses traitements peuvent entrainer des complications
+                        La transplantation pulmonaire et ses traitements peuvent entrainer des complications :
                     </div>
                     <a class="item" ng-if="vm.complications">
                         <div class="col">
@@ -791,7 +796,7 @@
                 <div class="list" style="padding-top: 30px">
                     <div class="item item-divider item-text-wrap"
                          ng-click="vm.surveillance = ! vm.surveillance" ng-init="vm.surveillance = false">
-                        D’autres surveillances peuvent être effectuées
+                        D’autres surveillances peuvent être effectuées :
                     </div>
                     <a class="item" ng-if="vm.surveillance">
                         <div class="col">
@@ -841,7 +846,7 @@
                 <div class="row" style="padding-top:20px">
                     <h4 class="color-grey">
                         Au quotidien : 
-                        Privilégier une alimentation saine et équilibrée et
+                        privilégier une alimentation saine et équilibrée et
                         pratiquer une activité physique régulière 
                     </h4>
                 </div>
