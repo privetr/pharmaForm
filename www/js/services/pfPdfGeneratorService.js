@@ -308,6 +308,10 @@
             }
             
             // Slide 110
+            body += '<h4><font color="#D9004D">Et maintenant...</font></h4>';
+            if(session.medicineImportant){
+                body += 'Vos médicaments sont-ils indispensables ?' + ' ' + session.medicineImportant + '/100<br>';
+            }
             if(session.doYouThinkHavingSideEffectsTrueFalse){
                 body += 'Pensez-vous avoir des effets indésirables ?' + ' ' + getTrueFalse(session.doYouThinkHavingSideEffectsTrueFalse) + '<br>';
             }
@@ -735,10 +739,10 @@
         
         function getTrueFalse(value) {
             if(value === '0'){
-                return 'Oui';
+                return 'Non';
             } 
             else if(value === '1'){
-                return 'Non';
+                return 'Oui';
             }
         }
 
