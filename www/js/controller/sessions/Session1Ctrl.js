@@ -159,6 +159,7 @@
                     vm.risksMedicine = vm.patient.listSessionsAnswers[i].answer.risksMedicine;
                     
                     // Slide 110
+                    vm.medicineImportant = vm.patient.listSessionsAnswers[i].answer.medicineImportant;
                     vm.doYouThinkHavingSideEffects = vm.patient.listSessionsAnswers[i].answer.doYouThinkHavingSideEffects;
                     vm.doYouThinkHavingSideEffectsTrueFalse = vm.patient.listSessionsAnswers[i].answer.doYouThinkHavingSideEffectsTrueFalse;
                     vm.whatChangeHoursMedicine = vm.patient.listSessionsAnswers[i].answer.whatChangeHoursMedicine;
@@ -168,9 +169,6 @@
                     vm.whatCanInterferAntiReject = vm.patient.listSessionsAnswers[i].answer.whatCanInterferAntiReject;
                     vm.doYouKnowTargetAntiRejectTrueFalse = vm.patient.listSessionsAnswers[i].answer.doYouKnowTargetAntiRejectTrueFalse;
                     vm.doYouKnowTargetAntiReject = vm.patient.listSessionsAnswers[i].answer.doYouKnowTargetAntiReject;
-                    
-                    
-                    
 
                     // Slide 11
                     vm.changeDecisionTeamRange = vm.patient.listSessionsAnswers[i].answer.changeDecisionTeamRange;
@@ -297,6 +295,7 @@
             vm.session.answer.risksMedicine = vm.risksMedicine;
             
             // Slide 110
+            vm.session.answer.medicineImportant = vm.medicineImportant;
             vm.session.answer.doYouThinkHavingSideEffects = vm.doYouThinkHavingSideEffects;
             vm.session.answer.doYouThinkHavingSideEffectsTrueFalse = vm.doYouThinkHavingSideEffectsTrueFalse;
             vm.session.answer.whatChangeHoursMedicine = vm.whatChangeHoursMedicine;
