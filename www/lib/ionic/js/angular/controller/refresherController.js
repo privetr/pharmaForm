@@ -170,7 +170,7 @@ IonicModule
     }
 
     function overscroll(val) {
-      scrollChild.style[ionic.CSS.TRANSFORM] = 'translateY(' + val + 'px)';
+      scrollChild.style[ionic.CSS.TRANSFORM] = 'translate3d(0px, ' + val + 'px, 0px)';
       lastOverscroll = val;
     }
 
@@ -306,13 +306,17 @@ IonicModule
     };
 
     function destroy() {
-      ionic.off(touchStartEvent, handleTouchstart, scrollChild);
-      ionic.off(touchMoveEvent, handleTouchmove, scrollChild);
-      ionic.off(touchEndEvent, handleTouchend, scrollChild);
-      ionic.off('mousedown', handleMousedown, scrollChild);
-      ionic.off('mousemove', handleTouchmove, scrollChild);
-      ionic.off('mouseup', handleTouchend, scrollChild);
-      ionic.off('scroll', handleScroll, scrollParent);
+      if ( scrollChild ) {
+        ionic.off(touchStartEvent, handleTouchstart, scrollChild);
+        ionic.off(touchMoveEvent, handleTouchmove, scrollChild);
+        ionic.off(touchEndEvent, handleTouchend, scrollChild);
+        ionic.off('mousedown', handleMousedown, scrollChild);
+        ionic.off('mousemove', handleTouchmove, scrollChild);
+        ionic.off('mouseup', handleTouchend, scrollChild);
+      }
+      if ( scrollParent ) {
+        ionic.off('scroll', handleScroll, scrollParent);
+      }
       scrollParent = null;
       scrollChild = null;
     }
